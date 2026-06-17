@@ -3,35 +3,35 @@
     {
       "id": "1781700966394",
       "username": "student1",
-      "password": "$2a$10$giIDsxSDeu6JP69QfoCMHOua0r3NUE/L/zmDobQSZ/OiAxFdb44xa",
+      "password": "$2a$10$L5y2GDQx2cmOWtTS8nltKOc.ppQP9gGPs1.5hGe3trnq0U2rvd7ES",
       "role": "student",
       "createdAt": "2026-06-17T12:56:06.394Z"
     },
     {
       "id": "1781701046567",
       "username": "ad",
-      "password": "$2a$10$jH5BsBXHVq.9Ps5iha/YDOWfaAAF2VAhyguKjqZ080PnGQmwuthQO",
+      "password": "$2a$10$L5y2GDQx2cmOWtTS8nltKOc.ppQP9gGPs1.5hGe3trnq0U2rvd7ES",
       "role": "student",
       "createdAt": "2026-06-17T12:57:26.567Z"
     },
     {
       "id": "1781701495438",
       "username": "admin",
-      "password": "$2a$10$IsO0YrWKzF8.6nVw1u10luoo4FVuPfvOcOoieCP55ZsJ.ciL18uu6",
+      "password": "$2a$10$L5y2GDQx2cmOWtTS8nltKOc.ppQP9gGPs1.5hGe3trnq0U2rvd7ES",
       "role": "student",
       "createdAt": "2026-06-17T13:04:55.438Z"
     },
     {
       "id": "1781702717665",
       "username": "studenttest",
-      "password": "$2a$10$iEMfvdkQWE78BiW6djtwc.asA6ZJ82dIHYh77WHgEvQoelL0XwRvW",
+      "password": "$2a$10$L5y2GDQx2cmOWtTS8nltKOc.ppQP9gGPs1.5hGe3trnq0U2rvd7ES",
       "role": "student",
       "createdAt": "2026-06-17T13:25:17.665Z"
     },
     {
       "id": "1781706149518",
       "username": "teststudent",
-      "password": "$2a$10$/K.HerWoei4GYLAPc5twte.j50YdpaI/bz6Y9ezLRKL2aMiS/CYgq",
+      "password": "$2a$10$L5y2GDQx2cmOWtTS8nltKOc.ppQP9gGPs1.5hGe3trnq0U2rvd7ES",
       "role": "student",
       "createdAt": "2026-06-17T14:22:29.518Z"
     }
@@ -2338,6 +2338,14 @@
       "action": "SUBMIT_ESSAY",
       "details": "Nộp bài tự luận môn math lớp 10 (easy). Điểm: 7/10",
       "timestamp": "2026-06-17T14:22:58.423Z"
+    },
+    {
+      "id": "17817074365240.9511291224737735",
+      "userId": "1781706149518",
+      "username": "teststudent",
+      "action": "LOGOUT",
+      "details": "Đăng xuất tài khoản học sinh",
+      "timestamp": "2026-06-17T14:43:56.524Z"
     }
   ],
   "essays": {
