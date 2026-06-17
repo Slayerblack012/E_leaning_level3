@@ -1,42 +1,72 @@
 const config = require('../config/config');
 
 async function gradeEssay(req, res) {
-  const { question, studentAnswer, sampleAnswer, subject, apiKey } = req.body;
-  if (!question || !studentAnswer || !sampleAnswer) {
+  const { question, studentAnswer, sampleAnswer, subject, apiKey, image } = req.body;
+  if (!question || !sampleAnswer || (!studentAnswer && !image)) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
   const activeKey = apiKey || process.env.GEMINI_API_KEY;
 
   if (!activeKey) {
-    const score = calculateOfflineScore(studentAnswer, sampleAnswer);
-    const feedback = getOfflineFeedback(studentAnswer, sampleAnswer, score, subject);
-    return res.json({ score, feedback, isOffline: true });
+    const score = calculateOfflineScore(studentAnswer || '', sampleAnswer);
+    const feedback = getOfflineFeedback(studentAnswer || '', sampleAnswer, score, subject);
+    return res.json({ score, feedback, ocrText: image ? '[Lưu ý: Bạn đang ở chế độ ngoại tuyến, không thể thực hiện OCR hình ảnh]' : '', isOffline: true });
   }
 
   try {
-    const prompt = `Bạn là Giáo viên chuyên môn giảng dạy THPT vô cùng nghiêm khắc, công tâm và áp dụng phương pháp sư phạm gợi mở. Hãy chấm điểm bài làm tự luận của học sinh:
+    let imagePart = null;
+    if (image && image.startsWith('data:')) {
+      const match = image.match(/^data:([^;]+);base64,(.+)$/);
+      if (match) {
+        imagePart = {
+          inlineData: {
+            mimeType: match[1],
+            data: match[2]
+          }
+        };
+      }
+    }
+
+    let prompt = `Bạn là Giáo viên chuyên môn giảng dạy THPT vô cùng nghiêm khắc, công tâm và áp dụng phương pháp sư phạm gợi mở.
 Môn học/Chủ đề: ${subject || 'Chung'}
 Câu hỏi: "${question}"
 Đáp án mẫu: "${sampleAnswer}"
-Bài làm của học sinh: "${studentAnswer}"
+`;
 
+    if (imagePart) {
+      prompt += `Học sinh đã chụp ảnh bài làm viết tay của mình.
+1. Hãy thực hiện nhận diện văn bản (OCR) chính xác từ ảnh chụp bài làm viết tay này, bao gồm cả các công thức toán/lý/hóa (dùng ký hiệu LaTeX) hoặc văn bản tiếng Việt. Trả về phần văn bản này trong khối [OCR_TEXT].
+2. Hãy chấm điểm bài làm viết tay của học sinh dựa trên nội dung OCR được và đối chiếu với đáp án mẫu. Nếu học sinh có nhập thêm nội dung ở ô nhập liệu: "${studentAnswer || ''}", hãy kết hợp cả hai.
+`;
+    } else {
+      prompt += `Bài làm của học sinh: "${studentAnswer || ''}"
+Hãy chấm điểm bài làm của học sinh dựa trên nội dung này và đối chiếu với đáp án mẫu.
+`;
+    }
+
+    prompt += `
 YÊU CẦU QUAN TRỌNG:
 1. Chấm điểm theo thang điểm 10 (chấp nhận số thập phân như 7.5, 8.0). Trừ điểm nặng nếu học sinh sai kiến thức cơ bản, thiếu logic hoặc diễn đạt rườm rà.
 2. Viết nhận xét chi tiết bằng tiếng Việt. Chỉ rõ lỗi sai kiến thức, giải thích rõ các công thức và biến số.
-3. [QUAN TRỌNG] Ở cuối phần nhận xét, BẮT BUỘC phải đặt ra 1-2 CÂU HỎI GỢI MỞ (Socratic questioning) để kích thích học sinh tự tư duy sâu hơn về bản chất vấn đề hoặc tự nhận ra lỗi sai của mình, giúp các em nhớ lâu hơn thay vì chỉ học vẹt.
-4. Định dạng câu trả lời bắt buộc phải tuân theo cấu trúc thẻ sau đây:
+3. Ở cuối phần nhận xét, BẮT BUỘC phải đặt ra 1-2 CÂU HỎI GỢI MỞ (Socratic questioning) để kích thích học sinh tự tư duy sâu hơn về bản chất vấn đề hoặc tự nhận ra lỗi sai của mình.
+4. Định dạng câu trả lời bắt buộc phải tuân theo cấu trúc thẻ sau đây (giữ nguyên các nhãn thẻ viết hoa):
 [SCORE] số_điểm_ở_đây
-[FEEDBACK] nhận_xét_chi_tiết_và_câu_hỏi_gợi_mở_ở_đây`;
+${imagePart ? '[OCR_TEXT] văn_bản_được_trích_xuất_từ_ảnh_ở_đây\n' : ''}[FEEDBACK] nhận_xét_chi_tiết_và_câu_hỏi_gợi_mở_ở_đây`;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${activeKey}`, {
+    const parts = [{ text: prompt }];
+    if (imagePart) {
+      parts.push(imagePart);
+    }
+
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${activeKey}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        contents: [{ role: 'user', parts: [{ text: prompt }] }],
+        contents: [{ role: 'user', parts: parts }],
         generationConfig: {
           temperature: 0.2,
-          maxOutputTokens: 1024
+          maxOutputTokens: 4096
         }
       })
     });
@@ -58,24 +88,32 @@ YÊU CẦU QUAN TRỌNG:
     if (isNaN(score)) score = 7.0;
     score = Math.max(0, Math.min(10, score)); // Clamp between 0 and 10
     
+    let ocrText = '';
+    if (reply.includes('[OCR_TEXT]')) {
+      const ocrStart = reply.indexOf('[OCR_TEXT]') + '[OCR_TEXT]'.length;
+      const ocrEnd = reply.includes('[FEEDBACK]') ? reply.indexOf('[FEEDBACK]') : reply.length;
+      ocrText = reply.substring(ocrStart, ocrEnd).trim();
+    }
+
     let feedback = '';
     if (reply.includes('[FEEDBACK]')) {
       feedback = reply.substring(reply.indexOf('[FEEDBACK]') + '[FEEDBACK]'.length).trim();
     } else {
-      feedback = reply.replace(/\[SCORE\]\s*[0-9.]+/i, '').trim();
+      feedback = reply.replace(/\[SCORE\]\s*[0-9.]+/i, '').replace(/\[OCR_TEXT\][\s\S]*?(?=\[FEEDBACK\]|$)/i, '').trim();
     }
 
     return res.json({
       score,
       feedback: feedback || 'Không có nhận xét chi tiết.',
+      ocrText: ocrText,
       isOffline: false
     });
 
   } catch (e) {
     console.error('Essay grading error', e);
-    const score = calculateOfflineScore(studentAnswer, sampleAnswer);
-    const feedback = `[Hệ thống chấm điểm dự phòng do lỗi kết nối AI]: ${e.message}\n\nNhận xét: ${getOfflineFeedback(studentAnswer, sampleAnswer, score, subject)}`;
-    res.json({ score, feedback, isOffline: true });
+    const score = calculateOfflineScore(studentAnswer || '', sampleAnswer);
+    const feedback = `[Hệ thống chấm điểm dự phòng do lỗi kết nối AI]: ${e.message}\n\nNhận xét: ${getOfflineFeedback(studentAnswer || '', sampleAnswer, score, subject)}`;
+    res.json({ score, feedback, ocrText: '', isOffline: true });
   }
 }
 
@@ -97,10 +135,10 @@ async function chatProxy(req, res) {
     // Add the current user message
     formattedHistory.push({ role: 'user', parts: [{ text: message }] });
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${activeKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${activeKey}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ contents: formattedHistory, generationConfig: { temperature: 0.7, maxOutputTokens: 1024 } })
+      body: JSON.stringify({ contents: formattedHistory, generationConfig: { temperature: 0.7, maxOutputTokens: 4096 } })
     });
     if (!response.ok) {
       const err = await response.text();

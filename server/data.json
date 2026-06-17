@@ -3386,6 +3386,366 @@
       "action": "SUBMIT_ANSWER",
       "details": "Nộp đáp án SAI môn math lớp 10 (hard). Câu hỏi: \"Cho tam giác ABC có ba cạnh a = 6, b = 8, c = 10. Tính bán kính r của đường tròn nội tiếp tam giác ABC.\"",
       "timestamp": "2026-06-17T20:01:16.115Z"
+    },
+    {
+      "id": "17817268961000.7069032635158963",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGOUT",
+      "details": "Đăng xuất tài khoản học sinh",
+      "timestamp": "2026-06-17T20:08:16.100Z"
+    },
+    {
+      "id": "17817269226440.25098764846760824",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-17T20:08:42.644Z"
+    },
+    {
+      "id": "17817269440510.6025989572312073",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:09:04.051Z"
+    },
+    {
+      "id": "17817269736320.5602122942967375",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-17T20:09:33.632Z"
+    },
+    {
+      "id": "17817269872280.8783740950546755",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:09:47.228Z"
+    },
+    {
+      "id": "17817269875590.31833174768151806",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:09:47.559Z"
+    },
+    {
+      "id": "17817270006600.5866930669052629",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: essay",
+      "timestamp": "2026-06-17T20:10:00.661Z"
+    },
+    {
+      "id": "17817271796410.6250030283406821",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:12:59.641Z"
+    },
+    {
+      "id": "17817272505500.8693209778184352",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 11",
+      "timestamp": "2026-06-17T20:14:10.550Z"
+    },
+    {
+      "id": "17817272515070.43204713615972634",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 12",
+      "timestamp": "2026-06-17T20:14:11.507Z"
+    },
+    {
+      "id": "17817272527700.3482135428160418",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 12",
+      "timestamp": "2026-06-17T20:14:12.770Z"
+    },
+    {
+      "id": "17817272529050.16555715998366338",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 11",
+      "timestamp": "2026-06-17T20:14:12.905Z"
+    },
+    {
+      "id": "17817272532280.20824054164774564",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 11",
+      "timestamp": "2026-06-17T20:14:13.228Z"
+    },
+    {
+      "id": "17817272536220.32487670146956094",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 10",
+      "timestamp": "2026-06-17T20:14:13.622Z"
+    },
+    {
+      "id": "17817273127880.9643086868900501",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:15:12.788Z"
+    },
+    {
+      "id": "17817273128070.8473171578341799",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:15:12.808Z"
+    },
+    {
+      "id": "17817273203110.047410742419989216",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: essay",
+      "timestamp": "2026-06-17T20:15:20.311Z"
+    },
+    {
+      "id": "17817274365820.936990884634857",
+      "userId": "1781700966394",
+      "username": "student1",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:17:16.582Z"
+    },
+    {
+      "id": "17817274406150.8252767551322903",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-17T20:17:20.615Z"
+    },
+    {
+      "id": "17817274766040.24258899805450373",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:17:56.604Z"
+    },
+    {
+      "id": "17817274769240.9695229630121455",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:17:56.924Z"
+    },
+    {
+      "id": "17817274855740.21681105422697222",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: essay",
+      "timestamp": "2026-06-17T20:18:05.574Z"
+    },
+    {
+      "id": "17817276728050.7044691424420428",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:21:12.805Z"
+    },
+    {
+      "id": "17817276731200.22480484579220406",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:21:13.120Z"
+    },
+    {
+      "id": "17817277437090.44228806278887856",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:22:23.709Z"
+    },
+    {
+      "id": "17817277437160.04166780692534955",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:22:23.716Z"
+    },
+    {
+      "id": "17817277439490.7577374849504336",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:22:23.949Z"
+    },
+    {
+      "id": "17817277440360.665356919644366",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:22:24.037Z"
+    },
+    {
+      "id": "17817277440490.07281082544851869",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:22:24.049Z"
+    },
+    {
+      "id": "17817277443020.4759674971832325",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:22:24.302Z"
+    },
+    {
+      "id": "17817277446660.8055252606507792",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:22:24.666Z"
+    },
+    {
+      "id": "17817277449670.9910540926976352",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:22:24.967Z"
+    },
+    {
+      "id": "17817277454670.7111027862585158",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:22:25.467Z"
+    },
+    {
+      "id": "17817277454790.7659053279441497",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:22:25.479Z"
+    },
+    {
+      "id": "17817277478420.09941809411206737",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:22:27.842Z"
+    },
+    {
+      "id": "17817277481540.6538336845130994",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:22:28.154Z"
+    },
+    {
+      "id": "17817277499500.012605635988751862",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án SAI môn math lớp 10 (easy). Câu hỏi: \"Phần bù của tập hợp con B trong tập hợp A (ký hiệu C_A B) là tập hợp:\"",
+      "timestamp": "2026-06-17T20:22:29.950Z"
+    },
+    {
+      "id": "17817277525740.08850785482282764",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án SAI môn math lớp 10 (easy). Câu hỏi: \"Số cách chọn ra một nhóm gồm 3 học sinh từ một tổ gồm 10 học sinh (không phân công nhiệm vụ) là:\"",
+      "timestamp": "2026-06-17T20:22:32.574Z"
+    },
+    {
+      "id": "17817277543840.44136171296021653",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án SAI môn math lớp 10 (easy). Câu hỏi: \"Cho mệnh đề phủ định P: 'Mọi học sinh lớp 10 đều thích học Toán'. Mệnh đề phủ định của P là:\"",
+      "timestamp": "2026-06-17T20:22:34.384Z"
+    },
+    {
+      "id": "17817277599900.0185258986810386",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án ĐÚNG môn math lớp 10 (easy). Câu hỏi: \"Cho tập hợp A = {1, 2, 3, 4} và B = {3, 4, 5, 6}. Giao của hai tập hợp A và B (A ∩ B) là:\"",
+      "timestamp": "2026-06-17T20:22:39.990Z"
+    },
+    {
+      "id": "17817277617480.07224580650006462",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "COMPLETE_QUIZ_SET",
+      "details": "Hoàn thành bộ trắc nghiệm math lớp 10 (easy) - Điểm số: 1/4",
+      "timestamp": "2026-06-17T20:22:41.748Z"
+    },
+    {
+      "id": "17817278260090.09829879548256293",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Nguyên tử\" (Môn: chemistry, Lớp: 10)",
+      "timestamp": "2026-06-17T20:23:46.009Z"
+    },
+    {
+      "id": "17817278260190.2526157256211735",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Nguyên tử\" (Môn: chemistry, Lớp: 10)",
+      "timestamp": "2026-06-17T20:23:46.019Z"
+    },
+    {
+      "id": "17817278387350.025472208399185736",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Động học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-17T20:23:58.735Z"
+    },
+    {
+      "id": "17817280280780.7095905063772859",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "RESET_PROGRESS",
+      "details": "Đặt lại toàn bộ tiến trình học tập (Khối lớp 10)",
+      "timestamp": "2026-06-17T20:27:08.078Z"
     }
   ],
   "essays": {

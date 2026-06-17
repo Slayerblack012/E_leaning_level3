@@ -12,7 +12,13 @@ import {
   Sparkles, 
   ChevronRight, 
   RotateCcw,
-  ArrowLeft
+  ArrowLeft,
+  Trophy,
+  FileText,
+  Edit3,
+  Lightbulb,
+  Camera,
+  Bot
 } from 'lucide-react';
 
 // Parser helper to render inline/block math equations and markdown beautifully
@@ -137,6 +143,7 @@ export default function PracticePage() {
   const [essayAnswer, setEssayAnswer] = useState('');
   const [essayResult, setEssayResult] = useState(null); // { score, feedback, isOffline }
   const [gradingLoading, setGradingLoading] = useState(false);
+  const [essayImage, setEssayImage] = useState(null);
 
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY || localStorage.getItem('gemini_api_key') || '';
 
@@ -241,7 +248,7 @@ export default function PracticePage() {
     const isCorrect = selectedAns === correctOptionIdx;
     if (isCorrect) {
       setScore(prev => prev + 1);
-      showToast('Chính xác! Chúc mừng em 🎉', 'success');
+      showToast('Chính xác! Chúc mừng em!', 'success');
       logUserAction('SUBMIT_ANSWER', `Nộp đáp án ĐÚNG môn ${activeSubject} lớp ${grade} (${activeLevel}). Câu hỏi: "${activeQuestion.q}"`);
     } else {
       showToast('Chưa chính xác rồi. Hãy đọc lời giải chi tiết nhé!', 'error');
@@ -278,8 +285,8 @@ export default function PracticePage() {
       logUserAction('COMPLETE_QUIZ_SET', `Hoàn thành bộ trắc nghiệm ${activeSubject} lớp ${grade} (${activeLevel}) - Điểm số: ${finalScore}/${totalQ}`);
 
       showModal({
-        title: '🎉 Hoàn Thành Bộ Trắc Nghiệm!',
-        icon: <div style={{ fontSize: '3rem' }}>🏆</div>,
+        title: 'Hoàn Thành Bộ Trắc Nghiệm!',
+        icon: <Trophy size={48} color="#ffab00" style={{ marginBottom: '0.5rem' }} />,
         content: (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', alignItems: 'center' }}>
             <p style={{ fontWeight: '600', fontSize: '1rem', color: '#001e62' }}>
@@ -344,7 +351,7 @@ export default function PracticePage() {
 
   // AI Essay Grading Request
   const handleGradeEssay = () => {
-    if (!essayAnswer.trim() || !activeEssay || gradingLoading) return;
+    if ((!essayAnswer.trim() && !essayImage) || !activeEssay || gradingLoading) return;
     setGradingLoading(true);
     setEssayResult(null);
 
@@ -354,7 +361,8 @@ export default function PracticePage() {
       studentAnswer: essayAnswer,
       sampleAnswer: activeEssay.sampleAnswer,
       subject: contextId,
-      apiKey: apiKey
+      apiKey: apiKey,
+      image: essayImage
     })
       .then(res => {
         setEssayResult(res.data);
@@ -376,9 +384,9 @@ export default function PracticePage() {
   ];
 
   const levelsList = [
-    { id: 'easy', label: '🟢 Cơ bản (Dễ)', bg: 'rgba(0, 135, 90, 0.08)', color: '#00875a' },
-    { id: 'medium', label: '🟡 Thông hiểu (Vừa)', bg: 'rgba(255, 171, 0, 0.08)', color: '#b27b00' },
-    { id: 'hard', label: '🔴 Vận dụng cao (Khó)', bg: 'rgba(222, 53, 11, 0.08)', color: '#de350b' },
+    { id: 'easy', label: 'Cơ bản (Dễ)', bg: 'rgba(0, 135, 90, 0.08)', color: '#00875a' },
+    { id: 'medium', label: 'Thông hiểu (Vừa)', bg: 'rgba(255, 171, 0, 0.08)', color: '#b27b00' },
+    { id: 'hard', label: 'Vận dụng cao (Khó)', bg: 'rgba(222, 53, 11, 0.08)', color: '#de350b' },
   ];
 
   return (
@@ -433,10 +441,14 @@ export default function PracticePage() {
             fontWeight: 'bold',
             fontSize: '1rem',
             cursor: 'pointer',
-            transition: 'all 0.2s'
+            transition: 'all 0.2s',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem'
           }}
         >
-          📝 Trắc nghiệm khách quan (10 câu)
+          <FileText size={18} />
+          <span>Trắc nghiệm khách quan (10 câu)</span>
         </button>
         <button
           onClick={() => setPracticeMode('essay')}
@@ -449,10 +461,14 @@ export default function PracticePage() {
             fontWeight: 'bold',
             fontSize: '1rem',
             cursor: 'pointer',
-            transition: 'all 0.2s'
+            transition: 'all 0.2s',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem'
           }}
         >
-          ✏️ Bài tập tự luận chi tiết
+          <Edit3 size={18} />
+          <span>Bài tập tự luận chi tiết</span>
         </button>
       </div>
 
@@ -474,6 +490,7 @@ export default function PracticePage() {
                 // Reset essay states
                 setCurrentEssayIdx(0);
                 setEssayAnswer('');
+                setEssayImage(null);
                 setEssayResult(null);
               }}
               style={{
@@ -487,11 +504,21 @@ export default function PracticePage() {
                 fontWeight: 'bold',
                 cursor: 'pointer',
                 fontSize: '0.85rem',
-                textAlign: 'center',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.5rem',
                 transition: 'all 0.2s'
               }}
             >
-              {level.label}
+              <span style={{
+                width: '8px',
+                height: '8px',
+                borderRadius: '50%',
+                backgroundColor: level.color,
+                display: 'inline-block'
+              }} />
+              <span>{level.label}</span>
             </button>
           );
         })}
@@ -644,7 +671,14 @@ export default function PracticePage() {
                       transition: 'all 0.2s'
                     }}
                   >
-                    {hintLoading ? 'Đang viết...' : '💡 Lấy Gợi Ý'}
+                    {hintLoading ? (
+                      'Đang viết...'
+                    ) : (
+                      <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
+                        <Lightbulb size={12} color="#b27b00" fill="#b27b00" />
+                        <span>Lấy Gợi Ý</span>
+                      </span>
+                    )}
                   </button>
                 </div>
 
@@ -767,11 +801,11 @@ export default function PracticePage() {
                   value={essayAnswer}
                   onChange={(e) => setEssayAnswer(e.target.value)}
                   disabled={gradingLoading || essayResult !== null}
-                  placeholder="Gõ lời giải chi tiết của em vào đây. Chú ý trình bày đầy đủ các bước giải quyết vấn đề, ghi rõ công thức và các phép biến đổi trung gian..."
+                  placeholder="Gõ lời giải chi tiết của em vào đây. Hoặc bạn có thể chụp ảnh bài viết tay của mình bằng nút bên dưới..."
                   style={{
                     width: '100%',
                     flex: 1,
-                    minHeight: '220px',
+                    minHeight: '200px',
                     padding: '1rem',
                     borderRadius: '8px',
                     border: '1px solid var(--border-color)',
@@ -782,9 +816,94 @@ export default function PracticePage() {
                     outline: 'none',
                     background: gradingLoading ? '#f8f9fa' : '#ffffff',
                     transition: 'border-color 0.2s',
-                    boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.02)'
+                    boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.02)',
+                    marginBottom: '1rem'
                   }}
                 />
+
+                {/* Photo Capture & Upload UI */}
+                <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                  <input
+                    type="file"
+                    id="essay-image-input"
+                    accept="image/*"
+                    style={{ display: 'none' }}
+                    disabled={gradingLoading || essayResult !== null}
+                    onChange={(e) => {
+                      const file = e.target.files[0];
+                      if (file) {
+                        const reader = new FileReader();
+                        reader.onloadend = () => {
+                          setEssayImage(reader.result);
+                        };
+                        reader.readAsDataURL(file);
+                      }
+                    }}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => document.getElementById('essay-image-input').click()}
+                    disabled={gradingLoading || essayResult !== null}
+                    style={{
+                      padding: '0.55rem 1.25rem',
+                      borderRadius: '20px',
+                      border: '1px solid var(--border-color)',
+                      background: '#ffffff',
+                      color: 'var(--text-primary)',
+                      fontSize: '0.85rem',
+                      fontWeight: 'bold',
+                      cursor: gradingLoading || essayResult !== null ? 'not-allowed' : 'pointer',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                      transition: 'all 0.2s',
+                    }}
+                  >
+                    <Camera size={16} />
+                    <span>Chụp ảnh / Tải ảnh bài viết tay</span>
+                  </button>
+
+                  {essayImage && (
+                    <div style={{ position: 'relative', display: 'inline-flex', alignItems: 'center' }}>
+                      <img
+                        src={essayImage}
+                        alt="Preview"
+                        style={{
+                          height: '42px',
+                          maxWidth: '100px',
+                          borderRadius: '6px',
+                          objectFit: 'cover',
+                          border: '1px solid var(--border-hover)',
+                        }}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setEssayImage(null)}
+                        disabled={gradingLoading || essayResult !== null}
+                        style={{
+                          position: 'absolute',
+                          top: '-6px',
+                          right: '-6px',
+                          background: 'rgba(222, 53, 11, 0.9)',
+                          color: '#ffffff',
+                          border: 'none',
+                          borderRadius: '50%',
+                          width: '16px',
+                          height: '16px',
+                          fontSize: '0.6rem',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          cursor: 'pointer',
+                          fontWeight: 'bold',
+                        }}
+                      >
+                        ✕
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
 
               {/* Action Buttons */}
@@ -792,7 +911,7 @@ export default function PracticePage() {
                 {essayResult === null ? (
                   <button
                     onClick={handleGradeEssay}
-                    disabled={gradingLoading || !essayAnswer.trim()}
+                    disabled={gradingLoading || (!essayAnswer.trim() && !essayImage)}
                     style={{
                       flex: 1,
                       padding: '0.8rem 1.5rem',
@@ -801,7 +920,7 @@ export default function PracticePage() {
                       border: 'none',
                       borderRadius: 'var(--radius-md)',
                       fontWeight: 'bold',
-                      cursor: gradingLoading || !essayAnswer.trim() ? 'not-allowed' : 'pointer',
+                      cursor: gradingLoading || (!essayAnswer.trim() && !essayImage) ? 'not-allowed' : 'pointer',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -828,6 +947,7 @@ export default function PracticePage() {
                       onClick={() => {
                         setEssayResult(null);
                         setEssayAnswer('');
+                        setEssayImage(null);
                       }}
                       style={{
                         flex: 1,
@@ -854,6 +974,7 @@ export default function PracticePage() {
                         onClick={() => {
                           setCurrentEssayIdx(prev => prev + 1);
                           setEssayAnswer('');
+                          setEssayImage(null);
                           setEssayResult(null);
                         }}
                         style={{
@@ -898,7 +1019,8 @@ export default function PracticePage() {
                   }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(0, 135, 90, 0.15)', paddingBottom: '0.5rem' }}>
                       <span style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#00875a', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                        🏆 Điểm AI: {essayResult.score} / 10
+                        <Trophy size={18} color="#00875a" />
+                        <span>Điểm AI: {essayResult.score} / 10</span>
                       </span>
                       {essayResult.isOffline && (
                         <span style={{ fontSize: '0.7rem', background: '#ffab00', color: '#fff', padding: '0.2rem 0.5rem', borderRadius: '10px', fontWeight: 'bold' }}>
@@ -913,6 +1035,43 @@ export default function PracticePage() {
                       </div>
                     </div>
                   </div>
+
+                  {/* OCR Text Result */}
+                  {essayResult.ocrText && (
+                    <div style={{
+                      background: 'rgba(0, 86, 210, 0.04)',
+                      border: '1px solid rgba(0, 86, 210, 0.15)',
+                      borderLeft: '5px solid var(--color-primary)',
+                      borderRadius: '12px',
+                      padding: '1.25rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.5rem'
+                    }}>
+                      <div style={{ 
+                        fontWeight: 'bold', 
+                        fontSize: '0.95rem', 
+                        color: '#001e62', 
+                        borderBottom: '1px dashed rgba(0, 86, 210, 0.15)', 
+                        paddingBottom: '0.5rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.35rem'
+                      }}>
+                        <Sparkles size={16} color="var(--color-primary)" />
+                        <span>Văn bản trích xuất từ ảnh (OCR):</span>
+                      </div>
+                      <div style={{ 
+                        fontSize: '0.85rem', 
+                        color: 'var(--text-secondary)', 
+                        lineHeight: '1.6', 
+                        fontStyle: 'italic',
+                        whiteSpace: 'pre-wrap'
+                      }}>
+                        {essayResult.ocrText}
+                      </div>
+                    </div>
+                  )}
 
                   {/* Standard sample answer */}
                   <div style={{
@@ -954,7 +1113,7 @@ export default function PracticePage() {
                   gap: '0.75rem',
                   textAlign: 'center'
                 }}>
-                  <div style={{ fontSize: '2.5rem' }}>🤖</div>
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.25rem' }}><Bot size={40} color="var(--color-primary)" /></div>
                   <h3 style={{ fontSize: '1rem', color: '#001e62', margin: 0 }}>Gia sư Trực quan AI</h3>
                   <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: '1.5', margin: 0 }}>
                     Viết chi tiết các bước làm bài tự luận và nhấn nút gửi. Hệ thống AI Tutor sẽ đánh giá cách suy luận, giải thích các công thức và chỉ ra các biến đổi khi thiếu dữ liệu đầu vào.
