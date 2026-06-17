@@ -311,29 +311,92 @@ export default function Dashboard() {
 
                   if (accuracy >= 80) {
                     items.push(
-                      <div key={subj} style={{ display: 'flex', gap: '0.5rem', background: '#e3fcef', borderLeft: '4px solid #00875a', padding: '0.75rem', borderRadius: '4px' }}>
-                        <div style={{ fontSize: '1.1rem' }}>🏆</div>
-                        <div style={{ fontSize: '0.8rem', lineHeight: '1.4', color: '#006644' }}>
-                          <strong>Môn thế mạnh - {label}:</strong> Bạn đang học rất vững với độ chính xác cao ({accuracy}%). Hãy tiếp tục thử thách bản thân với các bài tập **Tự luận nâng cao** hoặc trao đổi lý thuyết nâng cao với AI Gia Sư!
+                      <div key={subj} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', background: '#e3fcef', borderLeft: '4px solid #00875a', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}>
+                        <div style={{ display: 'flex', gap: '0.5rem' }}>
+                          <div style={{ fontSize: '1.1rem' }}>🏆</div>
+                          <div style={{ fontSize: '0.8rem', lineHeight: '1.4', color: '#006644', flex: 1 }}>
+                            <strong>Môn thế mạnh - {label}:</strong> Bạn đang học rất vững với độ chính xác cao ({accuracy}%). Hãy tiếp tục thử thách bản thân với các bài tập **Tự luận nâng cao** hoặc trao đổi với AI Gia Sư!
+                          </div>
                         </div>
+                        <button
+                          onClick={() => navigate(`/tutor?subject=${subj}`)}
+                          style={{
+                            alignSelf: 'flex-end',
+                            background: 'rgba(0, 135, 90, 0.1)',
+                            border: '1px solid rgba(0, 135, 90, 0.3)',
+                            color: '#006644',
+                            padding: '0.25rem 0.6rem',
+                            borderRadius: '4px',
+                            fontSize: '0.75rem',
+                            fontWeight: 'bold',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s'
+                          }}
+                          onMouseOver={(e) => { e.target.style.background = 'rgba(0, 135, 90, 0.2)' }}
+                          onMouseOut={(e) => { e.target.style.background = 'rgba(0, 135, 90, 0.1)' }}
+                        >
+                          Hỏi lý thuyết nâng cao →
+                        </button>
                       </div>
                     );
                   } else if (accuracy < 50) {
                     items.push(
-                      <div key={subj} style={{ display: 'flex', gap: '0.5rem', background: '#ffebe6', borderLeft: '4px solid #de350b', padding: '0.75rem', borderRadius: '4px' }}>
-                        <div style={{ fontSize: '1.1rem' }}>⚠️</div>
-                        <div style={{ fontSize: '0.8rem', lineHeight: '1.4', color: '#ae2a02' }}>
-                          <strong>Cần cải thiện - {label}:</strong> Độ chính xác hiện tại khá thấp ({accuracy}%). Bạn nên quay lại trung tâm bài giảng, đọc kỹ mục **Lý thuyết cơ bản** và thực hành các câu hỏi trắc nghiệm dễ.
+                      <div key={subj} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', background: '#ffebe6', borderLeft: '4px solid #de350b', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}>
+                        <div style={{ display: 'flex', gap: '0.5rem' }}>
+                          <div style={{ fontSize: '1.1rem' }}>⚠️</div>
+                          <div style={{ fontSize: '0.8rem', lineHeight: '1.4', color: '#ae2a02', flex: 1 }}>
+                            <strong>Cần cải thiện - {label}:</strong> Độ chính xác hiện tại khá thấp ({accuracy}%). Bạn nên xem lại lý thuyết hoặc thảo luận trực tiếp với AI Gia sư để tìm ra các lỗi kiến thức.
+                          </div>
                         </div>
+                        <button
+                          onClick={() => navigate(`/tutor?subject=${subj}`)}
+                          style={{
+                            alignSelf: 'flex-end',
+                            background: 'rgba(222, 53, 11, 0.1)',
+                            border: '1px solid rgba(222, 53, 11, 0.3)',
+                            color: '#de350b',
+                            padding: '0.25rem 0.6rem',
+                            borderRadius: '4px',
+                            fontSize: '0.75rem',
+                            fontWeight: 'bold',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s'
+                          }}
+                          onMouseOver={(e) => { e.target.style.background = 'rgba(222, 53, 11, 0.2)' }}
+                          onMouseOut={(e) => { e.target.style.background = 'rgba(222, 53, 11, 0.1)' }}
+                        >
+                          Nhờ Gia sư hướng dẫn lại →
+                        </button>
                       </div>
                     );
                   } else {
                     items.push(
-                      <div key={subj} style={{ display: 'flex', gap: '0.5rem', background: '#fff9e6', borderLeft: '4px solid #ffab00', padding: '0.75rem', borderRadius: '4px' }}>
-                        <div style={{ fontSize: '1.1rem' }}>⚖️</div>
-                        <div style={{ fontSize: '0.8rem', lineHeight: '1.4', color: '#a36d00' }}>
-                          <strong>Đang tiến bộ - {label}:</strong> Kết quả ở mức trung bình ({accuracy}%). Đọc thêm phần **Ví dụ mẫu** trong bài giảng và thực hành trắc nghiệm mức Vừa để nâng điểm số nhé!
+                      <div key={subj} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', background: '#fff9e6', borderLeft: '4px solid #ffab00', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}>
+                        <div style={{ display: 'flex', gap: '0.5rem' }}>
+                          <div style={{ fontSize: '1.1rem' }}>⚖️</div>
+                          <div style={{ fontSize: '0.8rem', lineHeight: '1.4', color: '#a36d00', flex: 1 }}>
+                            <strong>Đang tiến bộ - {label}:</strong> Kết quả ở mức trung bình ({accuracy}%). Hãy hỏi AI Gia sư để được gợi ý thêm các mẹo ghi nhớ nhanh công thức và ví dụ nâng cao.
+                          </div>
                         </div>
+                        <button
+                          onClick={() => navigate(`/tutor?subject=${subj}`)}
+                          style={{
+                            alignSelf: 'flex-end',
+                            background: 'rgba(255, 171, 0, 0.15)',
+                            border: '1px solid rgba(255, 171, 0, 0.4)',
+                            color: '#a36d00',
+                            padding: '0.25rem 0.6rem',
+                            borderRadius: '4px',
+                            fontSize: '0.75rem',
+                            fontWeight: 'bold',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s'
+                          }}
+                          onMouseOver={(e) => { e.target.style.background = 'rgba(255, 171, 0, 0.25)' }}
+                          onMouseOut={(e) => { e.target.style.background = 'rgba(255, 171, 0, 0.15)' }}
+                        >
+                          Hỏi mẹo học nhanh →
+                        </button>
                       </div>
                     );
                   }

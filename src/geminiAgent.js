@@ -9,6 +9,46 @@ function cleanText(text) {
     .trim();
 }
 
+// Get student performance overview from localStorage for AI personalization
+function getStudentPerformanceSummary() {
+  let summary = "";
+  try {
+    const subjects = {
+      math: "Toán học",
+      physics: "Vật lý",
+      chemistry: "Hóa học",
+      english: "Tiếng Anh"
+    };
+    const performance = {};
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      if (key && key.startsWith('stats_')) {
+        const parts = key.split('_'); // stats_math_10_easy
+        const subj = parts[1];
+        const data = JSON.parse(localStorage.getItem(key) || '{"answered": 0, "correct": 0}');
+        if (data.answered > 0) {
+          if (!performance[subj]) performance[subj] = { answered: 0, correct: 0 };
+          performance[subj].answered += data.answered;
+          performance[subj].correct += data.correct;
+        }
+      }
+    }
+    
+    const items = [];
+    for (const [subj, data] of Object.entries(performance)) {
+      const rate = Math.round((data.correct / data.answered) * 100);
+      const label = subjects[subj] || subj;
+      items.push(`- Môn ${label}: làm ${data.answered} câu, đúng ${data.correct} câu (${rate}% chính xác)`);
+    }
+    if (items.length > 0) {
+      summary = "\n[THÔNG TIN THÀNH TÍCH CỦA HỌC SINH HIỆN TẠI TRÊN HỆ THỐNG]:\n" + items.join('\n') + "\n(Hãy tận dụng thông tin này để đưa ra phản hồi cá nhân hóa hơn. Nếu thấy điểm yếu ở một môn nào đó (< 50%), hãy ân cần khuyên học sinh tập trung cải thiện. Nếu thấy điểm mạnh (> 80%), hãy tán dương tinh thần học tập xuất sắc của các em!)";
+    }
+  } catch (e) {
+    console.warn('Error reading performance stats for AI summary:', e);
+  }
+  return summary;
+}
+
 // Simulated offline tutor responses
 export function getOfflineResponse(subject, query) {
   const parts = subject.split('_');
@@ -106,6 +146,12 @@ Nhiệm vụ của bạn là giải đáp các thắc mắc chung về học t�
 Hãy trả lời bằng tiếng Việt lịch sự, thân thiện, truyền cảm hứng và thúc đẩy tinh thần học tập của học sinh.`;
   } else {
     systemInstruction = `Bạn là Trợ lý Học tập THPT Lớp ${grade}. Hãy trả lời các câu hỏi về học tập của học sinh bằng tiếng Việt dễ hiểu, chi tiết và chính xác.`;
+  }
+
+  // Inject student performance stats
+  const performanceSummary = getStudentPerformanceSummary();
+  if (performanceSummary) {
+    systemInstruction += "\n" + performanceSummary;
   }
 
   // Format messages for Gemini API chat history

@@ -2354,6 +2354,1038 @@
       "action": "LOGIN",
       "details": "Học sinh đăng nhập thành công",
       "timestamp": "2026-06-17T14:46:32.814Z"
+    },
+    {
+      "id": "17817226479100.2577288623854247",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Tổng hợp kiến thức Toán 10 từ cơ bản đến nâng cao\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T18:57:27.910Z"
+    },
+    {
+      "id": "17817226479130.04875755401377613",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Tổng hợp kiến thức Toán 10 từ cơ bản đến nâng cao\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T18:57:27.913Z"
+    },
+    {
+      "id": "17817226694020.2719082922665893",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Tổng ôn Toán 10: Mệnh đề, hàm số, phương trình và tổ hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T18:57:49.402Z"
+    },
+    {
+      "id": "17817226716720.39568332854430044",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Tổng hợp kiến thức Toán 10 từ cơ bản đến nâng cao\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T18:57:51.672Z"
+    },
+    {
+      "id": "17817230082470.44909430641216286",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:03:28.247Z"
+    },
+    {
+      "id": "17817238468590.34767952629787413",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-17T19:17:26.859Z"
+    },
+    {
+      "id": "17817238500950.963106636684081",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:30.095Z"
+    },
+    {
+      "id": "17817238501050.6890725202074542",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:30.105Z"
+    },
+    {
+      "id": "17817238510140.24431105766896766",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:17:31.014Z"
+    },
+    {
+      "id": "17817238510220.29637129176679267",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:17:31.022Z"
+    },
+    {
+      "id": "17817238515660.008682453429633918",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:31.566Z"
+    },
+    {
+      "id": "17817238515740.41394735296031726",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:31.574Z"
+    },
+    {
+      "id": "17817238542910.3887178516131583",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 2: Bất phương trình bậc nhất 2 ẩn\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:34.291Z"
+    },
+    {
+      "id": "17817238560030.191263884830288",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 4: Vector\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:36.003Z"
+    },
+    {
+      "id": "17817238565680.40042509048867103",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 3: Hệ thức lượng trong tam giác\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:36.568Z"
+    },
+    {
+      "id": "17817238570680.5297322058671685",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 5: Hàm số và Đồ thị\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:37.068Z"
+    },
+    {
+      "id": "17817238578270.8935878832731661",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 3: Hệ thức lượng trong tam giác\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:37.827Z"
+    },
+    {
+      "id": "17817238585320.43528130127707765",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:38.532Z"
+    },
+    {
+      "id": "17817238723290.8646257295889147",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-17T19:17:52.329Z"
+    },
+    {
+      "id": "17817238758340.6476922487008695",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:55.834Z"
+    },
+    {
+      "id": "17817238758410.33545262086880456",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:55.841Z"
+    },
+    {
+      "id": "17817238764650.7050608987760586",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:17:56.465Z"
+    },
+    {
+      "id": "17817238764780.5534407680776953",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:17:56.478Z"
+    },
+    {
+      "id": "17817238772690.7565405053759113",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:57.269Z"
+    },
+    {
+      "id": "17817238772770.9276058235604829",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:57.277Z"
+    },
+    {
+      "id": "17817238784840.8942777043418284",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 2: Bất phương trình bậc nhất 2 ẩn\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:58.484Z"
+    },
+    {
+      "id": "17817238791010.6925848684731165",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 5: Hàm số và Đồ thị\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:59.101Z"
+    },
+    {
+      "id": "17817238797090.8038284819876939",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 5: Chất khí\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:59.709Z"
+    },
+    {
+      "id": "17817238797250.3618839671168511",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Động học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-17T19:17:59.725Z"
+    },
+    {
+      "id": "17817238805870.5193725067233455",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 2: Động lực học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-17T19:18:00.587Z"
+    },
+    {
+      "id": "17817238814580.8514522389581607",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 2: Động lực học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-17T19:18:01.458Z"
+    },
+    {
+      "id": "17817238898590.6040196795704385",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 2: Động lực học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-17T19:18:09.859Z"
+    },
+    {
+      "id": "17817238905040.9451800361642124",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 4: Các định luật bảo toàn\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-17T19:18:10.504Z"
+    },
+    {
+      "id": "17817238916040.5221478995100735",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 5: Nhóm Halogen\" (Môn: chemistry, Lớp: 10)",
+      "timestamp": "2026-06-17T19:18:11.604Z"
+    },
+    {
+      "id": "17817238916190.42125253217324854",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Nguyên tử\" (Môn: chemistry, Lớp: 10)",
+      "timestamp": "2026-06-17T19:18:11.619Z"
+    },
+    {
+      "id": "17817238921770.2566330159450624",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 1 & 2: Cuộc sống Gia đình và Sức khỏe\" (Môn: english, Lớp: 10)",
+      "timestamp": "2026-06-17T19:18:12.177Z"
+    },
+    {
+      "id": "17817238984380.69080521727202",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "ASK_LECTURE_AI",
+      "details": "Hỏi AI bài \"Bài giảng Unit 1 & 2: Cuộc sống Gia đình và Sức khỏe\" (Môn: english, Lớp: 10) - Câu hỏi: \"Cho em thêm 2 ví dụ tự luyện tương tự có lời giải.\"",
+      "timestamp": "2026-06-17T19:18:18.438Z"
+    },
+    {
+      "id": "17817245655920.6367904149624226",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:29:25.592Z"
+    },
+    {
+      "id": "17817245655960.1789534829185918",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:29:25.596Z"
+    },
+    {
+      "id": "17817245686710.7046599399575304",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:29:28.671Z"
+    },
+    {
+      "id": "17817245702970.7594163946876422",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 2: Bất phương trình & Quy hoạch tuyến tính\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:29:30.297Z"
+    },
+    {
+      "id": "17817245711860.18183085592182346",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 2: Bất phương trình & Quy hoạch tuyến tính\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:29:31.186Z"
+    },
+    {
+      "id": "17817245852600.6572678765120046",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:29:45.260Z"
+    },
+    {
+      "id": "17817245961500.9450431719525865",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SEND_TUTOR_MESSAGE",
+      "details": "Hỏi Gia sư Cố vấn học tập (môn global lớp 10): \"Lên cho em lộ trình tự học môn Lý lớp 10 kì này.\"",
+      "timestamp": "2026-06-17T19:29:56.150Z"
+    },
+    {
+      "id": "17817249818330.9433141990249624",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:36:21.833Z"
+    },
+    {
+      "id": "17817249818360.46165786763504457",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:36:21.836Z"
+    },
+    {
+      "id": "17817249832240.2478079213994513",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:36:23.224Z"
+    },
+    {
+      "id": "17817249832380.29129031868687194",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:36:23.238Z"
+    },
+    {
+      "id": "17817250288390.1625599346098101",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 1 & 2: Cuộc sống Gia đình và Sức khỏe\" (Môn: english, Lớp: 10)",
+      "timestamp": "2026-06-17T19:37:08.839Z"
+    },
+    {
+      "id": "17817250288490.44334613788529886",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 1 & 2: Cuộc sống Gia đình và Sức khỏe\" (Môn: english, Lớp: 10)",
+      "timestamp": "2026-06-17T19:37:08.849Z"
+    },
+    {
+      "id": "17817250302590.5476859237594862",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 3 & 4: Âm nhạc và Cộng đồng\" (Môn: english, Lớp: 10)",
+      "timestamp": "2026-06-17T19:37:10.259Z"
+    },
+    {
+      "id": "17817250309700.003089491595248517",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 1 & 2: Cuộc sống Gia đình và Sức khỏe\" (Môn: english, Lớp: 10)",
+      "timestamp": "2026-06-17T19:37:10.970Z"
+    },
+    {
+      "id": "17817250314460.26566070619883275",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 1 & 2: Cuộc sống Gia đình và Sức khỏe\" (Môn: english, Lớp: 10)",
+      "timestamp": "2026-06-17T19:37:11.446Z"
+    },
+    {
+      "id": "17817251942670.7071193448536965",
+      "userId": "1781702717665",
+      "username": "studenttest",
+      "action": "LOGOUT",
+      "details": "Đăng xuất tài khoản học sinh",
+      "timestamp": "2026-06-17T19:39:54.267Z"
+    },
+    {
+      "id": "17817252103350.7702244557409273",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-17T19:40:10.335Z"
+    },
+    {
+      "id": "17817252219140.9257221604457474",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:40:21.914Z"
+    },
+    {
+      "id": "17817252221900.027671043611421586",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:40:22.190Z"
+    },
+    {
+      "id": "17817252337730.06140840623203425",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 2: Bất phương trình & Quy hoạch tuyến tính\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:40:33.774Z"
+    },
+    {
+      "id": "17817252440310.47629184546332526",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 2: Động lực học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-17T19:40:44.031Z"
+    },
+    {
+      "id": "17817252443830.2724810577247735",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Động học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-17T19:40:44.383Z"
+    },
+    {
+      "id": "17817252564690.2700860200032884",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:40:56.469Z"
+    },
+    {
+      "id": "17817252565040.9401127527113334",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:40:56.504Z"
+    },
+    {
+      "id": "17817252814200.4138028422392883",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án ĐÚNG môn math lớp 10 (easy). Câu hỏi: \"Phần bù của tập hợp con B trong tập hợp A (ký hiệu C_A B) là tập hợp:\"",
+      "timestamp": "2026-06-17T19:41:21.421Z"
+    },
+    {
+      "id": "17817253414950.5960599884437261",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SEND_TUTOR_MESSAGE",
+      "details": "Hỏi Gia sư Cố vấn học tập (môn global lớp 10): \"Lên cho em lộ trình tự học môn Lý lớp 10 kì này.\"",
+      "timestamp": "2026-06-17T19:42:21.495Z"
+    },
+    {
+      "id": "17817253970870.5364154226563481",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "RESET_PROGRESS",
+      "details": "Đặt lại toàn bộ tiến trình học tập (Khối lớp 10)",
+      "timestamp": "2026-06-17T19:43:17.087Z"
+    },
+    {
+      "id": "17817253996350.6520378030521188",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:43:19.635Z"
+    },
+    {
+      "id": "17817254264470.574935574614397",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:43:46.447Z"
+    },
+    {
+      "id": "17817254264880.09002478718642715",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:43:46.488Z"
+    },
+    {
+      "id": "17817254433390.230131768439801",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án ĐÚNG môn math lớp 10 (easy). Câu hỏi: \"Phần bù của tập hợp con B trong tập hợp A (ký hiệu C_A B) là tập hợp:\"",
+      "timestamp": "2026-06-17T19:44:03.339Z"
+    },
+    {
+      "id": "17817258590090.31532662825237745",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: chemistry, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:50:59.009Z"
+    },
+    {
+      "id": "17817258590210.924773330400204",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: chemistry, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:50:59.021Z"
+    },
+    {
+      "id": "17817258609020.02125701385990686",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án SAI môn chemistry lớp 10 (easy). Câu hỏi: \"Hạt nhân của hầu hết các nguyên tử được cấu tạo từ các loại hạt nào?\"",
+      "timestamp": "2026-06-17T19:51:00.902Z"
+    },
+    {
+      "id": "17817258677490.6099031061202442",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án SAI môn chemistry lớp 10 (easy). Câu hỏi: \"Trong phản ứng oxi hóa - khử, chất khử là chất:\"",
+      "timestamp": "2026-06-17T19:51:07.749Z"
+    },
+    {
+      "id": "17817258707380.12716347029196895",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án ĐÚNG môn chemistry lớp 10 (easy). Câu hỏi: \"Nguyên tố có cấu hình electron lớp ngoài cùng là 3s² 3p⁵ thuộc chu kỳ nào và nhóm nào?\"",
+      "timestamp": "2026-06-17T19:51:10.738Z"
+    },
+    {
+      "id": "17817258777620.8001126846669329",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án SAI môn chemistry lớp 10 (hard). Câu hỏi: \"Một đồng vị của nguyên tố X có tổng số hạt là 40. Số hạt mang điện nhiều hơn số hạt không mang điện là 12. Xác định số khối của đồng vị đó.\"",
+      "timestamp": "2026-06-17T19:51:17.762Z"
+    },
+    {
+      "id": "17817259921660.00030468830090257804",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:53:12.166Z"
+    },
+    {
+      "id": "17817259921700.2656170601015654",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:53:12.170Z"
+    },
+    {
+      "id": "17817259932280.1967119738994092",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:53:13.228Z"
+    },
+    {
+      "id": "17817259932440.19685194763168745",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:53:13.244Z"
+    },
+    {
+      "id": "17817259990190.9449417300187749",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: chemistry, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:53:19.019Z"
+    },
+    {
+      "id": "17817260316800.6727693290509256",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:53:51.680Z"
+    },
+    {
+      "id": "17817260316840.4646500874089393",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:53:51.684Z"
+    },
+    {
+      "id": "17817260339510.40378717274764064",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 2: Bất phương trình & Quy hoạch tuyến tính\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:53:53.951Z"
+    },
+    {
+      "id": "17817260348350.029100644585138502",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:53:54.835Z"
+    },
+    {
+      "id": "17817260511600.8114774734525324",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Động học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-17T19:54:11.160Z"
+    },
+    {
+      "id": "17817260518720.6752277024889303",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Nguyên tử\" (Môn: chemistry, Lớp: 10)",
+      "timestamp": "2026-06-17T19:54:11.872Z"
+    },
+    {
+      "id": "17817260957570.9392348372020577",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Động học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-17T19:54:55.757Z"
+    },
+    {
+      "id": "17817260966320.028862128878491933",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Nguyên tử\" (Môn: chemistry, Lớp: 10)",
+      "timestamp": "2026-06-17T19:54:56.632Z"
+    },
+    {
+      "id": "17817260974280.8064306966845591",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Nguyên tử\" (Môn: chemistry, Lớp: 10)",
+      "timestamp": "2026-06-17T19:54:57.428Z"
+    },
+    {
+      "id": "17817260978760.6072151498054036",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:54:57.876Z"
+    },
+    {
+      "id": "17817260989390.5524958641447061",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Động học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-17T19:54:58.939Z"
+    },
+    {
+      "id": "17817260996310.39747203855827884",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 1 & 2: Cuộc sống Gia đình và Sức khỏe\" (Môn: english, Lớp: 10)",
+      "timestamp": "2026-06-17T19:54:59.631Z"
+    },
+    {
+      "id": "17817261004320.9021036422664354",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Động học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-17T19:55:00.432Z"
+    },
+    {
+      "id": "17817261010300.09124137016362577",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:55:01.030Z"
+    },
+    {
+      "id": "17817262636380.17825245047962135",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:57:43.638Z"
+    },
+    {
+      "id": "17817262636620.715921065490133",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:57:43.662Z"
+    },
+    {
+      "id": "17817263049950.5901312394062466",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Động học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-17T19:58:24.995Z"
+    },
+    {
+      "id": "17817263060420.4383424513137465",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Nguyên tử\" (Môn: chemistry, Lớp: 10)",
+      "timestamp": "2026-06-17T19:58:26.042Z"
+    },
+    {
+      "id": "17817263066690.85020955508536",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 10",
+      "timestamp": "2026-06-17T19:58:26.669Z"
+    },
+    {
+      "id": "17817263082740.06397737105941004",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Hàm số và Phương trình lượng giác\" (Môn: math, Lớp: 11)",
+      "timestamp": "2026-06-17T19:58:28.274Z"
+    },
+    {
+      "id": "17817263100390.8193874552844446",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 10",
+      "timestamp": "2026-06-17T19:58:30.039Z"
+    },
+    {
+      "id": "17817263100480.3143083073864107",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T19:58:30.048Z"
+    },
+    {
+      "id": "17817263106590.1348995078985915",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 11",
+      "timestamp": "2026-06-17T19:58:30.659Z"
+    },
+    {
+      "id": "17817263116450.8208278576794864",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 11",
+      "timestamp": "2026-06-17T19:58:31.645Z"
+    },
+    {
+      "id": "17817263134230.4766335437575584",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 12",
+      "timestamp": "2026-06-17T19:58:33.423Z"
+    },
+    {
+      "id": "17817263160430.7461554205460059",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 10",
+      "timestamp": "2026-06-17T19:58:36.043Z"
+    },
+    {
+      "id": "17817263204900.698630282011435",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 1 & 2: Cuộc sống Gia đình và Sức khỏe\" (Môn: english, Lớp: 10)",
+      "timestamp": "2026-06-17T19:58:40.490Z"
+    },
+    {
+      "id": "17817263386070.36670595743153844",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 3 & 4: Âm nhạc và Cộng đồng\" (Môn: english, Lớp: 10)",
+      "timestamp": "2026-06-17T19:58:58.607Z"
+    },
+    {
+      "id": "17817263646290.9668189815897393",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 1 & 2: Cuộc sống Gia đình và Sức khỏe\" (Môn: english, Lớp: 10)",
+      "timestamp": "2026-06-17T19:59:24.629Z"
+    },
+    {
+      "id": "17817263657480.33753771255875753",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Nguyên tử\" (Môn: chemistry, Lớp: 10)",
+      "timestamp": "2026-06-17T19:59:25.748Z"
+    },
+    {
+      "id": "17817263672180.1604890761483222",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:59:27.218Z"
+    },
+    {
+      "id": "17817263672260.2997885671750633",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T19:59:27.226Z"
+    },
+    {
+      "id": "17817264448470.3603533256177731",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:00:44.847Z"
+    },
+    {
+      "id": "17817264448610.5250159995368086",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:00:44.861Z"
+    },
+    {
+      "id": "17817264450920.8287407225277008",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:00:45.092Z"
+    },
+    {
+      "id": "17817264452050.7191992897177217",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:00:45.205Z"
+    },
+    {
+      "id": "17817264452120.2237494389750717",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:00:45.212Z"
+    },
+    {
+      "id": "17817264454620.13100619652512513",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:00:45.462Z"
+    },
+    {
+      "id": "17817264481810.2988943254065445",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:00:48.181Z"
+    },
+    {
+      "id": "17817264484940.9856606206626449",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:00:48.494Z"
+    },
+    {
+      "id": "17817264525990.3423070793235188",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Tổng ôn Toán 10: Mệnh đề, hàm số, phương trình và tổ hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:00:52.599Z"
+    },
+    {
+      "id": "17817264580190.5657010353837922",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 4: Vector\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:00:58.019Z"
+    },
+    {
+      "id": "17817264585450.4946198137179417",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 2: Bất phương trình & Quy hoạch tuyến tính\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:00:58.545Z"
+    },
+    {
+      "id": "17817264587490.2396075516448064",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-17T20:00:58.749Z"
+    },
+    {
+      "id": "17817264595510.8016957710247121",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:00:59.551Z"
+    },
+    {
+      "id": "17817264598570.27483173749013057",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-17T20:00:59.857Z"
+    },
+    {
+      "id": "17817264627200.38250040008914266",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án ĐÚNG môn math lớp 10 (easy). Câu hỏi: \"Phần bù của tập hợp con B trong tập hợp A (ký hiệu C_A B) là tập hợp:\"",
+      "timestamp": "2026-06-17T20:01:02.720Z"
+    },
+    {
+      "id": "17817264669160.8816216914005036",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án SAI môn math lớp 10 (medium). Câu hỏi: \"Có bao nhiêu số tự nhiên gồm 3 chữ số khác nhau lập được từ các chữ số {1, 2, 3, 4, 5}?\"",
+      "timestamp": "2026-06-17T20:01:06.916Z"
+    },
+    {
+      "id": "17817264761150.04041094053969618",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án SAI môn math lớp 10 (hard). Câu hỏi: \"Cho tam giác ABC có ba cạnh a = 6, b = 8, c = 10. Tính bán kính r của đường tròn nội tiếp tam giác ABC.\"",
+      "timestamp": "2026-06-17T20:01:16.115Z"
     }
   ],
   "essays": {

@@ -255,6 +255,13 @@ export default function PracticePage() {
     localStorage.setItem('total_answered_questions', totalAnswered.toString());
     localStorage.setItem('total_correct_questions', totalCorrect.toString());
 
+    // Save detailed subject-level-grade stats for the capability dashboard
+    const statsKey = `stats_${activeSubject}_${grade}_${activeLevel}`;
+    const levelStats = JSON.parse(localStorage.getItem(statsKey) || '{"answered": 0, "correct": 0}');
+    levelStats.answered += 1;
+    levelStats.correct += (isCorrect ? 1 : 0);
+    localStorage.setItem(statsKey, JSON.stringify(levelStats));
+
     // Dispatch event to update statistics
     window.dispatchEvent(new Event('localStatsChanged'));
   };

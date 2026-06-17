@@ -15,20 +15,21 @@ async function gradeEssay(req, res) {
   }
 
   try {
-    const prompt = `Bạn là Giáo viên giảng dạy THPT. Hãy chấm điểm bài làm tự luận của học sinh sau đây:
+    const prompt = `Bạn là Giáo viên chuyên môn giảng dạy THPT vô cùng nghiêm khắc, công tâm và áp dụng phương pháp sư phạm gợi mở. Hãy chấm điểm bài làm tự luận của học sinh:
 Môn học/Chủ đề: ${subject || 'Chung'}
 Câu hỏi: "${question}"
 Đáp án mẫu: "${sampleAnswer}"
 Bài làm của học sinh: "${studentAnswer}"
 
 YÊU CẦU QUAN TRỌNG:
-1. Chấm điểm theo thang điểm 10 (từ 0 đến 10, chấp nhận số thập phân ví dụ 7.5, 8.0, 9.5).
-2. Viết nhận xét chi tiết bằng tiếng Việt thân thiện, động viên học sinh. Chỉ ra những chỗ làm đúng, những chỗ làm sai, giải thích rõ các công thức và biến số trong bài (đặc biệt đối với các môn tính toán Toán, Lý, Hóa khi thiếu biến hay biến đổi công thức).
-3. Định dạng câu trả lời bắt buộc phải tuân theo cấu trúc thẻ sau đây:
+1. Chấm điểm theo thang điểm 10 (chấp nhận số thập phân như 7.5, 8.0). Trừ điểm nặng nếu học sinh sai kiến thức cơ bản, thiếu logic hoặc diễn đạt rườm rà.
+2. Viết nhận xét chi tiết bằng tiếng Việt. Chỉ rõ lỗi sai kiến thức, giải thích rõ các công thức và biến số.
+3. [QUAN TRỌNG] Ở cuối phần nhận xét, BẮT BUỘC phải đặt ra 1-2 CÂU HỎI GỢI MỞ (Socratic questioning) để kích thích học sinh tự tư duy sâu hơn về bản chất vấn đề hoặc tự nhận ra lỗi sai của mình, giúp các em nhớ lâu hơn thay vì chỉ học vẹt.
+4. Định dạng câu trả lời bắt buộc phải tuân theo cấu trúc thẻ sau đây:
 [SCORE] số_điểm_ở_đây
-[FEEDBACK] nhận_xét_chi_tiết_ở_đây`;
+[FEEDBACK] nhận_xét_chi_tiết_và_câu_hỏi_gợi_mở_ở_đây`;
 
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${activeKey}`, {
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${activeKey}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -53,7 +54,9 @@ YÊU CẦU QUAN TRỌNG:
 
     // Parse using regex/tags
     const scoreMatch = reply.match(/\[SCORE\]\s*([0-9.]+)/i);
-    const score = scoreMatch ? parseFloat(scoreMatch[1]) : 7.0;
+    let score = scoreMatch ? parseFloat(scoreMatch[1]) : 7.0;
+    if (isNaN(score)) score = 7.0;
+    score = Math.max(0, Math.min(10, score)); // Clamp between 0 and 10
     
     let feedback = '';
     if (reply.includes('[FEEDBACK]')) {
@@ -63,7 +66,7 @@ YÊU CẦU QUAN TRỌNG:
     }
 
     return res.json({
-      score: isNaN(score) ? 7.0 : score,
+      score,
       feedback: feedback || 'Không có nhận xét chi tiết.',
       isOffline: false
     });
@@ -77,19 +80,27 @@ YÊU CẦU QUAN TRỌNG:
 }
 
 async function chatProxy(req, res) {
-  const { subject, message } = req.body;
+  const { subject, message, history = [], apiKey: clientApiKey } = req.body;
   if (!message) return res.status(400).json({ error: 'message required' });
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
+  const activeKey = clientApiKey || process.env.GEMINI_API_KEY;
+  if (!activeKey) {
     return res.json({ reply: 'Server is in offline mode. Set GEMINI_API_KEY on the server to enable AI responses.' });
   }
 
   try {
-    const formatted = [{ role: 'user', parts: [{ text: message }] }];
-    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+    // Map history to Gemini's expected format (role: 'user' | 'model', parts: [{text: ...}])
+    const formattedHistory = history.map(msg => ({
+      role: msg.role === 'assistant' ? 'model' : 'user',
+      parts: [{ text: msg.text || msg.content }]
+    }));
+    
+    // Add the current user message
+    formattedHistory.push({ role: 'user', parts: [{ text: message }] });
+
+    const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${activeKey}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ contents: formatted, generationConfig: { temperature: 0.7, maxOutputTokens: 1024 } })
+      body: JSON.stringify({ contents: formattedHistory, generationConfig: { temperature: 0.7, maxOutputTokens: 1024 } })
     });
     if (!response.ok) {
       const err = await response.text();

@@ -27,6 +27,7 @@ export default function App() {
   const [contentTab, setContentTab] = useState('outline'); // 'outline' or 'lecture'
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [selectedLectureIdx, setSelectedLectureIdx] = useState(0);
+  const [selectedQuizChapterId, setSelectedQuizChapterId] = useState('');
   
   const [apiKey, setApiKey] = useState(() => {
     return import.meta.env.VITE_GEMINI_API_KEY || localStorage.getItem('gemini_api_key') || '';
@@ -407,7 +408,7 @@ export default function App() {
       setSelectedAnswer(null);
       setQuizSubmitted(false);
     }
-  }, [currentQuizIndex, activeTab, selectedGrade]);
+  }, [currentQuizIndex, selectedQuizChapterId]);
 
   // Scroll to bottom of chat
   useEffect(() => {
@@ -434,7 +435,7 @@ export default function App() {
     // Add user message to state
     setChats(prev => ({
       ...prev,
-      [currentSubject]: [...prev[currentSubject], userMessage]
+      [currentSubject]: [...(prev[currentSubject] || []), userMessage]
     }));
 
     const query = chatInput;
@@ -445,14 +446,14 @@ export default function App() {
     let responseText = "";
     if (apiKey) {
       responseText = await askGeminiAgent(
-        activeTab === 'tutor' ? `english_${selectedGrade}` : `${activeTab}_${selectedGrade}`, 
+        currentSubject, 
         query, 
         apiKey, 
         chats[currentSubject]
       );
     } else {
       responseText = getOfflineResponse(
-        activeTab === 'tutor' ? `english_${selectedGrade}` : `${activeTab}_${selectedGrade}`, 
+        currentSubject, 
         query
       );
     }
@@ -460,7 +461,7 @@ export default function App() {
     const assistantMessage = { role: 'assistant', text: responseText };
     setChats(prev => ({
       ...prev,
-      [currentSubject]: [...prev[currentSubject], assistantMessage]
+      [currentSubject]: [...(prev[currentSubject] || []), assistantMessage]
     }));
     setLoading(false);
   };
@@ -481,14 +482,14 @@ export default function App() {
   };
 
   const nextQuizQuestion = () => {
-    const quizzes = subjectQuizzes[`${activeTab}_${selectedGrade}`];
+    const quizzes = subjectQuizzes[selectedQuizChapterId];
     if (currentQuizIndex < quizzes.length - 1) {
       setCurrentQuizIndex(prev => prev + 1);
       setSelectedAnswer(null);
       setQuizSubmitted(false);
     } else {
       // Finished
-      alert(`Em đã hoàn thành bài luyện tập nhanh! Điểm số: ${quizScore + (selectedAnswer === correctOptionIdx ? 1 : 0)}/${quizzes.length}`);
+      alert(`Em đã hoàn thành bài luyện tập chương này! Điểm số: ${quizScore + (selectedAnswer === correctOptionIdx ? 1 : 0)}/${quizzes.length}`);
       setCurrentQuizIndex(0);
       setSelectedAnswer(null);
       setQuizSubmitted(false);
@@ -570,6 +571,371 @@ export default function App() {
 
   return (
     <div className="app-container">
+      <style>{`
+        /* TỐI ƯU HÓA GIAO DIỆN CHUYÊN NGHIỆP - ĐẲNG CẤP TRI THỨC */
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+          --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+          --primary-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+          --glass-bg: rgba(255, 255, 255, 0.85);
+          --glass-border: 1px solid rgba(255, 255, 255, 0.4);
+          --shadow-elegant: 0 10px 40px -10px rgba(15, 23, 42, 0.08);
+          --shadow-hover: 0 20px 40px -10px rgba(15, 23, 42, 0.15);
+          --color-primary: #1e3a8a;
+          --text-main: #0f172a;
+          --text-secondary: #475569;
+          --text-muted: #64748b;
+          --surface-color: #ffffff;
+          --bg-body: #f8fafc;
+        }
+
+        html {
+          scroll-behavior: smooth;
+        }
+
+        body {
+          background-color: var(--bg-body);
+          background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+          background-size: 24px 24px;
+          font-family: 'Be Vietnam Pro', 'Inter', sans-serif;
+          color: var(--text-main);
+        }
+
+        .fade-in {
+          animation: fadeInSmooth 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeInSmooth {
+          0% { opacity: 0; transform: translateY(20px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* SIDEBAR - Kính mờ (Glassmorphism) */
+        .sidebar {
+          background: var(--glass-bg) !important;
+          backdrop-filter: blur(16px) !important;
+          -webkit-backdrop-filter: blur(16px) !important;
+          border-right: var(--glass-border) !important;
+          box-shadow: 4px 0 24px rgba(0,0,0,0.03) !important;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        .logo-container {
+          padding: 2rem 1.5rem !important;
+        }
+
+        .logo-text {
+          font-family: 'Inter', sans-serif !important;
+          font-weight: 800 !important;
+          background: var(--primary-gradient);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 1.6rem !important;
+          letter-spacing: -0.5px;
+        }
+
+        .menu-item {
+          transition: var(--transition-smooth);
+          border-radius: 12px !important;
+          font-weight: 600 !important;
+          color: var(--text-muted) !important;
+          margin-bottom: 0.25rem !important;
+        }
+
+        .menu-item:hover {
+          background: rgba(59, 130, 246, 0.08) !important;
+          color: var(--color-primary) !important;
+          transform: translateX(6px);
+        }
+
+        .menu-item.active {
+          background: rgba(30, 58, 138, 0.08) !important;
+          color: var(--color-primary) !important;
+          transform: translateX(4px);
+        }
+
+        /* HEADER & TYPOGRAPHY */
+        .dashboard-header h1 {
+          font-weight: 800 !important;
+          letter-spacing: -1px;
+          color: var(--text-main) !important;
+          font-size: 2rem !important;
+        }
+        
+        .dashboard-header p {
+          font-size: 1.05rem !important;
+          color: var(--text-secondary) !important;
+          margin-top: 0.5rem !important;
+        }
+
+        /* THẺ THỐNG KÊ (STAT CARDS) */
+        .stat-card {
+          background: var(--surface-color) !important;
+          border: 1px solid #f1f5f9 !important;
+          border-radius: 20px !important;
+          box-shadow: var(--shadow-elegant) !important;
+          padding: 1.5rem !important;
+          transition: var(--transition-bounce) !important;
+          display: flex;
+          align-items: center;
+          gap: 1.25rem;
+        }
+
+        .stat-card:hover {
+          transform: translateY(-8px) scale(1.02);
+          box-shadow: var(--shadow-hover) !important;
+        }
+
+        .stat-icon-wrapper {
+          background: #f8fafc !important;
+          border-radius: 16px !important;
+          padding: 1.25rem !important;
+          box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .stat-value {
+          font-size: 1.4rem !important;
+          font-weight: 800 !important;
+          color: var(--text-main) !important;
+        }
+
+        /* THẺ MÔN HỌC (SUBJECT CARDS) */
+        .subject-card {
+          background: var(--surface-color) !important;
+          border: 1px solid #e2e8f0 !important;
+          border-radius: 24px !important;
+          box-shadow: var(--shadow-elegant) !important;
+          padding: 2rem 1.5rem !important;
+          transition: var(--transition-smooth) !important;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .subject-card::before {
+          content: '';
+          position: absolute;
+          top: 0; left: 0; right: 0;
+          height: 4px;
+          background: var(--primary-gradient);
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+
+        .subject-card:hover {
+          transform: translateY(-8px);
+          box-shadow: var(--shadow-hover) !important;
+          border-color: #cbd5e1 !important;
+        }
+
+        .subject-card:hover::before {
+          opacity: 1;
+        }
+
+        .subject-badge {
+          background: #f1f5f9 !important;
+          color: var(--color-primary) !important;
+          font-weight: 700 !important;
+          border-radius: 8px !important;
+          padding: 0.4rem 0.8rem !important;
+          display: inline-block;
+          margin-bottom: 1rem !important;
+          font-size: 0.85rem !important;
+        }
+
+        .subject-title {
+          font-weight: 800 !important;
+          font-size: 1.3rem !important;
+          margin-bottom: 0.75rem !important;
+        }
+
+        .subject-description {
+          color: var(--text-secondary) !important;
+          line-height: 1.6 !important;
+        }
+
+        /* CHAT BUBBLES & AI AGENT */
+        .chat-container {
+          background: var(--surface-color) !important;
+          border-radius: 24px !important;
+          box-shadow: var(--shadow-elegant) !important;
+          border: 1px solid #e2e8f0 !important;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .chat-header {
+          background: rgba(248, 250, 252, 0.8) !important;
+          backdrop-filter: blur(8px);
+          border-bottom: 1px solid #e2e8f0 !important;
+          padding: 1.25rem 1.5rem !important;
+        }
+
+        .message-bubble {
+          border-radius: 18px !important;
+          line-height: 1.6 !important;
+          padding: 1rem 1.25rem !important;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+          animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+          font-size: 0.95rem !important;
+        }
+
+        .message-bubble.user {
+          background: var(--primary-gradient) !important;
+          color: white !important;
+          border-bottom-right-radius: 4px !important;
+        }
+
+        .message-bubble.assistant {
+          background: #f8fafc !important;
+          color: var(--text-main) !important;
+          border: 1px solid #e2e8f0 !important;
+          border-bottom-left-radius: 4px !important;
+        }
+
+        @keyframes popIn {
+          0% { opacity: 0; transform: scale(0.95) translateY(10px); }
+          100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .chat-input-wrapper {
+          background: var(--surface-color) !important;
+          border-top: 1px solid #e2e8f0 !important;
+          padding: 1rem 1.5rem !important;
+        }
+
+        .chat-input {
+          background: #f1f5f9 !important;
+          border: 1px solid transparent !important;
+          border-radius: 99px !important;
+          padding: 0.85rem 1.5rem !important;
+          font-size: 0.95rem !important;
+          transition: var(--transition-smooth);
+        }
+
+        .chat-input:focus {
+          background: var(--surface-color) !important;
+          border-color: #3b82f6 !important;
+          box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
+          outline: none;
+        }
+
+        .chat-send-btn {
+          border-radius: 50% !important;
+          width: 46px !important;
+          height: 46px !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          background: var(--primary-gradient) !important;
+          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2) !important;
+          color: white !important;
+          border: none !important;
+        }
+
+        .chat-send-btn:hover:not(:disabled) {
+          transform: scale(1.08) !important;
+          box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3) !important;
+        }
+
+        /* TRẮC NGHIỆM (QUIZ) */
+        .quiz-container {
+          background: var(--surface-color) !important;
+          border-radius: 24px !important;
+          box-shadow: var(--shadow-elegant) !important;
+          border: 1px solid #e2e8f0 !important;
+          padding: 1.75rem !important;
+        }
+
+        .quiz-question {
+          font-weight: 700 !important;
+          font-size: 1.1rem !important;
+          color: var(--text-main) !important;
+          line-height: 1.6 !important;
+          margin-bottom: 1.5rem !important;
+        }
+
+        .quiz-option {
+          border-radius: 14px !important;
+          border: 1px solid #cbd5e1 !important;
+          background: #f8fafc !important;
+          padding: 1rem 1.25rem !important;
+          font-weight: 500 !important;
+          color: var(--text-secondary) !important;
+          text-align: left !important;
+          transition: var(--transition-smooth) !important;
+          margin-bottom: 0.75rem !important;
+        }
+
+        .quiz-option:hover:not(:disabled) {
+          border-color: #3b82f6 !important;
+          background: #eff6ff !important;
+          color: #1e3a8a !important;
+          transform: translateX(6px) !important;
+          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08) !important;
+        }
+
+        /* KHUNG NỘI DUNG (CONTENT SECTIONS) */
+        .content-section {
+          background: var(--surface-color) !important;
+          border-radius: 24px !important;
+          box-shadow: var(--shadow-elegant) !important;
+          border: 1px solid #e2e8f0 !important;
+          padding: 2rem !important;
+          margin-bottom: 1.5rem !important;
+        }
+        
+        .section-title {
+          font-weight: 800 !important;
+          color: var(--text-main) !important;
+          border-bottom: 2px solid #f1f5f9 !important;
+          padding-bottom: 1rem !important;
+          margin-bottom: 1.5rem !important;
+        }
+
+        .chapter-item {
+          border-radius: 16px !important;
+          border: 1px solid #e2e8f0 !important;
+          background: #f8fafc !important;
+          padding: 1.5rem !important;
+          transition: var(--transition-smooth) !important;
+        }
+        
+        .chapter-item:hover {
+          transform: translateY(-4px) !important;
+          box-shadow: 0 12px 24px rgba(0,0,0,0.04) !important;
+          border-color: #cbd5e1 !important;
+          background: var(--surface-color) !important;
+        }
+
+        /* BUTTONS GENERAL */
+        button {
+          transition: var(--transition-smooth) !important;
+          font-family: inherit;
+        }
+        button:active:not(:disabled) {
+          transform: scale(0.95) !important;
+        }
+
+        /* SCROLLBAR CUSTOMIZATION */
+        ::-webkit-scrollbar {
+          width: 8px;
+          height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+          background: #f1f5f9; 
+          border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #cbd5e1; 
+          border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: #94a3b8; 
+        }
+      `}</style>
       {/* Mobile hamburger button */}
       <button
         className="mobile-menu-btn"
@@ -830,7 +1196,7 @@ export default function App() {
                   >
                     Mục lục bài học
                   </button>
-                  {pdfContext[`${activeTab}_${selectedGrade}`]?.lectures && (
+                  {pdfContext[`${activeTab}_${selectedGrade}`]?.lectures?.length > 0 && (
                     <button 
                       onClick={() => setContentTab('lecture')}
                       style={{ padding: '0.5rem 1.25rem', border: '1px solid #ccd0d5', borderRadius: '4px', fontSize: '0.9rem', fontWeight: 'bold', cursor: 'pointer', background: contentTab === 'lecture' ? 'var(--color-primary)' : '#ffffff', color: contentTab === 'lecture' ? '#ffffff' : 'var(--text-secondary)', transition: 'all 0.2s' }}
@@ -848,7 +1214,7 @@ export default function App() {
                         <span>Cấu trúc chương trình học</span>
                       </h2>
                       <div className="chapter-list">
-                        {pdfContext[`${activeTab}_${selectedGrade}`]?.chapters.map((ch, idx) => (
+                        {pdfContext[`${activeTab}_${selectedGrade}`]?.chapters?.map((ch, idx) => (
                           <div key={ch.id} className="chapter-item">
                             <div className="chapter-header">
                               <span className="chapter-title">{ch.title}</span>
@@ -868,7 +1234,7 @@ export default function App() {
                     </section>
 
                     {/* Specific learning content (Formulas for Math/Physics/Chem, Vocab for English) */}
-                    {activeTab === 'english' ? (
+                    {activeTab === 'english' && pdfContext[`english_${selectedGrade}`]?.vocabularySample?.length > 0 && (
                       <section className="content-section">
                         <h2 className="section-title">
                           <BookOpen size={18} />
@@ -884,7 +1250,8 @@ export default function App() {
                           ))}
                         </div>
                       </section>
-                    ) : (
+                    )}
+                    {activeTab !== 'english' && pdfContext[`${activeTab}_${selectedGrade}`]?.formulas?.length > 0 && (
                       <section className="content-section">
                         <h2 className="section-title">
                           <Binary size={18} />
@@ -917,14 +1284,16 @@ export default function App() {
                         onChange={(e) => setSelectedLectureIdx(parseInt(e.target.value))}
                         style={{ width: '100%', padding: '0.65rem', borderRadius: '4px', border: '1px solid #ccd0d5', fontSize: '0.9rem', outline: 'none' }}
                       >
-                        {pdfContext[`${activeTab}_${selectedGrade}`]?.lectures.map((lec, idx) => (
+                        {pdfContext[`${activeTab}_${selectedGrade}`]?.lectures?.map((lec, idx) => (
                           <option key={idx} value={idx}>{lec.title}</option>
                         ))}
                       </select>
                     </div>
 
                     <div style={{ background: '#ffffff', border: '1px solid #e1e5eb', borderRadius: 'var(--radius-md)', padding: '1.5rem', maxHeight: '550px', overflowY: 'auto' }}>
-                      {renderFormattedText(pdfContext[`${activeTab}_${selectedGrade}`]?.lectures[selectedLectureIdx]?.content)}
+                      {renderFormattedText(pdfContext[`${activeTab}_${selectedGrade}`]?.lectures[selectedLectureIdx]?.basic)}
+                      {renderFormattedText(pdfContext[`${activeTab}_${selectedGrade}`]?.lectures[selectedLectureIdx]?.advanced)}
+                      {renderFormattedText(pdfContext[`${activeTab}_${selectedGrade}`]?.lectures[selectedLectureIdx]?.examples)}
                     </div>
                   </section>
                 )}
@@ -975,69 +1344,92 @@ export default function App() {
                 </div>
 
                 {/* Practice Quiz */}
-                {subjectQuizzes[`${activeTab}_${selectedGrade}`] && (
-                  <div className="quiz-container">
-                    <div className="quiz-header">
+                <div className="quiz-container">
+                  <div className="quiz-header" style={{ marginBottom: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                       <HelpCircle size={18} style={{ color: '#0056d2' }} />
-                      <span>Luyện tập trắc nghiệm nhanh</span>
+                      <span style={{ fontWeight: 'bold' }}>Luyện tập trắc nghiệm theo chương</span>
                     </div>
+                    <select 
+                      value={selectedQuizChapterId} 
+                      onChange={(e) => {
+                        setSelectedQuizChapterId(e.target.value);
+                        setCurrentQuizIndex(0);
+                        setSelectedAnswer(null);
+                        setQuizSubmitted(false);
+                        setQuizScore(0);
+                      }}
+                      style={{ width: '100%', padding: '0.5rem', borderRadius: '4px', border: '1px solid #ccd0d5', fontSize: '0.85rem', outline: 'none' }}
+                    >
+                      {pdfContext[`${activeTab}_${selectedGrade}`]?.chapters?.map((ch) => (
+                        <option key={ch.id} value={ch.id}>{ch.title}</option>
+                      ))}
+                    </select>
+                  </div>
                     
-                    <div className="quiz-question">
-                      Câu {currentQuizIndex + 1}: {subjectQuizzes[`${activeTab}_${selectedGrade}`][currentQuizIndex].q}
-                    </div>
+                  {subjectQuizzes[selectedQuizChapterId] && subjectQuizzes[selectedQuizChapterId].length > 0 ? (
+                    <>
+                      <div className="quiz-question">
+                        Câu {currentQuizIndex + 1}: {subjectQuizzes[selectedQuizChapterId][currentQuizIndex].q}
+                      </div>
 
-                    <div className="quiz-options">
-                      {shuffledOptions.map((opt, optIdx) => {
-                        let classStr = "quiz-option";
-                        if (quizSubmitted) {
-                          if (optIdx === correctOptionIdx) {
-                            classStr += " correct";
-                          } else if (optIdx === selectedAnswer) {
-                            classStr += " incorrect";
+                      <div className="quiz-options">
+                        {shuffledOptions.map((opt, optIdx) => {
+                          let classStr = "quiz-option";
+                          if (quizSubmitted) {
+                            if (optIdx === correctOptionIdx) {
+                              classStr += " correct";
+                            } else if (optIdx === selectedAnswer) {
+                              classStr += " incorrect";
+                            }
                           }
-                        }
-                        
-                        return (
-                          <button 
-                            key={optIdx} 
-                            className={classStr}
-                            onClick={() => handleQuizAnswer(optIdx)}
-                            disabled={quizSubmitted}
-                            style={!quizSubmitted && selectedAnswer === optIdx ? { borderColor: '#0056d2', background: 'rgba(0, 86, 210, 0.05)', color: '#0056d2' } : {}}
-                          >
-                            {String.fromCharCode(65 + optIdx)}. {opt}
-                          </button>
-                        );
-                      })}
-                    </div>
+                          
+                          return (
+                            <button 
+                              key={optIdx} 
+                              className={classStr}
+                              onClick={() => handleQuizAnswer(optIdx)}
+                              disabled={quizSubmitted}
+                              style={!quizSubmitted && selectedAnswer === optIdx ? { borderColor: '#0056d2', background: 'rgba(0, 86, 210, 0.05)', color: '#0056d2' } : {}}
+                            >
+                              {String.fromCharCode(65 + optIdx)}. {opt}
+                            </button>
+                          );
+                        })}
+                      </div>
 
-                    {selectedAnswer !== null && !quizSubmitted && (
-                      <button 
-                        onClick={submitQuizAnswer}
-                        style={{ marginTop: '1rem', width: '100%', padding: '0.75rem', background: '#0056d2', color: '#fff', border: 'none', borderRadius: 'var(--radius-sm)', fontWeight: 'bold', cursor: 'pointer', transition: 'background-color 0.2s' }}
-                      >
-                        Nộp câu trả lời
-                      </button>
-                    )}
-
-                    {quizSubmitted && (
-                      <div className="quiz-feedback" style={{ marginTop: '1rem', borderLeft: `4px solid ${selectedAnswer === correctOptionIdx ? '#00875a' : '#de350b'}`, background: '#f8f9fa' }}>
-                        <div style={{ fontWeight: 'bold', color: selectedAnswer === correctOptionIdx ? '#00875a' : '#de350b', marginBottom: '0.25rem', fontSize: '0.95rem' }}>
-                          {selectedAnswer === correctOptionIdx ? '✓ Trả lời chính xác!' : '✗ Chưa chính xác!'}
-                        </div>
-                        <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.4' }}>
-                          <strong>Giải thích:</strong> {subjectQuizzes[`${activeTab}_${selectedGrade}`][currentQuizIndex].explain}
-                        </p>
+                      {selectedAnswer !== null && !quizSubmitted && (
                         <button 
-                          onClick={nextQuizQuestion}
+                          onClick={submitQuizAnswer}
                           style={{ marginTop: '1rem', width: '100%', padding: '0.75rem', background: '#0056d2', color: '#fff', border: 'none', borderRadius: 'var(--radius-sm)', fontWeight: 'bold', cursor: 'pointer', transition: 'background-color 0.2s' }}
                         >
-                          {currentQuizIndex < subjectQuizzes[`${activeTab}_${selectedGrade}`].length - 1 ? 'Câu tiếp theo →' : 'Luyện tập lại'}
+                          Nộp câu trả lời
                         </button>
-                      </div>
-                    )}
-                  </div>
-                )}
+                      )}
+
+                      {quizSubmitted && (
+                        <div className="quiz-feedback" style={{ marginTop: '1rem', borderLeft: `4px solid ${selectedAnswer === correctOptionIdx ? '#00875a' : '#de350b'}`, background: '#f8f9fa', padding: '0.75rem' }}>
+                          <div style={{ fontWeight: 'bold', color: selectedAnswer === correctOptionIdx ? '#00875a' : '#de350b', marginBottom: '0.25rem', fontSize: '0.95rem' }}>
+                            {selectedAnswer === correctOptionIdx ? '✓ Trả lời chính xác!' : '✗ Chưa chính xác!'}
+                          </div>
+                          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.4' }}>
+                            <strong>Giải thích:</strong> {subjectQuizzes[selectedQuizChapterId][currentQuizIndex].explain}
+                          </p>
+                          <button 
+                            onClick={nextQuizQuestion}
+                            style={{ marginTop: '1rem', width: '100%', padding: '0.75rem', background: '#0056d2', color: '#fff', border: 'none', borderRadius: 'var(--radius-sm)', fontWeight: 'bold', cursor: 'pointer', transition: 'background-color 0.2s' }}
+                          >
+                            {currentQuizIndex < subjectQuizzes[selectedQuizChapterId].length - 1 ? 'Câu tiếp theo →' : 'Luyện tập lại'}
+                          </button>
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <div style={{ textAlign: 'center', padding: '2rem 1rem', color: 'var(--text-muted)' }}>
+                      <p style={{ fontSize: '0.9rem' }}>Hiện chưa có câu hỏi trắc nghiệm cho chương này.</p>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
