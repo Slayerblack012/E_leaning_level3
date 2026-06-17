@@ -1,0 +1,405 @@
+const fs = require('fs');
+const path = require('path');
+
+const DATA_FILE = path.join(__dirname, 'data.json');
+
+// Đọc dữ liệu hiện tại
+const currentData = JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
+
+// Ngân hàng 10 câu hỏi trắc nghiệm cho từng môn (định dạng LaTeX & Markdown dễ nhìn)
+const extendedQuizzes = {
+  // LỚP 10
+  math_10: [
+    {
+      q: "Phần bù của tập hợp con B trong tập hợp A (ký hiệu C_A B) là tập hợp:",
+      options: ["Gồm các phần tử thuộc A và thuộc B", "Gồm các phần tử thuộc B nhưng không thuộc A", "Gồm các phần tử thuộc A nhưng không thuộc B (A \\ B)", "Gồm các phần tử không thuộc cả A và B"],
+      answer: 2,
+      level: "easy",
+      explain: "Phần bù $C_A B$ chính là hiệu của hai tập hợp $A$ và $B$ ($A \\setminus B$), tức là lấy các phần tử thuộc tập hợp mẹ $A$ nhưng không thuộc tập con $B$."
+    },
+    {
+      q: "Số cách chọn ra một nhóm gồm 3 học sinh từ một tổ gồm 10 học sinh (không phân công nhiệm vụ) là:",
+      options: ["Chỉnh hợp chập 3 của 10 (A₁₀³)", "Tổ hợp chập 3 của 10 (C₁₀³)", "Hoán vị của 3 học sinh (P₃)", "Tích số 10 * 9 * 8"],
+      answer: 1,
+      level: "easy",
+      explain: "Vì chọn ra $3$ học sinh từ $10$ học sinh mà không phân công nhiệm vụ (thứ tự không quan trọng), ta sử dụng tổ hợp:\n$$C_{10}^3 = \\frac{10!}{3!(10-3)!} = 120 \\text{ cách}$$"
+    },
+    {
+      q: "Cho mệnh đề phủ định P: 'Mọi học sinh lớp 10 đều thích học Toán'. Mệnh đề phủ định của P là:",
+      options: ["Có ít nhất một học sinh lớp 10 không thích học Toán", "Tất cả học sinh lớp 10 đều không thích học Toán", "Mọi học sinh lớp 10 đều thích học Lý", "Có một học sinh lớp 10 thích học Toán"],
+      answer: 0,
+      level: "easy",
+      explain: "Phủ định của mệnh đề dạng 'Mọi $X$ đều là $Y$' là 'Có ít nhất một $X$ không phải là $Y$'.\nDo đó, phủ định của 'Mọi học sinh... thích học Toán' là 'Có ít nhất một học sinh... không thích học Toán'."
+    },
+    {
+      q: "Cho tập hợp A = {1, 2, 3, 4} và B = {3, 4, 5, 6}. Giao của hai tập hợp A và B (A ∩ B) là:",
+      options: ["{1, 2, 3, 4, 5, 6}", "{3, 4}", "{1, 2, 5, 6}", "{5, 6}"],
+      answer: 1,
+      level: "easy",
+      explain: "Giao của hai tập hợp là tập gồm các phần tử chung của cả hai tập.\nỞ đây các phần tử chung của $A$ và $B$ là $3$ và $4$. Vậy:\n$$A \\cap B = \\{3, 4\\}$"
+    },
+    {
+      q: "Có bao nhiêu số tự nhiên gồm 3 chữ số khác nhau lập được từ các chữ số {1, 2, 3, 4, 5}?",
+      options: ["60 số", "125 số", "10 số", "120 số"],
+      answer: 0,
+      level: "medium",
+      explain: "Chọn và sắp xếp thứ tự của $3$ chữ số khác nhau từ tập gồm $5$ chữ số đã cho là chỉnh hợp chập $3$ của $5$:\n$$A_5^3 = \\frac{5!}{(5-3)!} = 5 \\cdot 4 \\cdot 3 = 60 \\text{ số}$$"
+    },
+    {
+      q: "Có bao nhiêu cách chọn ban đại diện gồm 1 lớp trưởng và 1 lớp phó từ một lớp gồm 40 học sinh?",
+      options: ["1560 cách", "780 cách", "80 cách", "40! cách"],
+      answer: 0,
+      level: "medium",
+      explain: "Vì chọn ra $2$ học sinh làm 2 chức vụ khác nhau (lớp trưởng và lớp phó), vai trò thứ tự quan trọng nên ta dùng chỉnh hợp chập $2$ của $40$:\n$$A_{40}^2 = 40 \\cdot 39 = 1560 \\text{ cách}$$"
+    },
+    {
+      q: "Một hộp đựng 4 bi đỏ và 5 bi xanh. Có bao nhiêu cách chọn ra 3 viên bi sao cho có đúng 1 viên bi đỏ?",
+      options: ["40 cách", "84 cách", "30 cách", "20 cách"],
+      answer: 0,
+      level: "medium",
+      explain: "Để chọn ra $3$ viên bi sao cho có đúng $1$ viên bi đỏ và $2$ viên bi xanh:\n*   Chọn $1$ bi đỏ từ $4$ bi đỏ: $C_4^1 = 4$ cách.\n*   Chọn $2$ bi xanh từ $5$ bi xanh: $C_5^2 = 10$ cách.\n*   Áp dụng quy tắc nhân: \n    $$4 \\cdot 10 = 40 \\text{ cách}$$"
+    },
+    {
+      q: "Cho tam giác ABC có ba cạnh a = 6, b = 8, c = 10. Tính bán kính r của đường tròn nội tiếp tam giác ABC.",
+      options: ["2", "3", "4", "1.5"],
+      answer: 0,
+      level: "hard",
+      explain: "Nhận thấy $a^2 + b^2 = 6^2 + 8^2 = 10^2 = c^2$, suy ra tam giác $ABC$ vuông tại $A$ (định lý Pitago đảo).\n\n*   **Diện tích tam giác vuông**:\n    $$S = \\frac{1}{2} \\cdot a \\cdot b = \\frac{1}{2} \\cdot 6 \\cdot 8 = 24$$\n\n*   **Nửa chu vi tam giác**:\n    $$p = \\frac{a + b + c}{2} = \\frac{6 + 8 + 10}{2} = 12$$\n\n*   **Bán kính đường tròn nội tiếp ($r$)**:\n    Sử dụng công thức liên hệ diện tích và nửa chu vi:\n    $$S = p \\cdot r \\implies r = \\frac{S}{p} = \\frac{24}{12} = 2$$"
+    },
+    {
+      q: "Từ các chữ số {0, 1, 2, 3, 4, 5} lập được bao nhiêu số tự nhiên chẵn gồm 4 chữ số khác nhau?",
+      options: ["156 số", "300 số", "120 số", "160 số"],
+      answer: 0,
+      level: "hard",
+      explain: "Gọi số cần tìm là $abcd$ ($a \\neq 0$, các chữ số đôi một khác nhau, $d$ chẵn).\n\nDo chữ số đầu tiên $a \\neq 0$ và chữ số cuối $d$ chẵn nên ta phải xét 2 trường hợp chính:\n\n*   **Trường hợp 1: $d = 0$** (1 cách chọn).\n    *   Chọn và sắp xếp 3 chữ số từ tập $\\{1, 2, 3, 4, 5\\}$ vào 3 vị trí $a, b, c$:\n        $$A_5^3 = 60 \\text{ số}$$\n\n*   **Trường hợp 2: $d \\in \\{2, 4\\}$** (2 cách chọn $d$).\n    *   Chọn chữ số $a \\neq 0$ và $a \\neq d$: có $4$ cách chọn.\n    *   Chọn và xếp 2 chữ số từ 4 chữ số còn lại vào vị trí $b, c$:\n        $$A_4^2 = 12 \\text{ cách}$$\n    *   Số lượng số lập được trong TH2 là:\n        $$2 \\cdot 4 \\cdot 12 = 96 \\text{ số}$$\n\n*   **Tổng kết**: Áp dụng quy tắc cộng, ta có tổng số cách lập là:\n    $$60 + 96 = 156 \\text{ số}$$"
+    },
+    {
+      q: "Khai triển nhị thức Newton (x + 2)⁴ có hệ số của số hạng chứa x² là:",
+      options: ["24", "6", "12", "8"],
+      answer: 0,
+      level: "hard",
+      explain: "Số hạng tổng quát trong khai triển nhị thức Newton $(x + 2)^4$ là:\n$$T_{k+1} = C_4^k \\cdot x^{4-k} \\cdot 2^k$$\n\nĐể tìm số hạng chứa $x^2$, ta cần $4 - k = 2 \\implies k = 2$. Thay vào công thức:\n$$C_4^2 \\cdot x^2 \\cdot 2^2 = 6 \\cdot 4 \\cdot x^2 = 24x^2$$\n\nVậy hệ số của số hạng chứa $x^2$ là $24$."
+    }
+  ],
+  physics_10: [
+    {
+      q: "Công thức liên hệ vận tốc, gia tốc và quãng đường trong chuyển động thẳng biến đổi đều (hệ thức độc lập thời gian) là:",
+      options: ["v² - v₀² = 2as", "v - v₀ = at", "s = v₀t + 1/2at²", "v² + v₀² = 2as"],
+      answer: 0,
+      level: "easy",
+      explain: "Hệ thức liên hệ khi không có thời gian $t$ là:\n$$v^2 - v_0^2 = 2 \cdot a \cdot s$$"
+    },
+    {
+      q: "Khi một quả táo rơi tự do từ trên cây xuống đất, lực nào đã tác dụng lên quả táo gây ra chuyển động rơi đó?",
+      options: ["Trọng lực (lực hút của Trái Đất)", "Lực ma sát của không khí", "Lực đẩy Archimedes", "Lực đàn hồi của cành cây"],
+      answer: 0,
+      level: "easy",
+      explain: "Trọng lực là lực hấp dẫn của Trái Đất tác dụng lên quả táo, hút vật về phía tâm Trái Đất và gây ra gia tốc rơi tự do $g$."
+    },
+    {
+      q: "Gia tốc rơi tự do g ở gần mặt đất có giá trị xấp xỉ bằng bao nhiêu?",
+      options: ["9.8 m/s²", "0 m/s²", "1.6 m/s²", "9.8 cm/s²"],
+      answer: 0,
+      level: "easy",
+      explain: "Ở gần mặt đất, gia tốc rơi tự do $g$ của mọi vật có giá trị xấp xỉ bằng $9.8\\text{ m/s}^2$ (hoặc thường được làm tròn thành $10\\text{ m/s}^2$ trong tính toán)."
+    },
+    {
+      q: "Lực ma sát trượt xuất hiện ở mặt tiếp xúc khi:",
+      options: ["Một vật trượt trên bề mặt vật khác", "Vật đứng yên trên mặt phẳng nghiêng", "Vật lăn trên mặt phẳng ngang", "Vật rơi tự do trong chân không"],
+      answer: 0,
+      level: "easy",
+      explain: "Lực ma sát trượt xuất hiện tại mặt tiếp xúc và ngược chiều với chiều chuyển động tương đối của vật khi một vật trượt trên bề mặt của vật khác."
+    },
+    {
+      q: "Một xe ô tô khởi hành từ trạng thái nghỉ, sau 10 giây đạt vận tốc 20 m/s. Gia tốc của ô tô là:",
+      options: ["2 m/s²", "0.5 m/s²", "20 m/s²", "4 m/s²"],
+      answer: 0,
+      level: "medium",
+      explain: "Áp dụng công thức tính gia tốc:\n$$a = \\frac{v - v_0}{t}$$\n\nThay số với $v_0 = 0$, $v = 20\\text{ m/s}$ và $t = 10\\text{ s}$:\n$$a = \\frac{20 - 0}{10} = 2 \\text{ m/s}^2$$"
+    },
+    {
+      q: "Một lò xo có độ cứng k = 100 N/m bị biến dạng nén một đoạn 5 cm. Lực đàn hồi của lò xo có độ lớn là:",
+      options: ["5 N", "500 N", "0.5 N", "20 N"],
+      answer: 0,
+      level: "medium",
+      explain: "Đổi độ biến dạng: $\\Delta l = 5\\text{ cm} = 0,05\\text{ m}$.\n\nTheo định luật Hooke, độ lớn lực đàn hồi là:\n$$F_{đh} = k \\cdot |\\Delta l| = 100 \\cdot 0,05 = 5 \\text{ N}$$"
+    },
+    {
+      q: "Một vật có khối lượng 2 kg chuyển động với gia tốc 3 m/s². Độ lớn lực tác dụng lên vật là:",
+      options: ["6 N", "1.5 N", "5 N", "0.6 N"],
+      answer: 0,
+      level: "medium",
+      explain: "Theo định luật II Newton, độ lớn lực tác dụng lên vật là:\n$$F = m \\cdot a = 2 \\cdot 3 = 6 \\text{ N}$$"
+    },
+    {
+      q: "Một vật rơi tự do từ độ cao h xuống đất. Vận tốc lúc chạm đất là v = 20 m/s. Lấy g = 10 m/s². Tìm độ cao h.",
+      options: ["20 m", "40 m", "10 m", "30 m"],
+      answer: 0,
+      level: "hard",
+      explain: "Áp dụng hệ thức liên hệ độc lập thời gian khi rơi tự do:\n$$v^2 = 2gh \\implies h = \\frac{v^2}{2g}$$\n\nThay số với $v = 20\\text{ m/s}$ và $g = 10\\text{ m/s}^2$:\n$$h = \\frac{20^2}{2 \\cdot 10} = \\frac{400}{20} = 20 \\text{ m}$$"
+    },
+    {
+      q: "Một vật trượt từ đỉnh mặt phẳng nghiêng dài 10m, nghiêng góc 30° so với phương ngang. Bỏ qua ma sát. Lấy g = 10 m/s². Tính vận tốc vật ở chân mặt phẳng nghiêng.",
+      options: ["10 m/s", "5 m/s", "14.1 m/s", "7.07 m/s"],
+      answer: 0,
+      level: "hard",
+      explain: "*   **Tính gia tốc của vật trên mặt phẳng nghiêng (không ma sát)**:\n    $$a = g \\cdot \\sin\\alpha = 10 \\cdot \\sin(30^\\circ) = 5 \\text{ m/s}^2$$\n\n*   **Tính vận tốc ở chân dốc** (áp dụng hệ thức độc lập thời gian):\n    $$v^2 - v_0^2 = 2as \\implies v = \\sqrt{2as + v_0^2}$$\n    $$v = \\sqrt{2 \\cdot 5 \\cdot 10 + 0} = \\sqrt{100} = 10 \\text{ m/s}$$"
+    },
+    {
+      q: "Một lò xo treo thẳng đứng, đầu dưới treo vật m = 100g thì lò xo giãn 2cm. Treo thêm vật m' = 50g thì lò xo giãn tổng cộng bao nhiêu?",
+      options: ["3 cm", "2.5 cm", "4 cm", "1.5 cm"],
+      answer: 0,
+      level: "hard",
+      explain: "Khi vật ở vị trí cân bằng, lực đàn hồi cân bằng với trọng lực:\n$$F_{đh} = P \\implies k \\cdot \\Delta l = m \\cdot g$$\n\nDo đó, độ giãn $\\Delta l$ tỉ lệ thuận với khối lượng vật treo $m$:\n$$\\frac{\\Delta l_2}{\\Delta l_1} = \\frac{m + m'}{m} = \\frac{100 + 50}{100} = 1,5$$\n\nTổng độ giãn lúc sau là:\n$$\\Delta l_2 = 1,5 \\cdot \\Delta l_1 = 1,5 \\cdot 2 = 3 \\text{ cm}$$"
+    }
+  ],
+  chemistry_10: [
+    {
+      q: "Hạt nhân của hầu hết các nguyên tử được cấu tạo từ các loại hạt nào?",
+      options: ["Proton và electron", "Proton và nơtron", "Nơtron và electron", "Proton, nơtron và electron"],
+      answer: 1,
+      level: "easy",
+      explain: "Hạt nhân nguyên tử được cấu tạo từ hai loại hạt chính là proton (mang điện dương) và nơtron (không mang điện). Vỏ nguyên tử được cấu tạo từ các electron."
+    },
+    {
+      q: "Trong phản ứng oxi hóa - khử, chất khử là chất:",
+      options: ["Nhường electron, số oxi hóa tăng", "Nhận electron, số oxi hóa giảm", "Nhường electron, số oxi hóa giảm", "Nhận electron, số oxi hóa tăng"],
+      answer: 0,
+      level: "easy",
+      explain: "Theo quy tắc kinh điển: **'Khử cho - O nhận'**.\nChất khử là chất nhường (cho) electron, dẫn tới số oxi hóa tăng lên sau phản ứng."
+    },
+    {
+      q: "Nguyên tố có cấu hình electron lớp ngoài cùng là 3s² 3p⁵ thuộc chu kỳ nào và nhóm nào?",
+      options: ["Chu kỳ 3, nhóm VIIA", "Chu kỳ 3, nhóm VA", "Chu kỳ 4, nhóm VIIA", "Chu kỳ 3, nhóm VIIB"],
+      answer: 0,
+      level: "easy",
+      explain: "*   Lớp electron ngoài cùng là lớp thứ 3 $\\implies$ Chu kỳ 3.\n*   Số electron ở lớp ngoài cùng là $2 + 5 = 7$ electron. Do là nguyên tố $p$, nên nguyên tố này thuộc nhóm VIIA."
+    },
+    {
+      q: "Nguyên tử của nguyên tố oxi (Z = 8) có cấu hình electron là:",
+      options: ["1s² 2s² 2p⁴", "1s² 2s² 2p⁶", "1s² 2s² 2p³", "1s² 2s² 2p⁵"],
+      answer: 0,
+      level: "easy",
+      explain: "Số hiệu nguyên tử $Z = 8 \\implies$ có 8 electron. Sắp xếp vào các phân lớp theo thứ tự năng lượng:\n$$1s^2 \\to 2s^2 \\to 2p^4$$"
+    },
+    {
+      q: "Số oxi hóa của Lưu huỳnh (S) trong hợp chất H₂SO₄ là:",
+      options: ["+6", "+4", "-2", "0"],
+      answer: 0,
+      level: "medium",
+      explain: "Gọi số oxi hóa của $S$ là $x$. Trong hợp chất $H_2SO_4$, số oxi hóa của $H$ là $+1$ và $O$ là $-2$. \nTổng số oxi hóa trong một phân tử trung hòa bằng 0:\n$$2 \\cdot (+1) + x + 4 \\cdot (-2) = 0 \\implies x - 6 = 0 \\implies x = +6$$"
+    },
+    {
+      q: "Hợp chất nào sau đây chỉ chứa liên kết cộng hóa trị?",
+      options: ["CO₂", "NaCl", "MgO", "CaCl₂"],
+      answer: 0,
+      level: "medium",
+      explain: "$CO_2$ được tạo thành từ phi kim Cacbon ($C$) và phi kim Oxi ($O$) nên chỉ chứa liên kết cộng hóa trị.\nCác hợp chất còn lại ($NaCl, MgO, CaCl_2$) được tạo thành từ kim loại điển hình và phi kim điển hình nên chứa liên kết ion."
+    },
+    {
+      q: "Trong phản ứng: Fe + CuSO₄ → FeSO₄ + Cu. Nguyên tử Fe đóng vai trò gì?",
+      options: ["Chất khử", "Chất oxi hóa", "Môi trường phản ứng", "Chất xúc tác"],
+      answer: 0,
+      level: "medium",
+      explain: "Số oxi hóa của $Fe$ tăng từ $0$ (trong $Fe$ đơn chất) lên $+2$ (trong $FeSO_4$). Vì số oxi hóa tăng nên $Fe$ đóng vai trò là chất khử (nhường electron)."
+    },
+    {
+      q: "Một đồng vị của nguyên tố X có tổng số hạt là 40. Số hạt mang điện nhiều hơn số hạt không mang điện là 12. Xác định số khối của đồng vị đó.",
+      options: ["27", "26", "28", "25"],
+      answer: 0,
+      level: "hard",
+      explain: "Gọi số hạt proton, nơtron, electron là $P, N, E$. Do nguyên tử trung hòa điện nên $P = E$.\n\nTa có hệ phương trình:\n$$\\begin{cases} (2P + N) = 40 \\\\ 2P - N = 12 \\end{cases}$$\n\nCộng vế theo vế hai phương trình:\n$$4P = 52 \\implies P = 13 \\implies N = 14$$\n\nSố khối $A$ của đồng vị đó là:\n$$A = P + N = 13 + 14 = 27 \\text{ (Đồng vị Nhôm } ^{27}Al\\text{)}$$"
+    },
+    {
+      q: "Clo trong tự nhiên gồm 2 đồng vị bền ³⁵Cl và ³⁷Cl. Nguyên tử khối trung bình của Clo là 35.5. Tỉ lệ số nguyên tử của đồng vị ³⁵Cl và ³⁷Cl là:",
+      options: ["3:1", "1:3", "1:1", "2:1"],
+      answer: 0,
+      level: "hard",
+      explain: "Gọi phần trăm số nguyên tử của đồng vị $^{35}Cl$ là $x$ (%). \nPhần trăm số nguyên tử của đồng vị $^{37}Cl$ là $100 - x$ (%).\n\nÁp dụng công thức tính nguyên tử khối trung bình:\n$$A_{tb} = \\frac{35x + 37(100 - x)}{100} = 35,5$$\n$$35x + 3700 - 37x = 3550 \\implies -2x = -150 \\implies x = 75\\%$$\n\nVậy $^{35}Cl$ chiếm 75% và $^{37}Cl$ chiếm 25%. Tỉ lệ số nguyên tử của hai đồng vị là:\n$$\\frac{x_{^{35}Cl}}{x_{^{37}Cl}} = \\frac{75}{25} = 3:1$$"
+    },
+    {
+      q: "Để cân bằng phản ứng oxi hóa khử: Cu + HNO₃ → Cu(NO₃)₂ + NO + H₂O. Hệ số tối giản của axit HNO₃ là:",
+      options: ["8", "4", "6", "10"],
+      answer: 0,
+      level: "hard",
+      explain: "Thăng bằng electron:\n*   Quá trình oxi hóa: $3 \\times (Cu^0 \\to Cu^{+2} + 2e)$\n*   Quá trình khử: $2 \\times (N^{+5} + 3e \\to N^{+2} \\text{ (trong NO)})$\n\nĐưa hệ số vào phương trình:\n$$3Cu + 8HNO_3 \\to 3Cu(NO_3)_2 + 2NO + 4H_2O$$\n\nHệ số tối giản của axit $HNO_3$ là $8$."
+    }
+  ],
+  english_10: [
+    { q: "The contract was _________ to update the payment terms.", options: ["amended", "downsized", "streamlined", "promoted"], answer: 0, level: "easy", explain: "Amend (sửa đổi) thường dùng cho hợp đồng khi cần thay đổi điều khoản. Ở đây hợp đồng được sửa đổi (amended) để cập nhật điều khoản thanh toán." },
+    { q: "A temporary job position that is currently available in a company is called a __________.", options: ["vacancy", "agreement", "commission", "breach"], answer: 0, level: "easy", explain: "Vacancy là vị trí công việc còn trống cần tuyển nhân sự mới." },
+    { q: "She needs to _________ her English vocabulary if she wants to pass the IELTS test.", options: ["broaden", "shrink", "narrow", "deteriorate"], answer: 0, level: "easy", explain: "Broaden vocabulary là cụm từ cố định nghĩa là mở rộng vốn từ vựng học tập." },
+    { q: "To make a system less complicated and more efficient, we should _________ it.", options: ["streamline", "degrade", "prolong", "amend"], answer: 0, level: "easy", explain: "Streamline nghĩa là tinh giản quy trình hoạt động để tăng hiệu suất." },
+    { q: "Due to the economic crisis, the company announced a major _________ of its workforce.", options: ["downsizing", "broadening", "promotion", "amendment"], answer: 0, level: "medium", explain: "Downsizing là sự cắt giảm nhân sự quy mô lớn do khó khăn tài chính." },
+    { q: "The rapid _________ of industrial processes has led to higher productivity but also massive worker displacement.", options: ["streamlining", "broadening", "downsizing", "amendment"], answer: 0, level: "medium", explain: "Streamlining (tinh giản quy trình) giúp tăng hiệu suất làm việc nhưng có thể giảm bớt nhân công thừa." },
+    { q: "If you want to access the company database, you must enter a security _________.", options: ["access code", "hardware", "software", "virus"], answer: 0, level: "medium", explain: "Access code là mã truy cập bảo mật dùng để đăng nhập vào dữ liệu." },
+    { q: "The computer system was severely damaged because of a malicious _________.", options: ["virus", "software", "hardware", "database"], answer: 0, level: "hard", explain: "Virus máy tính là mã độc gây hại cho hệ thống lưu trữ thông tin." },
+    { q: "We noticed a sudden _________ in the quality of service after the merger.", options: ["deterioration", "improvement", "streamlining", "amendment"], answer: 0, level: "hard", explain: "Deterioration là sự suy giảm chất lượng dịch vụ (tệ đi)." },
+    { q: "The legal department decided to make some important _________ to the draft agreement.", options: ["amendments", "vacancies", "downsizings", "databases"], answer: 0, level: "hard", explain: "Amendments là những sửa đổi, bổ sung pháp lý cho văn bản hợp đồng." }
+  ],
+
+  // LỚP 11
+  math_11: [
+    { q: "Tìm tập nghiệm của phương trình lượng giác cơ bản sin(x) = 0:", options: ["x = k*π (k ∈ ℤ)", "x = π/2 + k*π (k ∈ ℤ)", "x = k*2π (k ∈ ℤ)", "x = π + k*2π (k ∈ ℤ)"], answer: 0, level: "easy", explain: "$\sin(x) = 0$ khi góc $x = k\pi$ với $k$ là số nguyên." },
+    { q: "Cho cấp số cộng (u_n) có số hạng đầu u₁ = 3 và công sai d = 2. Tìm số hạng u₅:", options: ["11", "9", "13", "15"], answer: 0, level: "easy", explain: "Số hạng tổng quát: $u_n = u_1 + (n-1)d$.\nThay số $n = 5$:\n$$u_5 = 3 + (5-1) \cdot 2 = 3 + 8 = 11$$" },
+    { q: "Công thức tính đạo hàm của hàm số y = xⁿ (với n nguyên dương) là:", options: ["y' = n * xⁿ⁻¹", "y' = xⁿ⁻¹", "y' = n * xⁿ", "y' = n! * x"], answer: 0, level: "easy", explain: "Công thức đạo hàm lũy thừa cơ bản:\n$$(x^n)' = n \cdot x^{n-1}$$" },
+    { q: "Trong các giới hạn sau, giới hạn nào bằng 0?", options: ["lim (1/n)", "lim (n)", "lim (2n)", "lim (3n + 1)"], answer: 0, level: "easy", explain: "Khi $n \\to \\infty$, nghịch đảo của $n$ là $\\frac{1}{n}$ luôn tiến sát về 0. Các giới hạn khác đều tiến ra vô cùng." },
+    { q: "Đạo hàm của hàm số y = sin(x) là:", options: ["y' = cos(x)", "y' = -cos(x)", "y' = sin(x)", "y' = -sin(x)"], answer: 0, level: "medium", explain: "Đạo hàm lượng giác cơ bản:\n$$(\\sin x)' = \\cos x$$" },
+    { q: "Cho cấp số nhân (u_n) có u₁ = 2 và công bội q = 3. Số hạng u₄ bằng:", options: ["54", "18", "162", "24"], answer: 0, level: "medium", explain: "Số hạng tổng quát cấp số nhân: $u_n = u_1 \\cdot q^{n-1}$.\nThay số $n = 4$:\n$$u_4 = 2 \\cdot 3^{4-1} = 2 \\cdot 27 = 54$$" },
+    { q: "Tính giới hạn L = lim (2n² + 3n - 1) / (5n² - n + 2) khi n tiến tới vô cùng.", options: ["2/5", "3/5", "0", "Vô cùng"], answer: 0, level: "medium", explain: "Chia cả tử và mẫu cho $n^2$:\n$$L = \\lim \\frac{2 + \\frac{3}{n} - \\frac{1}{n^2}}{5 - \\frac{1}{n} + \\frac{2}{n^2}} = \\frac{2}{5}$$" },
+    { q: "Tìm đạo hàm của hàm số y = cos(2x + π/4):", options: ["y' = -2*sin(2x + π/4)", "y' = 2*sin(2x + π/4)", "y' = -sin(2x + π/4)", "y' = -2*cos(2x + π/4)"], answer: 0, level: "hard", explain: "Sử dụng công thức đạo hàm hàm hợp $y' = (u)' \\cdot \\cos'(u)$:\n$$y' = (2x + \\frac{\\pi}{4})' \\cdot (-\\sin(2x + \\frac{\\pi}{4})) = -2\\sin(2x + \\frac{\\pi}{4})$$" },
+    { q: "Phương trình lượng giác cos(x) = 1/2 có nghiệm là:", options: ["x = ±π/3 + k2π (k ∈ ℤ)", "x = ±π/6 + k2π (k ∈ ℤ)", "x = ±π/3 + kπ (k ∈ ℤ)", "x = π/3 + k2π (k ∈ ℤ)"], answer: 0, level: "hard", explain: "$$\\cos(x) = \\frac{1}{2} = \\cos(\\frac{\\pi}{3}) \\implies x = \\pm\\frac{\\pi}{3} + k2\\pi \\quad (k \\in \\mathbb{Z})$$" },
+    { q: "Cho hàm số y = x³ - 3x² + 2. Viết phương trình tiếp tuyến của đồ thị hàm số tại điểm có hoành độ x₀ = 1.", options: ["y = -3x + 3", "y = 3x - 3", "y = -3x - 3", "y = -3x"], answer: 0, level: "hard", explain: "*   Đạo hàm: $y' = 3x^2 - 6x$.\n*   Hệ số góc của tiếp tuyến tại $x_0 = 1$:\n    $$k = y'(1) = 3(1)^2 - 6(1) = -3$$\n*   Tung độ tiếp điểm: $y_0 = y(1) = 1^3 - 3(1)^2 + 2 = 0$.\n*   Phương trình tiếp tuyến:\n    $$y - y_0 = k(x - x_0) \\implies y - 0 = -3(x - 1) \\implies y = -3x + 3$$" }
+  ],
+  physics_11: [
+    { q: "Một vật dao động điều hòa có phương trình li độ x = 5*cos(4π*t + π/3) cm. Biên độ dao động của vật là:", options: ["5 cm", "4 cm", "10 cm", "2.5 cm"], answer: 0, level: "easy", explain: "Trong phương trình dao động điều hòa dạng $x = A\\cos(\\omega t + \\varphi)$, hệ số $A$ đứng trước hàm cosin đại diện cho biên độ. Ở đây $A = 5\\text{ cm}$." },
+    { q: "Lực tương tác tĩnh điện Coulomb giữa hai điện tích điểm đặt trong chân không tỷ lệ nghịch với:", options: ["Bình phương khoảng cách giữa hai điện tích", "Khoảng cách giữa hai điện tích", "Tích độ lớn hai điện tích", "Cường độ điện trường"], answer: 0, level: "easy", explain: "Theo định luật Coulomb:\n$$F = k \\frac{|q_1 q_2|}{r^2}$$\n\nLực điện $F$ tỉ lệ nghịch với bình phương khoảng cách $r^2$ giữa hai điện tích đó." },
+    { q: "Đơn vị đo của điện dung của tụ điện là:", options: ["Fara (F)", "Cộng hưởng (Hz)", "Vôn (V)", "Tesla (T)"], answer: 0, level: "easy", explain: "Điện dung $C$ của tụ điện có đơn vị đo chuẩn trong hệ SI là Fara (F)." },
+    { q: "Một điện tích điểm q = 2 μC đặt trong điện trường có cường độ E = 5000 V/m. Lực điện tác dụng lên điện tích có độ lớn là:", options: ["0.01 N", "10 N", "1000 N", "0.1 N"], answer: 0, level: "easy", explain: "Đổi điện tích: $q = 2\\ \\mu\\text{C} = 2 \\cdot 10^{-6}\\text{ C}$.\n\nÁp dụng công thức tính lực điện:\n$$F = |q| \\cdot E = 2 \\cdot 10^{-6} \\cdot 5000 = 0.01 \\text{ N}$$" },
+    { q: "Chu kỳ dao động điều hòa của con lắc đơn phụ thuộc vào:", options: ["Chiều dài dây treo và gia tốc trọng trường", "Khối lượng của quả nặng", "Biên độ dao động", "Độ cứng của con lắc"], answer: 0, level: "medium", explain: "Công thức tính chu kỳ con lắc đơn:\n$$T = 2\\pi \\sqrt{\\frac{l}{g}}$$\n\nChỉ phụ thuộc vào chiều dài dây treo $l$ và gia tốc trọng trường $g$ nơi treo con lắc." },
+    { q: "Một con lắc lò xo có độ cứng k = 50 N/m, quả nặng m = 200g. Tần số góc ω của con lắc là:", options: ["15.8 rad/s", "250 rad/s", "5 rad/s", "10 rad/s"], answer: 0, level: "medium", explain: "Đổi khối lượng: $m = 200\\text{g} = 0.2\\text{ kg}$.\n\nTần số góc của con lắc lò xo là:\n$$\\omega = \\sqrt{\\frac{k}{m}} = \\sqrt{\\frac{50}{0.2}} = \\sqrt{250} \\approx 15.8 \\text{ rad/s}$$" },
+    { q: "Hai điện tích điểm q₁ = 1 μC và q₂ = -4 μC cách nhau 3 cm trong chân không. Lực tương tác giữa chúng có độ lớn:", options: ["40 N", "4 N", "0.4 N", "400 N"], answer: 0, level: "medium", explain: "Đổi: $r = 0.03\\text{ m}$, $q_1 = 10^{-6}\\text{ C}$, $q_2 = -4 \\cdot 10^{-6}\\text{ C}$.\n\nÁp dụng định luật Coulomb:\n$$F = k \\frac{|q_1 q_2|}{r^2} = 9 \\cdot 10^9 \\cdot \\frac{|10^{-6} \\cdot (-4 \\cdot 10^{-6})|}{0.03^2} = 40 \\text{ N}$$" },
+    { q: "Một con lắc lò xo treo thẳng đứng dao động điều hòa. Khi vật ở vị trí cân bằng, lò xo giãn 4 cm. Lấy g = 10 m/s² (hoặc π² ≈ 10). Tần số dao động f của con lắc là:", options: ["2.5 Hz", "5 Hz", "1.25 Hz", "10 Hz"], answer: 0, level: "hard", explain: "*   Độ giãn tại vị trí cân bằng: $\\Delta l_0 = 4\\text{ cm} = 0.04\\text{ m}$.\n*   Tần số góc:\n    $$\\omega = \\sqrt{\\frac{g}{\\Delta l_0}} = \\sqrt{\\frac{10}{0.04}} = 5\\pi \\text{ rad/s}$$\n*   Tần số dao động:\n    $$f = \\frac{\\omega}{2\\pi} = \\frac{5\\pi}{2\\pi} = 2.5 \\text{ Hz}$$" },
+    { q: "Một chất điểm dao động điều hòa dọc theo trục Ox. Khi vật qua li độ x = 3 cm thì vận tốc của vật v = 40 cm/s. Biết tần số góc ω = 10 rad/s. Biên độ dao động của chất điểm là:", options: ["5 cm", "7 cm", "4 cm", "6 cm"], answer: 0, level: "hard", explain: "Áp dụng công thức độc lập thời gian giữa li độ và vận tốc:\n$$A^2 = x^2 + \\frac{v^2}{\\omega^2}$$\n$$A = \\sqrt{3^2 + \\left(\\frac{40}{10}\\right)^2} = \\sqrt{9 + 16} = 5 \\text{ cm}$$" },
+    { q: "Hiệu điện thế giữa hai bản tụ của tụ điện có điện dung C = 10 μF tăng từ 10V lên 20V. Năng lượng điện trường dự trữ trong tụ tăng thêm bao nhiêu?", options: ["1.5 * 10⁻³ J", "3 * 10⁻³ J", "2 * 10⁻³ J", "1 * 10⁻³ J"], answer: 0, level: "hard", explain: "Năng lượng điện trường dự trữ trong tụ điện: $W = \\frac{1}{2} C U^2$.\n\nPhần năng lượng tăng thêm là:\n$$\\Delta W = \\frac{1}{2} C (U_2^2 - U_1^2) = \\frac{1}{2} \\cdot 10 \\cdot 10^{-6} \\cdot (20^2 - 10^2)$$\n$$\\Delta W = 5 \\cdot 10^{-6} \\cdot 300 = 1.5 \\cdot 10^{-3} \\text{ J}$$" }
+  ],
+  chemistry_11: [
+    { q: "Theo thuyết Bronsted - Lowry, chất nào sau đây được định nghĩa là axit?", options: ["Chất nhường proton (H⁺)", "Chất nhận proton (H⁺)", "Chất nhường electron", "Chất nhận electron"], answer: 0, level: "easy", explain: "Theo thuyết Bronsted - Lowry, axit là chất nhường proton ($H^+$) còn bazơ là chất nhận proton ($H^+$)." },
+    { q: "pH của một dung dịch chứa nồng độ ion H⁺ bằng 10⁻³ M là:", options: ["3", "11", "7", "10"], answer: 0, level: "easy", explain: "Áp dụng công thức tính nhanh pH:\n$$\\text{pH} = -\\log[H^+] = -\\log(10^{-3}) = 3$$" },
+    { q: "Chất nào sau đây là chất điện li yếu trong dung dịch nước?", options: ["CH₃COOH", "HCl", "NaOH", "NaCl"], answer: 0, level: "easy", explain: "Axit axetic ($CH_3COOH$) là axit yếu, chỉ phân li một phần trong nước nên là chất điện li yếu. Các chất còn lại đều điện li mạnh hoàn toàn." },
+    { q: "Dung dịch có pH = 9 có môi trường gì?", options: ["Kiềm (Bazơ)", "Axit", "Trung tính", "Lưỡng tính"], answer: 0, level: "easy", explain: "Môi trường được xác định dựa trên pH:\n*   $\\text{pH} > 7 \\implies$ Môi trường kiềm (bazơ)."
+    },
+    { q: "Trộn 50 ml dung dịch axit mạnh có pH = 2 với 50 ml dung dịch pH = 2 thu được dung dịch mới có pH là:", options: ["2", "4", "7", "3"], answer: 0, level: "medium", explain: "Do trộn hai dung dịch có cùng nồng độ ion $H^+$ (cùng $\\text{pH} = 2$), nên nồng độ ion $H^+$ sau khi trộn không thay đổi, $\\text{pH}$ của dung dịch thu được vẫn bằng 2." },
+    { q: "Tính nồng độ mol/lít của ion OH⁻ trong dung dịch nước có nồng độ ion H⁺ là 10⁻⁴ M ở 25°C.", options: ["10⁻¹⁰ M", "10⁻⁴ M", "10⁻⁷ M", "10⁻¹² M"], answer: 0, level: "medium", explain: "Tích số ion của nước ở $25^\\circ\\text{C}$:\n$$K_w = [H^+] \\cdot [OH^-] = 10^{-14}$$\n$$[OH^-] = \\frac{10^{-14}}{[H^+]} = \\frac{10^{-14}}{10^{-4}} = 10^{-10} \\text{ M}$$" },
+    { q: "Trong các chất sau, chất nào có tính lưỡng tính theo thuyết Bronsted - Lowry?", options: ["HCO₃⁻", "CO₃²⁻", "NH₄⁺", "Cl⁻"], answer: 0, level: "medium", explain: "Ion $HCO_3^-$ vừa có thể nhường proton tạo $CO_3^{2-}$, vừa có thể nhận proton tạo $H_2CO_3$ nên có tính lưỡng tính." },
+    { q: "Tính pH của dung dịch thu được khi trộn lẫn 100 ml dung dịch HCl 0.1 M với 100 ml dung dịch NaOH 0.08 M.", options: ["2", "12", "3", "11"], answer: 0, level: "hard", explain: "*   $n_{H^+} = 0.1 \\cdot 0.1 = 0.01\\text{ mol}$.\n*   $n_{OH^-} = 0.1 \\cdot 0.08 = 0.008\\text{ mol}$.\n*   H⁺ phản ứng dư: $n_{H^+\\ dư} = 0.01 - 0.008 = 0.002\\text{ mol}$.\n*   Thể tích tổng: $V = 200\\text{ ml} = 0.2\\text{ lít}$.\n*   $[H^+]_{dư} = \\frac{0.002}{0.2} = 0.01\\text{ M} = 10^{-2}\\text{ M} \\implies \\text{pH} = 2$." },
+    { q: "Dung dịch axit yếu HA 0.1 M có độ điện li α = 1%. Tính pH của dung dịch này.", options: ["3", "1", "2", "4"], answer: 0, level: "hard", explain: "*   Nồng độ ion $H^+$ phân li ra từ axit yếu:\n    $$[H^+] = C_0 \\cdot \\alpha = 0.1 \\cdot 1\\% = 0.001\\text{ M} = 10^{-3}\\text{ M}$$\n*   pH của dung dịch:\n    $$\\text{pH} = -\\log[H^+] = 3$$" },
+    { q: "Để trung hòa hoàn toàn 100 ml dung dịch Ba(OH)₂ 0.05 M cần dùng vừa đủ V ml dung dịch HCl 0.1 M. Giá trị của V là:", options: ["100 ml", "50 ml", "200 ml", "150 ml"], answer: 0, level: "hard", explain: "*   $n_{OH^-} = 2 \\cdot n_{Ba(OH)_2} = 2 \\cdot (0.1 \\cdot 0.05) = 0.01\\text{ mol}$.\n*   Phản ứng trung hòa: $n_{H^+} = n_{OH^-} = 0.01\\text{ mol} \\implies n_{HCl} = 0.01\\text{ mol}$.\n*   Thể tích dung dịch HCl cần dùng:\n    $$V = \\frac{n}{C_M} = \\frac{0.01}{0.1} = 0.1 \\text{ lít} = 100 \\text{ ml}$$" }
+  ],
+  english_11: [
+    { q: "The destruction of forests, which causes damage to the ecosystem, is called _________.", options: ["deforestation", "conservation", "rehabilitation", "automation"], answer: 0, level: "easy", explain: "Deforestation là sự phá rừng, tàn phá rừng diện rộng." },
+    { q: "Many products are now sold in _________ packaging to help protect the environment.", options: ["biodegradable", "obsolete", "sedentary", "synthetic"], answer: 0, level: "easy", explain: "Biodegradable là phân hủy sinh học. Sử dụng bao bì phân hủy sinh học giúp bảo vệ môi trường." },
+    { q: "We should choose _________ methods of farming to preserve the soil quality.", options: ["sustainable", "harmful", "destructive", "biodegradable"], answer: 0, level: "easy", explain: "Sustainable farming (nông nghiệp bền vững) giúp bảo vệ chất lượng đất đai lâu dài." },
+    { q: "The local government is funding projects for wildlife _________.", options: ["conservation", "depletion", "contamination", "fluctuation"], answer: 0, level: "easy", explain: "Wildlife conservation là việc bảo tồn động vật hoang dã." },
+    { q: "Rapid urbanization and industrialization without strict green regulations have caused severe _________ of local waterways.", options: ["contamination", "rehabilitation", "preservation", "conservation"], answer: 0, level: "medium", explain: "Contamination có nghĩa là sự làm ô nhiễm nguồn nước bởi các chất độc hại." },
+    { q: "Solar energy is a _________ resource because it will never run out.", options: ["renewable", "non-renewable", "depleted", "finite"], answer: 0, level: "medium", explain: "Renewable energy (năng lượng tái tạo) là năng lượng vô tận không bao giờ cạn kiệt." },
+    { q: "They are planting trees in the area to combat soil _________.", options: ["erosion", "conservation", "fertilization", "irrigation"], answer: 0, level: "medium", explain: "Soil erosion là hiện tượng xói mòn đất." },
+    { q: "The team is working on the _________ of the damaged wetland habitat.", options: ["rehabilitation", "depletion", "contamination", "erosion"], answer: 0, level: "hard", explain: "Rehabilitation là sự cải tạo, phục hồi môi trường bị phá hủy." },
+    { q: "Overfishing has led to the drastic _________ of fish stocks in the North Sea.", options: ["depletion", "rehabilitation", "conservation", "accumulation"], answer: 0, level: "hard", explain: "Depletion là sự cạn kiệt nghiêm trọng (ở đây là cạn kiệt trữ lượng cá)." },
+    { q: "Carbon _________ refers to the amount of carbon dioxide released into the atmosphere by human activities.", options: ["footprint", "offset", "capture", "tax"], answer: 0, level: "hard", explain: "Carbon footprint (dấu chân carbon) là lượng khí nhà kính phát thải do hoạt động con người." }
+  ],
+
+  // LỚP 12
+  math_12: [
+    { q: "Họ nguyên hàm của hàm số f(x) = x là:", options: ["x²/2 + C", "x² + C", "1 + C", "2x + C"], answer: 0, level: "easy", explain: "Nguyên hàm của lũy thừa cơ bản $\\int x^1 dx = \\frac{x^2}{2} + C$." },
+    { q: "Đồ thị hàm số y = (2x + 1) / (x - 1) có đường tiệm cận đứng là:", options: ["x = 1", "y = 2", "x = -1", "y = -1"], answer: 0, level: "easy", explain: "Tiệm cận đứng là nghiệm của mẫu số: $x - 1 = 0 \\implies x = 1$." },
+    { q: "Trong không gian Oxyz, tọa độ của vectơ pháp tuyến của mặt phẳng (P): 2x - y + 3z - 5 = 0 là:", options: ["(2; -1; 3)", "(2; 1; 3)", "(2; -1; -5)", "(2; 3; -5)"], answer: 0, level: "easy", explain: "Vectơ pháp tuyến chính là các hệ số đứng trước $x, y, z$: $\\vec{n} = (2; -1; 3)$." },
+    { q: "Đồ thị hàm số nào sau đây luôn đồng biến trên tập xác định của nó?", options: ["y = x³ + 3x", "y = -x³ + 3x", "y = (x + 1)/(x - 1)", "y = x² + 2x"], answer: 0, level: "easy", explain: "*   Xét hàm $y = x^3 + 3x \\implies y' = 3x^2 + 3 > 0$ với mọi $x \\in \\mathbb{R}$. Do đạo hàm luôn dương nên hàm số luôn đồng biến trên $\\mathbb{R}$." },
+    { q: "Tính tích phân I = ∫₀¹ (e^x) dx:", options: ["e - 1", "e", "1 - e", "e + 1"], answer: 0, level: "medium", explain: "Tích phân cơ bản:\n$$I = \\int_0^1 e^x dx = \\left. e^x \\right|_0^1 = e^1 - e^0 = e - 1$$" },
+    { q: "Đồ thị hàm số y = (2x + 1) / (x - 1) có đường tiệm cận ngang là:", options: ["y = 2", "x = 1", "y = 1", "y = -1"], answer: 0, level: "medium", explain: "Tiệm cận ngang là giới hạn hàm số tại vô cực:\n$$y = \\lim_{x \\to \\pm\\infty} \\frac{2x + 1}{x - 1} = 2$$" },
+    { q: "Cho hàm số y = f(x) có đạo hàm f'(x) = x(x - 1)²(x + 2). Số điểm cực trị của hàm số là:", options: ["2", "3", "1", "4"], answer: 0, level: "medium", explain: "Số điểm cực trị của hàm số tương đương với số nghiệm bội lẻ của phương trình $f'(x) = 0$.\n*   $f'(x) = 0 \\implies x=0$ (bội 1), $x=1$ (bội 2), $x=-2$ (bội 1).\n*   Đạo hàm chỉ đổi dấu khi qua $x = 0$ và $x = -2$. Vậy hàm số có 2 điểm cực trị." },
+    { q: "Trong không gian Oxyz, tính khoảng cách từ điểm A(1; 2; 3) đến mặt phẳng (P): 2x - 2y + z + 5 = 0.", options: ["2", "3", "1", "4"], answer: 0, level: "hard", explain: "Áp dụng công thức khoảng cách từ điểm đến mặt phẳng:\n$$d = \\frac{|2(1) - 2(2) + 1(3) + 5|}{\\sqrt{2^2 + (-2)^2 + 1^2}} = \\frac{|2 - 4 + 3 + 5|}{\\sqrt{9}} = \\frac{6}{3} = 2$$" },
+    { q: "Tính tích phân I = ∫₁ᵉ (x * ln(x)) dx.", options: ["(e² + 1) / 4", "(e² - 1) / 4", "e² / 4", "(e² + 1) / 2"], answer: 0, level: "hard", explain: "*   Sử dụng phương pháp tích phân từng phần: Đặt $u = \\ln x \\implies du = \\frac{1}{x} dx$; $dv = x dx \\implies v = \\frac{x^2}{2}$.\n$$I = \\left. \\frac{x^2}{2} \\ln x \\right|_1^e - \\int_1^e \\frac{x^2}{2} \\cdot \\frac{1}{x} dx = \\frac{e^2}{2} - \\frac{1}{2} \\int_1^e x dx$$\n$$I = \\frac{e^2}{2} - \\left. \\frac{x^2}{4} \\right|_1^e = \\frac{e^2}{2} - \\frac{e^2 - 1}{4} = \\frac{e^2 + 1}{4}$$" },
+    { q: "Giá trị lớn nhất của hàm số y = x³ - 3x trên đoạn [0; 2] là:", options: ["2", "0", "-2", "4"], answer: 0, level: "hard", explain: "*   Đạo hàm: $y' = 3x^2 - 3 = 0 \\implies x = 1$ (do chỉ xét trên đoạn $[0; 2]$).\n*   Tính giá trị các điểm: $y(0) = 0$; $y(1) = -2$; $y(2) = 2^3 - 3(2) = 2$.\n*   So sánh: Giá trị lớn nhất là $2$ đạt được tại $x = 2$." }
+  ],
+  physics_12: [
+    { q: "Công thức tính cảm kháng của cuộn cảm L đối với dòng điện xoay chiều tần số góc ω là:", options: ["Z_L = ω * L", "Z_L = 1 / (ω * L)", "Z_L = L / ω", "Z_L = 2π * L"], answer: 0, level: "easy", explain: "Cảm kháng tỉ lệ thuận với tần số góc của dòng điện và hệ số tự cảm:\n$$Z_L = \\omega \\cdot L$$" },
+    { q: "Hiện tượng cộng hưởng điện xảy ra trong mạch RLC nối tiếp khi thỏa mãn điều kiện nào?", options: ["Z_L = Z_C", "Z_L > Z_C", "Z_L < Z_C", "R = Z_L"], answer: 0, level: "easy", explain: "Hiện tượng cộng hưởng điện xảy ra trong mạch RLC nối tiếp khi cảm kháng bằng dung kháng:\n$$Z_L = Z_C$$" },
+    { q: "Đại lượng nào sau đây đặc trưng cho mức độ cản trở dòng điện xoay chiều của toàn mạch RLC?", options: ["Tổng trở Z", "Cảm kháng Z_L", "Dung kháng Z_C", "Hệ số công suất cosφ"], answer: 0, level: "easy", explain: "Tổng trở $Z$ đặc trưng cho khả năng cản trở dòng điện xoay chiều của toàn mạch nối tiếp." },
+    { q: "Đặt điện áp u = 220√2 * cos(100π*t) V vào hai đầu điện trở R = 100 Ω. Cường độ dòng điện hiệu dụng chạy qua R là:", options: ["2.2 A", "2.2√2 A", "1.1 A", "4.4 A"], answer: 0, level: "easy", explain: "*   Hiệu điện thế hiệu dụng: $U = 220\\text{ V}$.\n*   Cường độ dòng điện hiệu dụng theo Định luật Ohm:\n    $$I = \\frac{U}{R} = \\frac{220}{100} = 2.2 \\text{ A}$$" },
+    { q: "Một tụ điện có điện dung C = 10⁻⁴/π F. Khi đặt vào dòng điện xoay chiều tần số 50 Hz, dung kháng Z_C bằng:", options: ["100 Ω", "50 Ω", "200 Ω", "10 Ω"], answer: 0, level: "medium", explain: "*   Tần số góc: $\\omega = 2\\pi f = 100\\pi\\text{ rad/s}$.\n*   Dung kháng tụ điện:\n    $$Z_C = \\frac{1}{\\omega \\cdot C} = \\frac{1}{100\\pi \\cdot \\frac{10^{-4}}{\\pi}} = 100 \\ \Omega$$" },
+    { q: "Một cuộn cảm thuần có độ tự cảm L = 1/π H. Đặt vào hai đầu cuộn cảm điện áp xoay chiều có ω = 100π rad/s. Cảm kháng của cuộn cảm bằng:", options: ["100 Ω", "50 Ω", "200 Ω", "10 Ω"], answer: 0, level: "medium", explain: "Cảm kháng cuộn cảm:\n$$Z_L = \\omega \\cdot L = 100\\pi \\cdot \\frac{1}{\\pi} = 100 \\ \Omega$$" },
+    { q: "Một đoạn mạch RLC nối tiếp có R = 30 Ω, Z_L = 80 Ω, Z_C = 40 Ω. Tổng trở Z của đoạn mạch bằng:", options: ["50 Ω", "150 Ω", "70 Ω", "110 Ω"], answer: 0, level: "medium", explain: "Tổng trở toàn mạch:\n$$Z = \\sqrt{R^2 + (Z_L - Z_C)^2} = \\sqrt{30^2 + (80 - 40)^2} = 50 \\ \Omega$$" },
+    { q: "Đặt điện áp xoay chiều hiệu dụng U = 200V vào hai đầu mạch RLC nối tiếp có R = 100 Ω, độ lệch pha giữa u và i là π/3. Tính công suất tiêu thụ P.", options: ["100 W", "200 W", "50 W", "400 W"], answer: 0, level: "hard", explain: "Do thiếu $Z_L, Z_C$, áp dụng công thức liên hệ trực tiếp qua hệ số công suất:\n$$P = \\frac{U^2 \\cdot \\cos^2\\varphi}{R} = \\frac{200^2 \\cdot \\cos^2(\\frac{\\pi}{3})}{100} = \\frac{40000 \\cdot 0.25}{100} = 100 \\text{ W}$$" },
+    { q: "Mạch RLC nối tiếp có R = 100 Ω, L = 2/π H, C = 10⁻⁴/π F. Đặt điện áp u = 220√2 * cos(100π*t) V. Tính công suất tiêu thụ P.", options: ["242 W", "484 W", "121 W", "220 W"], answer: 0, level: "hard", explain: "*   $Z_L = 100\\pi \\cdot \\frac{2}{\\pi} = 200\\ \\Omega$; $Z_C = 100\\ \\Omega$.\n*   $Z = \\sqrt{100^2 + (200 - 100)^2} = 100\\sqrt{2}\\ \\Omega$.\n*   Dòng điện hiệu dụng: $I = \\frac{U}{Z} = \\frac{220}{100\\sqrt{2}} = \\frac{2.2}{\\sqrt{2}}\\text{ A}$.\n*   Công suất tiêu thụ: $P = I^2 R = \\left(\\frac{2.2}{\\sqrt{2}}\\right)^2 \\cdot 100 = 2.42 \\cdot 100 = 242 \\text{ W}$." },
+    { q: "Mạch RLC nối tiếp đang có cộng hưởng điện. Nếu tăng tần số của dòng điện xoay chiều thì tổng trở Z của mạch sẽ:", options: ["Tăng", "Giảm", "Không đổi", "Bằng 0"], answer: 0, level: "hard", explain: "Khi có cộng hưởng, $Z_{min} = R$. Nếu thay đổi tần số (tăng lên), dung kháng giảm và cảm kháng tăng, dẫn đến $(Z_L - Z_C)^2 > 0$, do đó tổng trở $Z = \\sqrt{R^2 + (Z_L - Z_C)^2}$ chắc chắn tăng lên." }
+  ],
+  chemistry_12: [
+    { q: "Este no, đơn chức, mạch hở có công thức phân tử tổng quát dạng nào?", options: ["C_nH₂nO₂ (n ≥ 2)", "C_nH₂n₊₂O₂ (n ≥ 2)", "C_nH₂n₋₂O₂ (n ≥ 3)", "C_nH₂nO (n ≥ 2)"], answer: 0, level: "easy", explain: "Este no, đơn chức, mạch hở có công thức tổng quát là $C_nH_{2n}O_2$ với $n \\ge 2$." },
+    { q: "Phản ứng thủy phân este trong môi trường kiềm (ví dụ NaOH) còn được gọi là phản ứng:", options: ["Xà phòng hóa", "Este hóa", "Trùng hợp", "Khử cực"], answer: 0, level: "easy", explain: "Thủy phân este trong dung dịch kiềm tạo ra muối muối natri/kali của axit cacboxylic và ancol. Phản ứng này được gọi là phản ứng xà phòng hóa." },
+    { q: "Khi thủy phân phenyl axetat (CH₃COOC₆H₅) trong dung dịch NaOH dư, thu được muối nào?", options: ["CH₃COONa và C₆H₅ONa", "CH₃COONa và C₆H₅OH", "CH₃COOH và C₆H₅ONa", "C₆H₅COONa và CH₃ONa"], answer: 0, level: "easy", explain: "*   Phenyl axetat phản ứng tạo $CH_3COONa$ và phenol $C_6H_5OH$.\n*   Do phenol có tính axit yếu nên lập tức phản ứng tiếp với $NaOH$ dư để tạo muối natri phenolat $C_6H_5ONa$. Sản phẩm thu được gồm 2 muối: $CH_3COONa$ và $C_6H_5ONa$." },
+    { q: "Chất béo (triglycerit) là trieste của axit béo với ancol nào sau đây?", options: ["Glixerol", "Metanol", "Etanol", "Etylen glicol"], answer: 0, level: "easy", explain: "Chất béo theo định nghĩa là trieste của axit béo với glixerol ($C_3H_5(OH)_3$)." },
+    { q: "Sản phẩm thủy phân este etyl axetat (CH₃COOC₂H₅) trong môi trường axit là:", options: ["CH₃COOH và C₂H₅OH", "CH₃COONa và C₂H₅OH", "C₂H₅COOH và CH₃OH", "CH₃COOH và CH₃OH"], answer: 0, level: "medium", explain: "Phản ứng thủy phân este trong môi trường axit tạo ra axit cacboxylic tương ứng và ancol:\n$$CH_3COOC_2H_5 + H_2O \\rightleftharpoons CH_3COOH + C_2H_5OH$$" },
+    { q: "Công thức cấu tạo thu gọn của metyl axetat là:", options: ["CH₃COOCH₃", "HCOOCH₃", "CH₃COOC₂H₅", "C₂H₅COOCH₃"], answer: 0, level: "medium", explain: "Metyl axetat gồm gốc axetat ($CH_3COO-$) gắn với gốc metyl ($-CH_3$): $CH_3COOCH_3$." },
+    { q: "Chất béo lỏng (dầu thực vật) chứa chủ yếu các gốc axit béo loại nào?", options: ["Không no, có chứa liên kết đôi", "No, chỉ chứa liên kết đơn", "Thơm, có vòng benzen", "Axit mạch vòng"], answer: 0, level: "medium", explain: "Chất béo lỏng (dầu thực vật) chứa chủ yếu các gốc axit béo không no (chứa liên kết đôi $C=C$), có nhiệt độ nóng chảy thấp nên ở trạng thái lỏng ở nhiệt độ thường." },
+    { q: "Xà phòng hóa hoàn toàn 17.24 gam chất béo cần dùng vừa đủ dung dịch chứa 0.06 mol NaOH. Tính khối lượng muối thu được.", options: ["17.8 gam", "16.8 gam", "18.2 gam", "17.4 gam"], answer: 0, level: "hard", explain: "*   $n_{glixerol} = \\frac{1}{3} n_{NaOH} = 0.02\\text{ mol}$.\n*   Áp dụng định luật bảo toàn khối lượng:\n    $$m_{béo} + m_{NaOH} = m_{muối} + m_{glixerol}$$\n    $$17.24 + 0.06 \\cdot 40 = m_{muối} + 0.02 \\cdot 92$$\n    $$17.24 + 2.4 = m_{muối} + 1.84 \\implies m_{muối} = 17.8 \\text{ gam}$$" },
+    { q: "Thủy phân hoàn toàn 8.8 gam etyl axetat bằng dung dịch NaOH vừa đủ, cô cạn dung dịch thu được bao nhiêu gam muối khan?", options: ["8.2 gam", "10.2 gam", "9.6 gam", "7.4 gam"], answer: 0, level: "hard", explain: "*   $n_{este} = \\frac{8.8}{88} = 0.1\\text{ mol}$.\n*   Phản ứng sinh ra muối $CH_3COONa$:\n    $$n_{muối} = n_{este} = 0.1\\text{ mol}$$\n*   Khối lượng muối thu được:\n    $$m = 0.1 \\cdot 82 = 8.2 \\text{ gam}$$" },
+    { q: "Cho este no đơn chức mạch hở X phản ứng xà phòng hóa với NaOH sinh ra muối natri axetat và ancol etylic. Este X là:", options: ["Etyl axetat", "Metyl axetat", "Etyl fomat", "Metyl fomat"], answer: 0, level: "hard", explain: "Muối natri axetat ($CH_3COONa$) và ancol etylic ($C_2H_5OH$) tương ứng với este là $CH_3COOC_2H_5$ (etyl axetat)." }
+  ]
+};
+
+// Câu hỏi tự luận từ cơ bản đến nâng cao cho 12 tổ hợp môn học
+const extendedEssays = {
+  // LỚP 10
+  math_10: [
+    { q: "Cho hai tập hợp A = [-2; 4] và B = (0; 5). Hãy xác định các tập hợp sau và biểu diễn trên trục số: A ∩ B, A ∪ B và A \\ B.", level: "easy", sampleAnswer: "1. A ∩ B = (0; 4]\n2. A ∪ B = [-2; 5)\n3. A \\ B = [-2; 0]" },
+    { q: "Cho tam giác ABC có a = 5 cm, b = 7 cm, c = 8 cm. Hãy tính diện tích S của tam giác ABC và bán kính R của đường tròn ngoại tiếp tam giác.", level: "medium", sampleAnswer: "1. Nửa chu vi p = (5 + 7 + 8)/2 = 10 cm.\n2. Công thức Heron: S = √[10*(10-5)*(10-7)*(10-8)] = √[10*5*3*2] = √300 = 10√3 cm² ≈ 17.32 cm².\n3. R = (a*b*c)/(4S) = (5*7*8)/(4*10√3) = 280/(40√3) = 7/√3 = 7√3/3 cm ≈ 4.04 cm." },
+    { q: "Một nhóm học tập có 6 học sinh nam và 4 học sinh nữ. Cần lập ban cán sự lớp gồm 3 người. Có bao nhiêu cách chọn ban cán sự sao cho trong đó có ít nhất 1 học sinh nữ?", level: "hard", sampleAnswer: "Cách 1: Tính gián tiếp (Phủ định):\n1. Tổng số cách chọn 3 học sinh bất kỳ từ 10 học sinh: C₁₀³ = 120 cách.\n2. Số cách chọn 3 học sinh toàn nam (không có nữ): C_6³ = 20 cách.\n3. Số cách chọn có ít nhất 1 nữ: 120 - 20 = 100 cách.\n\nCách 2: Tính trực tiếp:\n- TH1: 1 nữ, 2 nam: C_4¹ * C_6² = 4 * 15 = 60 cách.\n- TH2: 2 nữ, 1 nam: C_4² * C_6¹ = 6 * 6 = 36 cách.\n- TH3: 3 nữ, 0 nam: C_4³ * C_6⁰ = 4 * 1 = 4 cách.\n- Tổng: 60 + 36 + 4 = 100 cách." }
+  ],
+  physics_10: [
+    { q: "Một vật nặng rơi tự do không vận tốc đầu từ độ cao 45 m xuống đất. Lấy g = 10 m/s². Tính thời gian rơi và vận tốc của vật khi chạm đất.", level: "easy", sampleAnswer: "1. Thời gian rơi: t = √(2h/g) = √(2*45/10) = √9 = 3 giây.\n2. Vận tốc lúc chạm đất: v = g * t = 10 * 3 = 30 m/s." },
+    { q: "Một xe có khối lượng 1 tấn đang chạy trên đường nằm ngang với vận tốc 72 km/h thì hãm phanh chuyển động chậm dần đều. Hệ số ma sát giữa bánh xe và mặt đường là μ = 0.2. Tính quãng đường xe đi được từ lúc hãm phanh đến khi dừng lại. Lấy g = 10 m/s².", level: "medium", sampleAnswer: "1. Đổi v₀ = 72 km/h = 20 m/s; m = 1000 kg. Dừng lại nên v = 0.\n2. Lực ma sát đóng vai trò lực hãm: F_ms = μ * m * g = 0.2 * 1000 * 10 = 2000 N.\n3. Gia tốc của xe: a = -F_ms / m = -2000 / 1000 = -2 m/s².\n4. Quãng đường đi được: v² - v₀² = 2as => 0 - 20² = 2 * (-2) * s => -400 = -4s => s = 100 m." },
+    { q: "Một lò xo treo thẳng đứng có độ cứng k = 50 N/m. Đầu dưới treo quả nặng m₁ = 200g thì lò xo giãn ra một đoạn Δl₁. Treo thêm quả nặng m₂ = 100g thì lò xo giãn thêm một đoạn bao nhiêu? Lấy g = 10 m/s².", level: "hard", sampleAnswer: "1. Khi treo m₁: k * Δl₁ = m₁ * g => Δl₁ = (0.2 * 10) / 50 = 0.04 m = 4 cm.\n2. Khi treo thêm m₂: lực kéo tăng thêm F_kéo_thêm = m₂ * g = 0.1 * 10 = 1 N.\n3. Độ giãn thêm Δl_thêm = F_kéo_thêm / k = 1 / 50 = 0.02 m = 2 cm.\n*(Tổng độ giãn là 6 cm, đoạn giãn thêm do m₂ là 2 cm)*" }
+  ],
+  chemistry_10: [
+    { q: "Nguyên tố X có số hiệu nguyên tử Z = 17. Hãy viết cấu hình electron của nguyên tử X và xác định vị trí của X (ô, chu kỳ, nhóm) trong bảng tuần hoàn.", level: "easy", sampleAnswer: "1. Cấu hình electron: 1s² 2s² 2p⁶ 3s² 3p⁵.\n2. Vị trí trong bảng tuần hoàn:\n- Ô số 17 (Z = 17).\n- Chu kỳ 3 (có 3 lớp electron).\n- Nhóm VIIA (có 7 electron lớp ngoài cùng, thuộc phân nhóm chính nguyên tố p)." },
+    { q: "Cho 4.6 gam kim loại Natri (Na) phản ứng hoàn toàn với nước dư sinh ra dung dịch bazơ NaOH và khí Hydro (H₂). Tính thể tích khí H₂ thu được ở điều kiện tiêu chuẩn. (Cho Na = 23)", level: "medium", sampleAnswer: "1. Phương trình phản ứng: 2Na + 2H₂O → 2NaOH + H₂\n2. Số mol Na: n_Na = 4.6 / 23 = 0.2 mol.\n3. Theo phương trình: n_H₂ = 1/2 * n_Na = 0.1 mol.\n4. Thể tích khí H₂ (đktc): V = 0.1 * 22.4 = 2.24 lít." },
+    { q: "Cân bằng phản ứng oxi hóa - khử sau bằng phương pháp thăng bằng electron, chỉ rõ chất khử và chất oxi hóa:\nFeSO₄ + KMnO₄ + H₂SO₄ → Fe₂(SO₄)₃ + MnSO₄ + K₂SO₄ + H₂O", level: "hard", sampleAnswer: "1. Xác định sự thay đổi số oxi hóa:\n- Fe⁺² → Fe⁺³ (nhường 1e, hay 2Fe⁺² → 2Fe⁺³ + 2e)\n- Mn⁺⁷ → Mn⁺² (nhận 5e)\n2. Thăng bằng electron:\n- 5 * (2Fe⁺² → 2Fe⁺³ + 2e)  (quá trình oxi hóa)\n- 2 * (Mn⁺⁷ + 5e → Mn⁺²)    (quá trình khử)\n3. Đưa hệ số vào phương trình:\n10FeSO₄ + 2KMnO₄ + 8H₂SO₄ → 5Fe₂(SO₄)₃ + 2MnSO₄ + K₂SO₄ + 8H₂O\n- Chất khử: FeSO₄ (chứa Fe⁺² có số oxi hóa tăng lên +3).\n- Chất oxi hóa: KMnO₄ (chứa Mn⁺⁷ có số oxi hóa giảm xuống +2)." }
+  ],
+  english_10: [
+    { q: "Write a short paragraph (50-70 words) about how technology has changed your learning habits. Use at least two vocabulary words from Chapter 2 (e.g., database, access code, software, computers).", level: "easy", sampleAnswer: "Sample Answer: Computers have completely changed my learning habits. I use modern software to practice tests and look up equations. Instead of searching through paper books, I can access online databases for instant resources. Entering a password or access code to my school account allows me to study anywhere and anytime." },
+    { q: "Explain the difference between 'amend' and 'streamline' in business contexts, and write one sentence for each to illustrate.", level: "medium", sampleAnswer: "1. Explanation: 'Amend' means to legally change or correct a document or agreement. 'Streamline' means to simplify office or production processes to increase efficiency and eliminate waste.\n2. Examples:\n- The legal team decided to amend the contract to add the new refund policies.\n- We streamlined the registration system to reduce the waiting time for students." },
+    { q: "Read the sentence and rewrite it using the word 'downsizing': 'The company had to reduce the number of employees because of financial difficulties.'", level: "hard", sampleAnswer: "Rewritten Sentence: The company had to announce a major downsizing plan due to financial difficulties. (Or: The company went through a downsizing process because of financial problems.)" }
+  ],
+
+  // LỚP 11
+  math_11: [
+    { q: "Giải phương trình lượng giác sau: 2*cos(x) - 1 = 0.", level: "easy", sampleAnswer: "2*cos(x) - 1 = 0 <=> cos(x) = 1/2\n<=> cos(x) = cos(π/3)\n<=> x = ±π/3 + k*2π (k ∈ ℤ)" },
+    { q: "Cho cấp số nhân (u_n) biết u₁ = 3 và u₄ = 24. Hãy tìm công bội q và tính tổng 5 số hạng đầu tiên (S₅) của cấp số nhân này.", level: "medium", sampleAnswer: "1. Ta có u₄ = u₁ * q³ => 24 = 3 * q³ => q³ = 8 => q = 2.\n2. Tổng 5 số hạng đầu: S₅ = u₁ * (1 - q⁵) / (1 - q) = 3 * (1 - 2⁵) / (1 - 2) = 3 * (1 - 32) / (-1) = 3 * (-31) / (-1) = 93." },
+    { q: "Tính giới hạn sau: L = lim (√(n² + 3n) - n) khi n tiến tới vô cùng.", level: "hard", sampleAnswer: "Nhân liên hợp:\nL = lim [ (√(n² + 3n) - n)(√(n² + 3n) + n) ] / [ √(n² + 3n) + n ]\nL = lim [ (n² + 3n - n²) ] / [ √(n² + 3n) + n ]\nL = lim (3n) / [ n*√(1 + 3/n) + n ]\nChia cả tử và mẫu cho n:\nL = lim 3 / [ √(1 + 3/n) + 1 ] = 3 / (1 + 1) = 3/2 = 1.5." }
+  ],
+  physics_11: [
+    { q: "Hai điện tích điểm q₁ = 2 * 10⁻⁸ C và q₂ = -2 * 10⁻⁸ C đặt cách nhau 10 cm trong chân không. Tính độ lớn lực hút tĩnh điện giữa chúng.", level: "easy", sampleAnswer: "1. Đổi r = 10 cm = 0.1 m.\n2. Áp dụng định luật Coulomb: F = k * |q₁*q₂| / r² = 9 * 10⁹ * |2*10⁻⁸ * (-2*10⁻⁸)| / 0.1²\n3. F = 9 * 10⁹ * 4 * 10⁻¹⁶ / 0.01 = 36 * 10⁻⁷ / 10⁻² = 3.6 * 10⁻⁵ N." },
+    { q: "Một con lắc lò xo treo thẳng đứng dao động điều hòa. Khi vật ở VTCB, lò xo giãn 10 cm. Lấy g = 10 m/s² và π² = 10. Hãy tính chu kỳ dao động T của con lắc này.", level: "medium", sampleAnswer: "1. Đổi Δl₀ = 10 cm = 0.1 m.\n2. Ta có công thức kết hợp khi thiếu khối lượng m: T = 2π * √(Δl₀ / g)\n3. T = 2π * √(0.1 / 10) = 2π * √0.01 = 2π * 0.1 = 0.2π (giây) ≈ 0.628 giây." },
+    { q: "Một tụ điện có ghi 20 μF - 50V. Tụ được tích điện dưới hiệu điện thế 30V. Tính điện tích q tích được trên tụ và năng lượng điện trường dự trữ trong tụ lúc đó.", level: "hard", sampleAnswer: "1. Đổi C = 20 μF = 20 * 10⁻⁶ F. Điện áp U = 30 V.\n2. Điện tích trên tụ: q = C * U = 20*10⁻⁶ * 30 = 6 * 10⁻⁴ C.\n3. Năng lượng điện trường dự trữ: W = 1/2 * C * U² = 1/2 * 20*10⁻⁶ * 30² = 10⁻⁵ * 900 = 9 * 10⁻³ J = 0.009 J." }
+  ],
+  chemistry_11: [
+    { q: "Hãy tính pH của dung dịch axit mạnh HNO₃ có nồng độ mol là 0.001 M. Cho biết đây là chất điện li mạnh hay yếu.", level: "easy", sampleAnswer: "1. HNO₃ là chất điện li mạnh, phân li hoàn toàn: HNO₃ → H⁺ + NO₃⁻\n2. Nồng độ ion H⁺: [H⁺] = [HNO₃] = 0.001 M = 10⁻³ M.\n3. pH = -log[H⁺] = -log(10⁻³) = 3." },
+    { q: "Tính pH của dung dịch kiềm Ba(OH)₂ có nồng độ 0.005 M ở 25°C.", level: "medium", sampleAnswer: "1. Ba(OH)₂ phân li hoàn toàn tạo ra 2 ion OH⁻: Ba(OH)₂ → Ba²⁺ + 2OH⁻\n2. Nồng độ ion OH⁻: [OH⁻] = 2 * [Ba(OH)₂] = 2 * 0.005 = 0.01 M = 10⁻² M.\n3. pOH = -log[OH⁻] = -log(10⁻²) = 2.\n4. Áp dụng công thức liên hệ pH + pOH = 14 => pH = 14 - 2 = 12." },
+    { q: "Trộn 200 ml dung dịch HCl 0.15 M với 300 ml dung dịch NaOH 0.1 M thu được dung dịch X. Tính pH của dung dịch X ở 25°C.", level: "hard", sampleAnswer: "1. Tính số mol ion phản ứng:\n- n_H⁺ = n_HCl = 0.2 * 0.15 = 0.03 mol.\n- n_OH⁻ = n_NaOH = 0.3 * 0.1 = 0.03 mol.\n2. Phản ứng trung hòa: H⁺ + OH⁻ → H₂O\n3. Nhận thấy n_H⁺ = n_OH⁻ = 0.03 mol nên phản ứng vừa đủ, sau phản ứng dung dịch chỉ chứa muối trung hòa NaCl và nước.\n4. Môi trường trung tính, do đó ở 25°C dung dịch có pH = 7." }
+  ],
+  english_11: [
+    { q: "Write a short paragraph (60-80 words) describing the causes and effects of deforestation on local ecosystems. Use the words 'deforestation' and 'ecosystem' in your paragraph.", level: "easy", sampleAnswer: "Sample Answer: Deforestation is causing massive damage to nature. The primary cause of deforestation is human activity, such as cutting down trees for agriculture and timber. As a result, the local ecosystem is severely disrupted. Animals lose their natural habitats, leading to biodiversity loss, and soil erosion increases global warming effects." },
+    { q: "What is 'biodegradable packaging' and why is it considered sustainable? Write a paragraph to explain.", level: "medium", sampleAnswer: "Sample Answer: Biodegradable packaging refers to boxes or bags made of natural materials that can be broken down by bacteria or other organisms easily. It is considered sustainable because it does not pollute the oceans or landfill sites for hundreds of years like plastic does, thus preserving resource availability for future generations." },
+    { q: "Complete the sentence with an explanation: 'Environmental conservation is crucial because...'", level: "hard", sampleAnswer: "Sample Answer: Environmental conservation is crucial because it helps protect fragile ecosystems, prevents the depletion of finite natural resources like clean water and forests, and combats global climate change, ensuring a clean and inhabitable planet for future human generations." }
+  ],
+
+  // LỚP 12
+  math_12: [
+    { q: "Tính tích phân sau: I = ∫₀¹ (3x² + 2x) dx.", level: "easy", sampleAnswer: "1. Tìm nguyên hàm của f(x) = 3x² + 2x: F(x) = x³ + x².\n2. Tính tích phân: I = F(1) - F(0) = (1³ + 1²) - (0³ + 0²) = 2 - 0 = 2." },
+    { q: "Trong không gian Oxyz, cho ba điểm A(2; 0; 0), B(0; -3; 0), C(0; 0; 4). Hãy viết phương trình mặt phẳng (ABC) dưới dạng phương trình đoạn chắn và phương trình tổng quát.", level: "medium", sampleAnswer: "1. Phương trình đoạn chắn của mặt phẳng đi qua A, B, C nằm trên 3 trục tọa độ là:\nx/2 + y/(-3) + z/4 = 1\n2. Quy đồng mẫu số chung là 12 để đưa về dạng tổng quát:\n6x - 4y + 3z = 12 <=> 6x - 4y + 3z - 12 = 0." },
+    { q: "Tìm giá trị lớn nhất (GTLN) và giá trị nhỏ nhất (GTNN) của hàm số y = x³ - 3x² + 1 trên đoạn [1; 3].", level: "hard", sampleAnswer: "1. Đạo hàm: y' = 3x² - 6x. Cho y' = 0 <=> 3x(x - 2) = 0 <=> x = 0 hoặc x = 2.\n2. Trên đoạn [1; 3], ta chỉ xét giá trị x = 2 (do x = 0 nằm ngoài đoạn).\n3. Tính các giá trị:\n- Biên x = 1: y(1) = 1³ - 3*1² + 1 = -1.\n- Cực trị x = 2: y(2) = 2³ - 3*2² + 1 = 8 - 12 + 1 = -3.\n- Biên x = 3: y(3) = 3³ - 3*3² + 1 = 1.\n4. So sánh kết quả:\n- GTLN (Max y) = 1 tại x = 3.\n- GTNN (Min y) = -3 tại x = 2." }
+  ],
+  physics_12: [
+    { q: "Đặt điện áp xoay chiều u = 220√2 * cos(100π*t) V vào hai đầu đoạn mạch nối tiếp gồm điện trở R = 100 Ω và cuộn cảm thuần có L = 1/π H. Tính cảm kháng Z_L và cường độ dòng điện hiệu dụng chạy trong mạch.", level: "easy", sampleAnswer: "1. Tần số góc ω = 100π rad/s. Cảm kháng: Z_L = ω * L = 100π * (1/π) = 100 Ω.\n2. Điện áp hiệu dụng U = 220 V. Tổng trở mạch: Z = √(R² + Z_L²) = √(100² + 100²) = 100√2 Ω.\n3. Cường độ dòng điện hiệu dụng: I = U / Z = 220 / (100√2) = 2.2 / √2 A = 1.1√2 A ≈ 1.56 A." },
+    { q: "Đặt điện áp xoay chiều U = 220 V vào hai đầu mạch RLC nối tiếp có R = 110 Ω. Biết cường độ dòng điện trễ pha π/3 so với điện áp hai đầu mạch. Tính hệ số công suất của mạch và công suất tiêu thụ P của mạch.", level: "medium", sampleAnswer: "1. Độ lệch pha φ = π/3. Hệ số công suất: cos(φ) = cos(π/3) = 0.5.\n2. Vì thiếu cảm kháng Z_L và dung kháng Z_C, áp dụng công thức kết hợp: P = (U² * cos²φ) / R\n3. P = (220² * 0.5²) / 110 = (48400 * 0.25) / 110 = 12100 / 110 = 110 W." },
+    { q: "Một đoạn mạch RLC nối tiếp gồm điện trở R = 50 Ω, cuộn cảm thuần có L = 1/π H và tụ điện có C = 2 * 10⁻⁴/π F. Đặt vào hai đầu mạch điện áp xoay chiều u = 220√2 * cos(100π*t) V. Hãy viết biểu thức cường độ dòng điện tức thời i chạy trong mạch.", level: "hard", sampleAnswer: "1. Tính các trở kháng:\n- Z_L = 100π * 1/π = 100 Ω.\n- Z_C = 1 / (100π * 2*10⁻⁴/π) = 1 / 0.02 = 50 Ω.\n2. Tổng trở: Z = √[R² + (Z_L - Z_C)²] = √[50² + (100 - 50)²] = 50√2 Ω.\n3. Cường độ dòng điện cực đại: I₀ = U₀ / Z = 220√2 / 50√2 = 4.4 A.\n4. Tính độ lệch pha: tan(φ) = (Z_L - Z_C)/R = (100 - 50)/50 = 1 => φ = π/4.\nVì φ = φ_u - φ_i => φ_i = φ_u - φ = 0 - π/4 = -π/4.\n5. Biểu thức cường độ dòng điện: i = 4.4 * cos(100π*t - π/4) A." }
+  ],
+  chemistry_12: [
+    { q: "Hãy viết phương trình phản ứng hóa học (dạng cấu tạo thu gọn) của phản ứng thủy phân Etyl axetat (CH₃COOC₂H₅) trong dung dịch kiềm NaOH nóng. Cho biết tên phản ứng này.", level: "easy", sampleAnswer: "1. Phương trình phản ứng:\nCH₃COOC₂H₅ + NaOH --(t°)--> CH₃COONa + C₂H₅OH\n2. Tên phản ứng: Phản ứng xà phòng hóa." },
+    { q: "Hãy tính khối lượng của glixerol thu được khi thủy phân hoàn toàn 8.9 gam chất béo tripanmitin (C₁₅H₃₁COO)₃C₃H₅ bằng dung dịch NaOH dư. (Cho C = 12, H = 1, O = 16)", level: "medium", sampleAnswer: "1. Tính phân tử khối tripanmitin: M = 806 g/mol.\n2. Số mol tripanmitin: n = 8.9 / 806 ≈ 0.011 mol.\n3. Phương trình thủy phân:\n(C₁₅H₃₁COO)₃C₃H₅ + 3NaOH → 3C₁₅H₃₁COONa + C₃H₅(OH)₃\n4. Số mol glixerol sinh ra bằng số mol tripanmitin: n_glixerol = 0.011 mol.\n5. Khối lượng glixerol: m = 0.011 * 92 ≈ 1.01 gam." },
+    { q: "Thủy phân hoàn toàn m gam chất béo (triglycerit) cần dùng vừa đủ 120 ml dung dịch NaOH 1M. Sau phản ứng cô cạn thu được 35.68 gam hỗn hợp muối khan. Hãy tính giá trị m.", level: "hard", sampleAnswer: "1. Tính số mol NaOH phản ứng: n_NaOH = 0.12 * 1 = 0.12 mol.\n2. Tính số mol glixerol sinh ra theo tỉ lệ: n_glixerol = 1/3 * n_NaOH = 0.04 mol.\n3. Tính khối lượng các chất:\n- m_NaOH = 0.12 * 40 = 4.8 gam.\n- m_glixerol = 0.04 * 92 = 3.68 gam.\n4. Áp dụng định luật bảo toàn khối lượng:\nm_chất_béo + m_NaOH = m_muối + m_glixerol\nm + 4.8 = 35.68 + 3.68 => m + 4.8 = 39.36 => m = 34.56 gam.\n*Kết quả: Khối lượng chất béo m = 34.56 gam.*" }
+  ],
+  english_12: [
+    { q: "What is 'carbon footprint' and write down two methods a household can do to decrease their carbon footprint in daily activities.", level: "easy", sampleAnswer: "Sample Answer: Carbon footprint is the total amount of greenhouse gases released due to an individual or household's activities. A household can decrease it by: 1) shifting to energy-efficient appliances and lighting (e.g., LED), and 2) using public transportation or carpooling to reduce vehicle emissions." },
+    { q: "Explain why 'sustainable development' is a geopolitical concern rather than just an environmental issue.", level: "medium", sampleAnswer: "Sample Answer: Sustainable development is a geopolitical concern because natural resources (like oil, gas, and water) are shared globally. Depletion of resources in one country can trigger migration, border disputes, or trade wars. Therefore, international cooperation and treaties are required to ensure resource sustainability and avoid political instability." },
+    { q: "Read this statement: 'The world needs to invest in ecosystem rehabilitation to prevent irreversible climate change.' Write an essay (100-120 words) explaining this statement using the vocabulary 'rehabilitation' and 'depletion'.", level: "hard", sampleAnswer: "Sample Answer: Human industrialization has caused severe depletion of resources and forests, putting wildlife habitats at risk. To combat this depletion, investing in ecosystem rehabilitation is urgent. Rehabilitation, which involves planting native trees and restoring wetlands, acts as carbon capture. Without rehabilitation, natural zones will continue to decline, releasing greenhouse gases and making climate change irreversible. Therefore, countries must collaborate on environmental rehabilitation projects immediately." }
+  ]
+};
+
+// Lưu dữ liệu cập nhật
+currentData.quizzes = extendedQuizzes;
+currentData.essays = extendedEssays;
+
+fs.writeFileSync(DATA_FILE, JSON.stringify(currentData, null, 2));
+console.log('Database extended successfully!');
