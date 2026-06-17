@@ -2346,6 +2346,14 @@
       "action": "LOGOUT",
       "details": "Đăng xuất tài khoản học sinh",
       "timestamp": "2026-06-17T14:43:56.524Z"
+    },
+    {
+      "id": "17817075928140.0011625872803073811",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-17T14:46:32.814Z"
     }
   ],
   "essays": {
