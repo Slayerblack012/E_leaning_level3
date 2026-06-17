@@ -61,7 +61,10 @@ Mã nguồn phía Backend được tái cấu trúc sạch sẽ (Clean Code) the
    ```env
    VITE_GEMINI_API_KEY=Nhập_API_Key_Gemini_Của_Bạn
    JWT_SECRET=mot_chuoi_bi_mat_bat_ky_cua_ban
+   REDIS_URL=redis://localhost:6379
    ```
+
+   Nếu chưa có Redis, hệ thống vẫn chạy với cơ chế rate limit dự phòng trong bộ nhớ. Khi deploy, nên trỏ `REDIS_URL` tới Redis dùng chung để giới hạn request hoạt động ổn định giữa nhiều instance hoặc serverless invocations.
 
 4. **Khởi chạy hệ thống:**
    *   **Chạy Frontend (React/Vite) ở chế độ Dev:**

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './pdfContextEnrichment';
 import App from './app_router.jsx';
 import './index.css';
 

@@ -4,22 +4,29 @@ const config = require('../config/config');
 const db = require('../models/db');
 
 async function register(req, res) {
-  const { username, password, role } = req.body;
-  if (!username || !password) {
+  const { username, password } = req.body;
+  const cleanUsername = typeof username === 'string' ? username.trim() : '';
+  const cleanPassword = typeof password === 'string' ? password : '';
+
+  if (!cleanUsername || !cleanPassword) {
     return res.status(400).json({ error: 'username and password required' });
   }
 
+  if (cleanUsername.length > 64 || cleanPassword.length < 8) {
+    return res.status(400).json({ error: 'Invalid username or password policy' });
+  }
+
   const data = db.readData();
-  const exists = data.users.find(u => u.username === username);
+  const exists = data.users.find(u => u.username === cleanUsername);
   if (exists) return res.status(409).json({ error: 'User exists' });
 
   try {
-    const hash = await bcrypt.hash(password, 10);
+    const hash = await bcrypt.hash(cleanPassword, 10);
     const user = {
       id: Date.now().toString(),
-      username,
+      username: cleanUsername,
       password: hash,
-      role: role || 'student',
+      role: 'student',
       createdAt: new Date().toISOString()
     };
     data.users.push(user);
