@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useGrade } from '../gradeContext';
 import { askGeminiAgent, getOfflineResponse } from '../geminiAgent';
 import { useNotification } from '../notificationContext';
@@ -6,16 +7,13 @@ import { logUserAction } from '../api';
 import { 
   Sparkles, 
   Send, 
-  ArrowRight,
   RefreshCw
 } from 'lucide-react';
-
 
 export default function TutorPage() {
   const { grade } = useGrade();
   const { showModal } = useNotification();
   const messagesEndRef = useRef(null);
-
 
   const [activeTutorSubject, setActiveTutorSubject] = useState('global'); // 'global', 'math', 'physics', 'chemistry', 'english'
   const [chatInput, setChatInput] = useState('');
@@ -53,7 +51,7 @@ export default function TutorPage() {
   // Scroll to bottom of chat
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [chats, activeTutorSubject, grade]);
+  }, [chats, activeTutorSubject, grade, loading]);
 
   const handleSendMessage = async (e) => {
     e.preventDefault();
@@ -77,7 +75,6 @@ export default function TutorPage() {
 
     setChatInput('');
     setLoading(true);
-
 
     let reply = "";
     if (apiKey) {
@@ -117,7 +114,6 @@ export default function TutorPage() {
       }
     });
   };
-
 
   const handleQuickQuestion = (questionText) => {
     setChatInput(questionText);
@@ -273,15 +269,17 @@ export default function TutorPage() {
   const activeTutor = getTutorInfo(activeTutorSubject);
 
   return (
-    <div className="fade-in" style={{ height: 'calc(100vh - 6rem)', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ height: 'calc(100vh - 6rem)', display: 'flex', flexDirection: 'column' }}>
       <header style={{ marginBottom: '1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
           <h1>Phòng Tự Học & Hỏi Đáp AI</h1>
           <p style={{ color: 'var(--text-muted)' }}>Tương tác trực tiếp với giáo viên ảo các môn Lớp {grade} 24/7</p>
         </div>
         
-        <button
+        <motion.button
           onClick={handleClearChat}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -294,14 +292,14 @@ export default function TutorPage() {
             cursor: 'pointer',
             fontWeight: 'bold',
             color: 'var(--text-muted)',
-            transition: 'all 0.2s'
+            transition: 'background-color 0.2s, color 0.2s'
           }}
           onMouseOver={(e) => { e.target.style.background = '#ffebe6'; e.target.style.color = 'var(--color-math)' }}
           onMouseOut={(e) => { e.target.style.background = '#ffffff'; e.target.style.color = 'var(--text-muted)' }}
         >
           <RefreshCw size={12} />
           <span>Làm mới đoạn chat</span>
-        </button>
+        </motion.button>
       </header>
 
       {/* Tutor Selector Buttons */}
@@ -310,9 +308,11 @@ export default function TutorPage() {
           const isActive = activeTutorSubject === t.id;
           const info = getTutorInfo(t.id);
           return (
-            <button
+            <motion.button
               key={t.id}
               onClick={() => setActiveTutorSubject(t.id)}
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.96 }}
               style={{
                 padding: '0.5rem 1rem',
                 borderRadius: '8px',
@@ -322,21 +322,21 @@ export default function TutorPage() {
                 cursor: 'pointer',
                 background: isActive ? info.theme : '#ffffff',
                 color: isActive ? '#ffffff' : 'var(--text-secondary)',
-                transition: 'all 0.2s',
+                transition: 'background-color 0.2s, color 0.2s, border-color 0.2s',
                 whiteSpace: 'nowrap'
               }}
             >
               {info.avatar} {t.label}
-            </button>
+            </motion.button>
           );
         })}
       </div>
 
-      {/* Chatroom Client */}
-      <div className="chat-container" style={{ flex: 1, height: 'auto', display: 'flex', flexDirection: 'column' }}>
+      {/* Chatroom Client - Styled like macOS application window */}
+      <div className="chat-container os-window" style={{ flex: 1, height: 'auto', display: 'flex', flexDirection: 'column' }}>
         
         {/* Chat Header */}
-        <div className="chat-header" style={{ borderLeft: `4px solid ${activeTutor.theme}` }}>
+        <div className="chat-header" style={{ borderLeft: `4px solid ${activeTutor.theme}`, background: '#f8f9fa' }}>
           <div className="chat-avatar" style={{ background: activeTutor.theme }}>
             {activeTutor.avatar}
             <span className="avatar-status-dot"></span>
@@ -349,35 +349,54 @@ export default function TutorPage() {
 
         {/* Messages List */}
         <div className="chat-messages" style={{ flex: 1, background: '#fafafa', padding: '1.5rem' }}>
-          {chats[activeChatKey]?.map((msg, index) => (
-            <div 
-              key={index} 
-              className={`message-bubble ${msg.role}`}
-              style={{
-                alignSelf: msg.role === 'user' ? 'flex-end' : 'flex-start',
-                background: msg.role === 'user' ? activeTutor.theme : '#ffffff',
-                color: msg.role === 'user' ? '#ffffff' : 'var(--text-primary)',
-                border: msg.role === 'assistant' ? '1px solid #e1e5eb' : 'none',
-                boxShadow: '0 1px 3px rgba(0,0,0,0.02)'
-              }}
-            >
-              {msg.role === 'assistant' ? renderFormattedText(msg.text) : msg.text}
-            </div>
-          ))}
-          {loading && (
-            <div className="message-bubble assistant" style={{ fontStyle: 'italic', color: 'var(--text-muted)', alignSelf: 'flex-start', background: '#ffffff', border: '1px solid #e1e5eb' }}>
-              {activeTutor.name} đang suy nghĩ...
-            </div>
-          )}
+          <AnimatePresence initial={false}>
+            {chats[activeChatKey]?.map((msg, index) => (
+              <motion.div 
+                key={index} 
+                initial={{ opacity: 0, y: 12, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ type: 'spring', stiffness: 350, damping: 25 }}
+                className={`message-bubble ${msg.role}`}
+                style={{
+                  alignSelf: msg.role === 'user' ? 'flex-end' : 'flex-start',
+                  background: msg.role === 'user' ? activeTutor.theme : '#ffffff',
+                  color: msg.role === 'user' ? '#ffffff' : 'var(--text-primary)',
+                  border: msg.role === 'assistant' ? '1px solid #e1e5eb' : 'none',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.02)'
+                }}
+              >
+                {msg.role === 'assistant' ? renderFormattedText(msg.text) : msg.text}
+              </motion.div>
+            ))}
+            {loading && (
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="message-bubble assistant" 
+                style={{ fontStyle: 'italic', color: 'var(--text-muted)', alignSelf: 'flex-start', background: '#ffffff', border: '1px solid #e1e5eb' }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                  <span>{activeTutor.name} đang suy nghĩ</span>
+                  <motion.span 
+                    animate={{ opacity: [0, 1, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.2, times: [0, 0.5, 1] }}
+                  >...</motion.span>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
           <div ref={messagesEndRef} />
         </div>
 
         {/* Suggestions footer */}
         <div style={{ padding: '0.5rem 1rem', background: '#ffffff', borderTop: '1px solid #e1e5eb', overflowX: 'auto', display: 'flex', gap: '0.5rem', whiteSpace: 'nowrap' }}>
           {quickSuggestions[activeTutorSubject]?.map((sug, i) => (
-            <button
+            <motion.button
               key={i}
               onClick={() => handleQuickQuestion(sug)}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
               style={{
                 background: '#f1f3f5',
                 border: '1px solid #e1e5eb',
@@ -386,13 +405,13 @@ export default function TutorPage() {
                 fontSize: '0.75rem',
                 cursor: 'pointer',
                 color: 'var(--text-secondary)',
-                transition: 'all 0.2s'
+                transition: 'background-color 0.2s, border-color 0.2s'
               }}
               onMouseOver={(e) => { e.target.style.background = '#e3fcef'; e.target.style.borderColor = '#00875a' }}
               onMouseOut={(e) => { e.target.style.background = '#f1f3f5'; e.target.style.borderColor = '#e1e5eb' }}
             >
               {sug}
-            </button>
+            </motion.button>
           ))}
         </div>
 
@@ -406,9 +425,16 @@ export default function TutorPage() {
             onChange={(e) => setChatInput(e.target.value)}
             disabled={loading}
           />
-          <button type="submit" className="chat-send-btn" disabled={loading} style={{ background: activeTutor.theme }}>
+          <motion.button 
+            type="submit" 
+            className="chat-send-btn" 
+            disabled={loading} 
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            style={{ background: activeTutor.theme }}
+          >
             <Send size={16} />
-          </button>
+          </motion.button>
         </form>
       </div>
     </div>

@@ -9,6 +9,7 @@ import {
   Menu, 
   X 
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useGrade } from '../gradeContext';
 import { useNotification } from '../notificationContext';
 import { logUserAction } from '../api';
@@ -125,7 +126,8 @@ export default function Layout({ children }) {
             background: '#f1f3f5', 
             padding: '0.2rem', 
             borderRadius: '6px', 
-            border: '1px solid var(--border-color)' 
+            border: '1px solid var(--border-color)',
+            position: 'relative'
           }}>
             {['10', '11', '12'].map((g) => (
               <button 
@@ -142,13 +144,28 @@ export default function Layout({ children }) {
                   fontSize: '0.8rem', 
                   fontWeight: 'bold', 
                   cursor: 'pointer', 
-                  background: grade === g ? '#ffffff' : 'transparent', 
+                  background: 'transparent',
                   color: grade === g ? 'var(--color-primary)' : 'var(--text-muted)', 
-                  boxShadow: grade === g ? '0 1px 3px rgba(0,0,0,0.06)' : 'none', 
-                  transition: 'all 0.2s' 
+                  position: 'relative',
+                  zIndex: 1,
+                  transition: 'color 0.25s' 
                 }}
               >
-                Lớp {g}
+                <span style={{ position: 'relative', zIndex: 2 }}>Lớp {g}</span>
+                {grade === g && (
+                  <motion.div
+                    layoutId="activeGrade"
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: '#ffffff',
+                      borderRadius: '4px',
+                      boxShadow: '0 1px 3px rgba(0,0,0,0.12)',
+                      zIndex: 1
+                    }}
+                    transition={{ type: 'spring', stiffness: 380, damping: 28 }}
+                  />
+                )}
               </button>
             ))}
           </div>
@@ -160,15 +177,42 @@ export default function Layout({ children }) {
             {menuItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
-                <li key={item.path}>
+                <li key={item.path} style={{ position: 'relative', marginBottom: '4px' }}>
                   <Link 
                     to={item.path} 
                     className={`menu-item ${isActive ? 'active' : ''}`}
                     onClick={() => setSidebarOpen(false)}
+                    style={{ 
+                      position: 'relative', 
+                      zIndex: 2,
+                      background: 'transparent',
+                      color: isActive ? 'var(--color-primary)' : 'var(--text-secondary)'
+                    }}
                   >
-                    <span className="menu-item-icon">{item.icon}</span>
+                    <motion.span 
+                      className="menu-item-icon"
+                      whileHover={{ scale: 1.15, rotate: 5 }}
+                      whileTap={{ scale: 0.95 }}
+                      style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+                    >
+                      {item.icon}
+                    </motion.span>
                     <span>{item.label}</span>
                   </Link>
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeNav"
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: 'rgba(0, 102, 204, 0.08)',
+                        borderRadius: 'var(--radius-sm)',
+                        zIndex: 1,
+                        pointerEvents: 'none'
+                      }}
+                      transition={{ type: 'spring', stiffness: 350, damping: 26 }}
+                    />
+                  )}
                 </li>
               );
             })}
@@ -188,8 +232,10 @@ export default function Layout({ children }) {
                   <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Học sinh Lớp {grade}</div>
                 </div>
               </div>
-              <button 
+              <motion.button 
                 onClick={handleLogout}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 style={{ 
                   width: '100%', 
                   padding: '0.4rem', 
@@ -200,13 +246,13 @@ export default function Layout({ children }) {
                   fontSize: '0.75rem', 
                   fontWeight: 'bold', 
                   cursor: 'pointer', 
-                  transition: 'all 0.2s' 
+                  transition: 'background-color 0.2s' 
                 }}
                 onMouseOver={(e) => { e.target.style.background = '#ffd1c5' }}
                 onMouseOut={(e) => { e.target.style.background = '#ffebe6' }}
               >
                 Đăng xuất
-              </button>
+              </motion.button>
             </div>
           ) : (
             <div style={{ display: 'flex', gap: '0.5rem', fontSize: '0.85rem', justifyContent: 'center' }}>

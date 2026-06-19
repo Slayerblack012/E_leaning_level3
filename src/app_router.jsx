@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import Dashboard from './pages/Dashboard';
 import LecturesPage from './pages/LecturesPage';
 import PracticePage from './pages/PracticePage';
@@ -30,6 +31,65 @@ function ProtectedRoute({ children }) {
   return children;
 }
 
+// Component bọc trang học để tự động chạy animation khi chuyển hướng
+function PageWrapper({ children }) {
+  const shouldReduceMotion = useReducedMotion();
+  
+  const pageVariants = {
+    initial: shouldReduceMotion 
+      ? { opacity: 0 } 
+      : { opacity: 0, y: 15 },
+    animate: shouldReduceMotion 
+      ? { opacity: 1 } 
+      : { opacity: 1, y: 0 },
+    exit: shouldReduceMotion 
+      ? { opacity: 0 } 
+      : { opacity: 0, y: -15 }
+  };
+
+  const pageTransition = shouldReduceMotion 
+    ? { duration: 0.15 } 
+    : { type: 'spring', stiffness: 300, damping: 30, mass: 0.8 };
+
+  return (
+    <motion.div
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={pageVariants}
+      transition={pageTransition}
+      style={{ width: '100%', height: '100%' }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+// Component chứa danh sách Routes được bao bọc bởi AnimatePresence
+function AnimatedRoutes() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        {/* Trang Auth */}
+        <Route path="/login" element={<AuthRoute><PageWrapper><Login /></PageWrapper></AuthRoute>} />
+        <Route path="/register" element={<AuthRoute><PageWrapper><Register /></PageWrapper></AuthRoute>} />
+        
+        {/* Trang học tập được bảo vệ */}
+        <Route path="/" element={<ProtectedRoute><PageWrapper><Dashboard /></PageWrapper></ProtectedRoute>} />
+        <Route path="/lectures" element={<ProtectedRoute><PageWrapper><LecturesPage /></PageWrapper></ProtectedRoute>} />
+        <Route path="/practice" element={<ProtectedRoute><PageWrapper><PracticePage /></PageWrapper></ProtectedRoute>} />
+        <Route path="/tutor" element={<ProtectedRoute><PageWrapper><TutorPage /></PageWrapper></ProtectedRoute>} />
+        <Route path="/settings" element={<ProtectedRoute><PageWrapper><SettingsPage /></PageWrapper></ProtectedRoute>} />
+        
+        {/* Điều hướng mặc định */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
 export default function App(){
   useEffect(()=>{
     const token = localStorage.getItem('token');
@@ -41,25 +101,10 @@ export default function App(){
       <NotificationProvider>
         <BrowserRouter>
           <Layout>
-            <Routes>
-              {/* Trang Auth */}
-              <Route path="/login" element={<AuthRoute><Login /></AuthRoute>} />
-              <Route path="/register" element={<AuthRoute><Register /></AuthRoute>} />
-              
-              {/* Trang học tập được bảo vệ */}
-              <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-              <Route path="/lectures" element={<ProtectedRoute><LecturesPage /></ProtectedRoute>} />
-              <Route path="/practice" element={<ProtectedRoute><PracticePage /></ProtectedRoute>} />
-              <Route path="/tutor" element={<ProtectedRoute><TutorPage /></ProtectedRoute>} />
-              <Route path="/settings" element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />
-              
-              {/* Điều hướng mặc định */}
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
+            <AnimatedRoutes />
           </Layout>
         </BrowserRouter>
       </NotificationProvider>
     </GradeProvider>
   );
 }
-

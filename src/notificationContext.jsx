@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { CheckCircle2, AlertTriangle, XCircle, Info, HelpCircle } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const NotificationContext = createContext();
 
@@ -42,15 +43,19 @@ export function NotificationProvider({ children }) {
         gap: '0.75rem',
         pointerEvents: 'none'
       }}>
-        {toasts.map(t => (
-          <ToastItem key={t.id} toast={t} onClose={removeToast} />
-        ))}
+        <AnimatePresence>
+          {toasts.map(t => (
+            <ToastItem key={t.id} toast={t} onClose={removeToast} />
+          ))}
+        </AnimatePresence>
       </div>
 
       {/* Modal Popup Overlay */}
-      {modal && (
-        <ModalPopup modal={modal} onClose={closeModal} />
-      )}
+      <AnimatePresence>
+        {modal && (
+          <ModalPopup modal={modal} onClose={closeModal} />
+        )}
+      </AnimatePresence>
     </NotificationContext.Provider>
   );
 }
@@ -109,21 +114,27 @@ function ToastItem({ toast, onClose }) {
   };
 
   return (
-    <div className="fade-in" style={{
-      pointerEvents: 'auto',
-      background: 'rgba(10, 18, 30, 0.95)',
-      border: `1px solid ${getBorderColor()}`,
-      borderRadius: '4px',
-      boxShadow: `0 0 15px ${getBorderColor()}66, inset 0 0 8px rgba(0, 240, 255, 0.1)`,
-      padding: '0.85rem 1.25rem',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '0.4rem',
-      minWidth: '300px',
-      maxWidth: '400px',
-      fontFamily: 'var(--font-body)',
-      animation: 'slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards'
-    }}>
+    <motion.div
+      layout
+      initial={{ opacity: 0, x: 80, scale: 0.95 }}
+      animate={{ opacity: 1, x: 0, scale: 1 }}
+      exit={{ opacity: 0, x: 80, scale: 0.9, transition: { duration: 0.2 } }}
+      transition={{ type: 'spring', stiffness: 350, damping: 25 }}
+      style={{
+        pointerEvents: 'auto',
+        background: 'rgba(10, 18, 30, 0.95)',
+        border: `1px solid ${getBorderColor()}`,
+        borderRadius: 'var(--radius-md)',
+        boxShadow: `0 8px 24px rgba(0, 0, 0, 0.15), 0 0 15px ${getBorderColor()}33, inset 0 0 8px rgba(0, 240, 255, 0.1)`,
+        padding: '0.85rem 1.25rem',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '0.4rem',
+        minWidth: '300px',
+        maxWidth: '400px',
+        fontFamily: 'var(--font-body)'
+      }}
+    >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: `1px solid ${getBorderColor()}33`, paddingBottom: '0.25rem' }}>
         <span style={{ 
           fontSize: '0.75rem', 
@@ -161,7 +172,7 @@ function ToastItem({ toast, onClose }) {
           {toast.message}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -194,32 +205,55 @@ function ModalPopup({ modal, onClose }) {
   const accentColor = '#00f0ff';
 
   return (
-    <div style={{
-      position: 'fixed',
-      inset: 0,
-      background: 'rgba(5, 10, 18, 0.75)',
-      backdropFilter: 'blur(6px)',
-      WebkitBackdropFilter: 'blur(6px)',
-      zIndex: 9999,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '1.5rem',
-      animation: 'fadeIn 0.2s ease-out forwards'
-    }}>
-      <div style={{
-        background: 'rgba(10, 20, 35, 0.96)',
-        border: `2px solid ${borderColor}`,
-        borderRadius: '8px',
-        boxShadow: `0 0 30px ${borderColor}44, inset 0 0 15px rgba(0, 240, 255, 0.1)`,
-        width: '100%',
-        maxWidth: '480px',
-        padding: '2rem 1.75rem',
-        position: 'relative',
-        animation: 'scaleUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
-        textAlign: 'center',
-        color: '#f8fafc'
-      }}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.15 } }}
+      style={{
+        position: 'fixed',
+        inset: 0,
+        background: 'rgba(5, 10, 18, 0.65)',
+        backdropFilter: 'blur(8px)',
+        WebkitBackdropFilter: 'blur(8px)',
+        zIndex: 9999,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '1.5rem'
+      }}
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.92, y: 15 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 10, transition: { duration: 0.15 } }}
+        transition={{ type: 'spring', stiffness: 380, damping: 28 }}
+        style={{
+          background: 'rgba(10, 20, 35, 0.96)',
+          border: `1.5px solid ${borderColor}`,
+          borderRadius: 'var(--radius-lg)',
+          boxShadow: `0 20px 50px rgba(0, 0, 0, 0.3), 0 0 30px ${borderColor}33, inset 0 0 15px rgba(0, 240, 255, 0.1)`,
+          width: '100%',
+          maxWidth: '480px',
+          padding: '2.5rem 1.75rem 2rem 1.75rem',
+          position: 'relative',
+          textAlign: 'center',
+          color: '#f8fafc'
+        }}
+      >
+        {/* macOS Traffic Lights decoration */}
+        <div style={{
+          position: 'absolute',
+          top: '16px',
+          left: '16px',
+          display: 'flex',
+          gap: '6px',
+          zIndex: 10
+        }}>
+          <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#ff5f56' }} />
+          <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#ffbd2e' }} />
+          <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#27c93f' }} />
+        </div>
+
         {/* Holographic Header Bar */}
         <div style={{ 
           fontSize: '0.8rem', 
@@ -336,7 +370,7 @@ function ModalPopup({ modal, onClose }) {
             {modal.confirmText || 'Đồng ý'}
           </button>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }

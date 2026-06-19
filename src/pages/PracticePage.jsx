@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import api, { logUserAction } from '../api';
 import { useGrade } from '../gradeContext';
 import { askGeminiAgent } from '../geminiAgent';
@@ -540,112 +541,128 @@ export default function PracticePage() {
         ) : (
           <div className="practice-layout">
             {/* Question column */}
-            <div className="content-section" style={{ minHeight: '400px', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.75rem', marginBottom: '1.5rem', fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 'bold' }}>
-                <span>CÂU HỎI {currentIdx + 1} / {filteredQuizzes.length}</span>
-                <span>Đúng: {score} câu</span>
-              </div>
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={`quiz-col-${currentIdx}-${activeLevel}`}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ type: 'spring', stiffness: 350, damping: 26 }}
+                className="content-section os-window" 
+                style={{ minHeight: '400px', display: 'flex', flexDirection: 'column' }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.75rem', marginBottom: '1.5rem', fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 'bold' }}>
+                  <span>CÂU HỎI {currentIdx + 1} / {filteredQuizzes.length}</span>
+                  <span>Đúng: {score} câu</span>
+                </div>
 
-              <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#001e62', lineHeight: '1.5', marginBottom: '1.5rem' }}>
-                {activeQuestion.q}
-              </div>
+                <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#001e62', lineHeight: '1.5', marginBottom: '1.5rem' }}>
+                  {activeQuestion.q}
+                </div>
 
-              <div className="quiz-options" style={{ marginBottom: '1.5rem' }}>
-                {shuffledOptions.map((opt, optIdx) => {
-                  let statusClass = "";
-                  if (isSubmitted) {
-                    if (optIdx === correctOptionIdx) {
-                      statusClass = "correct";
-                    } else if (optIdx === selectedAns) {
-                      statusClass = "incorrect";
+                <div className="quiz-options" style={{ marginBottom: '1.5rem' }}>
+                  {shuffledOptions.map((opt, optIdx) => {
+                    let statusClass = "";
+                    if (isSubmitted) {
+                      if (optIdx === correctOptionIdx) {
+                        statusClass = "correct";
+                      } else if (optIdx === selectedAns) {
+                        statusClass = "incorrect";
+                      }
                     }
-                  }
 
-                  const letter = String.fromCharCode(65 + optIdx);
-                  const isSelected = selectedAns === optIdx;
+                    const letter = String.fromCharCode(65 + optIdx);
+                    const isSelected = selectedAns === optIdx;
 
-                  return (
-                    <button
-                      key={optIdx}
-                      onClick={() => handleSelectAnswer(optIdx)}
-                      disabled={isSubmitted}
-                      className={`quiz-option ${statusClass}`}
+                    return (
+                      <motion.button
+                        key={optIdx}
+                        onClick={() => handleSelectAnswer(optIdx)}
+                        disabled={isSubmitted}
+                        whileHover={!isSubmitted ? { scale: 1.01, x: 2 } : {}}
+                        whileTap={!isSubmitted ? { scale: 0.99 } : {}}
+                        className={`quiz-option ${statusClass}`}
+                        style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.75rem',
+                          borderColor: !isSubmitted && isSelected ? 'var(--color-primary)' : '',
+                          background: !isSubmitted && isSelected ? 'rgba(0, 86, 210, 0.04)' : '',
+                          color: !isSubmitted && isSelected ? 'var(--color-primary)' : ''
+                        }}
+                      >
+                        <span style={{ 
+                          display: 'inline-flex', 
+                          width: '24px', 
+                          height: '24px', 
+                          borderRadius: '50%', 
+                          border: '1px solid ' + (statusClass ? 'transparent' : 'currentColor'), 
+                          alignItems: 'center', 
+                          justifyContent: 'center', 
+                          fontSize: '0.8rem',
+                          fontWeight: 'bold',
+                          flexShrink: 0
+                        }}>
+                          {letter}
+                        </span>
+                        <span style={{ fontSize: '0.9rem', lineHeight: '1.4' }}>{opt}</span>
+                      </motion.button>
+                    );
+                  })}
+                </div>
+
+                <div style={{ display: 'flex', gap: '0.75rem', marginTop: 'auto' }}>
+                  {selectedAns !== null && !isSubmitted && (
+                    <motion.button
+                      onClick={handleSubmitAnswer}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
                       style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.75rem',
-                        borderColor: !isSubmitted && isSelected ? 'var(--color-primary)' : '',
-                        background: !isSubmitted && isSelected ? 'rgba(0, 86, 210, 0.04)' : '',
-                        color: !isSubmitted && isSelected ? 'var(--color-primary)' : ''
+                        flex: 1,
+                        padding: '0.8rem',
+                        background: 'var(--color-primary)',
+                        color: '#ffffff',
+                        border: 'none',
+                        borderRadius: 'var(--radius-md)',
+                        fontWeight: 'bold',
+                        cursor: 'pointer',
+                        fontSize: '0.9rem',
+                        transition: 'background-color 0.2s'
                       }}
                     >
-                      <span style={{ 
-                        display: 'inline-flex', 
-                        width: '24px', 
-                        height: '24px', 
-                        borderRadius: '50%', 
-                        border: '1px solid ' + (statusClass ? 'transparent' : 'currentColor'), 
-                        alignItems: 'center', 
-                        justifyContent: 'center', 
-                        fontSize: '0.8rem',
+                      Nộp câu trả lời
+                    </motion.button>
+                  )}
+
+                  {isSubmitted && (
+                    <motion.button
+                      onClick={handleNextQuestion}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      style={{
+                        flex: 1,
+                        padding: '0.8rem',
+                        background: 'var(--color-primary)',
+                        color: '#ffffff',
+                        border: 'none',
+                        borderRadius: 'var(--radius-md)',
                         fontWeight: 'bold',
-                        flexShrink: 0
-                      }}>
-                        {letter}
-                      </span>
-                      <span style={{ fontSize: '0.9rem', lineHeight: '1.4' }}>{opt}</span>
-                    </button>
-                  );
-                })}
-              </div>
-
-              <div style={{ display: 'flex', gap: '0.75rem', marginTop: 'auto' }}>
-                {selectedAns !== null && !isSubmitted && (
-                  <button
-                    onClick={handleSubmitAnswer}
-                    style={{
-                      flex: 1,
-                      padding: '0.8rem',
-                      background: 'var(--color-primary)',
-                      color: '#ffffff',
-                      border: 'none',
-                      borderRadius: 'var(--radius-md)',
-                      fontWeight: 'bold',
-                      cursor: 'pointer',
-                      fontSize: '0.9rem',
-                      transition: 'background-color 0.2s'
-                    }}
-                  >
-                    Nộp câu trả lời
-                  </button>
-                )}
-
-                {isSubmitted && (
-                  <button
-                    onClick={handleNextQuestion}
-                    style={{
-                      flex: 1,
-                      padding: '0.8rem',
-                      background: 'var(--color-primary)',
-                      color: '#ffffff',
-                      border: 'none',
-                      borderRadius: 'var(--radius-md)',
-                      fontWeight: 'bold',
-                      cursor: 'pointer',
-                      fontSize: '0.9rem',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: '0.25rem',
-                      transition: 'background-color 0.2s'
-                    }}
-                  >
-                    <span>{currentIdx < filteredQuizzes.length - 1 ? 'Câu tiếp theo' : 'Hoàn thành lượt học'}</span>
-                    <ChevronRight size={16} />
-                  </button>
-                )}
-              </div>
-            </div>
+                        cursor: 'pointer',
+                        fontSize: '0.9rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '0.25rem',
+                        transition: 'background-color 0.2s'
+                      }}
+                    >
+                      <span>{currentIdx < filteredQuizzes.length - 1 ? 'Câu tiếp theo' : 'Hoàn thành lượt học'}</span>
+                      <ChevronRight size={16} />
+                    </motion.button>
+                  )}
+                </div>
+              </motion.div>
+            </AnimatePresence>
 
             {/* Sidebar column (Solution & AI Assist) */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -773,53 +790,62 @@ export default function PracticePage() {
         ) : (
           <div className="practice-layout" style={{ gridTemplateColumns: '1.2fr 0.8fr' }}>
             {/* Essay Input and Workspace Column */}
-            <div className="content-section" style={{ minHeight: '500px', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.75rem', marginBottom: '1.5rem', fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 'bold' }}>
-                <span>BÀI TẬP TỰ LUẬN {currentEssayIdx + 1} / {filteredEssays.length}</span>
-                <span>Cấp độ: {activeLevel === 'easy' ? 'Dễ (Cơ bản)' : activeLevel === 'medium' ? 'Vừa (Thông hiểu)' : 'Khó (Vận dụng cao)'}</span>
-              </div>
+            <AnimatePresence mode="wait">
+              <motion.div 
+                key={`essay-col-${currentEssayIdx}-${activeLevel}`}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ type: 'spring', stiffness: 350, damping: 26 }}
+                className="content-section os-window" 
+                style={{ minHeight: '500px', display: 'flex', flexDirection: 'column' }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.75rem', marginBottom: '1.5rem', fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 'bold' }}>
+                  <span>BÀI TẬP TỰ LUẬN {currentEssayIdx + 1} / {filteredEssays.length}</span>
+                  <span>Cấp độ: {activeLevel === 'easy' ? 'Dễ (Cơ bản)' : activeLevel === 'medium' ? 'Vừa (Thông hiểu)' : 'Khó (Vận dụng cao)'}</span>
+                </div>
 
-              {/* Essay Question Body */}
-              <div style={{ 
-                fontSize: '1.15rem', 
-                fontWeight: 'bold', 
-                color: '#001e62', 
-                lineHeight: '1.5', 
-                marginBottom: '1.5rem',
-                background: 'rgba(0,86,210,0.02)',
-                padding: '1rem',
-                borderLeft: '4px solid var(--color-primary)',
-                borderRadius: '0 8px 8px 0'
-              }}>
-                {activeEssay.q}
-              </div>
+                {/* Essay Question Body */}
+                <div style={{ 
+                  fontSize: '1.15rem', 
+                  fontWeight: 'bold', 
+                  color: '#001e62', 
+                  lineHeight: '1.5', 
+                  marginBottom: '1.5rem',
+                  background: 'rgba(0,86,210,0.02)',
+                  padding: '1rem',
+                  borderLeft: '4px solid var(--color-primary)',
+                  borderRadius: '0 8px 8px 0'
+                }}>
+                  {activeEssay.q}
+                </div>
 
-              {/* Student solution textarea */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.5rem', flex: 1 }}>
-                <label style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'var(--text-secondary)' }}>Bài làm của học sinh:</label>
-                <textarea
-                  value={essayAnswer}
-                  onChange={(e) => setEssayAnswer(e.target.value)}
-                  disabled={gradingLoading || essayResult !== null}
-                  placeholder="Gõ lời giải chi tiết của em vào đây. Hoặc bạn có thể chụp ảnh bài viết tay của mình bằng nút bên dưới..."
-                  style={{
-                    width: '100%',
-                    flex: 1,
-                    minHeight: '200px',
-                    padding: '1rem',
-                    borderRadius: '8px',
-                    border: '1px solid var(--border-color)',
-                    fontSize: '0.95rem',
-                    fontFamily: 'inherit',
-                    lineHeight: '1.6',
-                    resize: 'vertical',
-                    outline: 'none',
-                    background: gradingLoading ? '#f8f9fa' : '#ffffff',
-                    transition: 'border-color 0.2s',
-                    boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.02)',
-                    marginBottom: '1rem'
-                  }}
-                />
+                {/* Student solution textarea */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', marginBottom: '1.5rem', flex: 1 }}>
+                  <label style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'var(--text-secondary)' }}>Bài làm của học sinh:</label>
+                  <textarea
+                    value={essayAnswer}
+                    onChange={(e) => setEssayAnswer(e.target.value)}
+                    disabled={gradingLoading || essayResult !== null}
+                    placeholder="Gõ lời giải chi tiết của em vào đây. Hoặc bạn có thể chụp ảnh bài viết tay của mình bằng nút bên dưới..."
+                    style={{
+                      width: '100%',
+                      flex: 1,
+                      minHeight: '200px',
+                      padding: '1rem',
+                      borderRadius: '8px',
+                      border: '1px solid var(--border-color)',
+                      fontSize: '0.95rem',
+                      fontFamily: 'inherit',
+                      lineHeight: '1.6',
+                      resize: 'vertical',
+                      outline: 'none',
+                      background: gradingLoading ? '#f8f9fa' : '#ffffff',
+                      transition: 'border-color 0.2s',
+                      boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.02)',
+                      marginBottom: '1rem'
+                    }}
+                  />
 
                 {/* Photo Capture & Upload UI */}
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
@@ -1000,7 +1026,8 @@ export default function PracticePage() {
                   </div>
                 )}
               </div>
-            </div>
+            </motion.div>
+          </AnimatePresence>
 
             {/* AI Tutor Feedback Column */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>

@@ -3746,6 +3746,198 @@
       "action": "RESET_PROGRESS",
       "details": "Đặt lại toàn bộ tiến trình học tập (Khối lớp 10)",
       "timestamp": "2026-06-17T20:27:08.078Z"
+    },
+    {
+      "id": "17818538135640.4542952032217149",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 11",
+      "timestamp": "2026-06-19T07:23:33.564Z"
+    },
+    {
+      "id": "17818538435010.6472505715275265",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGOUT",
+      "details": "Đăng xuất tài khoản học sinh",
+      "timestamp": "2026-06-19T07:24:03.502Z"
+    },
+    {
+      "id": "17818539454900.4790536963222244",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 11",
+      "timestamp": "2026-06-19T07:25:45.490Z"
+    },
+    {
+      "id": "17818539463990.7968950360378404",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 12",
+      "timestamp": "2026-06-19T07:25:46.399Z"
+    },
+    {
+      "id": "17818539469170.22329718597809067",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 11",
+      "timestamp": "2026-06-19T07:25:46.918Z"
+    },
+    {
+      "id": "17818539480500.8097572598624924",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 10",
+      "timestamp": "2026-06-19T07:25:48.051Z"
+    },
+    {
+      "id": "17818539538940.7945791767264159",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T07:25:53.894Z"
+    },
+    {
+      "id": "17818539818610.5414567658319895",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Hàm số và Phương trình lượng giác\" (Môn: math, Lớp: 11)",
+      "timestamp": "2026-06-19T07:26:21.861Z"
+    },
+    {
+      "id": "17818539818790.45175363976775773",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Hàm số và Phương trình lượng giác\" (Môn: math, Lớp: 11)",
+      "timestamp": "2026-06-19T07:26:21.880Z"
+    },
+    {
+      "id": "17818539904360.48274690037937507",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "MARK_LECTURE_COMPLETED",
+      "details": "Đánh dấu hoàn thành bài học: \"Bài giảng Chương 1: Hàm số và Phương trình lượng giác\" (Môn: math, Lớp: 11)",
+      "timestamp": "2026-06-19T07:26:30.436Z"
+    },
+    {
+      "id": "17818540094640.1770402367145264",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T07:26:49.464Z"
+    },
+    {
+      "id": "17818540098030.4298962619109995",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T07:26:49.804Z"
+    },
+    {
+      "id": "17818540273920.20630615556631948",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án ĐÚNG môn math lớp 11 (easy). Câu hỏi: \"Tìm tập nghiệm của phương trình lượng giác cơ bản sin(x) = 0:\"",
+      "timestamp": "2026-06-19T07:27:07.392Z"
+    },
+    {
+      "id": "17818540457510.22532968383675622",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "GET_AI_HINT",
+      "details": "Yêu cầu trợ giúp AI gợi ý câu hỏi: \"Cho cấp số cộng (u_n) có số hạng đầu u₁ = 3 và công sai d = 2. Tìm số hạng u₅:\"",
+      "timestamp": "2026-06-19T07:27:25.751Z"
+    },
+    {
+      "id": "17818540731250.1499091587597462",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án ĐÚNG môn math lớp 11 (easy). Câu hỏi: \"Cho cấp số cộng (u_n) có số hạng đầu u₁ = 3 và công sai d = 2. Tìm số hạng u₅:\"",
+      "timestamp": "2026-06-19T07:27:53.125Z"
+    },
+    {
+      "id": "17818541113000.6401433628910099",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án ĐÚNG môn math lớp 11 (easy). Câu hỏi: \"Công thức tính đạo hàm của hàm số y = xⁿ (với n nguyên dương) là:\"",
+      "timestamp": "2026-06-19T07:28:31.300Z"
+    },
+    {
+      "id": "17818541472190.14062114362582556",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án ĐÚNG môn math lớp 11 (easy). Câu hỏi: \"Trong các giới hạn sau, giới hạn nào bằng 0?\"",
+      "timestamp": "2026-06-19T07:29:07.219Z"
+    },
+    {
+      "id": "17818541584380.3502911150921868",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "COMPLETE_QUIZ_SET",
+      "details": "Hoàn thành bộ trắc nghiệm math lớp 11 (easy) - Điểm số: 4/4",
+      "timestamp": "2026-06-19T07:29:18.438Z"
+    },
+    {
+      "id": "17818542391230.7837805389262417",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 1 & 2: Khoảng cách thế hệ và Các mối quan hệ\" (Môn: english, Lớp: 11)",
+      "timestamp": "2026-06-19T07:30:39.124Z"
+    },
+    {
+      "id": "17818542391490.2600034268228325",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 1 & 2: Khoảng cách thế hệ và Các mối quan hệ\" (Môn: english, Lớp: 11)",
+      "timestamp": "2026-06-19T07:30:39.149Z"
+    },
+    {
+      "id": "17818542534020.4167878481541437",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T07:30:53.402Z"
+    },
+    {
+      "id": "17818542534280.02440514322813836",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T07:30:53.428Z"
+    },
+    {
+      "id": "17818542706000.4508199840296917",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án ĐÚNG môn math lớp 11 (easy). Câu hỏi: \"Tìm tập nghiệm của phương trình lượng giác cơ bản sin(x) = 0:\"",
+      "timestamp": "2026-06-19T07:31:10.600Z"
+    },
+    {
+      "id": "17818542939130.4124610557931655",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án ĐÚNG môn math lớp 11 (easy). Câu hỏi: \"Cho cấp số cộng (u_n) có số hạng đầu u₁ = 3 và công sai d = 2. Tìm số hạng u₅:\"",
+      "timestamp": "2026-06-19T07:31:33.913Z"
     }
   ],
   "essays": {

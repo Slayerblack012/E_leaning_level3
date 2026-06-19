@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import api from '../api';
 import { useGrade } from '../gradeContext';
 import { pdfContext } from '../pdfContext';
@@ -11,10 +12,8 @@ import {
   Sparkles, 
   GraduationCap, 
   CheckCircle,
-  ChevronRight,
   TrendingUp
 } from 'lucide-react';
-
 
 export default function Dashboard() {
   const { grade } = useGrade();
@@ -103,6 +102,26 @@ export default function Dashboard() {
     return Math.round((stats.correctAnswers / stats.answeredQuestions) * 100);
   };
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.08
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 15 },
+    show: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { type: 'spring', stiffness: 350, damping: 25 } 
+    }
+  };
+
   if (loading) {
     return (
       <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh', flexDirection: 'column', gap: '1rem' }}>
@@ -113,7 +132,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="fade-in">
+    <div>
       <header className="dashboard-header" style={{ borderBottom: '1px solid var(--border-color)', paddingBottom: '1.5rem', marginBottom: '2rem' }}>
         <div>
           <h1 style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
@@ -142,8 +161,19 @@ export default function Dashboard() {
       </header>
 
       {/* Statistics Section */}
-      <div className="stats-grid" style={{ marginBottom: '2.5rem' }}>
-        <div className="stat-card">
+      <motion.div 
+        className="stats-grid" 
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        style={{ marginBottom: '2.5rem' }}
+      >
+        <motion.div 
+          className="stat-card" 
+          variants={itemVariants}
+          whileHover={{ y: -3, boxShadow: 'var(--shadow-hover)' }}
+          style={{ transition: 'background-color 0.2s' }}
+        >
           <div className="stat-icon-wrapper" style={{ color: 'var(--color-english)' }}>
             <BookOpen size={24} />
           </div>
@@ -151,8 +181,13 @@ export default function Dashboard() {
             <div className="stat-value">{stats.completedLectures} bài</div>
             <div className="stat-label">Bài giảng đã hoàn thành</div>
           </div>
-        </div>
-        <div className="stat-card">
+        </motion.div>
+        <motion.div 
+          className="stat-card" 
+          variants={itemVariants}
+          whileHover={{ y: -3, boxShadow: 'var(--shadow-hover)' }}
+          style={{ transition: 'background-color 0.2s' }}
+        >
           <div className="stat-icon-wrapper" style={{ color: 'var(--color-physics)' }}>
             <GraduationCap size={24} />
           </div>
@@ -160,8 +195,13 @@ export default function Dashboard() {
             <div className="stat-value">{stats.answeredQuestions} câu</div>
             <div className="stat-label">Bài tập trắc nghiệm đã làm</div>
           </div>
-        </div>
-        <div className="stat-card">
+        </motion.div>
+        <motion.div 
+          className="stat-card" 
+          variants={itemVariants}
+          whileHover={{ y: -3, boxShadow: 'var(--shadow-hover)' }}
+          style={{ transition: 'background-color 0.2s' }}
+        >
           <div className="stat-icon-wrapper" style={{ color: 'var(--color-chemistry)' }}>
             <CheckCircle size={24} />
           </div>
@@ -169,8 +209,8 @@ export default function Dashboard() {
             <div className="stat-value">{getAccuracyRate()}%</div>
             <div className="stat-label">Tỉ lệ trả lời chính xác</div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Subject Selector cards */}
       <h2 style={{ marginBottom: '1.5rem', fontSize: '1.4rem', color: '#001e62' }}>Học liệu Lớp {grade} theo môn</h2>
@@ -180,7 +220,13 @@ export default function Dashboard() {
           Chưa có môn học nào được cấu hình cho Khối {grade}.
         </div>
       ) : (
-        <div className="subject-grid" style={{ marginBottom: '3rem' }}>
+        <motion.div 
+          className="subject-grid" 
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          style={{ marginBottom: '3rem' }}
+        >
           {activeSubjects.map(sub => {
             const subjName = sub.id.split('_')[0];
             
@@ -193,7 +239,13 @@ export default function Dashboard() {
             const progressPercent = totalLectures > 0 ? Math.round((completedCount / totalLectures) * 100) : 0;
 
             return (
-              <div key={sub.id} className={`subject-card ${getSubjectClass(sub.id)}`}>
+              <motion.div 
+                key={sub.id} 
+                className={`subject-card ${getSubjectClass(sub.id)}`}
+                variants={itemVariants}
+                whileHover={{ y: -6, boxShadow: 'var(--shadow-hover)' }}
+                transition={{ type: 'spring', stiffness: 350, damping: 25 }}
+              >
                 <div className="subject-badge">{subjName}</div>
                 <h3 className="subject-title">{sub.title}</h3>
                 <p className="subject-description">{sub.description || 'Chi tiết lý thuyết và bài tập phân cấp theo độ khó.'}</p>
@@ -210,32 +262,35 @@ export default function Dashboard() {
                       width: `${progressPercent}%`, 
                       height: '100%',
                       borderRadius: '4px',
-                      transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1)'
+                      transition: 'width 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
                     }} />
                   </div>
                 </div>
 
                 <div style={{ display: 'flex', gap: '0.5rem', marginTop: 'auto' }}>
-                  <button 
+                  <motion.button 
                     className="subject-btn"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
                     style={{ flex: 1, padding: '0.5rem', fontSize: '0.8rem' }}
                     onClick={() => navigate(`/lectures?subject=${subjName}`)}
                   >
                     Bài Giảng
-                  </button>
-                  <button 
+                  </motion.button>
+                  <motion.button 
                     className="subject-btn"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
                     style={{ flex: 1, padding: '0.5rem', fontSize: '0.8rem' }}
                     onClick={() => navigate(`/practice?subject=${subjName}`)}
                   >
                     Luyện Tập
-                  </button>
+                  </motion.button>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
-
+        </motion.div>
       )}
 
       {/* Góc Phân Tích Năng Lực & Đề Xuất Học Tập */}
@@ -244,10 +299,16 @@ export default function Dashboard() {
         <span>Phân Tích Năng Lực & Đề Xuất Học Tập</span>
       </h2>
       
-      <div className="practice-layout" style={{ gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2.5rem' }}>
+      <motion.div 
+        className="practice-layout" 
+        variants={containerVariants}
+        initial="hidden"
+        animate="show"
+        style={{ gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2.5rem' }}
+      >
         
         {/* Left Column: Progress / Accuracy per subject */}
-        <div className="content-section" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+        <motion.div className="content-section" variants={itemVariants} style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
           <h3 style={{ fontSize: '1.05rem', color: '#001e62', marginBottom: '0.25rem', fontWeight: 'bold' }}>🎯 Tỉ lệ chính xác theo môn</h3>
           
           {['math', 'physics', 'chemistry', 'english'].map(subj => {
@@ -268,13 +329,16 @@ export default function Dashboard() {
                 
                 <div style={{ background: '#f1f3f5', height: '10px', borderRadius: '5px', overflow: 'hidden', border: '1px solid #e1e5eb', position: 'relative' }}>
                   {accuracy !== null ? (
-                    <div style={{ 
-                      background: colorVar, 
-                      width: `${accuracy}%`, 
-                      height: '100%',
-                      borderRadius: '5px',
-                      transition: 'width 0.5s ease-out'
-                    }} />
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      animate={{ width: `${accuracy}%` }}
+                      transition={{ duration: 0.8, ease: 'easeOut' }}
+                      style={{ 
+                        background: colorVar, 
+                        height: '100%',
+                        borderRadius: '5px',
+                      }} 
+                    />
                   ) : (
                     <div style={{ 
                       background: '#e1e5eb', 
@@ -287,10 +351,10 @@ export default function Dashboard() {
               </div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Right Column: AI Recommendations */}
-        <div className="content-section" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem', background: 'rgba(0, 86, 210, 0.02)' }}>
+        <motion.div className="content-section" variants={itemVariants} style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem', background: 'rgba(0, 86, 210, 0.02)' }}>
           <h3 style={{ fontSize: '1.05rem', color: '#001e62', marginBottom: '0.25rem', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
             <Sparkles size={18} color="#a855f7" fill="#a855f7" />
             <span>Đề xuất học tập cá nhân hóa</span>
@@ -311,15 +375,22 @@ export default function Dashboard() {
 
                   if (accuracy >= 80) {
                     items.push(
-                      <div key={subj} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', background: '#e3fcef', borderLeft: '4px solid #00875a', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}>
+                      <motion.div 
+                        key={subj} 
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', background: '#e3fcef', borderLeft: '4px solid #00875a', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}
+                      >
                         <div style={{ display: 'flex', gap: '0.5rem' }}>
                           <div style={{ fontSize: '1.1rem' }}>🏆</div>
                           <div style={{ fontSize: '0.8rem', lineHeight: '1.4', color: '#006644', flex: 1 }}>
                             <strong>Môn thế mạnh - {label}:</strong> Bạn đang học rất vững với độ chính xác cao ({accuracy}%). Hãy tiếp tục thử thách bản thân với các bài tập **Tự luận nâng cao** hoặc trao đổi với AI Gia Sư!
                           </div>
                         </div>
-                        <button
+                        <motion.button
                           onClick={() => navigate(`/tutor?subject=${subj}`)}
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
                           style={{
                             alignSelf: 'flex-end',
                             background: 'rgba(0, 135, 90, 0.1)',
@@ -330,26 +401,33 @@ export default function Dashboard() {
                             fontSize: '0.75rem',
                             fontWeight: 'bold',
                             cursor: 'pointer',
-                            transition: 'all 0.2s'
+                            transition: 'background-color 0.2s'
                           }}
                           onMouseOver={(e) => { e.target.style.background = 'rgba(0, 135, 90, 0.2)' }}
                           onMouseOut={(e) => { e.target.style.background = 'rgba(0, 135, 90, 0.1)' }}
                         >
                           Hỏi lý thuyết nâng cao →
-                        </button>
-                      </div>
+                        </motion.button>
+                      </motion.div>
                     );
                   } else if (accuracy < 50) {
                     items.push(
-                      <div key={subj} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', background: '#ffebe6', borderLeft: '4px solid #de350b', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}>
+                      <motion.div 
+                        key={subj} 
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', background: '#ffebe6', borderLeft: '4px solid #de350b', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}
+                      >
                         <div style={{ display: 'flex', gap: '0.5rem' }}>
                           <div style={{ fontSize: '1.1rem' }}>⚠️</div>
                           <div style={{ fontSize: '0.8rem', lineHeight: '1.4', color: '#ae2a02', flex: 1 }}>
                             <strong>Cần cải thiện - {label}:</strong> Độ chính xác hiện tại khá thấp ({accuracy}%). Bạn nên xem lại lý thuyết hoặc thảo luận trực tiếp với AI Gia sư để tìm ra các lỗi kiến thức.
                           </div>
                         </div>
-                        <button
+                        <motion.button
                           onClick={() => navigate(`/tutor?subject=${subj}`)}
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
                           style={{
                             alignSelf: 'flex-end',
                             background: 'rgba(222, 53, 11, 0.1)',
@@ -360,26 +438,33 @@ export default function Dashboard() {
                             fontSize: '0.75rem',
                             fontWeight: 'bold',
                             cursor: 'pointer',
-                            transition: 'all 0.2s'
+                            transition: 'background-color 0.2s'
                           }}
                           onMouseOver={(e) => { e.target.style.background = 'rgba(222, 53, 11, 0.2)' }}
                           onMouseOut={(e) => { e.target.style.background = 'rgba(222, 53, 11, 0.1)' }}
                         >
                           Nhờ Gia sư hướng dẫn lại →
-                        </button>
-                      </div>
+                        </motion.button>
+                      </motion.div>
                     );
                   } else {
                     items.push(
-                      <div key={subj} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', background: '#fff9e6', borderLeft: '4px solid #ffab00', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}>
+                      <motion.div 
+                        key={subj} 
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', background: '#fff9e6', borderLeft: '4px solid #ffab00', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}
+                      >
                         <div style={{ display: 'flex', gap: '0.5rem' }}>
                           <div style={{ fontSize: '1.1rem' }}>⚖️</div>
                           <div style={{ fontSize: '0.8rem', lineHeight: '1.4', color: '#a36d00', flex: 1 }}>
                             <strong>Đang tiến bộ - {label}:</strong> Kết quả ở mức trung bình ({accuracy}%). Hãy hỏi AI Gia sư để được gợi ý thêm các mẹo ghi nhớ nhanh công thức và ví dụ nâng cao.
                           </div>
                         </div>
-                        <button
+                        <motion.button
                           onClick={() => navigate(`/tutor?subject=${subj}`)}
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
                           style={{
                             alignSelf: 'flex-end',
                             background: 'rgba(255, 171, 0, 0.15)',
@@ -390,14 +475,14 @@ export default function Dashboard() {
                             fontSize: '0.75rem',
                             fontWeight: 'bold',
                             cursor: 'pointer',
-                            transition: 'all 0.2s'
+                            transition: 'background-color 0.2s'
                           }}
                           onMouseOver={(e) => { e.target.style.background = 'rgba(255, 171, 0, 0.25)' }}
                           onMouseOut={(e) => { e.target.style.background = 'rgba(255, 171, 0, 0.15)' }}
                         >
                           Hỏi mẹo học nhanh →
-                        </button>
-                      </div>
+                        </motion.button>
+                      </motion.div>
                     );
                   }
                 }
@@ -417,8 +502,8 @@ export default function Dashboard() {
               return items;
             })()}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
