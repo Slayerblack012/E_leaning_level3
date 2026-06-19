@@ -28,6 +28,9 @@ export default function SettingsPage() {
       { id: 'math', name: 'Toán học', color: 'var(--color-math)' },
       { id: 'physics', name: 'Vật lý', color: 'var(--color-physics)' },
       { id: 'chemistry', name: 'Hóa học', color: 'var(--color-chemistry)' },
+      { id: 'biology', name: 'Sinh học', color: 'var(--color-biology)' },
+      { id: 'history', name: 'Lịch sử', color: 'var(--color-history)' },
+      { id: 'literature', name: 'Ngữ văn', color: 'var(--color-literature)' },
       { id: 'english', name: 'Tiếng Anh', color: 'var(--color-english)' }
     ];
 

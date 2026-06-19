@@ -12,7 +12,10 @@ import {
   Sparkles, 
   GraduationCap, 
   CheckCircle,
-  TrendingUp
+  TrendingUp,
+  Dna,
+  History,
+  Feather
 } from 'lucide-react';
 
 export default function Dashboard() {
@@ -89,6 +92,9 @@ export default function Dashboard() {
       case 'chemistry': return <Atom size={24} />;
       case 'physics': return <Activity size={24} />;
       case 'math': return <Binary size={24} />;
+      case 'biology': return <Dna size={24} />;
+      case 'history': return <History size={24} />;
+      case 'literature': return <Feather size={24} />;
       default: return <GraduationCap size={24} />;
     }
   };

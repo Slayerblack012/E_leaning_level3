@@ -1,13 +1,14 @@
-// Compact curriculum context for all subjects and grades.
+import { newSubjects } from './pdfContextNewSubjects';
 
-function makeContext({ title, author, totalPages, description, chapters, lectures }) {
+function makeContext({ title, author, totalPages, description, chapters, lectures, introduction }) {
   return {
     title,
     author,
     totalPages,
     description,
     chapters,
-    lectures: lectures || []
+    lectures: lectures || [],
+    introduction: introduction || null
   };
 }
 
@@ -2027,5 +2028,6 @@ Cho tam giác $ABC$ có các cạnh tương ứng là $a, b, c$, nửa chu vi $p
         *   *Đáp án*: **In spite of being ill, she went to work**.`
       }
     ]
-  })
+  }),
+  ...newSubjects
 };

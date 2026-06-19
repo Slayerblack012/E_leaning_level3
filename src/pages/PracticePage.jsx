@@ -381,6 +381,9 @@ export default function PracticePage() {
     { id: 'math', label: 'Toán học', color: 'var(--color-math)' },
     { id: 'physics', label: 'Vật lý', color: 'var(--color-physics)' },
     { id: 'chemistry', label: 'Hóa học', color: 'var(--color-chemistry)' },
+    { id: 'biology', label: 'Sinh học', color: 'var(--color-biology)' },
+    { id: 'history', label: 'Lịch sử', color: 'var(--color-history)' },
+    { id: 'literature', label: 'Ngữ văn', color: 'var(--color-literature)' },
     { id: 'english', label: 'Tiếng Anh', color: 'var(--color-english)' },
   ];
 

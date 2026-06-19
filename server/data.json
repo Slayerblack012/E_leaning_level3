@@ -96,6 +96,51 @@
       "id": "math_12",
       "title": "Toán học 12",
       "description": "Khảo sát hàm số & Tích phân, Oxyz"
+    },
+    {
+      "id": "biology_10",
+      "title": "Sinh học 10",
+      "description": "Thế giới sống, tế bào & vi sinh vật"
+    },
+    {
+      "id": "history_10",
+      "title": "Lịch sử 10",
+      "description": "Lịch sử thế giới thời cổ trung đại & VN"
+    },
+    {
+      "id": "literature_10",
+      "title": "Ngữ văn 10",
+      "description": "Văn học dân gian, trung đại & nghị luận"
+    },
+    {
+      "id": "biology_11",
+      "title": "Sinh học 11",
+      "description": "Trao đổi chất & chuyển hóa năng lượng"
+    },
+    {
+      "id": "history_11",
+      "title": "Lịch sử 11",
+      "description": "Lịch sử thế giới cận hiện đại & VN"
+    },
+    {
+      "id": "literature_11",
+      "title": "Ngữ văn 11",
+      "description": "Văn học hiện đại & nghị luận nâng cao"
+    },
+    {
+      "id": "biology_12",
+      "title": "Sinh học 12",
+      "description": "Di truyền học, tiến hóa & sinh thái học"
+    },
+    {
+      "id": "history_12",
+      "title": "Lịch sử 12",
+      "description": "Lịch sử VN từ 1919 & thế giới hiện đại"
+    },
+    {
+      "id": "literature_12",
+      "title": "Ngữ văn 12",
+      "description": "Tác phẩm trọng điểm & ôn thi tốt nghiệp THPT"
     }
   ],
   "quizzes": {
@@ -1439,6 +1484,1104 @@
         "answer": 0,
         "level": "hard",
         "explain": "Muối natri axetat ($CH_3COONa$) và ancol etylic ($C_2H_5OH$) tương ứng với este là $CH_3COOC_2H_5$ (etyl axetat)."
+      }
+    ],
+    "biology_10": [
+      {
+        "q": "Các cấp độ tổ chức cơ bản của thế giới sống từ thấp đến cao gồm:",
+        "options": [
+          "Tế bào → Cơ thể → Quần thể → Quần xã → Hệ sinh thái",
+          "Bào quan → Tế bào → Mô → Cơ quan → Hệ cơ quan",
+          "Cơ thể → Quần thể → Hệ sinh thái → Quần xã",
+          "Tế bào → Mô → Cơ thể → Quần xã → Quần thể"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Các cấp độ tổ chức cơ bản và lớn nhất của thế giới sống được sắp xếp từ thấp đến cao là: Tế bào → Cơ thể → Quần thể → Quần xã → Hệ sinh thái."
+      },
+      {
+        "q": "Thành phần cấu tạo chính của màng sinh chất ở tế bào nhân thực là gì?",
+        "options": [
+          "Lớp kép photpholipit và prôtêin",
+          "Xenlulôzơ và kitin",
+          "Peptidoglycan và lipit",
+          "Glicôgen và prôtêin màng"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Màng sinh chất được cấu tạo chủ yếu bởi lớp kép phôtpholipit quay đuôi kị nước vào nhau và các phân tử prôtêin khảm trên lớp kép đó."
+      },
+      {
+        "q": "Bào quan nào được ví như 'nhà máy năng lượng' của tế bào?",
+        "options": [
+          "Ti thể",
+          "Lục lạp",
+          "Lưới nội chất",
+          "Bộ máy Golgi"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Ti thể là nơi diễn ra quá trình hô hấp tế bào để phân giải chất hữu cơ giải phóng năng lượng tích lũy trong các phân tử ATP cung cấp cho mọi hoạt động sống."
+      },
+      {
+        "q": "Bào quan nào sau đây chỉ có ở tế bào thực vật mà không có ở tế bào động vật?",
+        "options": [
+          "Lục lạp",
+          "Ti thể",
+          "Ribôxôm",
+          "Trung thể"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Lục lạp thực hiện chức năng quang hợp chỉ có ở tế bào thực vật và tảo."
+      },
+      {
+        "q": "Trong quá trình nguyên phân, các nhiễm sắc thể co xoắn cực đại và xếp thành một hàng trên mặt phẳng xích đạo ở kỳ nào?",
+        "options": [
+          "Kỳ giữa",
+          "Kỳ đầu",
+          "Kỳ sau",
+          "Kỳ cuối"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Ở kỳ giữa của nguyên phân, các nhiễm sắc thể co xoắn cực đại và tập trung thành 1 hàng trên mặt phẳng xích đạo của thoi phân bào."
+      },
+      {
+        "q": "Quá trình hô hấp tế bào gồm 3 giai đoạn chính theo thứ tự nào?",
+        "options": [
+          "Đường phân → Chu trình Krebs → Chuỗi truyền electron hô hấp",
+          "Chu trình Krebs → Đường phân → Chuỗi truyền electron",
+          "Đường phân → Chuỗi truyền electron → Chu trình Krebs",
+          "Chuỗi truyền electron → Đường phân → Chu trình Krebs"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Hô hấp tế bào gồm ba giai đoạn kế tiếp: 1. Đường phân (xảy ra ở tế bào chất), 2. Chu trình Krebs (ở chất nền ti thể), và 3. Chuỗi truyền electron hô hấp (ở màng trong ti thể)."
+      },
+      {
+        "q": "Cacbohiđrat nào sau đây đóng vai trò là cấu trúc chính cấu tạo nên thành tế bào thực vật?",
+        "options": [
+          "Xenlulôzơ",
+          "Tinh bột",
+          "Glicôgen",
+          "Saccarôzơ"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Xenlulôzơ là một loại đường đa cấu tạo từ các gốc glucôzơ liên kết với nhau bền vững, là thành phần chính cấu tạo nên thành tế bào thực vật."
+      },
+      {
+        "q": "Nếu một kính hiển vi có thị kính độ phóng đại 10x và vật kính 40x thì độ phóng đại tổng cộng là bao nhiêu?",
+        "options": [
+          "400 lần",
+          "50 lần",
+          "30 lần",
+          "4000 lần"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Độ phóng đại của kính hiển vi bằng tích độ phóng đại của thị kính và vật kính: $10 \\times 40 = 400$ lần."
+      },
+      {
+        "q": "Sản phẩm nào của pha sáng quang hợp được sử dụng trực tiếp trong pha tối (chu trình Calvin)?",
+        "options": [
+          "ATP và NADPH",
+          "O₂ và glucôzơ",
+          "ADP và NADP⁺",
+          "H₂O và CO₂"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Pha sáng chuyển hóa năng lượng ánh sáng thành năng lượng hóa học trong các phân tử ATP và NADPH. Hai chất này được đưa sang pha tối để khử CO₂ thành cacbohiđrat."
+      },
+      {
+        "q": "Sự vận chuyển các ion khoáng từ môi trường đất có nồng độ thấp vào tế bào rễ có nồng độ cao là hình thức vận chuyển nào?",
+        "options": [
+          "Vận chuyển chủ động (cần tiêu tốn ATP)",
+          "Khếch tán thụ động",
+          "Thẩm thấu qua lớp phôtpholipit",
+          "Vận chuyển thụ động nhờ prôtêin kênh"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Vận chuyển ngược chiều nồng độ (từ nơi thấp đến nơi cao) đòi hỏi tế bào phải tiêu tốn năng lượng (ATP) và cần các prôtêin vận chuyển đặc hiệu, đây là vận chuyển chủ động."
+      }
+    ],
+    "history_10": [
+      {
+        "q": "Bốn trung tâm văn minh lớn phương Đông cổ đại được hình thành ở lưu vực các con sông lớn là:",
+        "options": [
+          "Ai Cập, Lưỡng Hà, Ấn Độ, Trung Hoa",
+          "Hy Lạp, La Mã, Ai Cập, Lưỡng Hà",
+          "Ai Cập, Hy Lạp, Ấn Độ, Maya",
+          "Lưỡng Hà, La Mã, Trung Hoa, Ấn Độ"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Các nền văn minh phương Đông cổ đại hình thành sớm ở lưu vực sông Hằng/sông Ấn (Ấn Độ), sông Hằng/Hoàng Hà (Trung Hoa), sông Nile (Ai Cập) và sông Tigris/Euphrates (Lưỡng Hà)."
+      },
+      {
+        "q": "Cơ sở kinh tế chủ đạo của các quốc gia cổ đại phương Tây (Hy Lạp và La Mã) là:",
+        "options": [
+          "Thủ công nghiệp và thương nghiệp đường biển",
+          "Nông nghiệp trồng lúa nước",
+          "Chăn nuôi gia súc du mục",
+          "Săn bắn và hái lượm tự nhiên"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Do địa hình nhiều đồi núi, ít đồng bằng phì nhiêu nhưng lại có nhiều cảng biển tự nhiên, Hy Lạp và La Mã cổ đại phát triển mạnh về thủ công nghiệp và thương nghiệp đường biển."
+      },
+      {
+        "q": "Nhà nước đầu tiên trong lịch sử Việt Nam được hình thành dưới sự cai trị của các vị vua nào?",
+        "options": [
+          "Các vua Hùng (Nhà nước Văn Lang)",
+          "An Dương Vương (Nhà nước Âu Lạc)",
+          "Ngô Quyền (Nhà nước Cổ Loa)",
+          "Lý Nam Đế (Nhà nước Vạn Xuân)"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Nhà nước đầu tiên của nước ta là nhà nước Văn Lang, do các vua Hùng đứng đầu đứng độc lập cai trị miền Bắc Việt Nam ngày nay."
+      },
+      {
+        "q": "Sự kiện lịch sử nào đánh dấu chấm dứt hoàn toàn thời kỳ Bắc thuộc kéo dài hơn 1000 năm?",
+        "options": [
+          "Chiến thắng Bạch Đằng của Ngô Quyền năm 938",
+          "Khởi nghĩa Hai Bà Trưng năm 40",
+          "Khởi nghĩa Lý Bí năm 542",
+          "Chiến thắng Bạch Đằng của Lê Hoàn năm 981"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Năm 938, Ngô Quyền đánh bại quân Nam Hán trên sông Bạch Đằng, kết thúc hơn 10 thế kỷ thống trị của phong kiến phương Bắc, mở ra kỷ nguyên độc lập tự chủ lâu dài cho dân tộc."
+      },
+      {
+        "q": "Cuối thế kỷ XIV - đầu thế kỷ XV, vị vua/nhân vật lịch sử nào đã tiến hành cuộc cải cách táo bạo về kinh tế, chính trị và xã hội (phát hành tiền giấy đầu tiên)?",
+        "options": [
+          "Hồ Quý Ly",
+          "Trần Nhân Tông",
+          "Lê Lợi",
+          "Nguyễn Trãi"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Hồ Quý Ly đã thực hiện cuộc cải cách toàn diện cuối triều Trần và đầu triều Hồ, nổi bật là chính sách hạn điền, hạn nô và phát hành tiền giấy Thông bảo hội sao."
+      },
+      {
+        "q": "Nho giáo chiếm địa vị độc tôn và trở thành hệ tư tưởng chính thống của nhà nước phong kiến Việt Nam từ thời kỳ nào?",
+        "options": [
+          "Thời Lê sơ (Thế kỷ XV)",
+          "Thời Lý (Thế kỷ XI)",
+          "Thời Trần (Thế kỷ XIII)",
+          "Thời Nguyễn (Thế kỷ XIX)"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Đến thời Lê sơ, đặc biệt dưới triều vua Lê Thánh Tông, Nho giáo chính thức đạt vị trí độc tôn trong giáo dục, khoa cử và quản lý đất nước."
+      },
+      {
+        "q": "Ý nghĩa quyết định nhất của chiến thắng Chi Lăng - Xương Giang (1427) trong cuộc khởi nghĩa Lam Sơn là:",
+        "options": [
+          "Tiêu diệt hoàn toàn viện binh địch, buộc quân Minh phải xin hòa và rút về nước",
+          "Giải phóng Nghệ An làm địa bàn đứng chân",
+          "Đập tan bộ chỉ huy quân Minh ở Đông Quan",
+          "Mở rộng vùng giải phóng ra toàn bộ miền Trung"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Chiến thắng Chi Lăng - Xương Giang đập tan 15 vạn viện binh của Liễu Thăng và Mộc Thạnh gửi sang, làm lung lay hoàn toàn ý chí xâm lược của nhà Minh, dẫn đến hội thề Đông Quan buộc quân Minh rút về nước."
+      },
+      {
+        "q": "Trong các thế kỷ XVI - XVII, những đô thị thương cảng nào phát triển phồn thịnh nhất ở Đàng Trong và Đàng Ngoài nước ta?",
+        "options": [
+          "Phố Hiến (Đàng Ngoài) và Hội An (Đàng Trong)",
+          "Thăng Long (Đàng Ngoài) và Sài Gòn (Đàng Trong)",
+          "Hải Phòng (Đàng Ngoài) và Đà Nẵng (Đàng Trong)",
+          "Vân Đồn (Đàng Ngoài) và Thanh Hà (Đàng Trong)"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Câu thành ngữ lịch sử truyền miệng 'Thứ nhất Kinh Kỳ, thứ nhì Phố Hiến' chỉ sự phồn thịnh ở Đàng Ngoài, còn Hội An là thương cảng sầm uất nhất tại Đàng Trong thời chúa Nguyễn."
+      },
+      {
+        "q": "Chính sách đối ngoại đóng cửa ('bế quan tỏa cảng') của triều Nguyễn thế kỷ XIX đã dẫn tới hậu quả lớn nhất là:",
+        "options": [
+          "Làm suy yếu tiềm lực đất nước, tạo cớ cho thực dân Pháp xâm lược",
+          "Bảo vệ vững chắc chủ quyền quốc gia trước phương Tây",
+          "Thúc đẩy giao lưu kinh tế với các nước láng giềng",
+          "Xóa bỏ hoàn toàn mâu thuẫn xã hội trong nước"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Chính sách đóng cửa của triều Nguyễn làm hạn chế sự phát triển kinh tế, cô lập nước ta với nền khoa học kỹ thuật hiện đại của thế giới, khiến đất nước suy yếu và tạo cơ hội cho Pháp dễ dàng xâm lược."
+      },
+      {
+        "q": "Thời kỳ Bắc thuộc, chính sách cai trị thâm độc nhất của phong kiến phương Bắc về mặt văn hóa đối với nhân dân ta là:",
+        "options": [
+          "Thực hiện chính sách đồng hóa dân tộc",
+          "Thu thuế nặng nề các sản vật quý",
+          "Bắt nhân dân ta cống nạp thợ thủ công giỏi",
+          "Thiết lập chế độ quận huyện cai trị trực tiếp"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Chính sách đồng hóa (truyền bá Nho giáo, chữ Hán, bắt thay đổi phong tục tập quán theo người Hán) là chính sách thâm độc nhất nhằm biến nước ta thành một quận huyện vĩnh viễn của Trung Quốc."
+      }
+    ],
+    "literature_10": [
+      {
+        "q": "Tác phẩm sử thi nổi tiếng 'Đăm Săn' (Chiến thắng Mtao Mxây) thuộc kho tàng văn học dân gian của đồng bào dân tộc nào?",
+        "options": [
+          "Ê-đê",
+          "Mường",
+          "Thái",
+          "Tày"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Sử thi (Khan) Đăm Săn là tác phẩm sử thi anh hùng nổi tiếng của người Ê-đê ở Tây Nguyên."
+      },
+      {
+        "q": "Tác phẩm nào của Nguyễn Trãi được đánh giá là áng 'thiên cổ hùng văn' tuyên bố nền độc lập dân tộc?",
+        "options": [
+          "Bình Ngô đại cáo",
+          "Quốc âm thi tập",
+          "Ức Trai thi tập",
+          "Lam Sơn thực lục"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Bình Ngô đại cáo viết bằng chữ Hán năm 1428 thay lời Lê Lợi là áng văn yêu nước hùng tráng, được xem là bản tuyên ngôn độc lập thứ hai của nước ta."
+      },
+      {
+        "q": "Kiệt tác 'Truyện Kiều' (Đoạn trường tân thanh) của đại thi hào Nguyễn Du được sáng tác bằng loại chữ viết nào?",
+        "options": [
+          "Chữ Nôm",
+          "Chữ Hán",
+          "Chữ Quốc ngữ",
+          "Chữ Phạn"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Truyện Kiều viết bằng thể thơ lục bát truyền thống bằng chữ Nôm - thứ chữ do người Việt sáng tạo dựa trên bộ chữ Hán để ghi âm tiếng Việt."
+      },
+      {
+        "q": "Tác giả của bài thơ 'Tỏ lòng' (Thuật hoài) thể hiện chí nam nhi và hào khí Đông A thời Trần là ai?",
+        "options": [
+          "Phạm Ngũ Lão",
+          "Trần Hưng Đạo",
+          "Trần Quang Khải",
+          "Trần Nhân Tông"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Tỏ lòng (Thuật hoài) là bài thơ thất ngôn tứ tuyệt nổi tiếng của danh tướng Phạm Ngũ Lão thời Trần."
+      },
+      {
+        "q": "Đoạn trích 'Trao duyên' trong Truyện Kiều ghi lại cuộc đối thoại/monologue giữa những nhân vật nào?",
+        "options": [
+          "Thúy Kiều trao duyên lại cho Thúy Vân",
+          "Thúy Kiều tâm sự với Kim Trọng",
+          "Thúy Kiều nói chuyện với Vương Quan",
+          "Thúy Vân an ủi Thúy Kiều"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Đoạn trích 'Trao duyên' miêu tả cảnh Thúy Kiều cầu khẩn và thuyết phục em gái là Thúy Vân thay mình kết duyên với Kim Trọng để trả nghĩa cho chàng trước khi Kiều bán mình chuộc cha."
+      },
+      {
+        "q": "Trong bài thơ 'Cảnh ngày hè' (Gương báu khuyên răn - bài 43), Nguyễn Trãi đã bày tỏ ước nguyện lớn nhất của đời mình là gì?",
+        "options": [
+          "Dân giàu đủ, cuộc sống thái bình ấm no khắp mọi nơi",
+          "Rũ bỏ quan trường để về sống ẩn dật yên bình ở quê",
+          "Lập nên công danh vĩ đại lưu truyền sử sách",
+          "Sở hữu một khu vườn rộng lớn thơ mộng để làm thơ"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Ước nguyện cuối bài thơ 'Dân giàu đủ khắp đòi phương' (Dân ấm no giàu có khắp mọi nơi) thể hiện tư tưởng nhân nghĩa, lo cho dân cho nước suốt cả cuộc đời của Ức Trai."
+      },
+      {
+        "q": "Nghệ thuật lập luận độc đáo nhất trong đoạn mở đầu của tác phẩm 'Bình Ngô đại cáo' là gì?",
+        "options": [
+          "Nêu cao nguyên lý nhân nghĩa gắn liền với khẳng định chủ quyền độc lập quốc gia",
+          "Liệt kê chi tiết các tội ác của kẻ thù xâm lược nhà Minh",
+          "Kể lại diễn biến khó khăn của cuộc khởi nghĩa Lam Sơn",
+          "Sử dụng nhiều hình ảnh ẩn dụ thiên nhiên kỳ vĩ"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Nguyễn Trãi bắt đầu bằng chân lý nhân nghĩa: 'Việc nhân nghĩa cốt ở yên dân / Quân điếu phạt trước lo trừ bạo', sau đó khẳng định ngay chủ quyền dân tộc tồn tại song song từ lâu đời."
+      },
+      {
+        "q": "Cuộc chiến đấu giữa Đăm Săn và Mtao Mxây trong sử thi mang ý nghĩa sâu sắc nào sau đây?",
+        "options": [
+          "Bảo vệ danh dự cá nhân, gia đình và giành lại hạnh phúc, đồng thời khẳng định sức mạnh của bộ tộc",
+          "Sự tranh giành đất đai sản xuất màu mỡ ở Tây Nguyên",
+          "Sự trả thù mù quáng cá nhân giữa hai tù trưởng",
+          "Tiêu diệt kẻ yếu để xưng bá toàn vùng núi rừng"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Trận chiến cứu vợ (Hơ Nhị) của Đăm Săn mang ý nghĩa cộng đồng to lớn: thống nhất các bộ tộc, mang lại cuộc sống yên bình thịnh vượng cho buôn làng."
+      },
+      {
+        "q": "Triết lý sống 'Nhàn' trong bài thơ cùng tên của Nguyễn Bỉnh Khiêm khuyên con người nên:",
+        "options": [
+          "Tránh xa vòng danh lợi xô bồ, sống hòa hợp với thiên nhiên tự tại",
+          "Lười biếng, trốn tránh trách nhiệm với gia đình và xã hội",
+          "Chỉ làm thơ và uống rượu cả ngày không cần lao động",
+          "Tìm kiếm sự giàu sang vinh hoa phú quý ở chốn kinh thành"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Nhàn của Nguyễn Bỉnh Khiêm là lối sống thanh cao, hòa hợp với tự nhiên, giữ cốt cách trong sạch trước bụi trần danh lợi bon chen."
+      },
+      {
+        "q": "Thể thơ thất ngôn xen lục ngôn xuất hiện nhiều trong tập thơ nào của Nguyễn Trãi?",
+        "options": [
+          "Quốc âm thi tập",
+          "Ức Trai thi tập",
+          "Lam Sơn thực lục",
+          "Dư địa chí"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Quốc âm thi tập là tập thơ Nôm đầu tiên còn lưu lại của Việt Nam, sáng tạo độc đáo ở việc đưa các câu thơ lục ngôn (6 chữ) đan xen vào thể thơ thất ngôn Đường luật."
+      }
+    ],
+    "biology_11": [
+      {
+        "q": "Nước và các ion khoáng được hấp thụ từ đất vào tế bào lông hút của rễ thực vật chủ yếu qua con đường nào?",
+        "options": [
+          "Con đường gian bào và con đường tế bào chất",
+          "Chỉ qua con đường không bào",
+          "Vận chuyển chủ động qua các khí khổng ở lá",
+          "Thẩm thấu qua lớp biểu bì của thân cây"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Nước và ion khoáng đi từ đất qua tế bào lông hút và vỏ rễ vào mạch gỗ bằng hai con đường song song: con đường gian bào (qua thành tế bào và khoảng gian bào) và con đường tế bào chất (qua cầu sinh chất)."
+      },
+      {
+        "q": "Động lực chính của dòng mạch gỗ (vận chuyển nước ngược chiều trọng lực từ rễ lên lá) là gì?",
+        "options": [
+          "Lực kéo do thoát hơi nước ở lá",
+          "Lực đẩy (áp suất rễ)",
+          "Lực liên kết giữa các phân tử nước",
+          "Cả ba phương án trên đều đúng"
+        ],
+        "answer": 3,
+        "level": "easy",
+        "explain": "Dòng mạch gỗ di chuyển được nhờ sự phối hợp của 3 lực: Lực kéo do thoát hơi nước ở lá (quan trọng nhất), lực đẩy của rễ (áp suất rễ), và lực liên kết giữa các phân tử nước với nhau và với thành mạch gỗ."
+      },
+      {
+        "q": "Cơ quan thực hiện chức năng thoát hơi nước chủ yếu ở cây xanh là gì?",
+        "options": [
+          "Khí khổng ở lá",
+          "Biểu bì của thân cây",
+          "Lông hút ở rễ",
+          "Lỗ vỏ trên cành"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Thoát hơi nước ở thực vật xảy ra chủ yếu qua con đường khí khổng ở lá (chiếm phần lớn lượng nước thoát ra)."
+      },
+      {
+        "q": "Động vật nào sau đây có hệ tuần hoàn hở (máu trộn lẫn với dịch mô chảy trong khoang cơ thể)?",
+        "options": [
+          "Côn trùng (Châu chấu, gián)",
+          "Giun đất",
+          "Cá chép",
+          "Chim bồ câu"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Động vật thân mềm và chân khớp (như côn trùng, châu chấu) có hệ tuần hoàn hở, máu chảy từ tim vào động mạch rồi tràn vào khoang cơ thể trộn lẫn dịch mô."
+      },
+      {
+        "q": "Hô hấp ở chim đạt hiệu quả cao nhất trong các động vật trên cạn nhờ cấu trúc đặc biệt nào?",
+        "options": [
+          "Hệ thống túi khí trước và sau phối hợp với phổi",
+          "Phổi có kích thước cực lớn",
+          "Da luôn ẩm ướt để trao đổi khí trực tiếp",
+          "Hệ thống ống khí phân nhánh đến tận tế bào"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Phổi của chim không có phế nang mà gồm các ống khí thông với hệ thống túi khí giúp dòng khí giàu ôxi đi qua phổi liên tục theo một chiều cả khi hít vào và thở ra (hô hấp kép)."
+      },
+      {
+        "q": "Nhóm thực vật nào sau đây có con đường cố định CO₂ thích nghi với điều kiện khô hạn kéo dài ở sa mạc?",
+        "options": [
+          "Thực vật CAM (Dứa, xương rồng)",
+          "Thực vật C₃ (Lúa, ngô)",
+          "Thực vật C₄ (Mía, rau dền)",
+          "Thực vật ôn đới cận nhiệt"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Thực vật CAM (như xương rồng, dứa) thích nghi bằng cách đóng khí khổng vào ban ngày để tránh mất nước, mở khí khổng ban đêm để hấp thụ CO₂ dự trữ."
+      },
+      {
+        "q": "Mạch rây ở thực vật có hoa thực hiện nhiệm vụ chủ yếu là vận chuyển:",
+        "options": [
+          "Chất hữu cơ tổng hợp từ lá đến các cơ quan lưu trữ và rễ",
+          "Nước và ion khoáng từ đất lên lá",
+          "Khí CO₂ phục vụ pha tối quang hợp",
+          "Nhựa nguyên cung cấp cho sinh trưởng ngọn cành"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Mạch rây vận chuyển các chất hữu cơ (chủ yếu là saccarôzơ) được tổng hợp từ lá đi nuôi dưỡng rễ và các cơ quan dự trữ sinh trưởng khác."
+      },
+      {
+        "q": "Trong cơ chế duy trì cân bằng nội môi, cơ quan nào đóng vai trò quan trọng nhất trong việc điều hòa áp suất thẩm thấu của máu bằng cách tái hấp thụ nước?",
+        "options": [
+          "Thận",
+          "Gan",
+          "Phổi",
+          "Tuyến tụy"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Thận điều hòa áp suất thẩm thấu nhờ khả năng tái hấp thu hoặc thải bớt nước và các chất điện giải dưới sự kiểm soát của hoocmôn ADH và aldosteron."
+      },
+      {
+        "q": "Điện thế hoạt động lan truyền trên sợi thần kinh có bao miêlin nhanh hơn sợi thần kinh không có bao miêlin là do xung thần kinh:",
+        "options": [
+          "Lan truyền theo cách nhảy cóc từ eo Ranvier này sang eo Ranvier khác",
+          "Đi qua trực tiếp bao miêlin cách điện tốt",
+          "Được tăng cường dòng điện thế liên tục dọc sợi",
+          "Không bị cản trở bởi chất trung gian hóa học"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Bao miêlin có tính chất cách điện, do đó dòng điện thế hoạt động chỉ hình thành và lan truyền nhảy cóc qua các điểm không có bao (eo Ranvier), giúp tốc độ truyền tin tăng lên vượt trội."
+      },
+      {
+        "q": "Loại hoocmôn thực vật nào kích thích sự chín nhanh của quả và làm rụng lá ở cây?",
+        "options": [
+          "Êtilen",
+          "Auxin (AIA)",
+          "Gibêrelin (GA)",
+          "Xitôkinin"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Êtilen là hoocmôn dạng khí được sinh ra ở quả chín, các mô già yếu kích thích mạnh mẽ quá trình chín của quả và sự rụng lá, rụng hoa."
+      }
+    ],
+    "history_11": [
+      {
+        "q": "Cuộc Duy tân Minh Trị ở Nhật Bản năm 1868 thực chất là một cuộc:",
+        "options": [
+          "Cách mạng tư sản không triệt để",
+          "Cách mạng xã hội chủ nghĩa",
+          "Cuộc đảo chính quân sự thông thường",
+          "Cuộc chiến tranh giải phóng dân tộc"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Duy tân Minh Trị do Thiên hoàng tiến hành đã mở đường cho kinh tế tư bản chủ nghĩa phát triển mạnh ở Nhật Bản, mang tính chất của một cuộc cách mạng tư sản không triệt để."
+      },
+      {
+        "q": "Sự kiện lịch sử trực tiếp châm ngòi thổi bùng Chiến tranh thế giới thứ nhất (1914 - 1918) là:",
+        "options": [
+          "Thái tử Áo-Hung bị một phần tử khủng bố ám sát tại Xéc-bi",
+          "Đức tấn công Ba Lan bất ngờ",
+          "Nga tuyên chiến với Đế quốc Áo-Hung",
+          "Anh và Pháp tuyên chiến với Đức"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Ngày 28/6/1914, Thái tử Áo-Hung là Franz Ferdinand bị ám sát tại Sarajevo (Bosnia, do phần tử yêu nước Serbia thực hiện). Áo-Hung lấy cớ đó tuyên chiến với Serbia, làm bùng nổ chiến tranh thế giới."
+      },
+      {
+        "q": "Năm 1917, cuộc Cách mạng tháng Mười Nga thắng lợi đã lật đổ:",
+        "options": [
+          "Chính phủ lâm thời của giai cấp tư sản",
+          "Chế độ phong kiến Nga hoàng",
+          "Chính quyền quân phiệt phát xít",
+          "Sự thống trị của liên minh Anh - Pháp"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Cách mạng tháng Hai năm 1917 đã lật đổ Nga hoàng Nicholas II, còn Cách mạng tháng Mười sau đó lật đổ Chính phủ lâm thời tư sản lập ra chính quyền Xô viết."
+      },
+      {
+        "q": "Đảng Cộng sản Việt Nam chính thức được thành lập vào ngày tháng năm nào?",
+        "options": [
+          "3/2/1930",
+          "2/3/1930",
+          "19/8/1945",
+          "2/9/1945"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Hội nghị hợp nhất các tổ chức cộng sản do Nguyễn Ái Quốc chủ trì tại Cửu Long (Hương Cảng, Trung Quốc) đã quyết định thành lập Đảng Cộng sản Việt Nam vào ngày 3/2/1930."
+      },
+      {
+        "q": "Nội dung cơ bản nhất của 'Chính sách kinh tế mới' (NEP) do Lênin đề xướng ở nước Nga năm 1921 là:",
+        "options": [
+          "Thay thế chế độ trưng thu lương thực thừa bằng thuế lương thực",
+          "Quốc hữu hóa toàn bộ các xí nghiệp vừa và nhỏ",
+          "Tập trung khôi phục công nghiệp quốc phòng trước tiên",
+          "Cấm buôn bán tự do thương nghiệp"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "NEP chuyển từ 'Chính sách cộng sản thời chiến' sang kinh tế thị trường có sự kiểm soát, cốt lõi là thay trưng thu lương thực thừa bằng thuế lương thực cố định để khuyến khích nông dân sản xuất."
+      },
+      {
+        "q": "Cuộc khủng hoảng kinh tế thế giới 1929 - 1933 tác động trực tiếp đến nền kinh tế Việt Nam làm cho:",
+        "options": [
+          "Kinh tế suy thoái nghiêm trọng, đời sống nhân dân vô cùng cực khổ",
+          "Kinh tế phát triển vượt bậc nhờ Pháp đầu tư",
+          "Giá cả nông sản tăng cao kích thích sản xuất",
+          "Các doanh nghiệp Việt Nam tự chủ hoàn toàn"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Là thuộc địa của Pháp, Việt Nam chịu ảnh hưởng nặng nề: nông nghiệp, công nghiệp đình đốn, giá lúa gạo sụt giảm, lương công nhân hạ thấp tạo nên làn sóng đấu tranh mạnh mẽ."
+      },
+      {
+        "q": "Đỉnh cao của phong trào cách mạng 1930 - 1931 ở Việt Nam được đánh dấu bằng sự kiện nào?",
+        "options": [
+          "Sự thành lập chính quyền Xô viết ở một số xã thuộc Nghệ An và Hà Tĩnh",
+          "Cuộc bãi công của công nhân Ba Son Sài Gòn",
+          "Cuộc khởi nghĩa Yên Bái của Việt Nam Quốc dân Đảng",
+          "Chiến thắng Việt Bắc thu đông"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Phong trào phát triển tới đỉnh cao ở Nghệ - Tĩnh. Chính quyền thực dân bị tê liệt ở cơ sở, quần chúng tự đứng ra quản lý đời sống xã hội theo hình thức Xô viết đầu tiên."
+      },
+      {
+        "q": "Ý nghĩa lịch sử vĩ đại nhất của thắng lợi Cách mạng tháng Tám năm 1945 đối với dân tộc Việt Nam là:",
+        "options": [
+          "Phá tan xiềng xích thực dân - phát xít, lật đổ chế độ phong kiến, lập ra nước VNDCCH",
+          "Đánh bại quân phiệt Nhật, buộc quân Anh phải thừa nhận độc lập",
+          "Giúp Việt Nam trở thành quốc gia công nghiệp phát triển",
+          "Xóa bỏ hoàn toàn ranh giới chia cắt hai miền Nam Bắc"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Cách mạng tháng Tám đập tan ách thống trị hơn 80 năm của Pháp và ách phát xít Nhật, lật đổ chế độ phong kiến tồn tại ngàn năm, khai sinh nước Việt Nam Dân chủ Cộng hòa độc lập."
+      },
+      {
+        "q": "Trong cuộc khai thác thuộc địa lần thứ hai (1919 - 1929) ở Đông Dương, thực dân Pháp đầu tư nhiều nhất vào ngành nào?",
+        "options": [
+          "Nông nghiệp (đồn điền cao su) và khai mỏ (than đá)",
+          "Công nghiệp cơ khí chế tạo máy",
+          "Hệ thống đường sắt đô thị hiện đại",
+          "Thương nghiệp xuất nhập khẩu tự do"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Để vơ vét nguyên liệu phục vụ phục hồi chính quốc sau chiến tranh, Pháp đổ vốn nhiều nhất vào đồn điền cao su và khai thác mỏ than đá tại Quảng Ninh."
+      },
+      {
+        "q": "Sự kiện nào đánh dấu bước ngoặt quyết định của Nguyễn Ái Quốc từ người yêu nước trở thành chiến sĩ cộng sản?",
+        "options": [
+          "Đọc bản Sơ thảo luận cương của Lênin về vấn đề dân tộc và thuộc địa (7/1920) và bỏ phiếu tán thành gia nhập Quốc tế thứ ba (12/1920)",
+          "Gửi Bản yêu sách của nhân dân An Nam tới Hội nghị Véc-xai năm 1919",
+          "Thành lập Hội Việt Nam Cách mạng Thanh niên tại Quảng Châu năm 1925",
+          "Chủ trì hội nghị thành lập Đảng Cộng sản Việt Nam năm 1930"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Việc bỏ phiếu tán thành gia nhập Quốc tế thứ ba và tham gia sáng lập Đảng Cộng sản Pháp tại Đại hội Tua tháng 12/1920 đánh dấu bước chuyển biến nhảy vọt từ chủ nghĩa yêu nước sang chủ nghĩa cộng sản của Người."
+      }
+    ],
+    "literature_11": [
+      {
+        "q": "Truyện ngắn 'Chữ người tử tù' của nhà văn Nguyễn Tuân được in lần đầu trong tác phẩm tập truyện nào?",
+        "options": [
+          "Vang bóng một thời",
+          "Chiếc lư đồng mắt cua",
+          "Sông Đà",
+          "Một chuyến đi"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Chữ người tử tù (ban đầu tên là Dòng chữ cuối cùng) là truyện ngắn xuất sắc nhất rút từ tập 'Vang bóng một thời' (1940) tôn vinh những nét đẹp văn hóa cổ truyền của dân tộc."
+      },
+      {
+        "q": "Ai là tác giả của bài thơ tình lãng mạn đầy giục giã 'Vội vàng'?",
+        "options": [
+          "Xuân Diệu",
+          "Huy Cận",
+          "Hàn Mặc Tử",
+          "Chế Lan Viên"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Vội vàng là bài thơ nổi tiếng của 'ông hoàng thơ tình' Xuân Diệu in trong tập 'Thơ thơ' (1938)."
+      },
+      {
+        "q": "Không gian trong bài thơ 'Tràng giang' của Huy Cận mang đặc điểm nổi bật nào?",
+        "options": [
+          "Sông nước mênh mông, chia cắt, đượm buồn cô đơn của cái tôi nhỏ bé",
+          "Cảnh sắc phố thị ồn ào náo nhiệt thời hiện đại",
+          "Cảnh núi non hiểm trở hùng vĩ của vùng cao Tây Bắc",
+          "Cảnh nhộn nhịp mua bán của một làng chài ven biển"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Tràng giang thể hiện nỗi sầu nhân thế trước thiên nhiên vũ trụ bao la, vô biên đối lập với kiếp người nổi trôi, cô độc 'củi một cành khô lạc mấy dòng'."
+      },
+      {
+        "q": "Nhân vật chính Chí Phèo trong truyện ngắn cùng tên của Nam Cao khao khát điều gì nhất trước khi chết?",
+        "options": [
+          "Được làm hòa với xã hội, trở lại làm một người lương thiện",
+          "Kiếm thật nhiều tiền để trả thù Bá Kiến",
+          "Được lấy Thị Nở làm vợ chính thức để xây dựng gia đình",
+          "Trở thành tay anh chị khét tiếng hơn nữa ở làng Vũ Đại"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Sau khi thức tỉnh nhân tính nhờ tình yêu của Thị Nở, bi kịch ập đến khiến Chí Phèo nhận ra mình không thể trở lại làm người lương thiện được nữa. Câu hỏi đau đớn nhất của anh là: 'Ai cho tôi lương thiện?'"
+      },
+      {
+        "q": "Chi tiết nghệ thuật nào được coi là bước ngoặt làm thức tỉnh phần người nhân tính bị vùi lấp của Chí Phèo?",
+        "options": [
+          "Bát cháo hành nóng hổi của Thị Nở",
+          "Cuộc gặp gỡ trực tiếp đòi tiền Bá Kiến",
+          "Tiếng chửi bới của Chí Phèo lúc say rượu đầu truyện",
+          "Lúc tự rạch mặt ăn vạ ngoài cổng nhà lí trưởng"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Bát cháo hành bình dị chứa đựng sự chăm sóc mộc mạc của Thị Nở là hương vị của tình thương ấm áp giúp Chí Phèo thức tỉnh khỏi những cơn say vô tận và khát khao lương thiện trỗi dậy."
+      },
+      {
+        "q": "Huấn Cao trong truyện ngắn 'Chữ người tử tù' được xây dựng dựa trên nguyên mẫu lịch sử của danh sĩ nào?",
+        "options": [
+          "Cao Bá Quát",
+          "Nguyễn Trãi",
+          "Nguyễn Bỉnh Khiêm",
+          "Phan Bội Châu"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Nguyễn Tuân đã lấy nguyên mẫu từ cuộc đời của Cao Bá Quát - một danh sĩ lỗi lạc thời Nguyễn nổi tiếng chữ đẹp và có khí phách hiên ngang lãnh đạo cuộc khởi nghĩa chống lại triều đình tự tôn."
+      },
+      {
+        "q": "Bức tranh phố huyện nghèo lúc chiều muộn trong truyện 'Hai đứa trẻ' của Thạch Lam gợi lên cảm xúc chủ đạo nào?",
+        "options": [
+          "Nỗi buồn thương man mác trước cuộc sống nghèo nàn tẻ nhạt của những con người nhỏ bé",
+          "Sự tức giận phẫn nộ trước cảnh áp bức bóc lột của địa chủ",
+          "Sự vui tươi háo hức trước sự đổi thay của nông thôn",
+          "Nỗi nhớ nhà da diết của hai đứa trẻ thành thị về quê ăn tết"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Truyện ngắn của Thạch Lam không có cốt truyện gay cấn mà giàu chất thơ, ghi lại cảm giác buồn tẻ, mỏi mòn của những người nghèo nơi ga xép đợi chuyến tàu đêm qua."
+      },
+      {
+        "q": "Triết lý nhân sinh sâu sắc nhất mà Nam Cao gửi gắm qua truyện ngắn 'Chí Phèo' là:",
+        "options": [
+          "Sự hủy diệt nhân hình, nhân tính của người nông dân trong xã hội cũ và tiếng kêu cứu bảo vệ quyền làm người",
+          "Sự lên án thói nghiện ngập rượu chè ở nông thôn Việt Nam",
+          "Vạch trần bộ mặt tham lam của giai cấp tư sản thành thị",
+          "Ca ngợi vẻ đẹp trù phú của vùng đồng bằng sông Hồng"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Chí Phèo không chỉ là câu chuyện lưu manh hóa mà sâu sắc hơn là bi kịch cự tuyệt quyền làm người, qua đó tác giả khẳng định sức sống bất diệt của phần lương thiện trong tâm hồn người lao động."
+      },
+      {
+        "q": "Quan niệm về thời gian của Xuân Diệu thể hiện trong bài thơ 'Vội vàng' là gì?",
+        "options": [
+          "Thời gian tuyến tính một đi không trở lại, tuổi trẻ ngắn ngủi cần sống hết mình trọn vẹn từng giây",
+          "Thời gian tuần hoàn vô tận, đời người sẽ mãi mãi trường tồn",
+          "Thời gian chỉ là ảo ảnh không có thực của con người",
+          "Thời gian trôi rất chậm nên con người cứ thong thả thụ hưởng"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Khác với các nhà thơ trung đại coi thời gian tuần hoàn (xuân đi xuân lại lại), Xuân Diệu nhìn thời gian tuyến tính trôi nhanh cuồn cuộn: 'Lòng tôi rộng nhưng lượng trời chật hẹp / Không cho dài thời trẻ của nhân gian'."
+      },
+      {
+        "q": "Cảnh cho chữ trong truyện 'Chữ người tử tù' được tác giả Nguyễn Tuân đánh giá là một cảnh tượng như thế nào?",
+        "options": [
+          "Một cảnh tượng xưa nay chưa từng có",
+          "Một đêm hội ngộ ấm cúng giữa những người bạn cũ",
+          "Một buổi tra tấn tù nhân dã man trong ngục tối",
+          "Cảnh tượng phô diễn quyền lực của viên quản ngục"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Nguyễn Tuân viết: 'Một cảnh tượng xưa nay chưa từng có' bởi lẽ việc thưởng thức cái đẹp thanh cao lại diễn ra trong buồng giam tối tăm, bẩn thỉu; người tử tù ban phát cái đẹp còn viên quản ngục cúi đầu đón nhận."
+      }
+    ],
+    "biology_12": [
+      {
+        "q": "Đặc điểm nào sau đây của mã di truyền thể hiện rằng tất cả các loài sinh vật trên Trái Đất đều dùng chung một bộ bảng mã di truyền (trừ vài ngoại lệ)?",
+        "options": [
+          "Tính phổ biến",
+          "Tính đặc hiệu",
+          "Tính thoái hóa (dư thừa)",
+          "Tính liên tục không gối lên nhau"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Tính phổ biến của mã di truyền nghĩa là hầu hết các loài sinh vật từ vi khuẩn đến con người đều dùng chung một bộ mã di truyền, chứng tỏ nguồn gốc thống nhất của sinh giới."
+      },
+      {
+        "q": "Quá trình nhân đôi ADN (tự nhân đôi) ở tế bào nhân thực được thực hiện theo những nguyên tắc nào?",
+        "options": [
+          "Nguyên tắc bổ sung và nguyên tắc bán bảo tồn (giữ lại một nửa)",
+          "Nguyên tắc bổ sung và nguyên tắc bảo tồn hoàn toàn",
+          "Nguyên tắc khuôn mẫu và nguyên tắc gián đoạn",
+          "Nguyên tắc tự do và nguyên tắc nửa bảo tồn"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Quá trình nhân đôi ADN luôn tuân thủ nguyên tắc bổ sung (A-T, G-X) và bán bảo tồn (trong mỗi phân tử ADN con có 1 mạch cũ của mẹ và 1 mạch mới tổng hợp)."
+      },
+      {
+        "q": "Đột biến gen là những biến đổi trong:",
+        "options": [
+          "Cấu trúc của gen, liên quan đến một hoặc một số cặp nuclêôtit",
+          "Số lượng nhiễm sắc thể của tế bào sinh dưỡng",
+          "Hình thái cấu trúc nhiễm sắc thể ở kỳ giữa",
+          "Trình tự sắp xếp các axit amin trên chuỗi pôlipeptit"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Đột biến gen là những biến đổi xảy ra trong cấu trúc của gen, thường liên quan đến mất, thêm, thay thế một hoặc một vài cặp nuclêôtit."
+      },
+      {
+        "q": "Theo quy luật phân li độc lập của Menđen, phép lai AaBb x AaBb cho tỉ lệ kiểu hình ở thế hệ lai F₁ là:",
+        "options": [
+          "9 : 3 : 3 : 1",
+          "1 : 1 : 1 : 1",
+          "3 : 1",
+          "9 : 7"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Lai hai cặp tính trạng trội lặn hoàn toàn dị hợp tử lai với nhau cho tỉ lệ kiểu hình chuẩn Menđen: $(3:1) \\times (3:1) = 9:3:3:1$."
+      },
+      {
+        "q": "Trong cấu trúc của Operon Lac ở vi khuẩn E. coli, vùng vận hành (O) là nơi:",
+        "options": [
+          "Prôtêin ức chế liên kết để ngăn cản quá trình phiên mã của gen cấu trúc",
+          "Enzim ARN pôlimeraza liên kết để khởi đầu phiên mã",
+          "Chứa thông tin mã hóa cấu trúc các enzim phân giải lactôzơ",
+          "Tổng hợp ra prôtêin ức chế khi môi trường có lactôzơ"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Vùng vận hành (operator - O) là vùng trình tự nuclêôtit đặc biệt nơi prôtêin ức chế bám vào để ngăn cản sự hoạt động của enzim phiên mã ARN pôlimeraza."
+      },
+      {
+        "q": "Cánh của chim và cánh của côn trùng (bướm, ong) là ví dụ tiêu biểu về loại cơ quan nào?",
+        "options": [
+          "Cơ quan tương tự (khác nguồn gốc nhưng cùng chức năng)",
+          "Cơ quan tương đồng (cùng nguồn gốc phát sinh)",
+          "Cơ quan thoái hóa không còn chức năng",
+          "Cơ quan nhân tạo chọn lọc lai tạo tạo ra"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Cánh chim có cấu trúc xương thuộc chi trước lớp thú, cánh bướm cấu tạo từ lớp màng da kitin côn trùng. Chúng khác nguồn gốc nhưng cùng chức năng bay lượn nên gọi là cơ quan tương tự."
+      },
+      {
+        "q": "Một quần thể thực vật tự thụ phấn có thành phần kiểu gen ở thế hệ xuất phát P là 100% Aa. Sau 3 thế hệ tự thụ phấn liên tục, tỉ lệ kiểu gen dị hợp Aa trong quần thể là bao nhiêu?",
+        "options": [
+          "12.5% (1/8)",
+          "50% (1/2)",
+          "25% (1/4)",
+          "6.25% (1/16)"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Tỉ lệ kiểu gen dị hợp qua $n$ thế hệ tự thụ phấn giảm dần theo công thức: $(\\frac{1}{2})^n$. Với $n = 3 \\implies (\\frac{1}{2})^3 = \\frac{1}{8} = 12.5\\%$."
+      },
+      {
+        "q": "Trong công nghệ chuyển gen, enzim cắt giới hạn dùng để cắt phân tử ADN của tế bào cho và thể truyền ở những vị trí xác định là:",
+        "options": [
+          "Restrictaza",
+          "Ligaza",
+          "ARN pôlimeraza",
+          "ADN pôlimeraza"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Enzim cắt giới hạn (restrictaza) nhận biết và cắt đứt liên kết phôtphodieste ở các vị trí đặc hiệu trên ADN để tạo đầu dính tương thích."
+      },
+      {
+        "q": "Theo học thuyết tiến hóa tổng hợp hiện đại, nhân tố tiến hóa nào sau đây định hướng cho quá trình tiến hóa (quy định chiều hướng biến đổi tần số alen)?",
+        "options": [
+          "Chọn lọc tự nhiên",
+          "Đột biến gen",
+          "Di - nhập gen",
+          "Các yếu tố ngẫu nhiên"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Chọn lọc tự nhiên tác động trực tiếp lên kiểu hình qua đó loại bỏ các alen có hại, giữ lại alen có lợi, định hướng chiều hướng tiến hóa của quần thể."
+      },
+      {
+        "q": "Ở một loài sinh vật, alen A quy định thân cao trội hoàn toàn so với a quy định thân thấp. Phép lai giữa hai cây tứ bội AAaa x AAaa cho tỉ lệ kiểu hình thân thấp (aaaa) ở đời con F₁ là bao nhiêu (biết quá trình giảm phân bình thường tạo giao tử lưỡng bội 2n)?",
+        "options": [
+          "1/36",
+          "1/16",
+          "1/4",
+          "3/36"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "* Cây tứ bội dị hợp tử $AAaa$ giảm phân cho tỉ lệ giao tử: $\\frac{1}{6}AA : \\frac{4}{6}Aa : \\frac{1}{6}aa$.\n* Con thân thấp kiểu gen $aaaa$ nhận giao tử $aa$ từ cả bố và mẹ:\n  $$aaaa = \\frac{1}{6}aa \\times \\frac{1}{6}aa = \\frac{1}{36}$$"
+      }
+    ],
+    "history_12": [
+      {
+        "q": "Sau Chiến tranh thế giới thứ hai, trật tự thế giới mới được thiết lập theo khuôn khổ của thỏa thuận giữa ba cường quốc tại hội nghị nào?",
+        "options": [
+          "Hội nghị Ianta (2/1945)",
+          "Hội nghị Versailles (1919)",
+          "Hội nghị Potsdam (8/1945)",
+          "Hội nghị Paris (1973)"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Hội nghị Ianta gồm nguyên thủ 3 nước Liên Xô, Mĩ, Anh họp tháng 2/1945 đã đưa ra những quyết định phân chia khu vực ảnh hưởng thiết lập nên Trật tự hai cực Ianta."
+      },
+      {
+        "q": "Chiến thắng quân sự nào của quân dân ta đã đập tan hoàn toàn kế hoạch Navarre của thực dân Pháp, quyết định thắng lợi cuộc kháng chiến chống Pháp (1945 - 1954)?",
+        "options": [
+          "Chiến dịch Điện Biên Phủ năm 1954",
+          "Chiến dịch Biên giới thu đông năm 1950",
+          "Chiến dịch Tây Bắc năm 1952",
+          "Chiến dịch Việt Bắc thu đông năm 1947"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Chiến thắng lịch sử Điện Biên Phủ lừng lẫy năm châu chấn động địa cầu là thắng lợi quân sự cao nhất, buộc Pháp ký hiệp định Giơnevơ rút quân về nước."
+      },
+      {
+        "q": "Hiệp định nào ký kết năm 1973 buộc đế quốc Mĩ phải rút hết quân đội viễn chinh về nước, tôn trọng độc lập chủ quyền thống nhất của Việt Nam?",
+        "options": [
+          "Hiệp định Paris về Việt Nam",
+          "Hiệp định Giơnevơ về Đông Dương",
+          "Hiệp định sơ bộ 6/3",
+          "Tạm ước 14/9"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Hiệp định Paris ký ngày 27/1/1973 đánh dấu thắng lợi to lớn, hoàn thành nhiệm vụ 'đánh cho Mĩ cút' tạo điều kiện thuận lợi đi đến giải phóng hoàn toàn miền Nam."
+      },
+      {
+        "q": "Đại hội đại biểu toàn quốc lần thứ VI của Đảng Cộng sản Việt Nam (12/1986) đi vào lịch sử dân tộc với quyết sách vĩ đại nào?",
+        "options": [
+          "Đề ra đường lối đổi mới đất nước toàn diện, trọng tâm là đổi mới kinh tế",
+          "Thông qua Cương lĩnh xây dựng đất nước thời kỳ quá độ",
+          "Quyết định chuyển từ nền kinh tế thị trường sang bao cấp",
+          "Phát động cuộc kháng chiến toàn quốc chống thực dân Pháp"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Đại hội VI đề ra đường lối Đổi mới, xóa bỏ cơ chế tập trung quan liêu bao cấp chuyển sang kinh tế hàng hóa nhiều thành phần vận hành theo cơ chế thị trường dưới sự quản lý của nhà nước."
+      },
+      {
+        "q": "Chiến dịch quân sự quyết định thắng lợi hoàn toàn của Cuộc Tổng tiến công và nổi dậy Xuân 1975 giải phóng miền Nam là:",
+        "options": [
+          "Chiến dịch Hồ Chí Minh",
+          "Chiến dịch Tây Nguyên",
+          "Chiến dịch Huế - Đà Nẵng",
+          "Chiến dịch Đường 14 - Phước Long"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Chiến dịch Hồ Chí Minh bắt đầu từ 26/4 đến 30/4/1975 đánh thẳng vào đầu não chính quyền Sài Gòn, giải phóng hoàn toàn miền Nam thống nhất đất nước."
+      },
+      {
+        "q": "Thắng lợi nào của quân dân ta ở miền Bắc được ví như trận 'Điện Biên Phủ trên không' buộc Mĩ dừng ném bom và ký Hiệp định Paris?",
+        "options": [
+          "Đánh bại cuộc tập kích tuần kích bằng B-52 của Mĩ vào Hà Nội, Hải Phòng cuối năm 1972",
+          "Đánh sập cầu Hàm Rồng Thanh Hóa",
+          "Đập tan cuộc hành quân Gian-xơn Xi-ti năm 1967",
+          "Hạ gục tàu chiến Maddox trên vịnh Bắc Bộ năm 1964"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Trận chiến 12 ngày đêm cuối tháng 12 năm 1972 đập tan cuộc tập kích chiến lược B-52 của Mĩ được coi là trận Điện Biên Phủ trên không làm sụp đổ ý chí leo thang chiến tranh của Mĩ."
+      },
+      {
+        "q": "Một trong những xu thế phát triển chính của thế giới sau khi Chiến tranh lạnh kết thúc (1989-1991) là:",
+        "options": [
+          "Xu thế hòa bình, hợp tác cùng phát triển và toàn cầu hóa kinh tế",
+          "Sự trỗi dậy của chủ nghĩa khủng bố đơn phương",
+          "Thế giới chuyển hoàn toàn sang đơn cực do Mĩ chi phối",
+          "Các khối quân sự đối đầu tiếp tục chạy đua vũ trang ác liệt"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Sau Chiến tranh lạnh, xu thế chung là hòa bình, ổn định, đối thoại trực tiếp và hợp tác phát triển kinh tế đa phương cùng xu thế toàn cầu hóa sâu rộng."
+      },
+      {
+        "q": "Điểm khác biệt cơ bản về quy mô giữa chiến lược 'Chiến tranh cục bộ' (1965-1968) và 'Chiến tranh đặc biệt' (1961-1965) của Mĩ ở miền Nam Việt Nam là:",
+        "options": [
+          "Chiến tranh cục bộ sử dụng quân viễn chinh Mĩ trực tiếp chiến đấu làm lực lượng nòng cốt và mở rộng đánh phá miền Bắc bằng không quân",
+          "Chiến tranh cục bộ chỉ dùng quân đội Sài Gòn làm nòng cốt",
+          "Chiến tranh đặc biệt diễn ra trên quy mô rộng lớn khắp Đông Dương",
+          "Chiến tranh đặc biệt có sự tham gia của quân đội các nước đồng minh của Mĩ"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Trong 'Chiến tranh cục bộ', Mĩ trực tiếp đổ quân viễn chinh Mĩ và đồng minh vào tham chiến nhằm giành lại thế chủ động quân sự, đồng thời mở rộng chiến tranh phá hoại ra miền Bắc bằng hải quân và không quân."
+      },
+      {
+        "q": "Cơ quan ngôn luận đầu tiên của tổ chức Hội Việt Nam Cách mạng Thanh niên do Nguyễn Ái Quốc sáng lập là tờ báo nào?",
+        "options": [
+          "Báo Thanh niên",
+          "Báo Người cùng khổ (Le Paria)",
+          "Báo Nhân dân",
+          "Báo Búa liềm"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Nguyễn Ái Quốc sáng lập báo Thanh niên tại Quảng Châu (Trung Quốc), số đầu tiên ra ngày 21/6/1925, chính thức khai sinh dòng báo chí cách mạng Việt Nam."
+      },
+      {
+        "q": "Nhiệm vụ hàng đầu của cách mạng nước ta được xác định trong các Hội nghị Ban Chấp hành Trung ương Đảng từ tháng 11/1939 đến tháng 5/1941 là:",
+        "options": [
+          "Giải phóng dân tộc khỏi ách thực dân phát xít đặt lên trên hết",
+          "Tiến hành cải cách ruộng đất triệt để",
+          "Xây dựng giai cấp công nhân lãnh đạo cách mạng",
+          "Lập liên minh công nông binh Độc lập"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Trước nguy cơ xâm lược phát xít, Hội nghị TW 6, 7, và đặc biệt TW 8 (5/1941) quyết định chuyển hướng chỉ đạo chiến lược: tạm gác khẩu hiệu cách mạng ruộng đất, đặt nhiệm vụ giải phóng dân tộc lên hàng đầu."
+      }
+    ],
+    "literature_12": [
+      {
+        "q": "Tác giả của bài thơ 'Tây Tiến' tái hiện bức tranh thiên nhiên Tây Bắc hùng vĩ dữ dội và vẻ đẹp kiêu hùng hào hoa của người lính là:",
+        "options": [
+          "Quang Dũng",
+          "Tố Hữu",
+          "Chế Lan Viên",
+          "Nguyễn Khoa Điềm"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Bài thơ Tây Tiến sáng tác năm 1948 tại Phù Lưu Chanh là thi phẩm xuất sắc nhất của đời thơ hào hoa Quang Dũng."
+      },
+      {
+        "q": "Bài thơ 'Việt Bắc' của nhà thơ cách mạng Tố Hữu được viết theo thể thơ dân tộc nào?",
+        "options": [
+          "Lục bát",
+          "Song thất lục bát",
+          "Thất ngôn bát cú",
+          "Tự do hiện đại"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Việt Bắc là bản anh hùng ca về cuộc kháng chiến chống Pháp được viết bằng thể thơ lục bát ngọt ngào mang đậm âm hưởng ca dao dân ca."
+      },
+      {
+        "q": "Hai nhân vật trung tâm tượng trưng cho sức sống tiềm tàng mạnh mẽ của người dân Tây Bắc trong truyện ngắn 'Vợ chồng A Phủ' của Tô Hoài là:",
+        "options": [
+          "Mị và A Phủ",
+          "Tràng và thị",
+          "Tnú và Mai",
+          "Phùng và người đàn bà hàng chài"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Truyện ngắn Vợ chồng A Phủ viết về số phận đau khổ nhưng quật khởi giành tự do của cô Mị và chàng trai nghèo A Phủ ở hồng ngài."
+      },
+      {
+        "q": "Trong truyện ngắn 'Vợ nhặt' của Kim Lân, bối cảnh lịch sử diễn ra sự kiện Tràng nhặt được vợ là vào thời gian nào?",
+        "options": [
+          "Nạn đói khủng khiếp năm 1945",
+          "Cuộc cải cách ruộng đất năm 1954",
+          "Thời kỳ bao cấp gian khó",
+          "Cuộc kháng chiến chống Mĩ cứu nước"
+        ],
+        "answer": 0,
+        "level": "easy",
+        "explain": "Bối cảnh truyện là nạn đói lịch sử năm Ất Dậu 1945 khiến hơn 2 triệu đồng bào ta bị chết đói, người chết như ngả rạ."
+      },
+      {
+        "q": "Thông điệp sâu sắc nhất về mối quan hệ giữa nghệ thuật và cuộc sống được nhà văn Nguyễn Minh Châu gửi gắm qua truyện ngắn 'Chiếc thuyền ngoài xa' là:",
+        "options": [
+          "Nghệ thuật không được xa rời cuộc đời thực tế; người nghệ sĩ cần nhìn nhận cuộc sống đa chiều, không phiến diện bề ngoài",
+          "Ca ngợi vẻ đẹp thơ mộng huyền ảo của vùng biển miền Trung",
+          "Khuyên con người không nên chụp ảnh từ cự ly quá xa",
+          "Lên án gay gắt những người phụ nữ cam chịu bị bạo hành"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Bức ảnh chụp chiếc thuyền rất đẹp thơ mộng nhưng đằng sau nó lại là bi kịch bạo hành gia đình đau xót của gia đình hàng chài, nhắc nhở người nghệ sĩ phải nhìn thấu bản chất phức tạp bên trong cuộc sống."
+      },
+      {
+        "q": "Hình tượng rừng cây xà nu trong truyện ngắn cùng tên của Nguyễn Trung Thành mang ý nghĩa biểu tượng chủ đạo nào?",
+        "options": [
+          "Vẻ đẹp kiên cường, sức sống bất diệt kiêu hãnh của con người Tây Nguyên trong kháng chiến",
+          "Sự hoang dã nguy hiểm của núi rừng Tây Nguyên",
+          "Sự giàu có về tài nguyên gỗ quý của Việt Nam",
+          "Nơi ẩn nấp an toàn của cán bộ cách mạng"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Cây xà nu đâm thẳng lên bầu trời đón ánh nắng, dù bị đạn đại bác chặt đứt nhưng cây con vẫn mọc lên kiên cường, biểu tượng cho thế hệ tiếp nối kiên cường bất khuất của dân làng Xô Man."
+      },
+      {
+        "q": "Thể ký độc đáo của Hoàng Phủ Ngọc Tường viết về dòng sông biểu tượng của xứ Huế thơ mộng mang tên gì?",
+        "options": [
+          "Ai đã đặt tên cho dòng sông?",
+          "Người lái đò sông Đà",
+          "Một chiến công thầm lặng",
+          "Hương Giang dòng sông tôi yêu"
+        ],
+        "answer": 0,
+        "level": "medium",
+        "explain": "Bút ký 'Ai đã đặt tên cho dòng sông?' ngợi ca sông Hương từ thượng nguồn hoang dại đến khi dịu dàng lững lờ ôm lấy cố đô Huế cổ kính."
+      },
+      {
+        "q": "Hình tượng 'Sóng' trong bài thơ cùng tên của Xuân Quỳnh mang ý nghĩa nghệ thuật kép thể hiện sự đồng điệu giữa:",
+        "options": [
+          "Hình tượng sóng biển và tâm hồn người phụ nữ đang yêu khát khao hạnh phúc",
+          "Sự giận dữ của tự nhiên và nỗi buồn con người",
+          "Sức mạnh của đại dương và khát vọng chinh phục vũ trụ",
+          "Sóng nước mênh mông và hành trình vượt biên gian nan"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Sóng và Em là hai hình tượng ẩn dụ đan xen song hành. Sóng là sự biểu hiện cụ thể, hữu hình của thế giới tâm hồn đầy biến động, thủy chung khát khao của 'em' khi yêu."
+      },
+      {
+        "q": "Ý nghĩa nhân đạo sâu sắc nhất của tác phẩm 'Vợ nhặt' (Kim Lân) nằm ở khía cạnh nào?",
+        "options": [
+          "Dù cận kề cái chết đói, con người vẫn khát khao hạnh phúc gia đình, yêu thương đùm bọc nhau và tin tưởng vào tương lai cách mạng",
+          "Tố cáo tội ác của thực dân Pháp và phát xít Nhật",
+          "Miêu tả chân thực từng bữa ăn đói khát thảm hại",
+          "Đề cao vai trò của phụ nữ trong việc thu xếp kinh tế gia đình"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Kim Lân không tập trung khai thác sự bi thảm của nạn đói mà làm nổi bật ánh sáng tình người: họ nương tựa vào nhau, dựng vợ gả chồng tìm kiếm sự sống giữa ranh giới cái chết cận kề."
+      },
+      {
+        "q": "Sự thức tỉnh nhận thức lớn nhất của nhân vật nghệ sĩ Phùng sau khi chứng kiến bi kịch ở tòa án huyện là gì?",
+        "options": [
+          "Hiểu được nguyên nhân sâu xa của sự cam chịu ở người đàn bà hàng chài bắt nguồn từ cuộc sống mưu sinh vất vả trên biển cần một người đàn ông gánh vác",
+          "Hiểu rằng tòa án huyện có thể giải quyết dứt điểm mọi tranh chấp gia đình",
+          "Nhận ra nhiếp ảnh nghệ thuật không thể nuôi sống bản thân",
+          "Thấy được tính cách hiếu chiến bạo lực của đàn ông hàng chài"
+        ],
+        "answer": 0,
+        "level": "hard",
+        "explain": "Phùng ban đầu nghĩ ly hôn là tốt nhất, nhưng lời giải thích của người đàn bà hàng chài giúp anh nhận ra lý thuyết sách vở xa rời thực tế mưu sinh nghiệt ngã của người dân lao động."
       }
     ]
   },
@@ -4164,6 +5307,16 @@
         "q": "Tìm giá trị lớn nhất (GTLN) và giá trị nhỏ nhất (GTNN) của hàm số y = x³ - 3x² + 1 trên đoạn [1; 3].",
         "level": "hard",
         "sampleAnswer": "1. Đạo hàm: y' = 3x² - 6x. Cho y' = 0 <=> 3x(x - 2) = 0 <=> x = 0 hoặc x = 2.\n2. Trên đoạn [1; 3], ta chỉ xét giá trị x = 2 (do x = 0 nằm ngoài đoạn).\n3. Tính các giá trị:\n- Biên x = 1: y(1) = 1³ - 3*1² + 1 = -1.\n- Cực trị x = 2: y(2) = 2³ - 3*2² + 1 = 8 - 12 + 1 = -3.\n- Biên x = 3: y(3) = 3³ - 3*3² + 1 = 1.\n4. So sánh kết quả:\n- GTLN (Max y) = 1 tại x = 3.\n- GTNN (Min y) = -3 tại x = 2."
+      },
+      {
+        "q": "Giải phương trình mũ sau bằng phương pháp đặt ẩn phụ: 9^x - 4*3^x + 3 = 0. Sau đó, tính tổng các nghiệm tìm được.",
+        "level": "hard",
+        "sampleAnswer": "1. Đặt t = 3^x (điều kiện: t > 0). Phương trình trở thành phương trình bậc hai: t² - 4t + 3 = 0.\n2. Giải phương trình trên, ta được hai nghiệm t = 1 và t = 3 (đều thỏa mãn điều kiện t > 0).\n3. Với t = 1: 3^x = 1 => x = 0.\n4. Với t = 3: 3^x = 3 => x = 1.\n5. Phương trình có hai nghiệm phân biệt x = 0 và x = 1. Vậy tổng các nghiệm là 0 + 1 = 1."
+      },
+      {
+        "q": "Trong không gian Oxyz, cho đường thẳng d: (x-1)/2 = (y+1)/1 = z/-1 và mặt phẳng (P): x + y + z - 3 = 0. Tìm tọa độ giao điểm M của đường thẳng d và mặt phẳng (P).",
+        "level": "hard",
+        "sampleAnswer": "1. Chuyển phương trình đường thẳng d về dạng tham số: x = 1 + 2t, y = -1 + t, z = -t.\n2. Vì M là giao điểm của d và (P), thay tọa độ tham số của d vào phương trình mặt phẳng (P): (1 + 2t) + (-1 + t) + (-t) - 3 = 0.\n3. Rút gọn phương trình ta được: 2t - 3 = 0 => t = 3/2.\n4. Thay giá trị t = 3/2 vào phương trình tham số của d để tìm tọa độ M: x = 1 + 2*(3/2) = 4; y = -1 + 3/2 = 1/2; z = -3/2.\n5. Vậy tọa độ giao điểm M là (4; 1/2; -3/2)."
       }
     ],
     "physics_12": [
@@ -4215,6 +5368,159 @@
         "q": "Read this statement: 'The world needs to invest in ecosystem rehabilitation to prevent irreversible climate change.' Write an essay (100-120 words) explaining this statement using the vocabulary 'rehabilitation' and 'depletion'.",
         "level": "hard",
         "sampleAnswer": "Sample Answer: Human industrialization has caused severe depletion of resources and forests, putting wildlife habitats at risk. To combat this depletion, investing in ecosystem rehabilitation is urgent. Rehabilitation, which involves planting native trees and restoring wetlands, acts as carbon capture. Without rehabilitation, natural zones will continue to decline, releasing greenhouse gases and making climate change irreversible. Therefore, countries must collaborate on environmental rehabilitation projects immediately."
+      }
+    ],
+    "biology_10": [
+      {
+        "q": "Trình bày sự khác biệt cơ bản về cấu tạo giữa tế bào nhân sơ (Prokaryote) và tế bào nhân thực (Eukaryote).",
+        "level": "easy",
+        "sampleAnswer": "1. Tế bào nhân sơ:\n- Chưa có nhân hoàn chỉnh (chỉ có vùng nhân chứa phân tử ADN vòng, không có màng nhân bao bọc).\n- Không có các bào quan có màng bao bọc (chỉ có ribôxôm).\n- Kích thước nhỏ (1-5 μm), cấu trúc đơn giản.\n\n2. Tế bào nhân thực:\n- Đã có nhân hoàn chỉnh (với màng nhân bao bọc chất nhiễm sắc).\n- Hệ thống nội màng phát triển và có nhiều bào quan có màng bao bọc (ti thể, lục lạp, lưới nội chất, bộ máy Golgi,...).\n- Kích thước lớn hơn (10-100 μm), cấu trúc phức tạp hơn nhiều."
+      },
+      {
+        "q": "Mô tả cấu trúc hóa học và chức năng của phân tử ATP. Tại sao nói ATP là 'đồng tiền năng lượng' của tế bào?",
+        "level": "medium",
+        "sampleAnswer": "1. Cấu trúc hóa học của ATP (Adenosin Triphosphat):\n- Gồm 3 thành phần: Bazo nito Adenin, đường ribozơ và 3 nhóm photphat.\n- Trong đó, liên kết giữa 2 nhóm photphat ngoài cùng là liên kết cao năng, dễ bị bẻ gãy để giải phóng năng lượng lớn (khoảng 7.3 kcal/mol).\n\n2. Tại sao gọi là 'đồng tiền năng lượng':\n- Tế bào không thể sử dụng trực tiếp năng lượng từ thức ăn (như glucose) mà phải chuyển hóa thành ATP.\n- ATP dễ dàng truyền năng lượng cho các phản ứng thu nhiệt trong tế bào thông qua việc đứt gãy liên kết cao năng để tạo thành ADP và photphat vô cơ. Khi cần tích lũy, tế bào lại tái tổng hợp ATP từ ADP. Do tính chất dễ tiêu dùng và tái sinh linh hoạt như tiền tệ trong lưu thông xã hội, ATP được gọi là 'đồng tiền năng lượng'."
+      },
+      {
+        "q": "Mô tả mối quan hệ mật thiết giữa pha sáng và pha tối của quá trình quang hợp ở thực vật.",
+        "level": "hard",
+        "sampleAnswer": "Quang hợp gồm pha sáng và pha tối liên kết chặt chẽ với nhau như hai bánh răng truyền động:\n1. Pha sáng (xảy ra ở màng thilacôit):\n- Hấp thụ năng lượng ánh sáng và phân ly H₂O để tạo ra O₂ (giải phóng ra ngoài), đồng thời tổng hợp các hợp chất cao năng là ATP và NADPH.\n\n2. Pha tối (xảy ra ở chất nền stroma):\n- Sử dụng CO₂ từ khí quyển cùng sản phẩm của pha sáng là ATP và NADPH để khử CO₂ thành hợp chất hữu cơ (glucôzơ) thông qua chu trình Calvin.\n- Pha tối trả lại ADP và NADP⁺ cho pha sáng để tiếp tục tái sinh ATP và NADPH.\n*Kết luận: Không có pha sáng thì pha tối không thể diễn ra do thiếu năng lượng và chất khử; ngược lại, nếu pha tối bị đình trệ thì pha sáng cũng sẽ ngưng do thiếu nguyên liệu ADP và NADP⁺.*"
+      }
+    ],
+    "history_10": [
+      {
+        "q": "Trình bày những thành tựu văn hóa tiêu biểu của Ai Cập cổ đại và đóng góp của chúng đối với văn minh nhân loại.",
+        "level": "easy",
+        "sampleAnswer": "Ai Cập cổ đại đóng đóng góp vĩ đại cho lịch sử loài người với các thành tựu:\n1. Chữ viết: Sáng tạo chữ tượng hình viết trên giấy papyrus, ghi chép lại lịch sử và tri thức cổ đại.\n2. Toán học: Nghệ thuật đo đạc ruộng đất phát triển hình học (tính số pi ≈ 3.16), giải phương trình bậc nhất.\n3. Thiên văn và Lịch pháp: Làm ra lịch dựa trên chu kỳ chuyển động của Mặt Trời và nước sông Nile dâng (năm có 365 ngày).\n4. Y học và Kiến trúc: Kỹ thuật ướp xác độc đáo hiểu biết sâu về giải phẫu người; các công trình kiến trúc kỳ vĩ như Kim tự tháp, tượng Nhân sư thách thức thời gian."
+      },
+      {
+        "q": "Phân tích nguyên nhân thắng lợi và ý nghĩa lịch sử của chiến thắng Bạch Đằng năm 938 do Ngô Quyền lãnh đạo.",
+        "level": "medium",
+        "sampleAnswer": "1. Nguyên nhân thắng lợi:\n- Sự lãnh đạo tài tình của Ngô Quyền với nghệ thuật quân sự độc đáo (sử dụng trận địa cọc ngầm kết hợp nước thủy triều lên xuống).\n- Tinh thần đoàn kết, chiến đấu dũng cảm của quân dân ta vượt qua sức mạnh ban đầu của địch.\n- Sự chủ quan khinh địch của hoàng tử Lưu Hoằng Tháo và quân Nam Hán.\n\n2. Ý nghĩa lịch sử:\n- Tiêu diệt hoàn toàn ý chí xâm lược của quân Nam Hán.\n- Kết thúc hoàn toàn ách thống trị kéo dài hơn 1000 năm của các triều đại phong kiến phương Bắc.\n- Khẳng định chủ quyền độc lập dân tộc sâu sắc, mở ra kỷ nguyên độc lập tự chủ lâu dài cho nước ta."
+      },
+      {
+        "q": "So sánh những đặc điểm kinh tế - xã hội cốt lõi giữa các quốc gia cổ đại phương Đông và các quốc gia cổ đại phương Tây.",
+        "level": "hard",
+        "sampleAnswer": "1. Các quốc gia cổ đại phương Đông (Ai Cập, Lưỡng Hà, Ấn Độ, Trung Quốc):\n- Kinh tế: Nông nghiệp trồng lúa nước ở lưu vực các con sông lớn phì nhiêu làm cơ sở, công tác trị thủy đắp đê được đề cao.\n- Xã hội: Hình thành giai cấp thống trị (vua chuyên chế, quý tộc, tăng lữ) và giai cấp bị trị (nông dân công xã là lực lượng sản xuất chính, nô lệ phục dịch).\n- Thể chế chính trị: Quân chủ chuyên chế trung ương tập quyền mang tính thần thánh.\n\n2. Các quốc gia cổ đại phương Tây (Hy Lạp, La Mã):\n- Kinh tế: Nghèo đất trồng trọt nhưng giàu tài nguyên khoáng sản, phát triển mạnh thủ công nghiệp và thương nghiệp biển (hải thương quốc tế).\n- Xã hội: Chiếm hữu nô lệ sâu sắc gồm hai giai cấp cơ bản: chủ nô và nô lệ (nô lệ chỉ được xem là vật sở hữu biết nói).\n- Thể chế chính trị: Dân chủ chủ nô (Athens) hoặc Cộng hòa chủ nô (La Mã), không có vua chuyên chế."
+      }
+    ],
+    "literature_10": [
+      {
+        "q": "Trình bày giá trị nhân đạo sâu sắc của tác phẩm kiệt tác 'Truyện Kiều' (Nguyễn Du) qua đoạn trích 'Trao duyên'.",
+        "level": "easy",
+        "sampleAnswer": "Giá trị nhân đạo trong đoạn trích 'Trao duyên' thể hiện qua:\n1. Sự đồng cảm sâu sắc của Nguyễn Du với nỗi đau đớn, bi kịch tình yêu tan vỡ của Thúy Kiều khi buộc phải đặt chữ hiếu lên trên chữ tình.\n2. Trân trọng vẻ đẹp nhân cách cao thượng của Kiều: dù trong hoàn cảnh tuyệt vọng vẫn lo nghĩ cho hạnh phúc của Kim Trọng, hy sinh hạnh phúc cá nhân để giữ trọn lời thề nghĩa nặng.\n3. Lên án gián tiếp các thế lực phong kiến tàn bạo (đồng tiền đen tối) đẩy gia đình Kiều vào cảnh ly tán, buộc nàng phải bán mình chuộc cha."
+      },
+      {
+        "q": "Phân tích hào khí Đông A đầy kiêu hùng được thể hiện qua bài thơ 'Tỏ lòng' (Thuật hoài) của danh tướng Phạm Ngũ Lão.",
+        "level": "medium",
+        "sampleAnswer": "Hào khí Đông A thời Trần được tái hiện sắc nét qua:\n1. Vẻ đẹp của người tráng sĩ đời Trần: Tư thế hiên ngang cầm giáo ('hoành sóc') bảo vệ non sông suốt nhiều năm ròng rã, sẵn sàng chiến đấu vì vận mệnh đất nước.\n2. Sức mạnh quân đội nhà Trần: Hình ảnh so sánh đầy hào hùng 'ba quân khí mạnh nuốt trôi trâu' miêu tả sức mạnh vật chất lẫn tinh thần quật khởi của quân dân thời Trần.\n3. Chí nam nhi cao cả của tác giả: Thể hiện qua cái 'thẹn' trước tấm gương Vũ Hầu (Gia Cát Lượng) vì chưa trả xong nợ công danh cho đất nước, bộc lộ khát vọng cống hiến quên mình vì dân tộc."
+      },
+      {
+        "q": "Chứng minh rằng 'Bình Ngô đại cáo' của Nguyễn Trãi là bản Tuyên ngôn Độc lập thứ hai đầy hùng tráng của dân tộc Việt Nam.",
+        "level": "hard",
+        "sampleAnswer": "'Bình Ngô đại cáo' được coi là bản Tuyên ngôn độc lập thứ hai vì:\n1. Định nghĩa toàn diện về quốc gia dân tộc: Nguyễn Trãi đưa ra các yếu tố chủ quyền đầy đủ gồm cương vực lãnh thổ, nền văn hiến lâu đời, phong tục tập quán riêng biệt, lịch sử các triều đại song hành cùng phong kiến phương Bắc, và hào kiệt đời nào cũng có.\n2. Bản cáo trạng đanh thép tố cáo tội ác vô nhân đạo của giặc Minh: 'Nướng dân đen trên ngọn lửa hung tàn / Vùi con đỏ xuống dưới hầm tai vạ', lột trần luận điệu giả nhân giả nghĩa của kẻ thù.\n3. Bản hùng ca về cuộc khởi nghĩa Lam Sơn: từ những ngày đầu gian khổ ở núi Lam đến các chiến thắng vang dội Chi Lăng, Xương Giang vang dội bờ cõi.\n4. Lời tuyên bố độc lập đàng hoàng: khẳng định kỷ nguyên mới hòa bình bền vững xây dựng trên nền tảng nhân nghĩa yên dân."
+      }
+    ],
+    "biology_11": [
+      {
+        "q": "Phân biệt sự khác nhau giữa quá trình thoát hơi nước qua khí khổng và thoát hơi nước qua cutin ở lá cây xanh.",
+        "level": "easy",
+        "sampleAnswer": "1. Qua khí khổng:\n- Vận tốc thoát hơi nước rất lớn.\n- Được điều chỉnh chủ động bằng cơ chế đóng mở của tế bào hạt sinh (tế bào hình hạt đậu).\n- Chiếm phần lớn lượng nước thoát ra từ lá.\n\n2. Qua lớp cutin trên bề mặt lá:\n- Vận tốc thoát hơi nước nhỏ.\n- Không tự điều chỉnh được (phụ thuộc vào độ dày của lớp cutin: lá non cutin mỏng thoát nước nhiều, lá già cutin dày thoát nước ít).\n- Chiếm tỉ lệ nhỏ hơn nhiều so với qua khí khổng."
+      },
+      {
+        "q": "So sánh cấu tạo và nguyên lý hoạt động giữa hệ tuần hoàn hở và hệ tuần hoàn kín ở động vật.",
+        "level": "medium",
+        "sampleAnswer": "1. Hệ tuần hoàn hở (ở côn trùng, thân mềm):\n- Cấu tạo: Có tim, hệ thống động mạch và tĩnh mạch ngắn, không có mao mạch trung gian.\n- Nguyên lý hoạt động: Máu được tim bơm vào động mạch rồi chảy tràn vào khoang cơ thể trộn lẫn dịch mô tạo thành hỗn hợp máu - dịch mô trực tiếp trao đổi chất với tế bào, sau đó được hút lại về tim qua các lỗ tim. Tốc độ chảy chậm, áp lực máu thấp.\n\n2. Hệ tuần hoàn kín (ở giun đất, mực ống, động vật có xương sống):\n- Cấu tạo: Có tim, hệ thống động mạch, tĩnh mạch và mạng lưới mao mạch dày đặc liên kết kín.\n- Nguyên lý hoạt động: Máu chảy liên tục trong mạch kín từ tim qua động mạch → mao mạch (trao đổi chất gián tiếp qua thành mao mạch) → tĩnh mạch rồi về tim. Tốc độ chảy nhanh, áp lực máu cao, điều hòa phân phối máu hiệu quả hơn."
+      },
+      {
+        "q": "Phân tích cơ chế truyền tin (xung thần kinh) qua xináp hóa học. Tại sao thông tin đi qua xináp chỉ theo một chiều duy nhất?",
+        "level": "hard",
+        "sampleAnswer": "1. Cơ chế truyền tin qua xináp hóa học:\n- Xung thần kinh lan truyền đến chùy xináp làm mở kênh Ca²⁺, ion Ca²⁺ đi vào trong chùy xináp.\n- Ca²⁺ kích thích các bóng chứa chất trung gian hóa học (ví dụ axêtilcôlin) liên kết với màng trước và giải phóng chất này vào khe xináp bằng xuất bào.\n- Chất trung gian hóa học khuếch tán qua khe xináp và gắn vào thụ thể đặc hiệu ở màng sau xináp, làm thay đổi tính thấm màng sau xuất hiện điện thế hoạt động lan truyền đi tiếp.\n\n2. Tại sao chỉ truyền đi một chiều:\n- Vì chỉ ở chùy xináp (màng trước) mới có các bóng chứa chất trung gian hóa học để giải phóng ra ngoài.\n- Chỉ ở màng sau xináp mới có các thụ thể tiếp nhận chất trung gian hóa học này bám vào kích hoạt xung điện. Do đó xung thần kinh không thể truyền ngược lại."
+      }
+    ],
+    "history_11": [
+      {
+        "q": "Trình bày ý nghĩa lịch sử của Cách mạng tháng Mười Nga năm 1917 đối với phong trào giải phóng dân tộc trên thế giới.",
+        "level": "easy",
+        "sampleAnswer": "Cách mạng tháng Mười Nga mang ý nghĩa quốc tế sâu sắc:\n1. Đập tan xiềng xích chủ nghĩa đế quốc ở một quốc gia lớn, cổ vũ mạnh mẽ phong trào đấu tranh của giai cấp công nhân và các dân tộc bị áp bức toàn cầu.\n2. Mở ra con đường cứu nước mới cho các dân tộc thuộc địa - con đường cách mạng vô sản gắn liền độc lập dân tộc với chủ nghĩa xã hội.\n3. Thành lập nhà nước xã hội chủ nghĩa đầu tiên, trở thành chỗ dựa vững chắc cho phong trào hòa bình và tiến bộ thế giới sau này."
+      },
+      {
+        "q": "Phân tích nguyên nhân thực dân Pháp chọn Đà Nẵng làm mục tiêu tấn công mở đầu khi xâm lược nước ta vào năm 1858.",
+        "level": "medium",
+        "sampleAnswer": "Pháp chọn Đà Nẵng làm điểm đổ bộ tấn công đầu tiên vì các lý do chiến lược:\n1. Vị trí địa lý: Đà Nẵng có cảng biển sâu, rộng thuận lợi cho tàu chiến Pháp neo đậu và dễ dàn trận pháo kích đất liền.\n2. Mục tiêu chính trị: Đà Nẵng chỉ cách kinh thành Huế khoảng 100km về phía Bắc, Pháp muốn thực hiện kế hoạch 'đánh nhanh thắng nhanh', nhanh chóng uy hiếp triều đình Huế đầu hàng.\n3. Cơ sở hậu thuẫn xã hội: Pháp hy vọng sự hỗ trợ của lực lượng giáo sĩ và giáo dân Thiên chúa giáo tại khu vực này để làm nội ứng hành quân thuận tiện."
+      },
+      {
+        "q": "So sánh điểm giống và khác nhau về con đường cứu nước của Nguyễn Ái Quốc với các nhà yêu nước tiền bối đầu thế kỷ XX (Phan Bội Châu, Phan Châu Trinh).",
+        "level": "hard",
+        "sampleAnswer": "1. Điểm giống nhau:\n- Đều xuất phát từ lòng yêu nước thương dân nồng nàn, mong muốn giải phóng dân tộc khỏi ách đô hộ của thực dân Pháp.\n- Đều tích cực đi ra nước ngoài tìm kiếm sự giúp đỡ và con đường mới cứu nước.\n\n2. Điểm khác biệt:\n- Phan Bội Châu: Đi theo con đường bạo động vũ trang, chủ trương dựa vào Nhật Bản (phong trào Đông Du) cải cách thể chế quân chủ lập hiến.\n- Phan Châu Trinh: Đi theo con đường cải cách dân chủ, chủ trương dựa vào Pháp để chấn hưng dân trí, nâng cao dân lực rồi mới đòi độc lập ('Khai dân trí, chấn dân khí, hậu dân sinh').\n- Nguyễn Ái Quốc: Hướng sang phương Tây (Pháp, Anh, Mĩ) để tìm hiểu bản chất kẻ thù, tìm đến chủ nghĩa Mác-Lênin, xác định cách mạng Việt Nam là cách mạng vô sản, dựa vào sức mạnh đại đoàn kết toàn dân và liên kết chặt chẽ với phong trào vô sản thế giới để tự giải phóng."
+      }
+    ],
+    "literature_11": [
+      {
+        "q": "Phân tích vẻ đẹp lãng mạn và khát vọng sống hiến dâng mãnh liệt của Xuân Diệu được thể hiện trong đoạn mở đầu bài thơ 'Vội vàng'.",
+        "level": "easy",
+        "sampleAnswer": "1. Khát vọng táo bạo đoạt quyền tạo hóa: Nhà thơ muốn tắt nắng, buộc gió lại để giữ lấy sắc hương tươi đẹp của cuộc đời trần thế ('Tôi muốn tắt nắng đi / Cho màu đừng nhạt mất...').\n2. Bức tranh thiên nhiên tràn ngập sức sống: Thiên nhiên mùa xuân hiện lên như một bữa tiệc đầy sắc hương tươi non quyến rũ ('Ong bướm này đây tuần tháng mật / Này đây hoa của đồng nội xanh rì...').\n3. Quan niệm nhân sinh mới mẻ: Lấy con người trẻ tuổi làm thước đo vẻ đẹp của thiên nhiên ('Tháng giêng ngon như một cặp môi gần'), thể hiện khát khao tận hưởng cuộc sống trần thế một cách mãnh liệt nhất."
+      },
+      {
+        "q": "Phân tích vẻ đẹp hiên ngang, khí phách của nhân vật Huấn Cao trong truyện ngắn 'Chữ người tử tù' của Nguyễn Tuân.",
+        "level": "medium",
+        "sampleAnswer": "Huấn Cao hội tụ vẻ đẹp uy nghi cổ kính chốn ngục tù:\n1. Tài hoa nghệ thuật lỗi lạc: Nổi tiếng khắp tỉnh Sơn về tài viết chữ nhanh và đẹp, chữ của Huấn Cao là báu vật thể hiện hoài bão tung hoành của một đời người.\n2. Khí phách hiên ngang bất khuất: Dù là tử tù chờ ngày ra pháp trường, ông vẫn thản nhiên nhận rượu thịt quản ngục dâng, không sợ hãi bạo lực, uy quyền, giữ tư thế hiên ngang lẫm liệt.\n3. Thiên lương trong sáng: Trọng nghĩa khinh tài, chỉ cho chữ những ai biết quý trọng cái đẹp. Cảm động trước tấm lòng quản ngục, Huấn Cao đã tặng chữ và khuyên bảo chân thành giữ thiên lương thanh cao lánh xa chốn nhơ bẩn."
+      },
+      {
+        "q": "Phân tích quá trình thức tỉnh nhân tính và bi kịch đau đớn bị cự tuyệt quyền làm người của nhân vật Chí Phèo trong kiệt tác cùng tên của Nam Cao.",
+        "level": "hard",
+        "sampleAnswer": "1. Quá trình thức tỉnh nhân tính:\n- Từ một anh canh điền hiền lành bị Bá Kiến đẩy vào tù, ra tù thành con quỷ dữ của làng Vũ Đại rạch mặt ăn vạ phá nát cuộc sống bình yên.\n- Gặp Thị Nở trong đêm trăng, nhận sự chăm sóc mộc mạc (bát cháo hành ấm nóng), Chí Phèo lần đầu tiên tỉnh rượu, cảm nhận được âm thanh cuộc sống đời thường và khát khao lương thiện trỗi dậy mãnh liệt.\n\n2. Bi kịch bị cự tuyệt quyền làm người:\n- Sự từ chối phũ phàng của bà cô Thị Nở đại diện cho định kiến khắt khe của xã hội đã đóng sầm cánh cửa trở lại làm người lương thiện của Chí.\n- Chí Phèo rơi vào tuyệt vọng, vác dao đến nhà Bá Kiến đâm chết kẻ thù và tự sát.\n- Tiếng kêu cứu tuyệt vọng cuối cùng: 'Ai cho tôi lương thiện? Làm thế nào cho mất được những vết mảnh chai trên mặt này?' khẳng định bi kịch đau xót của kiếp người bị tha hóa trong xã hội thực dân nửa phong kiến cũ."
+      }
+    ],
+    "biology_12": [
+      {
+        "q": "Đột biến gen là gì? Nêu ý nghĩa của đột biến gen đối với quá trình tiến hóa và chọn giống cây trồng vật nuôi.",
+        "level": "easy",
+        "sampleAnswer": "1. Khái niệm: Đột biến gen là những biến đổi nhỏ trong cấu trúc của gen, liên quan đến một hoặc một vài cặp nuclêôtit tại một điểm xác định.\n\n2. Ý nghĩa đối với tiến hóa và chọn giống:\n- Đối với tiến hóa: Đột biến gen là nguồn phát sinh các alen mới, tạo ra nguồn biến dị sơ cấp vô tận cung cấp cho quá trình chọn lọc tự nhiên biến đổi tần số gen thích nghi.\n- Đối với chọn giống: Cung cấp nguồn nguyên liệu phong phú để các nhà chọn giống chọn lựa, lai tạo tạo ra các giống cây trồng, vật nuôi mới có năng suất cao hoặc đặc tính quý hiếm."
+      },
+      {
+        "q": "Trình bày các đặc điểm của mã di truyền. Giải thích tại sao tính thoái hóa của mã di truyền lại có lợi cho sự sinh tồn của sinh vật.",
+        "level": "medium",
+        "sampleAnswer": "1. Các đặc điểm của mã di truyền:\n- Mã di truyền là mã bộ ba (cứ 3 nuclêôtit kế tiếp xác định 1 axit amin).\n- Được đọc từ một điểm xác định, liên tục không gối lên nhau.\n- Tính phổ biến (hầu hết sinh vật dùng chung một bảng mã).\n- Tính đặc hiệu (1 bộ ba chỉ mã hóa cho 1 axit amin duy nhất).\n- Tính thoái hóa (nhiều bộ ba khác nhau cùng mã hóa cho 1 loại axit amin).\n\n2. Tại sao tính thoái hóa có lợi:\n- Giúp bảo vệ cấu trúc prôtêin trước tác động của đột biến gen. Nếu xảy ra đột biến thay thế nuclêôtit ở vị trí thứ ba trong bộ ba, bộ ba mới sinh ra nhiều khả năng vẫn mã hóa cho chính axit amin cũ, cấu trúc prôtêin không đổi đảm bảo chức năng sinh học ổn định bình thường."
+      },
+      {
+        "q": "Một quần thể ngẫu phối cân bằng Hardy-Weinberg có tần số kiểu hình hoa trắng (kiểu gen aa) là 9%. Hãy tính tần số của các alen A, a và tỉ lệ kiểu gen dị hợp Aa. Nếu quần thể bị đào thải hoàn toàn các cá thể hoa trắng aa thì ở thế hệ ngẫu phối tiếp theo tần số alen a là bao nhiêu?",
+        "level": "hard",
+        "sampleAnswer": "1. Tính tần số các alen khi cân bằng:\n- Tần số kiểu hình hoa trắng $q^2(aa) = 9\\% = 0.09 \\implies q(a) = \\sqrt{0.09} = 0.3$.\n- Tần số alen A: $p(A) = 1 - q = 1 - 0.3 = 0.7$.\n- Tỉ lệ kiểu gen dị hợp Aa trong quần thể khi cân bằng:\n  $$2pq(Aa) = 2 \\times 0.7 \\times 0.3 = 0.42 = 42\\%$$\n\n2. Tính tần số alen a thế hệ tiếp theo sau đào thải hoa trắng:\n- Thành phần kiểu gen còn lại sau đào thải $aa$:\n  $p^2(AA) = 0.7^2 = 0.49$; $2pq(Aa) = 0.42$.\n- Tổng tỉ lệ cá thể còn lại: $0.49 + 0.42 = 0.91$.\n- Tỉ lệ kiểu gen chuẩn hóa mới: \n  $$AA = \\frac{0.49}{0.91} = \\frac{7}{13}$$; $$Aa = \\frac{0.42}{0.91} = \\frac{6}{13}$$\n- Tần số alen a mới sau đào thải:\n  $$q'(a) = \\frac{1}{2} \\times Aa = \\frac{1}{2} \\times \\frac{6}{13} = \\frac{3}{13} \\approx 0.23$$"
+      }
+    ],
+    "history_12": [
+      {
+        "q": "Trình bày hoàn cảnh lịch sử dẫn đến quyết định đổi mới đất nước tại Đại hội lần thứ VI của Đảng Cộng sản Việt Nam (12/1986).",
+        "level": "easy",
+        "sampleAnswer": "Hoàn cảnh lịch sử vô cùng khó khăn cấp bách:\n1. Khủng hoảng kinh tế - xã hội trầm trọng: Đất nước rơi vào tình trạng lạm phát phi mã, thiếu lương thực hàng hóa tiêu dùng cơ bản, đời sống nhân dân cực kỳ gian khổ do hậu quả kéo dài của cơ chế tập trung quan liêu bao cấp và chiến tranh bảo vệ biên giới.\n2. Cô lập quốc tế: Sự bao vây cấm vận của các thế lực thù địch phương Tây và khó khăn từ các nước XHCN viện trợ truyền thống.\n3. Yêu cầu đổi mới: Thực tiễn đất nước đòi hỏi Đảng phải nhìn nhận thẳng vào sự thật, sửa chữa sai lầm chủ quan duy ý chí để đưa đất nước đi lên thoát nghèo."
+      },
+      {
+        "q": "Phân tích nguyên nhân thắng lợi và ý nghĩa lịch sử của chiến dịch Điện Biên Phủ năm 1954 chống thực dân Pháp.",
+        "level": "medium",
+        "sampleAnswer": "1. Nguyên nhân thắng lợi:\n- Sự lãnh đạo sáng suốt của Trung ương Đảng và Chủ tịch Hồ Chí Minh, đứng đầu là Đại tướng Võ Nguyên Giáp với quyết định chuyển phương châm tác chiến lịch sử từ 'đánh nhanh thắng nhanh' sang 'đánh chắc tiến chắc'.\n- Tinh thần quả cảm chiến đấu, sẵn sàng hy sinh của chiến sĩ xung kích quân đội ta.\n- Sự chi viện đồng lòng của hậu phương to lớn (dân công hỏa tuyến thồ hàng ngàn tấn gạo lên Điện Biên Phủ).\n\n2. Ý nghĩa lịch sử:\n- Đập tan hoàn toàn nỗ lực quân sự cao nhất của Pháp và Mĩ, giáng đòn quyết định buộc Pháp ký Hiệp định Giơnevơ năm 1954.\n- Giải phóng hoàn toàn miền Bắc, tạo cơ sở hậu phương vững chắc cho sự nghiệp giải phóng miền Nam thống nhất đất nước.\n- Cổ vũ mạnh mẽ phong trào giải phóng dân tộc thuộc địa trên toàn thế giới."
+      },
+      {
+        "q": "So sánh chiến lược 'Chiến tranh đặc biệt' (1961-1965) và chiến lược 'Việt Nam hóa chiến tranh' (1969-1973) của Mĩ ở miền Nam Việt Nam.",
+        "level": "hard",
+        "sampleAnswer": "1. Điểm giống nhau:\n- Đều là các loại hình chiến tranh xâm lược thực dân kiểu mới của Mĩ nhằm biến miền Nam Việt Nam thành thuộc địa và chia cắt đất nước lâu dài.\n- Đều dựa vào viện trợ quân sự, tài chính khổng lồ của Mĩ, hệ thống cố vấn Mĩ và vũ khí tối tân hiện đại.\n\n2. Điểm khác biệt:\n- Lực lượng tham chiến chính:\n  + Chiến tranh đặc biệt: Sử dụng quân đội Sài Gòn làm lực lượng nòng cốt tiến hành chiến đấu.\n  + Việt Nam hóa chiến tranh: Mĩ rút dần quân Mĩ về nước nhằm 'thay màu da trên xác chết', quân Sài Gòn vẫn làm nòng cốt phối hợp không quân Mĩ yểm trợ hỏa lực tối đa.\n- Quy mô chiến tranh:\n  + Chiến tranh đặc biệt: Diễn ra chủ yếu ở miền Nam Việt Nam.\n  + Việt Nam hóa chiến tranh: Mở rộng ra toàn Đông Dương (Lào và Campuchia), dùng người Đông Dương đánh người Đông Dương.\n- Thủ đoạn cốt lõi:\n  + Chiến tranh đặc biệt: Quốc sách ấp chiến lược dồn dân cô lập cách mạng.\n  + Việt Nam hóa chiến tranh: Sử dụng thủ đoạn ngoại giao chia rẽ khối XHCN (như Mĩ bắt tay Trung Quốc, Liên Xô) để cô lập viện trợ cách mạng nước ta."
+      }
+    ],
+    "literature_12": [
+      {
+        "q": "Phân tích vẻ đẹp bi tráng của hình tượng người lính Tây Tiến trong bài thơ 'Tây Tiến' của Quang Dũng.",
+        "level": "easy",
+        "sampleAnswer": "Vẻ đẹp bi tráng thể hiện qua sự hài hòa giữa hai yếu tố Bi (đau thương) và Tráng (hùng tráng):\n1. Cái 'Bi' (Đau thương mất mát): Cuộc sống gian khổ, bệnh tật sốt rét rừng tàn phá ngoại hình lính ('không mọc tóc', 'xanh màu lá'), cái chết rình rập rải rác biên cương ('mồ viễn xứ', 'áo bào thay chiếu anh về đất').\n2. Cái 'Tráng' (Hùng tráng kiêu dũng): Tâm hồn kiêu dũng vượt khó khăn coi khinh bệnh tật ('dữ oai hùm'), khát vọng chiến đấu lý tưởng cống hiến ('chiến trường đi chẳng tiếc đời xanh'), cái chết thanh thản nhẹ nhàng hóa thành tiếng thét gầm tiễn đưa của sông Mã gầm lên khúc độc hành oai hùng."
+      },
+      {
+        "q": "Phân tích giá trị hiện thực và nhân đạo sâu sắc của truyện ngắn 'Vợ nhặt' (Kim Lân) qua tình huống nhặt vợ độc đáo giữa ngày đói 1945.",
+        "level": "medium",
+        "sampleAnswer": "1. Giá trị hiện thực:\n- Tái hiện chân thực thảm cảnh nạn đói năm 1945: người chết như ngả rạ, không khí vẩn lên mùi ẩm thối của rác rưởi và mùi tử khí. Con người rẻ rúng đến mức Tràng 'nhặt' được vợ chỉ bằng bốn bát bánh đúc ngoài chợ.\n\n2. Giá trị nhân đạo sâu sắc:\n- Ca ngợi tình nghĩa gắn bó đùm bọc giữa những người nghèo đói (bà cụ Tứ chấp nhận nàng dâu mới bằng tình thương vô bờ bến).\n- Khẳng định sức sống bất diệt của con người: càng cận kề cái chết, họ càng khát khao tổ ấm gia đình hạnh phúc bền vững.\n- Hướng con người tới tương lai tươi sáng: hình ảnh lá cờ đỏ sao vàng xuất hiện trong tâm trí Tràng hứa hẹn bước chuyển biến giải phóng cuộc đời họ."
+      },
+      {
+        "q": "Phân tích vẻ đẹp khuất lấp đầy nghị lực, yêu thương của người đàn bà hàng chài trong truyện ngắn 'Chiếc thuyền ngoài xa' của Nguyễn Minh Châu.",
+        "level": "hard",
+        "sampleAnswer": "Người đàn bà hàng chài tuy vô danh, thô kệch nhưng mang vẻ đẹp tâm hồn ngời sáng:\n1. Nỗi đau và sự cam chịu nhẫn nhục: Bị chồng đánh đập tàn nhẫn 'ba ngày một trận nhẹ, năm ngày một trận nặng' nhưng không hề kêu van hay chạy trốn, xin chồng đưa lên bờ đánh để con không nhìn thấy.\n2. Nguyên nhân sâu xa: Thấu hiểu cuộc sống mưu sinh vất vả trên biển cần một người đàn ông khỏe mạnh để chèo chống thuyền khi phong ba bão táp, cam chịu vì tương lai của các con ('phải sống cho con chứ không thể sống cho mình').\n3. Sự thấu cảm sâu sắc lẽ đời: Hiểu được sự bất lực, cục cằn của chồng thực chất do đói nghèo áp bách, độ lượng tha thứ cho chồng.\n4. Tình mẫu tử vĩ đại: Hạnh phúc bình dị nhất của chị là nhìn các con được ăn no trên thuyền. Sự từng trải của chị đã thức tỉnh nhận thức cho nghệ sĩ Phùng và chánh án Đẩu về lẽ đời đa sự."
       }
     ]
   }

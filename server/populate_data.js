@@ -3,6 +3,9 @@ const path = require('path');
 
 const DATA_FILE = path.join(__dirname, 'data.json');
 
+const newQuizzes = require('./new_quizzes.js');
+const newEssays = require('./new_essays.js');
+
 // Đọc dữ liệu hiện tại
 const currentData = JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
 
@@ -325,7 +328,8 @@ const extendedQuizzes = {
     { q: "Xà phòng hóa hoàn toàn 17.24 gam chất béo cần dùng vừa đủ dung dịch chứa 0.06 mol NaOH. Tính khối lượng muối thu được.", options: ["17.8 gam", "16.8 gam", "18.2 gam", "17.4 gam"], answer: 0, level: "hard", explain: "*   $n_{glixerol} = \\frac{1}{3} n_{NaOH} = 0.02\\text{ mol}$.\n*   Áp dụng định luật bảo toàn khối lượng:\n    $$m_{béo} + m_{NaOH} = m_{muối} + m_{glixerol}$$\n    $$17.24 + 0.06 \\cdot 40 = m_{muối} + 0.02 \\cdot 92$$\n    $$17.24 + 2.4 = m_{muối} + 1.84 \\implies m_{muối} = 17.8 \\text{ gam}$$" },
     { q: "Thủy phân hoàn toàn 8.8 gam etyl axetat bằng dung dịch NaOH vừa đủ, cô cạn dung dịch thu được bao nhiêu gam muối khan?", options: ["8.2 gam", "10.2 gam", "9.6 gam", "7.4 gam"], answer: 0, level: "hard", explain: "*   $n_{este} = \\frac{8.8}{88} = 0.1\\text{ mol}$.\n*   Phản ứng sinh ra muối $CH_3COONa$:\n    $$n_{muối} = n_{este} = 0.1\\text{ mol}$$\n*   Khối lượng muối thu được:\n    $$m = 0.1 \\cdot 82 = 8.2 \\text{ gam}$$" },
     { q: "Cho este no đơn chức mạch hở X phản ứng xà phòng hóa với NaOH sinh ra muối natri axetat và ancol etylic. Este X là:", options: ["Etyl axetat", "Metyl axetat", "Etyl fomat", "Metyl fomat"], answer: 0, level: "hard", explain: "Muối natri axetat ($CH_3COONa$) và ancol etylic ($C_2H_5OH$) tương ứng với este là $CH_3COOC_2H_5$ (etyl axetat)." }
-  ]
+  ],
+  ...newQuizzes
 };
 
 // Câu hỏi tự luận từ cơ bản đến nâng cao cho 12 tổ hợp môn học
@@ -396,7 +400,8 @@ const extendedEssays = {
     { q: "What is 'carbon footprint' and write down two methods a household can do to decrease their carbon footprint in daily activities.", level: "easy", sampleAnswer: "Sample Answer: Carbon footprint is the total amount of greenhouse gases released due to an individual or household's activities. A household can decrease it by: 1) shifting to energy-efficient appliances and lighting (e.g., LED), and 2) using public transportation or carpooling to reduce vehicle emissions." },
     { q: "Explain why 'sustainable development' is a geopolitical concern rather than just an environmental issue.", level: "medium", sampleAnswer: "Sample Answer: Sustainable development is a geopolitical concern because natural resources (like oil, gas, and water) are shared globally. Depletion of resources in one country can trigger migration, border disputes, or trade wars. Therefore, international cooperation and treaties are required to ensure resource sustainability and avoid political instability." },
     { q: "Read this statement: 'The world needs to invest in ecosystem rehabilitation to prevent irreversible climate change.' Write an essay (100-120 words) explaining this statement using the vocabulary 'rehabilitation' and 'depletion'.", level: "hard", sampleAnswer: "Sample Answer: Human industrialization has caused severe depletion of resources and forests, putting wildlife habitats at risk. To combat this depletion, investing in ecosystem rehabilitation is urgent. Rehabilitation, which involves planting native trees and restoring wetlands, acts as carbon capture. Without rehabilitation, natural zones will continue to decline, releasing greenhouse gases and making climate change irreversible. Therefore, countries must collaborate on environmental rehabilitation projects immediately." }
-  ]
+  ],
+  ...newEssays
 };
 
 // Lưu dữ liệu cập nhật

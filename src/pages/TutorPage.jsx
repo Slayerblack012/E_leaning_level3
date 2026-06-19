@@ -27,11 +27,14 @@ export default function TutorPage() {
 
   // Default greetings for each tutor
   const defaultGreetings = {
-    global: 'Chào em! Thầy/Cô thuộc Ban cố vấn học tập THPT rất vui được hỗ trợ em. Thầy/Cô có thể giúp em lên lộ trình ôn tập, tổng hợp kiến thức từ các tài liệu môn Toán, Lý, Hoá, Anh lớp ' + grade + '. Em cần hỗ trợ gì hôm nay?',
+    global: 'Chào em! Thầy/Cô thuộc Ban cố vấn học tập THPT rất vui được hỗ trợ em. Thầy/Cô có thể giúp em lên lộ trình ôn tập, tổng hợp kiến thức từ các tài liệu lớp ' + grade + '. Em cần hỗ trợ gì hôm nay?',
     english: "Hello! I'm Mr. Wyatt, your English teacher. Let's master Grade " + grade + " English vocabulary together. Ask me about any words, phrases, grammatical points or exercises!",
     chemistry: 'Chào em, cô là Cô Hoa dạy Hoá. Học lý thuyết hay làm bài tập Hoá học lớp ' + grade + ' có gì khó khăn, em cứ hỏi cô giải đáp chi tiết nhé!',
     physics: 'Chào em, thầy là Thầy Hải dạy Lý. Từ các công thức Động học, Lực, dao động hay điện xoay chiều lớp ' + grade + ', thầy đều sẵn sàng đồng hành cùng em!',
-    math: 'Chào em, thầy là Thầy Nam dạy Toán. Học Toán lớp ' + grade + ' cần tư duy logic và nắm vững định nghĩa, công thức. Thầy trò mình cùng khám phá nhé!'
+    math: 'Chào em, thầy là Thầy Nam dạy Toán. Học Toán lớp ' + grade + ' cần tư duy logic và nắm vững định nghĩa, công thức. Thầy trò mình cùng khám phá nhé!',
+    biology: 'Chào em, cô là Cô Linh dạy Sinh. Sinh học lớp ' + grade + ' có nhiều kiến thức thú vị về thế giới tế bào, di truyền học và hệ sinh thái. Cô sẽ giúp em chinh phục môn Sinh nhé!',
+    history: 'Chào em, thầy là Thầy Bình dạy Sử. Lịch sử lớp ' + grade + ' giúp em hiểu sâu sắc về văn minh nhân loại và các mốc lịch sử hào hùng của dân tộc Việt Nam. Cần hỏi gì cứ nhắn thầy!',
+    literature: 'Chào em, cô là Cô Mai dạy Ngữ văn. Học Văn lớp ' + grade + ' cần cảm xúc chân thành và tư duy nghị luận sắc bén. Cô sẽ đồng hành cùng em qua các tác phẩm văn học nhé!'
   };
 
   // Load chat history from localStorage
@@ -129,6 +132,9 @@ export default function TutorPage() {
       case 'chemistry': return { name: 'Cô Hoa Hóa học', role: 'Giáo viên Hoá học', avatar: '🧪', theme: 'var(--color-chemistry)' };
       case 'physics': return { name: 'Thầy Hải Vật lý', role: 'Giáo viên Vật lý', avatar: '⚡', theme: 'var(--color-physics)' };
       case 'math': return { name: 'Thầy Nam Toán', role: 'Giáo viên Toán học', avatar: '📐', theme: 'var(--color-math)' };
+      case 'biology': return { name: 'Cô Linh Sinh học', role: 'Giáo viên Sinh học', avatar: '🧬', theme: 'var(--color-biology)' };
+      case 'history': return { name: 'Thầy Bình Lịch sử', role: 'Giáo viên Lịch sử', avatar: '🏛️', theme: 'var(--color-history)' };
+      case 'literature': return { name: 'Cô Mai Ngữ văn', role: 'Giáo viên Ngữ văn', avatar: '✍️', theme: 'var(--color-literature)' };
       default: return { name: 'Cố vấn học tập', role: 'Ban cố vấn học tập THPT', avatar: '🎓', theme: '#a855f7' };
     }
   };
@@ -215,6 +221,9 @@ export default function TutorPage() {
     { id: 'math', label: 'Thầy Nam (Toán)' },
     { id: 'physics', label: 'Thầy Hải (Lý)' },
     { id: 'chemistry', label: 'Cô Hoa (Hóa)' },
+    { id: 'biology', label: 'Cô Linh (Sinh)' },
+    { id: 'history', label: 'Thầy Bình (Sử)' },
+    { id: 'literature', label: 'Cô Mai (Văn)' },
     { id: 'english', label: 'Mr. Wyatt (Anh)' },
   ];
 
@@ -222,7 +231,7 @@ export default function TutorPage() {
   const quickSuggestions = {
     global: [
       `Lên cho em lộ trình tự học môn Lý lớp ${grade} kì này.`,
-      `Phương pháp phân bổ thời gian học 4 môn Toán, Lý, Hóa, Anh hiệu quả?`
+      `Phương pháp phân bổ thời gian học hiệu quả?`
     ],
     math: grade === '10' ? [
       "Giải thích cách làm bài Đại số tổ hợp.",
@@ -253,6 +262,36 @@ export default function TutorPage() {
     ] : [
       "Trình bày phản ứng xà phòng hóa chất béo (Triglycerit).",
       "Tính chất hóa học đặc trưng của amino axit."
+    ],
+    biology: grade === '10' ? [
+      "Phân biệt tế bào nhân sơ và tế bào nhân thực.",
+      "Vẽ sơ đồ pha sáng và pha tối quang hợp."
+    ] : grade === '11' ? [
+      "Cơ chế hấp thụ nước và muối khoáng ở rễ cây.",
+      "Hệ dẫn truyền tim và chu kì hoạt động của tim."
+    ] : [
+      "Định luật Hardy-Weinberg về cân bằng di truyền.",
+      "Phân tích các nhân tố tiến hóa trong tự nhiên."
+    ],
+    history: grade === '10' ? [
+      "Thành tựu văn hóa tiêu biểu của Ai Cập cổ đại.",
+      "Ý nghĩa lịch sử trận chiến Bạch Đằng năm 938."
+    ] : grade === '11' ? [
+      "Ý nghĩa Cách mạng tháng Mười Nga năm 1917.",
+      "So sánh đường lối Phan Bội Châu và Phan Châu Trinh."
+    ] : [
+      "Nội dung chính sách Đổi mới đất nước năm 1986.",
+      "So sánh các chiến lược chiến tranh của Mĩ ở VN."
+    ],
+    literature: grade === '10' ? [
+      "Phân tích hào khí Đông A trong bài thơ Tỏ lòng.",
+      "Ý nghĩa đoạn trích Trao duyên trong Truyện Kiều."
+    ] : grade === '11' ? [
+      "Quá trình thức tỉnh nhân tính của Chí Phèo.",
+      "Bức tranh phố huyện nghèo trong truyện Hai đứa trẻ."
+    ] : [
+      "Vẻ đẹp bi tráng của người lính Tây Tiến.",
+      "Giá trị nhân đạo trong truyện ngắn Vợ nhặt."
     ],
     english: grade === '10' ? [
       "Difference between 'amend', 'broaden' and 'streamline'?",

@@ -100,10 +100,28 @@
   box-shadow: 0 16px 36px rgba(255, 59, 48, 0.08), 0 0 20px rgba(255, 59, 48, 0.06);
 }
 
+.subject-card.biology:hover {
+  border-color: var(--color-biology);
+  box-shadow: 0 16px 36px rgba(255, 149, 0, 0.08), 0 0 20px rgba(255, 149, 0, 0.06);
+}
+
+.subject-card.history:hover {
+  border-color: var(--color-history);
+  box-shadow: 0 16px 36px rgba(175, 82, 222, 0.08), 0 0 20px rgba(175, 82, 222, 0.06);
+}
+
+.subject-card.literature:hover {
+  border-color: var(--color-literature);
+  box-shadow: 0 16px 36px rgba(255, 45, 85, 0.08), 0 0 20px rgba(255, 45, 85, 0.06);
+}
+
 .subject-card.english::before { background: var(--color-english); }
 .subject-card.chemistry::before { background: var(--color-chemistry); }
 .subject-card.physics::before { background: var(--color-physics); }
 .subject-card.math::before { background: var(--color-math); }
+.subject-card.biology::before { background: var(--color-biology); }
+.subject-card.history::before { background: var(--color-history); }
+.subject-card.literature::before { background: var(--color-literature); }
 
 .subject-badge {
   align-self: flex-start;
@@ -120,6 +138,9 @@
 .chemistry .subject-badge { color: var(--color-chemistry); background: var(--bg-badge-chemistry); }
 .physics .subject-badge { color: var(--color-physics); background: var(--bg-badge-physics); }
 .math .subject-badge { color: var(--color-math); background: var(--bg-badge-math); }
+.biology .subject-badge { color: var(--color-biology); background: var(--bg-badge-biology); }
+.history .subject-badge { color: var(--color-history); background: var(--bg-badge-history); }
+.literature .subject-badge { color: var(--color-literature); background: var(--bg-badge-literature); }
 
 .subject-title {
   font-size: 1.45rem;
@@ -169,6 +190,9 @@
 .chemistry:hover .subject-btn { background: var(--color-chemistry); border-color: var(--color-chemistry); color: #fff; }
 .physics:hover .subject-btn { background: var(--color-physics); border-color: var(--color-physics); color: #fff; }
 .math:hover .subject-btn { background: var(--color-math); border-color: var(--color-math); color: #fff; }
+.biology:hover .subject-btn { background: var(--color-biology); border-color: var(--color-biology); color: #fff; }
+.history:hover .subject-btn { background: var(--color-history); border-color: var(--color-history); color: #fff; }
+.literature:hover .subject-btn { background: var(--color-literature); border-color: var(--color-literature); color: #fff; }
 
 /* Subject details & Outlines */
 .subject-layout {
@@ -298,6 +322,9 @@
 .chemistry .formula-text { border-color: var(--color-chemistry); }
 .physics .formula-text { border-color: var(--color-physics); }
 .math .formula-text { border-color: var(--color-math); }
+.biology .formula-text { border-color: var(--color-biology); }
+.history .formula-text { border-color: var(--color-history); }
+.literature .formula-text { border-color: var(--color-literature); }
 
 .formula-note {
   font-size: 0.85rem;
@@ -405,6 +432,9 @@
 .chemistry .chat-avatar { background: var(--color-chemistry); }
 .physics .chat-avatar { background: var(--color-physics); }
 .math .chat-avatar { background: var(--color-math); }
+.biology .chat-avatar { background: var(--color-biology); }
+.history .chat-avatar { background: var(--color-history); }
+.literature .chat-avatar { background: var(--color-literature); }
 
 .avatar-status-dot {
   width: 8px;
@@ -472,6 +502,9 @@
 .chemistry .message-bubble.user { background: var(--color-chemistry); }
 .physics .message-bubble.user { background: var(--color-physics); }
 .math .message-bubble.user { background: var(--color-math); }
+.biology .message-bubble.user { background: var(--color-biology); }
+.history .message-bubble.user { background: var(--color-history); }
+.literature .message-bubble.user { background: var(--color-literature); }
 
 .chat-input-wrapper {
   padding: 0.85rem;
@@ -520,6 +553,9 @@
 .chemistry .chat-send-btn { background: var(--color-chemistry); }
 .physics .chat-send-btn { background: var(--color-physics); }
 .math .chat-send-btn { background: var(--color-math); }
+.biology .chat-send-btn { background: var(--color-biology); }
+.history .chat-send-btn { background: var(--color-history); }
+.literature .chat-send-btn { background: var(--color-literature); }
 
 /* Practice Quiz Component */
 .quiz-container {

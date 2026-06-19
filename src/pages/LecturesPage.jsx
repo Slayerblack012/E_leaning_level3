@@ -153,6 +153,9 @@ export default function LecturesPage() {
       case 'chemistry': return { name: 'Cô Hoa Hóa học', role: 'Giáo viên Hoá học', avatar: '🧪' };
       case 'physics': return { name: 'Thầy Hải Vật lý', role: 'Giáo viên Vật lý', avatar: '⚡' };
       case 'math': return { name: 'Thầy Nam Toán', role: 'Giáo viên Toán học', avatar: '📐' };
+      case 'biology': return { name: 'Cô Linh Sinh học', role: 'Giáo viên Sinh học', avatar: '🧬' };
+      case 'history': return { name: 'Thầy Bình Lịch sử', role: 'Giáo viên Lịch sử', avatar: '🏛️' };
+      case 'literature': return { name: 'Cô Mai Ngữ văn', role: 'Giáo viên Ngữ văn', avatar: '✍️' };
       default: return { name: 'Cố vấn học tập', role: 'Ban cố vấn học tập', avatar: '🎓' };
     }
   };
@@ -247,6 +250,9 @@ export default function LecturesPage() {
     { id: 'math', label: 'Toán học', color: 'var(--color-math)' },
     { id: 'physics', label: 'Vật lý', color: 'var(--color-physics)' },
     { id: 'chemistry', label: 'Hóa học', color: 'var(--color-chemistry)' },
+    { id: 'biology', label: 'Sinh học', color: 'var(--color-biology)' },
+    { id: 'history', label: 'Lịch sử', color: 'var(--color-history)' },
+    { id: 'literature', label: 'Ngữ văn', color: 'var(--color-literature)' },
     { id: 'english', label: 'Tiếng Anh', color: 'var(--color-english)' },
   ];
 
@@ -352,6 +358,22 @@ export default function LecturesPage() {
               {/* Tabs list */}
               <div style={{ display: 'flex', borderBottom: '1px solid var(--border-color)', marginBottom: '1.5rem', overflowX: 'auto', gap: '0.5rem' }}>
                 <button
+                  onClick={() => setActiveTab('intro')}
+                  style={{
+                    padding: '0.75rem 1.25rem',
+                    background: 'none',
+                    border: 'none',
+                    borderBottom: activeTab === 'intro' ? '3px solid var(--color-primary)' : '3px solid transparent',
+                    color: activeTab === 'intro' ? 'var(--color-primary)' : 'var(--text-muted)',
+                    fontWeight: activeTab === 'intro' ? 'bold' : 'normal',
+                    cursor: 'pointer',
+                    fontSize: '0.9rem',
+                    whiteSpace: 'nowrap'
+                  }}
+                >
+                  🗺️ Lộ trình & Giới thiệu
+                </button>
+                <button
                   onClick={() => setActiveTab('basic')}
                   style={{
                     padding: '0.75rem 1.25rem',
@@ -419,6 +441,16 @@ export default function LecturesPage() {
 
               {/* Tab Content Rendering */}
               <div style={{ flex: 1 }}>
+                {activeTab === 'intro' && (
+                  <div className="fade-in">
+                    {subjectData?.introduction ? (
+                      renderFormattedText(subjectData.introduction)
+                    ) : (
+                      <p style={{ color: 'var(--text-muted)' }}>Chưa có thông tin lộ trình và giới thiệu cho môn học này.</p>
+                    )}
+                  </div>
+                )}
+
                 {activeTab === 'basic' && (
                   <div className="fade-in">
                     {renderFormattedText(lecture?.basic)}
