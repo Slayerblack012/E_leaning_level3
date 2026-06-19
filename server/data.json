@@ -5289,6 +5289,62 @@
       "action": "SEND_TUTOR_MESSAGE",
       "details": "Hỏi Gia sư Cố vấn học tập (môn global lớp 10): \"giới thiệu về bạn đi\"",
       "timestamp": "2026-06-19T17:23:20.088Z"
+    },
+    {
+      "id": "17818905689740.901030571871032",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 12",
+      "timestamp": "2026-06-19T17:36:08.974Z"
+    },
+    {
+      "id": "17818905725440.798300439510828",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 10",
+      "timestamp": "2026-06-19T17:36:12.544Z"
+    },
+    {
+      "id": "17818905841110.128775243654482",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 11",
+      "timestamp": "2026-06-19T17:36:24.111Z"
+    },
+    {
+      "id": "17818905843720.5883290144680325",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 12",
+      "timestamp": "2026-06-19T17:36:24.372Z"
+    },
+    {
+      "id": "17818905846990.32550870126398634",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 10",
+      "timestamp": "2026-06-19T17:36:24.699Z"
+    },
+    {
+      "id": "17818905855610.3294218264576111",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-19T17:36:25.561Z"
+    },
+    {
+      "id": "17818905858660.5543876341183591",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-19T17:36:25.866Z"
     }
   ],
   "essays": {
