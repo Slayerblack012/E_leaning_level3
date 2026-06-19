@@ -42,18 +42,113 @@
 }
 
 /* Subjects Grid */
+/* Premium Hero Banner */
+.hero-banner {
+  background: var(--grad-hero);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2.5rem;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08), var(--shadow-glow);
+  margin-bottom: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  right: -50px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.25) 0%, rgba(99, 102, 241, 0.15) 50%, transparent 70%);
+  pointer-events: none;
+  filter: blur(40px);
+  border-radius: 50%;
+}
+
+.hero-banner-content {
+  flex: 1;
+  position: relative;
+  zIndex: 2;
+}
+
+.hero-banner-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.hero-banner-title {
+  font-size: 2.15rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+  background: linear-gradient(120deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+
+.hero-banner-desc {
+  font-size: 1.02rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  max-width: 620px;
+}
+
+.hero-banner-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.hero-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-stat-val {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.hero-stat-lbl {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Subjects Grid & Cards - Course Card Layout */
 .subject-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
   gap: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 .subject-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
+  border-radius: var(--radius-xl);
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-main);
@@ -61,138 +156,162 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  height: 360px;
+  height: auto;
+  min-height: 380px;
 }
 
-.subject-card::before {
+.subject-card-cover {
+  height: 120px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  color: #ffffff;
+  background: var(--color-primary);
+}
+
+.subject-card-cover::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: var(--color-primary);
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+}
+
+.subject-card-cover-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0);
+  background-size: 16px 16px;
+  z-index: 0;
+}
+
+.subject-card.english .subject-card-cover { background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%); }
+.subject-card.chemistry .subject-card-cover { background: linear-gradient(135deg, #059669 0%, #10b981 100%); }
+.subject-card.physics .subject-card-cover { background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%); }
+.subject-card.math .subject-card-cover { background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); }
+.subject-card.biology .subject-card-cover { background: linear-gradient(135deg, #ea580c 0%, #f97316 100%); }
+.subject-card.history .subject-card-cover { background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%); }
+.subject-card.literature .subject-card-cover { background: linear-gradient(135deg, #db2777 0%, #ec4899 100%); }
+
+.subject-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.subject-card-badge {
+  align-self: flex-start;
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  backdrop-filter: blur(5px);
+}
+
+.subject-card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .subject-card:hover {
   transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
   border-color: var(--color-primary);
-  box-shadow: 0 16px 36px rgba(0, 102, 204, 0.08), 0 0 20px rgba(0, 102, 204, 0.06);
 }
 
-.subject-card.english:hover {
-  border-color: var(--color-english);
-  box-shadow: 0 16px 36px rgba(94, 92, 230, 0.08), 0 0 20px rgba(94, 92, 230, 0.06);
-}
-
-.subject-card.chemistry:hover {
-  border-color: var(--color-chemistry);
-  box-shadow: 0 16px 36px rgba(52, 199, 89, 0.08), 0 0 20px rgba(52, 199, 89, 0.06);
-}
-
-.subject-card.physics:hover {
-  border-color: var(--color-physics);
-  box-shadow: 0 16px 36px rgba(48, 176, 199, 0.08), 0 0 20px rgba(48, 176, 199, 0.06);
-}
-
-.subject-card.math:hover {
-  border-color: var(--color-math);
-  box-shadow: 0 16px 36px rgba(255, 59, 48, 0.08), 0 0 20px rgba(255, 59, 48, 0.06);
-}
-
-.subject-card.biology:hover {
-  border-color: var(--color-biology);
-  box-shadow: 0 16px 36px rgba(255, 149, 0, 0.08), 0 0 20px rgba(255, 149, 0, 0.06);
-}
-
-.subject-card.history:hover {
-  border-color: var(--color-history);
-  box-shadow: 0 16px 36px rgba(175, 82, 222, 0.08), 0 0 20px rgba(175, 82, 222, 0.06);
-}
-
-.subject-card.literature:hover {
-  border-color: var(--color-literature);
-  box-shadow: 0 16px 36px rgba(255, 45, 85, 0.08), 0 0 20px rgba(255, 45, 85, 0.06);
-}
-
-.subject-card.english::before { background: var(--color-english); }
-.subject-card.chemistry::before { background: var(--color-chemistry); }
-.subject-card.physics::before { background: var(--color-physics); }
-.subject-card.math::before { background: var(--color-math); }
-.subject-card.biology::before { background: var(--color-biology); }
-.subject-card.history::before { background: var(--color-history); }
-.subject-card.literature::before { background: var(--color-literature); }
-
-.subject-badge {
-  align-self: flex-start;
-  padding: 0.25rem 0.75rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 1.25rem;
-  letter-spacing: 0.04em;
-}
-
-.english .subject-badge { color: var(--color-english); background: var(--bg-badge-english); }
-.chemistry .subject-badge { color: var(--color-chemistry); background: var(--bg-badge-chemistry); }
-.physics .subject-badge { color: var(--color-physics); background: var(--bg-badge-physics); }
-.math .subject-badge { color: var(--color-math); background: var(--bg-badge-math); }
-.biology .subject-badge { color: var(--color-biology); background: var(--bg-badge-biology); }
-.history .subject-badge { color: var(--color-history); background: var(--bg-badge-history); }
-.literature .subject-badge { color: var(--color-literature); background: var(--bg-badge-literature); }
+.subject-card.english:hover { border-color: var(--color-english); }
+.subject-card.chemistry:hover { border-color: var(--color-chemistry); }
+.subject-card.physics:hover { border-color: var(--color-physics); }
+.subject-card.math:hover { border-color: var(--color-math); }
+.subject-card.biology:hover { border-color: var(--color-biology); }
+.subject-card.history:hover { border-color: var(--color-history); }
+.subject-card.literature:hover { border-color: var(--color-literature); }
 
 .subject-title {
-  font-size: 1.45rem;
-  color: var(--color-primary);
-  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
 }
 
 .subject-description {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   line-height: 1.5;
-  margin-bottom: auto;
+  margin-bottom: 1.5rem;
 }
 
 .subject-footer {
-  margin-top: 1.5rem;
+  margin-top: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid #f1f3f5;
-  padding-top: 1rem;
-}
-
-.subject-info {
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.25rem;
+  gap: 0.75rem;
 }
 
 .subject-btn {
   background: #ffffff;
-  border: 1px solid var(--color-primary);
+  border: 1.5px solid var(--color-primary);
   color: var(--color-primary);
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.85rem;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
   font-weight: 700;
-  transition: all 0.2s;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  flex: 1;
+  text-align: center;
 }
 
-.subject-card:hover .subject-btn {
+.subject-btn.btn-solid {
   background: var(--color-primary);
   color: #ffffff;
+  border-color: var(--color-primary);
 }
 
-.english:hover .subject-btn { background: var(--color-english); border-color: var(--color-english); color: #fff; }
-.chemistry:hover .subject-btn { background: var(--color-chemistry); border-color: var(--color-chemistry); color: #fff; }
-.physics:hover .subject-btn { background: var(--color-physics); border-color: var(--color-physics); color: #fff; }
-.math:hover .subject-btn { background: var(--color-math); border-color: var(--color-math); color: #fff; }
-.biology:hover .subject-btn { background: var(--color-biology); border-color: var(--color-biology); color: #fff; }
-.history:hover .subject-btn { background: var(--color-history); border-color: var(--color-history); color: #fff; }
-.literature:hover .subject-btn { background: var(--color-literature); border-color: var(--color-literature); color: #fff; }
+.subject-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+.english .subject-btn.btn-solid { background: var(--color-english); border-color: var(--color-english); }
+.chemistry .subject-btn.btn-solid { background: var(--color-chemistry); border-color: var(--color-chemistry); }
+.physics .subject-btn.btn-solid { background: var(--color-physics); border-color: var(--color-physics); }
+.math .subject-btn.btn-solid { background: var(--color-math); border-color: var(--color-math); }
+.biology .subject-btn.btn-solid { background: var(--color-biology); border-color: var(--color-biology); }
+.history .subject-btn.btn-solid { background: var(--color-history); border-color: var(--color-history); }
+.literature .subject-btn.btn-solid { background: var(--color-literature); border-color: var(--color-literature); }
+
+.english .subject-btn:not(.btn-solid) { color: var(--color-english); border-color: var(--color-english); }
+.chemistry .subject-btn:not(.btn-solid) { color: var(--color-chemistry); border-color: var(--color-chemistry); }
+.physics .subject-btn:not(.btn-solid) { color: var(--color-physics); border-color: var(--color-physics); }
+.math .subject-btn:not(.btn-solid) { color: var(--color-math); border-color: var(--color-math); }
+.biology .subject-btn:not(.btn-solid) { color: var(--color-biology); border-color: var(--color-biology); }
+.history .subject-btn:not(.btn-solid) { color: var(--color-history); border-color: var(--color-history); }
+.literature .subject-btn:not(.btn-solid) { color: var(--color-literature); border-color: var(--color-literature); }
 
 /* Subject details & Outlines */
 .subject-layout {
@@ -842,31 +961,362 @@
   .stat-value {
     font-size: 1.1rem;
   }
+}
 
-  .guide-step {
-    padding: 1.25rem;
+/* =============================================
+   ENTERPRISE GRADE UI COMPONENTS
+   ============================================= */
+
+/* CBT Question Map */
+.question-map-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-main);
+}
+
+.question-map-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.question-map-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.question-map-btn {
+  height: 38px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: #ffffff;
+  color: var(--text-secondary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.question-map-btn:hover {
+  border-color: var(--color-primary);
+  background: rgba(37, 99, 235, 0.05);
+}
+
+.question-map-btn.active {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+.question-map-btn.answered {
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--color-primary);
+  border-color: rgba(37, 99, 235, 0.3);
+}
+
+.question-map-btn.correct {
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.question-map-btn.incorrect {
+  background: rgba(239, 68, 68, 0.1);
+  color: #dc2626;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+/* CBT Option Cards */
+.option-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #ffffff;
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.option-card:hover:not(:disabled) {
+  border-color: #94a3b8;
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.option-card.selected {
+  border-color: var(--color-primary);
+  background: rgba(37, 99, 235, 0.03);
+  color: var(--color-primary);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.05);
+}
+
+.option-card-index {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.82rem;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.option-card.selected .option-card-index {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.option-card.correct {
+  background: rgba(16, 185, 129, 0.06);
+  border-color: #10b981;
+  color: #047857;
+  font-weight: 600;
+}
+
+.option-card.correct .option-card-index {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.option-card.incorrect {
+  background: rgba(239, 68, 68, 0.06);
+  border-color: #ef4444;
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.option-card.incorrect .option-card-index {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+/* AI Tutor Profile Card */
+.tutor-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tutor-profile-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-main);
+  border-color: var(--color-primary);
+}
+
+.tutor-profile-card.active {
+  border-color: var(--color-primary);
+  background: rgba(37, 99, 235, 0.02);
+  box-shadow: var(--shadow-main);
+}
+
+.tutor-profile-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  background: #f1f5f9;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.tutor-profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.tutor-profile-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tutor-profile-role {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Syllabus Accordion */
+.syllabus-accordion {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.syllabus-chapter {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.syllabus-chapter:last-child {
+  border-bottom: none;
+}
+
+.syllabus-chapter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  user-select: none;
+}
+
+.syllabus-chapter-header:hover {
+  background: #f1f5f9;
+}
+
+.syllabus-chapter-title {
+  font-weight: 700;
+  font-size: 0.96rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.syllabus-chapter-body {
+  padding: 0.5rem 0;
+  background: #ffffff;
+}
+
+.syllabus-lesson-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem 0.75rem 2.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.syllabus-lesson-item:hover {
+  background: rgba(37, 99, 235, 0.03);
+}
+
+.syllabus-lesson-item.active {
+  background: rgba(37, 99, 235, 0.06);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.syllabus-lesson-title {
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Enterprise Split Authentication Layout */
+.auth-split-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background: var(--bg-main);
+}
+
+.auth-visual-side {
+  flex: 1.1;
+  background: var(--grad-hero);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.auth-visual-side::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.auth-visual-side-content {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
+}
+
+.auth-visual-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+}
+
+.auth-visual-desc {
+  font-size: 1.15rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.auth-form-side {
+  flex: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  background: #ffffff;
+  border-left: 1px solid var(--border-color);
+}
+
+@media (max-width: 900px) {
+  .auth-split-container {
+    flex-direction: column;
   }
-
-  .chat-container {
-    height: 380px;
+  .auth-visual-side {
+    display: none;
   }
-
-  .message-bubble {
-    max-width: 92%;
-    font-size: 0.85rem;
-  }
-
-  .quiz-question {
-    font-size: 0.9rem;
-  }
-
-  .quiz-option {
-    font-size: 0.82rem;
-    padding: 0.7rem 0.85rem;
-  }
-
-  .formula-text {
-    font-size: 0.9rem;
-    padding: 0.5rem;
+  .auth-form-side {
+    flex: 1;
+    width: 100%;
+    padding: 1.5rem;
   }
 }
