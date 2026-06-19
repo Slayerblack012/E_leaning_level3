@@ -4,7 +4,6 @@ import api from './api';
 export function getLocalSyncData() {
   const syncData = {};
   const keysToSync = [
-    'lms_theme',
     'selected_grade',
     'completed_lectures'
   ];
@@ -62,7 +61,6 @@ export async function pullSyncFromServer() {
       // Trigger events so components reload
       window.dispatchEvent(new Event('localStatsChanged'));
       window.dispatchEvent(new Event('completedLecturesChanged'));
-      window.dispatchEvent(new Event('lmsThemeChanged'));
       window.dispatchEvent(new Event('gradeChanged'));
     }
   } catch (e) {

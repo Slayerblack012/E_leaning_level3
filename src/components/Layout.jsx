@@ -22,18 +22,11 @@ export default function Layout({ children }) {
   const navigate = useNavigate();
   const { showModal } = useNotification();
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem('lms_theme') || 'coursera');
+
   const token = localStorage.getItem('token');
   const username = localStorage.getItem('username');
 
-  // Push theme update to server
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('lms_theme', theme);
-    if (token) {
-      pushSyncToServer();
-    }
-  }, [theme, token]);
+
 
   // Push grade update to server
   useEffect(() => {
@@ -42,21 +35,7 @@ export default function Layout({ children }) {
     }
   }, [grade, token]);
 
-  // Listen to theme changed from server sync or other tabs
-  useEffect(() => {
-    const handleThemeChange = () => {
-      const storedTheme = localStorage.getItem('lms_theme') || 'coursera';
-      if (storedTheme !== theme) {
-        setTheme(storedTheme);
-      }
-    };
-    window.addEventListener('lmsThemeChanged', handleThemeChange);
-    window.addEventListener('storage', handleThemeChange);
-    return () => {
-      window.removeEventListener('lmsThemeChanged', handleThemeChange);
-      window.removeEventListener('storage', handleThemeChange);
-    };
-  }, [theme]);
+
 
   // Pull sync from server on mount, tab visible, and periodically
   useEffect(() => {
@@ -229,83 +208,7 @@ export default function Layout({ children }) {
           </div>
         </div>
 
-        {/* Theme Switcher Section */}
-        <div style={{ marginBottom: '1.5rem', padding: '0 0.5rem' }}>
-          <label style={{ 
-            fontSize: '0.72rem', 
-            textTransform: 'uppercase', 
-            color: 'var(--text-muted)', 
-            fontWeight: 'bold', 
-            display: 'block', 
-            marginBottom: '0.5rem', 
-            letterSpacing: '0.04em' 
-          }}>
-            Giao diện LMS
-          </label>
-          <div style={{ 
-            display: 'flex', 
-            gap: '0.25rem', 
-            background: '#f1f3f5', 
-            padding: '0.2rem', 
-            borderRadius: '6px', 
-            border: '1px solid var(--border-color)',
-            position: 'relative'
-          }}>
-            {[
-              { id: 'coursera', name: 'Coursera Blue', color: '#0056d2' },
-              { id: 'udemy', name: 'Udemy Purple', color: '#5624d0' }
-            ].map((t) => (
-              <button 
-                key={t.id}
-                onClick={() => {
-                  setTheme(t.id);
-                  logUserAction('CHANGE_THEME', `Thay đổi giao diện sang ${t.name}`);
-                }}
-                style={{ 
-                  flex: 1, 
-                  padding: '0.35rem', 
-                  border: 'none', 
-                  borderRadius: '4px', 
-                  fontSize: '0.78rem', 
-                  fontWeight: 'bold', 
-                  cursor: 'pointer', 
-                  background: 'transparent',
-                  color: theme === t.id ? t.color : 'var(--text-muted)', 
-                  position: 'relative',
-                  zIndex: 1,
-                  transition: 'color 0.25s',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '0.25rem'
-                }}
-              >
-                <span style={{ 
-                  width: '6px', 
-                  height: '6px', 
-                  borderRadius: '50%', 
-                  background: t.color,
-                  display: 'inline-block' 
-                }}></span>
-                <span style={{ position: 'relative', zIndex: 2 }}>{t.id === 'coursera' ? 'Coursera' : 'Udemy'}</span>
-                {theme === t.id && (
-                  <motion.div
-                    layoutId="activeTheme"
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      background: '#ffffff',
-                      borderRadius: '4px',
-                      boxShadow: '0 1px 3px rgba(0,0,0,0.12)',
-                      zIndex: 1
-                    }}
-                    transition={{ type: 'spring', stiffness: 380, damping: 28 }}
-                  />
-                )}
-              </button>
-            ))}
-          </div>
-        </div>
+
 
         {/* Navigation Menu */}
         <nav style={{ flex: 1 }}>

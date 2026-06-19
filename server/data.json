@@ -68,6 +68,39 @@
         "last_studied_subject": "math",
         "total_correct_questions": "6"
       }
+    },
+    {
+      "id": "1781899117814",
+      "username": "testuser123",
+      "password": "$2a$10$PmeMFP21LVT.f5HeBoF1iuqil6aCW7ZagEWa9ST2L/YY3O426gEPK",
+      "role": "student",
+      "createdAt": "2026-06-19T19:58:37.814Z",
+      "syncData": {
+        "lms_theme": "coursera",
+        "selected_grade": "10",
+        "completed_lectures": "[\"t11_ch1\"]",
+        "chats_tutors": "{\"global_11\":[{\"role\":\"assistant\",\"text\":\"Chào em! Thầy/Cô thuộc Ban cố vấn học tập THPT rất vui được hỗ trợ em. Thầy/Cô có thể giúp em lên lộ trình ôn tập, tổng hợp kiến thức từ các tài liệu lớp 11. Em cần hỗ trợ gì hôm nay?\"}],\"math_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, thầy là Thầy Nam dạy Toán. Học Toán lớp 11 cần tư duy logic và nắm vững định nghĩa, công thức. Thầy trò mình cùng khám phá nhé!\"}],\"physics_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, thầy là Thầy Hải dạy Lý. Từ các công thức Động học, Lực, dao động hay điện xoay chiều lớp 11, thầy đều sẵn sàng đồng hành cùng em!\"}],\"chemistry_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, cô là Cô Hoa dạy Hoá. Học lý thuyết hay làm bài tập Hoá học lớp 11 có gì khó khăn, em cứ hỏi cô giải đáp chi tiết nhé!\"}],\"biology_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, cô là Cô Linh dạy Sinh. Sinh học lớp 11 có nhiều kiến thức thú vị về thế giới tế bào, di truyền học và hệ sinh thái. Cô sẽ giúp em chinh phục môn Sinh nhé!\"}],\"history_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, thầy là Thầy Bình dạy Sử. Lịch sử lớp 11 giúp em hiểu sâu sắc về văn minh nhân loại và các mốc lịch sử hào hùng của dân tộc Việt Nam. Cần hỏi gì cứ nhắn thầy!\"}],\"literature_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, cô là Cô Mai dạy Ngữ văn. Học Văn lớp 11 cần cảm xúc chân thành và tư duy nghị luận sắc bén. Cô sẽ đồng hành cùng em qua các tác phẩm văn học nhé!\"}],\"english_11\":[{\"role\":\"assistant\",\"text\":\"Hello! I'm Mr. Wyatt, your English teacher. Let's master Grade 11 English vocabulary together. Ask me about any words, phrases, grammatical points or exercises!\"}],\"global_10\":[{\"role\":\"assistant\",\"text\":\"Chào em! Thầy/Cô thuộc Ban cố vấn học tập THPT rất vui được hỗ trợ em. Thầy/Cô có thể giúp em lên lộ trình ôn tập, tổng hợp kiến thức từ các tài liệu lớp 10. Em cần hỗ trợ gì hôm nay?\"}]}",
+        "stats_math_11_easy": "{\"answered\":6,\"correct\":6}",
+        "total_answered_questions": "6",
+        "last_studied_subject": "math",
+        "total_correct_questions": "6"
+      }
+    },
+    {
+      "id": "1781899365583",
+      "username": "uniqueuser999",
+      "password": "$2a$10$qaDvX4yMzHPcOObN7qB5EuVpltJoHgjEk6z52IURyXlKL4YvhvsFq",
+      "role": "student",
+      "createdAt": "2026-06-19T20:02:45.583Z",
+      "syncData": {
+        "selected_grade": "10",
+        "completed_lectures": "[\"t11_ch1\"]",
+        "chats_tutors": "{\"global_11\":[{\"role\":\"assistant\",\"text\":\"Chào em! Thầy/Cô thuộc Ban cố vấn học tập THPT rất vui được hỗ trợ em. Thầy/Cô có thể giúp em lên lộ trình ôn tập, tổng hợp kiến thức từ các tài liệu lớp 11. Em cần hỗ trợ gì hôm nay?\"}],\"math_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, thầy là Thầy Nam dạy Toán. Học Toán lớp 11 cần tư duy logic và nắm vững định nghĩa, công thức. Thầy trò mình cùng khám phá nhé!\"}],\"physics_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, thầy là Thầy Hải dạy Lý. Từ các công thức Động học, Lực, dao động hay điện xoay chiều lớp 11, thầy đều sẵn sàng đồng hành cùng em!\"}],\"chemistry_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, cô là Cô Hoa dạy Hoá. Học lý thuyết hay làm bài tập Hoá học lớp 11 có gì khó khăn, em cứ hỏi cô giải đáp chi tiết nhé!\"}],\"biology_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, cô là Cô Linh dạy Sinh. Sinh học lớp 11 có nhiều kiến thức thú vị về thế giới tế bào, di truyền học và hệ sinh thái. Cô sẽ giúp em chinh phục môn Sinh nhé!\"}],\"history_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, thầy là Thầy Bình dạy Sử. Lịch sử lớp 11 giúp em hiểu sâu sắc về văn minh nhân loại và các mốc lịch sử hào hùng của dân tộc Việt Nam. Cần hỏi gì cứ nhắn thầy!\"}],\"literature_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, cô là Cô Mai dạy Ngữ văn. Học Văn lớp 11 cần cảm xúc chân thành và tư duy nghị luận sắc bén. Cô sẽ đồng hành cùng em qua các tác phẩm văn học nhé!\"}],\"english_11\":[{\"role\":\"assistant\",\"text\":\"Hello! I'm Mr. Wyatt, your English teacher. Let's master Grade 11 English vocabulary together. Ask me about any words, phrases, grammatical points or exercises!\"}],\"global_10\":[{\"role\":\"assistant\",\"text\":\"Chào em! Thầy/Cô thuộc Ban cố vấn học tập THPT rất vui được hỗ trợ em. Thầy/Cô có thể giúp em lên lộ trình ôn tập, tổng hợp kiến thức từ các tài liệu lớp 10. Em cần hỗ trợ gì hôm nay?\"}]}",
+        "stats_math_11_easy": "{\"answered\":6,\"correct\":6}",
+        "total_answered_questions": "6",
+        "last_studied_subject": "math",
+        "total_correct_questions": "6"
+      }
     }
   ],
   "subjects": [
@@ -6347,6 +6380,46 @@
       "action": "LOGIN",
       "details": "Học sinh đăng nhập thành công",
       "timestamp": "2026-06-19T19:48:32.532Z"
+    },
+    {
+      "id": "17818989714700.4060044266670282",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T19:56:11.470Z"
+    },
+    {
+      "id": "17818991178140.06173345038776945",
+      "userId": "1781899117814",
+      "username": "testuser123",
+      "action": "REGISTER",
+      "details": "Đăng ký tài khoản thành công",
+      "timestamp": "2026-06-19T19:58:37.814Z"
+    },
+    {
+      "id": "17818991179270.4345315727976421",
+      "userId": "1781899117814",
+      "username": "testuser123",
+      "action": "REGISTER_SUCCESS",
+      "details": "Đăng ký tài khoản thành công từ Client",
+      "timestamp": "2026-06-19T19:58:37.927Z"
+    },
+    {
+      "id": "17818993655830.803188762360622",
+      "userId": "1781899365583",
+      "username": "uniqueuser999",
+      "action": "REGISTER",
+      "details": "Đăng ký tài khoản thành công",
+      "timestamp": "2026-06-19T20:02:45.583Z"
+    },
+    {
+      "id": "17818993662070.35960304675621857",
+      "userId": "1781899365583",
+      "username": "uniqueuser999",
+      "action": "REGISTER_SUCCESS",
+      "details": "Đăng ký tài khoản thành công từ Client",
+      "timestamp": "2026-06-19T20:02:46.207Z"
     }
   ],
   "essays": {

@@ -51,30 +51,7 @@
   --radius-sm: 8px;
 }
 
-/* Udemy Theme Override */
-[data-theme="udemy"] {
-  --bg-main: #f7f9fa; /* Udemy light grey background */
-  --bg-card: #ffffff; /* Pure white card background */
-  --border-color: #d1d7dc; /* Udemy thin grey border */
-  --border-hover: #5624d0; /* Active Udemy purple hover */
-  
-  --text-primary: #1c1d1f; /* Udemy dark charcoal text */
-  --text-secondary: #2d2f31; /* Legible dark text */
-  --text-muted: #6a6f73; /* Caption text */
 
-  /* Udemy Brand Accent Colors */
-  --color-primary: #5624d0; /* Udemy signature deep purple */
-  --color-primary-hover: #401b9c; /* Darker purple */
-  --grad-main: linear-gradient(135deg, #1c1d1f 0%, #5624d0 50%, #a435f0 100%);
-  --grad-hero: linear-gradient(135deg, #1c1d1f 0%, #2d2f31 50%, #5624d0 100%);
-  --bg-active-nav: rgba(86, 36, 208, 0.08);
-  
-  /* Multi-layered Soft Shadows (Udemy Tint) */
-  --shadow-main: 0 2px 4px rgba(28, 29, 31, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
-  --shadow-hover: 0 8px 16px rgba(28, 29, 31, 0.08), 0 2px 4px rgba(0, 0, 0, 0.03);
-  --shadow-active: 0 0 0 3px rgba(86, 36, 208, 0.15);
-  --shadow-glow: 0 8px 24px rgba(86, 36, 208, 0.12);
-}
 
 /* Smooth transitions for theme property changes */
 body, 
