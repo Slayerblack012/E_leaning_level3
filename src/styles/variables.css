@@ -1,0 +1,149 @@
+:root {
+  --font-title: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+  --font-body: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+
+  /* Colors - macOS System Gray and Acrylic Translucency */
+  --bg-main: #f5f5f7; /* macOS Light System Background */
+  --bg-card: #ffffff; /* Pure white card background */
+  --bg-sidebar: rgba(255, 255, 255, 0.8); /* Semi-transparent sidebar background */
+  --border-color: rgba(0, 0, 0, 0.065); /* macOS thin clean border */
+  --border-hover: #0066cc; /* macOS System Blue on hover */
+  
+  --text-primary: #1d1d1f; /* macOS charcoal primary text */
+  --text-secondary: #48484a; /* macOS gray secondary text */
+  --text-muted: #86868b; /* macOS muted slate text */
+
+  /* macOS Brand Accent Colors */
+  --color-primary: #0066cc; /* macOS System Blue */
+  --color-primary-hover: #0055aa; /* Darker system blue */
+  --grad-main: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+  
+  /* Subject Accents (Clean, Bright Professional Education Accents) */
+  --color-english: #5e5ce6; /* macOS System Purple */
+  --color-chemistry: #34c759; /* macOS System Green */
+  --color-physics: #30b0c7; /* macOS System Teal */
+  --color-math: #ff3b30; /* macOS System Red */
+
+  /* Subject Badge Backgrounds */
+  --bg-badge-english: rgba(94, 92, 230, 0.08);
+  --bg-badge-chemistry: rgba(52, 199, 89, 0.08);
+  --bg-badge-physics: rgba(48, 176, 199, 0.08);
+  --bg-badge-math: rgba(255, 59, 48, 0.08);
+
+  /* Premium Elegant Box Shadows (macOS style soft ambient shadows) */
+  --shadow-main: 0 8px 30px rgba(0, 0, 0, 0.035), 0 1px 2px rgba(0, 0, 0, 0.015);
+  --shadow-hover: 0 24px 50px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.02);
+  --shadow-active: 0 0 20px rgba(0, 102, 204, 0.15);
+
+  --radius-lg: 16px; /* Smooth macOS corner radii */
+  --radius-md: 12px;
+  --radius-sm: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  background-image: 
+    linear-gradient(rgba(0, 102, 204, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 102, 204, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f3f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccd0d5;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #aab0b6;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 2.1rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Animations Keyframes */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Reduced Motion Utility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-delay: 0s !important;
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
+}
