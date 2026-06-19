@@ -51,12 +51,18 @@
 body {
   font-family: var(--font-body);
   background-color: var(--bg-main);
+  background-image: 
+    linear-gradient(rgba(0, 102, 204, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 102, 204, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
   color: var(--text-primary);
   min-height: 100vh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
 
 /* Scrollbar styling */
 ::-webkit-scrollbar {
@@ -273,7 +279,8 @@ h1 {
 
 .stat-card:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
+  border-color: rgba(0, 102, 204, 0.2);
+  box-shadow: 0 12px 24px rgba(0, 102, 204, 0.06), 0 0 15px rgba(0, 102, 204, 0.04);
 }
 
 .stat-icon-wrapper {
@@ -327,8 +334,28 @@ h1 {
 
 .subject-card:hover {
   transform: translateY(-6px);
-  border-color: #ccd0d5;
-  box-shadow: var(--shadow-hover);
+  border-color: var(--color-primary);
+  box-shadow: 0 16px 36px rgba(0, 102, 204, 0.08), 0 0 20px rgba(0, 102, 204, 0.06);
+}
+
+.subject-card.english:hover {
+  border-color: var(--color-english);
+  box-shadow: 0 16px 36px rgba(94, 92, 230, 0.08), 0 0 20px rgba(94, 92, 230, 0.06);
+}
+
+.subject-card.chemistry:hover {
+  border-color: var(--color-chemistry);
+  box-shadow: 0 16px 36px rgba(52, 199, 89, 0.08), 0 0 20px rgba(52, 199, 89, 0.06);
+}
+
+.subject-card.physics:hover {
+  border-color: var(--color-physics);
+  box-shadow: 0 16px 36px rgba(48, 176, 199, 0.08), 0 0 20px rgba(48, 176, 199, 0.06);
+}
+
+.subject-card.math:hover {
+  border-color: var(--color-math);
+  box-shadow: 0 16px 36px rgba(255, 59, 48, 0.08), 0 0 20px rgba(255, 59, 48, 0.06);
 }
 
 .subject-card.english::before { background: var(--color-english); }
@@ -1319,6 +1346,40 @@ h1 {
     animation-iteration-count: 1 !important;
     transition-duration: 0s !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Pulsing Status Dot for OS System status */
+.status-dot.online {
+  background: #00875a;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.status-dot.online::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid #00875a;
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  opacity: 0;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
   }
 }
 
