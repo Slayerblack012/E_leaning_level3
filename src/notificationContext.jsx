@@ -79,37 +79,28 @@ function ToastItem({ toast, onClose }) {
 
   const getIcon = () => {
     switch (toast.type) {
-      case 'success': return <CheckCircle2 size={18} color="#00f0ff" />;
-      case 'error': return <XCircle size={18} color="#ff3e3e" />;
-      case 'warning': return <AlertTriangle size={18} color="#ff7a00" />;
-      default: return <Info size={18} color="#00f0ff" />;
+      case 'success': return <CheckCircle2 size={18} color="#10b981" />;
+      case 'error': return <XCircle size={18} color="#ef4444" />;
+      case 'warning': return <AlertTriangle size={18} color="#f59e0b" />;
+      default: return <Info size={18} color="var(--color-primary)" />;
     }
   };
 
-  const getBorderColor = () => {
+  const getBorderLeftColor = () => {
     switch (toast.type) {
-      case 'success': return '#00f0ff';
-      case 'error': return '#ff3e3e';
-      case 'warning': return '#ff7a00';
-      default: return '#00f0ff';
+      case 'success': return '#10b981';
+      case 'error': return '#ef4444';
+      case 'warning': return '#f59e0b';
+      default: return 'var(--color-primary)';
     }
   };
 
   const getHeaderLabel = () => {
     switch (toast.type) {
-      case 'success': return 'SYSTEM: QUEST CLEAR';
-      case 'error': return 'SYSTEM: QUEST FAILED';
-      case 'warning': return 'SYSTEM: WARNING';
-      default: return 'SYSTEM: DIRECTIVE';
-    }
-  };
-
-  const getHeaderColor = () => {
-    switch (toast.type) {
-      case 'success': return '#00f0ff';
-      case 'error': return '#ff3e3e';
-      case 'warning': return '#ff7a00';
-      default: return '#00f0ff';
+      case 'success': return 'Thành công';
+      case 'error': return 'Lỗi';
+      case 'warning': return 'Cảnh báo';
+      default: return 'Thông báo';
     }
   };
 
@@ -122,56 +113,54 @@ function ToastItem({ toast, onClose }) {
       transition={{ type: 'spring', stiffness: 350, damping: 25 }}
       style={{
         pointerEvents: 'auto',
-        background: 'rgba(10, 18, 30, 0.95)',
-        border: `1px solid ${getBorderColor()}`,
+        background: 'var(--bg-card)',
+        border: '1px solid var(--border-color)',
+        borderLeft: `4px solid ${getBorderLeftColor()}`,
         borderRadius: 'var(--radius-md)',
-        boxShadow: `0 8px 24px rgba(0, 0, 0, 0.15), 0 0 15px ${getBorderColor()}33, inset 0 0 8px rgba(0, 240, 255, 0.1)`,
-        padding: '0.85rem 1.25rem',
+        boxShadow: 'var(--shadow-hover)',
+        padding: '0.85rem 1.15rem',
         display: 'flex',
-        flexDirection: 'column',
-        gap: '0.4rem',
-        minWidth: '300px',
-        maxWidth: '400px',
+        alignItems: 'center',
+        gap: '0.75rem',
+        minWidth: '280px',
+        maxWidth: '380px',
         fontFamily: 'var(--font-body)'
       }}
     >
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: `1px solid ${getBorderColor()}33`, paddingBottom: '0.25rem' }}>
-        <span style={{ 
-          fontSize: '0.75rem', 
-          fontWeight: '800', 
-          color: getHeaderColor(), 
-          letterSpacing: '0.1em',
-          fontFamily: 'monospace'
-        }}>
-          {getHeaderLabel()}
-        </span>
-        <button 
-          onClick={() => onClose(toast.id)}
-          style={{
-            background: 'none',
-            border: 'none',
-            color: '#94a3b8',
-            cursor: 'pointer',
-            fontSize: '1rem',
-            lineHeight: 1,
-            padding: 0
-          }}
-        >
-          ×
-        </button>
+      <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+        {getIcon()}
       </div>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginTop: '0.25rem' }}>
-        <div style={{ flexShrink: 0 }}>{getIcon()}</div>
+      <div style={{ flex: 1 }}>
+        <div style={{ fontSize: '0.72rem', fontWeight: 'bold', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.02em', marginBottom: '0.15rem' }}>
+          {getHeaderLabel()}
+        </div>
         <div style={{ 
-          fontSize: '0.85rem', 
-          fontWeight: '600', 
-          color: '#f8fafc', 
-          lineHeight: '1.4',
-          flex: 1
+          fontSize: '0.86rem', 
+          fontWeight: '500', 
+          color: 'var(--text-primary)', 
+          lineHeight: '1.4'
         }}>
           {toast.message}
         </div>
       </div>
+      <button 
+        onClick={() => onClose(toast.id)}
+        style={{
+          background: 'none',
+          border: 'none',
+          color: 'var(--text-muted)',
+          cursor: 'pointer',
+          fontSize: '1.15rem',
+          lineHeight: 1,
+          padding: '0 0 0 0.5rem',
+          alignSelf: 'center',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >
+        ×
+      </button>
     </motion.div>
   );
 }
@@ -188,21 +177,18 @@ function ModalPopup({ modal, onClose }) {
     onClose();
   };
 
-  const getSystemHeader = () => {
-    if (modal.title.includes('Hoàn Thành') || modal.title.includes('Trắc Nghiệm')) {
-      return 'SYSTEM: QUEST COMPLETED';
+  const getIconColor = () => {
+    const titleLower = modal.title.toLowerCase();
+    if (titleLower.includes('xóa') || titleLower.includes('đặt lại') || titleLower.includes('xác nhận đăng xuất')) {
+      return { bg: 'rgba(239, 68, 68, 0.06)', text: '#ef4444', border: '1px solid rgba(239, 68, 68, 0.15)' };
     }
-    if (modal.title.includes('Xác nhận Đăng xuất')) {
-      return 'SYSTEM: LOGOUT DIRECTIVE';
+    if (titleLower.includes('hoàn thành') || titleLower.includes('chúc mừng') || titleLower.includes('thành tựu')) {
+      return { bg: 'rgba(245, 158, 11, 0.06)', text: '#eab308', border: '1px solid rgba(245, 158, 11, 0.15)' };
     }
-    if (modal.title.includes('Đặt lại')) {
-      return 'SYSTEM: RESET DIRECTIVE';
-    }
-    return 'SYSTEM: ACTIVE DIRECTIVE';
+    return { bg: 'rgba(0, 86, 210, 0.06)', text: 'var(--color-primary)', border: '1px solid var(--border-color)' };
   };
 
-  const borderColor = '#00f0ff';
-  const accentColor = '#00f0ff';
+  const colorConfig = getIconColor();
 
   return (
     <motion.div
@@ -212,9 +198,9 @@ function ModalPopup({ modal, onClose }) {
       style={{
         position: 'fixed',
         inset: 0,
-        background: 'rgba(5, 10, 18, 0.65)',
-        backdropFilter: 'blur(8px)',
-        WebkitBackdropFilter: 'blur(8px)',
+        background: 'rgba(15, 23, 42, 0.35)', // Soft slate translucent overlay
+        backdropFilter: 'blur(4px)',
+        WebkitBackdropFilter: 'blur(4px)',
         zIndex: 9999,
         display: 'flex',
         alignItems: 'center',
@@ -223,96 +209,62 @@ function ModalPopup({ modal, onClose }) {
       }}
     >
       <motion.div
-        initial={{ opacity: 0, scale: 0.92, y: 15 }}
+        initial={{ opacity: 0, scale: 0.95, y: 15 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.95, y: 10, transition: { duration: 0.15 } }}
+        exit={{ opacity: 0, scale: 0.96, y: 10, transition: { duration: 0.15 } }}
         transition={{ type: 'spring', stiffness: 380, damping: 28 }}
         style={{
-          background: 'rgba(10, 20, 35, 0.96)',
-          border: `1.5px solid ${borderColor}`,
+          background: 'var(--bg-card)',
+          border: '1px solid var(--border-color)',
           borderRadius: 'var(--radius-lg)',
-          boxShadow: `0 20px 50px rgba(0, 0, 0, 0.3), 0 0 30px ${borderColor}33, inset 0 0 15px rgba(0, 240, 255, 0.1)`,
+          boxShadow: 'var(--shadow-hover)',
           width: '100%',
-          maxWidth: '480px',
-          padding: '2.5rem 1.75rem 2rem 1.75rem',
+          maxWidth: '460px',
+          padding: '2rem 1.75rem',
           position: 'relative',
           textAlign: 'center',
-          color: '#f8fafc'
+          color: 'var(--text-primary)',
+          fontFamily: 'var(--font-body)'
         }}
       >
-        {/* macOS Traffic Lights decoration */}
+        {/* Upper Icon Container */}
         <div style={{
-          position: 'absolute',
-          top: '16px',
-          left: '16px',
-          display: 'flex',
-          gap: '6px',
-          zIndex: 10
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: '60px',
+          height: '60px',
+          borderRadius: '50%',
+          background: colorConfig.bg,
+          color: colorConfig.text,
+          border: colorConfig.border,
+          marginBottom: '1.15rem'
         }}>
-          <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#ff5f56' }} />
-          <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#ffbd2e' }} />
-          <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#27c93f' }} />
+          {modal.icon ? (
+            <div style={{ fontSize: '1.8rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              {modal.icon}
+            </div>
+          ) : (
+            <HelpCircle size={26} />
+          )}
         </div>
 
-        {/* Holographic Header Bar */}
-        <div style={{ 
-          fontSize: '0.8rem', 
-          fontWeight: '900', 
-          color: accentColor, 
-          letterSpacing: '0.15em', 
-          fontFamily: 'monospace',
-          marginBottom: '1rem',
-          borderBottom: `1px solid ${borderColor}33`,
-          paddingBottom: '0.5rem',
-          textTransform: 'uppercase'
-        }}>
-          {getSystemHeader()}
-        </div>
-
-        {/* Icon representation */}
-        {modal.icon ? (
-          <div style={{
-            fontSize: '3rem',
-            marginBottom: '1rem',
-            display: 'inline-flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            filter: 'drop-shadow(0 0 10px rgba(0, 240, 255, 0.5))'
-          }}>
-            {modal.icon}
-          </div>
-        ) : (
-          <div style={{
-            background: 'rgba(0, 240, 255, 0.1)',
-            color: '#00f0ff',
-            width: '56px',
-            height: '56px',
-            borderRadius: '50%',
-            display: 'inline-flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            marginBottom: '1.2rem',
-            border: '1px solid #00f0ff',
-            boxShadow: '0 0 10px rgba(0, 240, 255, 0.2)'
-          }}>
-            <HelpCircle size={28} />
-          </div>
-        )}
-
+        {/* Modal Title */}
         <h3 style={{
-          fontSize: '1.4rem',
-          fontWeight: 'bold',
-          color: '#ffffff',
-          marginBottom: '0.75rem',
-          letterSpacing: '0.02em',
-          fontFamily: 'var(--font-title)'
+          fontSize: '1.25rem',
+          fontWeight: '800',
+          color: 'var(--text-primary)',
+          marginBottom: '0.65rem',
+          fontFamily: 'var(--font-title)',
+          letterSpacing: '-0.015em'
         }}>
           {modal.title}
         </h3>
 
+        {/* Modal Content */}
         <div style={{
-          fontSize: '0.92rem',
-          color: '#cbd5e1',
+          fontSize: '0.88rem',
+          color: 'var(--text-secondary)',
           lineHeight: '1.6',
           marginBottom: '1.75rem',
           textAlign: modal.textAlign || 'center'
@@ -320,7 +272,7 @@ function ModalPopup({ modal, onClose }) {
           {modal.content}
         </div>
 
-        {/* Buttons */}
+        {/* Action Buttons */}
         <div style={{
           display: 'flex',
           gap: '0.75rem',
@@ -331,41 +283,42 @@ function ModalPopup({ modal, onClose }) {
               onClick={handleCancel}
               style={{
                 flex: 1,
-                padding: '0.75rem 1.25rem',
-                background: 'rgba(239, 68, 68, 0.08)',
-                color: '#f87171',
-                border: '1px solid rgba(239, 68, 68, 0.4)',
-                borderRadius: '4px',
-                fontWeight: 'bold',
+                padding: '0.6rem 1.25rem',
+                background: '#ffffff',
+                color: 'var(--text-secondary)',
+                border: '1px solid var(--border-color)',
+                borderRadius: 'var(--radius-md)',
+                fontWeight: '700',
                 cursor: 'pointer',
                 fontSize: '0.85rem',
                 transition: 'all 0.2s',
-                fontFamily: 'monospace'
+                fontFamily: 'var(--font-body)'
               }}
-              onMouseOver={(e) => { e.target.style.background = 'rgba(239, 68, 68, 0.15)' }}
-              onMouseOut={(e) => { e.target.style.background = 'rgba(239, 68, 68, 0.08)' }}
+              onMouseOver={(e) => { e.target.style.background = '#f8fafc'; e.target.style.borderColor = '#cbd5e1' }}
+              onMouseOut={(e) => { e.target.style.background = '#ffffff'; e.target.style.borderColor = 'var(--border-color)' }}
             >
               {modal.cancelText}
             </button>
           )}
+          
           <button
             onClick={handleConfirm}
             style={{
               flex: 1,
-              padding: '0.75rem 1.25rem',
-              background: 'rgba(0, 240, 255, 0.15)',
-              color: '#00f0ff',
-              border: '1px solid #00f0ff',
-              borderRadius: '4px',
-              fontWeight: 'bold',
+              padding: '0.6rem 1.25rem',
+              background: 'var(--color-primary)',
+              color: '#ffffff',
+              border: '1px solid var(--color-primary)',
+              borderRadius: 'var(--radius-md)',
+              fontWeight: '700',
               cursor: 'pointer',
               fontSize: '0.85rem',
               transition: 'all 0.2s',
-              boxShadow: '0 0 10px rgba(0, 240, 255, 0.2)',
-              fontFamily: 'monospace'
+              fontFamily: 'var(--font-body)',
+              boxShadow: '0 2px 8px rgba(0, 86, 210, 0.1)'
             }}
-            onMouseOver={(e) => { e.target.style.background = 'rgba(0, 240, 255, 0.25)'; e.target.style.boxShadow = '0 0 15px rgba(0, 240, 255, 0.4)' }}
-            onMouseOut={(e) => { e.target.style.background = 'rgba(0, 240, 255, 0.15)'; e.target.style.boxShadow = '0 0 10px rgba(0, 240, 255, 0.2)' }}
+            onMouseOver={(e) => { e.target.style.background = 'var(--color-primary-hover)'; e.target.style.borderColor = 'var(--color-primary-hover)' }}
+            onMouseOut={(e) => { e.target.style.background = 'var(--color-primary)'; e.target.style.borderColor = 'var(--color-primary)' }}
           >
             {modal.confirmText || 'Đồng ý'}
           </button>

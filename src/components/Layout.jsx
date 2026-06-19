@@ -289,7 +289,7 @@ export default function Layout({ children }) {
                       style={{
                         position: 'absolute',
                         inset: 0,
-                        background: 'rgba(0, 102, 204, 0.08)',
+                        background: 'var(--bg-active-nav)',
                         borderRadius: 'var(--radius-sm)',
                         zIndex: 1,
                         pointerEvents: 'none'
