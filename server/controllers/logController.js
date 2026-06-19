@@ -1,7 +1,7 @@
 const db = require('../models/db');
 
 function logAction(req, res) {
-  const { action, details } = req.body;
+  const { action, details } = req.body || {};
   if (!action) return res.status(400).json({ error: 'action required' });
   
   const data = db.readData();
@@ -16,7 +16,10 @@ function logAction(req, res) {
     timestamp: new Date().toISOString()
   });
   
-  db.writeData(data);
+  if (!db.writeData(data)) {
+    return res.status(500).json({ error: 'Không thể lưu nhật ký hoạt động' });
+  }
+
   res.json({ ok: true });
 }
 

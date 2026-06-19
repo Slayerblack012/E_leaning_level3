@@ -21,11 +21,18 @@ function addSubject(req, res) {
   if (req.user.role !== 'admin') return res.status(403).json({ error: 'Forbidden' });
   const data = db.readData();
   const subject = req.body;
+  if (!subject || typeof subject !== 'object' || Array.isArray(subject)) {
+    return res.status(400).json({ error: 'Invalid subject payload' });
+  }
+
   subject.id = subject.id || (subject.title || 'subject').toLowerCase().replace(/[^a-z0-9_]/g, '_');
   
   if (!data.subjects) data.subjects = [];
   data.subjects.push(subject);
-  db.writeData(data);
+  if (!db.writeData(data)) {
+    return res.status(500).json({ error: 'Không thể lưu môn học' });
+  }
+
   res.json({ ok: true, subject });
 }
 

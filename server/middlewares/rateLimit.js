@@ -1,5 +1,3 @@
-const { createClient } = require('redis');
-
 const buckets = new Map();
 let redisClient;
 let redisConnectPromise;
@@ -17,6 +15,14 @@ function getRedisClient() {
   if (!process.env.REDIS_URL) return null;
 
   if (!redisClient) {
+    let createClient;
+    try {
+      ({ createClient } = require('redis'));
+    } catch (error) {
+      console.warn('Redis package unavailable, falling back to memory rate limit:', error.message);
+      return null;
+    }
+
     redisClient = createClient({ url: process.env.REDIS_URL });
     redisClient.on('error', (error) => {
       console.warn('Redis rate limit client error:', error.message);

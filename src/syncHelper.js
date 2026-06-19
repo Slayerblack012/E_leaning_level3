@@ -67,3 +67,36 @@ export async function pullSyncFromServer() {
     console.warn('Sync from server failed:', e);
   }
 }
+
+// Subscribe to server-sent events for realtime sync updates
+export function subscribeToSyncStream() {
+  const token = localStorage.getItem('token');
+  if (!token || typeof window === 'undefined') return null;
+
+  // EventSource cannot send Authorization headers, so the stream uses a query token.
+  const url = `/api/auth/sync/stream?token=${encodeURIComponent(token)}`;
+  const evtSource = new EventSource(url, { withCredentials: true });
+
+  evtSource.addEventListener('sync', (e) => {
+    try {
+      const payload = JSON.parse(e.data);
+      if (payload && payload.syncData) {
+        Object.entries(payload.syncData).forEach(([key, val]) => {
+          localStorage.setItem(key, val);
+        });
+        window.dispatchEvent(new Event('localStatsChanged'));
+        window.dispatchEvent(new Event('completedLecturesChanged'));
+        window.dispatchEvent(new Event('gradeChanged'));
+      }
+    } catch (err) {
+      console.warn('Invalid sync event payload', err);
+    }
+  });
+
+  evtSource.addEventListener('error', (err) => {
+    // connection errors will be logged; EventSource auto-retries
+    console.warn('Sync stream error', err);
+  });
+
+  return evtSource; // caller should call close() when appropriate
+}

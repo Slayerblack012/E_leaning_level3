@@ -13,7 +13,7 @@ export default function Register() {
 
   const submit = async (e) => {
     e.preventDefault();
-    if (!username || !password) return;
+    if (!username.trim() || !password) return;
     setError(null);
     setLoading(true);
     try {
@@ -23,11 +23,9 @@ export default function Register() {
       localStorage.setItem('username', user.username);
       setAuthToken(token);
       await pullSyncFromServer();
-      // Gửi log đăng ký ẩn lên server
-      await logUserAction('REGISTER_SUCCESS', 'Đăng ký tài khoản thành công từ Client');
+      await logUserAction('REGISTER_SUCCESS', 'Đăng ký tài khoản thành công từ client');
       navigate('/');
     } catch (err) {
-
       setError(err.response?.data?.error || 'Tên đăng nhập đã tồn tại hoặc đăng ký thất bại');
     } finally {
       setLoading(false);
@@ -36,16 +34,15 @@ export default function Register() {
 
   return (
     <div className="auth-split-container">
-      {/* Left Column: Visual Brand Block (Desktop only) */}
       <div className="auth-visual-side">
         <div className="auth-visual-side-content">
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '2.5rem' }}>
             <GraduationCap size={32} style={{ color: '#ffffff' }} />
-            <span style={{ fontSize: '1.75rem', fontWeight: '800', letterSpacing: '-0.02em', background: 'linear-gradient(to right, #ffffff, #94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>E-Learning THPT</span>
+            <span style={{ fontSize: '1.75rem', fontWeight: '800', letterSpacing: '0', background: 'linear-gradient(to right, #ffffff, #94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>E-Learning THPT</span>
           </div>
           <h2 className="auth-visual-title">Bắt đầu hành trình học tập thông minh</h2>
           <p className="auth-visual-desc">
-            Chỉ với vài giây tạo tài khoản, em sẽ sở hữu toàn bộ học liệu 7 môn học cốt lõi lớp 10, 11, 12 và kết nối trực tiếp với đội ngũ trợ lý học tập trực tuyến thông minh hàng đầu.
+            Tạo tài khoản để lưu tiến độ học tập, đồng bộ bài đã làm và tiếp tục luyện tập trên mọi thiết bị.
           </p>
           <div style={{ display: 'flex', gap: '2rem', marginTop: '3rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem' }}>
             <div>
@@ -57,14 +54,13 @@ export default function Register() {
               <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Bảo mật thông tin</div>
             </div>
             <div>
-              <div style={{ fontSize: '1.6rem', fontWeight: '800' }}>Tốc độ</div>
-              <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Tạo ngay trong 3 giây</div>
+              <div style={{ fontSize: '1.6rem', fontWeight: '800' }}>Nhanh</div>
+              <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Tạo trong vài giây</div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Right Column: Form Block */}
       <div className="auth-form-side">
         <div className="content-section" style={{ 
           width: '100%', 
@@ -76,7 +72,7 @@ export default function Register() {
         }}>
           <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
             <UserPlus size={36} style={{ color: 'var(--color-primary)', margin: '0 auto 0.5rem auto' }} />
-            <h2 style={{ fontSize: '1.6rem', color: '#001e62', marginTop: '0.5rem', fontFamily: 'var(--font-title)' }}>Đăng Ký</h2>
+            <h2 style={{ fontSize: '1.6rem', color: '#001e62', marginTop: '0.5rem', fontFamily: 'var(--font-title)' }}>Đăng ký</h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.25rem' }}>
               Tạo tài khoản học tập trực tuyến mới của bạn
             </p>
@@ -84,64 +80,40 @@ export default function Register() {
 
           <form onSubmit={submit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
             <div>
-              <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', marginBottom: '0.4rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Tên đăng nhập:</label>
-              <input 
+              <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', marginBottom: '0.4rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Tên đăng nhập</label>
+              <input
                 type="text"
                 required
                 className="chat-input"
-                value={username} 
-                onChange={e => setUsername(e.target.value)} 
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 style={{ width: '100%', padding: '0.65rem 0.85rem', fontSize: '0.9rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', outline: 'none' }}
                 placeholder="Chọn tên tài khoản..."
               />
             </div>
 
             <div>
-              <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', marginBottom: '0.4rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Mật khẩu:</label>
-              <input 
+              <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', marginBottom: '0.4rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Mật khẩu</label>
+              <input
                 type="password"
                 required
+                minLength={8}
                 className="chat-input"
-                value={password} 
-                onChange={e => setPassword(e.target.value)} 
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 style={{ width: '100%', padding: '0.65rem 0.85rem', fontSize: '0.9rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', outline: 'none' }}
-                placeholder="Nhập mật khẩu..."
+                placeholder="Tối thiểu 8 ký tự..."
               />
             </div>
 
             {error && (
-              <div style={{ 
-                color: 'var(--color-math)', 
-                background: '#ffebe6', 
-                padding: '0.5rem 0.75rem', 
-                borderRadius: 'var(--radius-md)', 
-                fontSize: '0.8rem',
-                fontWeight: 'bold',
-                textAlign: 'center'
-              }}>
+              <div style={{ color: 'var(--color-math)', background: '#ffebe6', padding: '0.5rem 0.75rem', borderRadius: 'var(--radius-md)', fontSize: '0.8rem', fontWeight: 'bold', textAlign: 'center' }}>
                 {error}
               </div>
             )}
 
-            <button 
-              type="submit" 
-              disabled={loading}
-              style={{ 
-                width: '100%', 
-                padding: '0.75rem', 
-                background: 'var(--color-primary)', 
-                color: '#ffffff', 
-                border: 'none', 
-                borderRadius: 'var(--radius-md)', 
-                fontWeight: 'bold', 
-                cursor: 'pointer',
-                fontSize: '0.9rem',
-                transition: 'background-color 0.2s',
-                marginTop: '0.5rem',
-                boxShadow: '0 4px 12px rgba(37, 99, 235, 0.2)'
-              }}
-            >
-              {loading ? 'Đang tạo tài khoản...' : 'Đăng Ký'}
+            <button type="submit" disabled={loading} style={{ width: '100%', padding: '0.75rem', background: 'var(--color-primary)', color: '#ffffff', border: 'none', borderRadius: 'var(--radius-md)', fontWeight: 'bold', cursor: 'pointer', fontSize: '0.9rem', transition: 'background-color 0.2s', marginTop: '0.5rem', boxShadow: '0 4px 12px rgba(37, 99, 235, 0.2)' }}>
+              {loading ? 'Đang tạo tài khoản...' : 'Đăng ký'}
             </button>
           </form>
 
