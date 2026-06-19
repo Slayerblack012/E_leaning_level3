@@ -75,7 +75,31 @@ async function login(req, res) {
   }
 }
 
+async function getSync(req, res) {
+  const data = db.readData();
+  const user = data.users.find(u => u.id === req.user.id);
+  if (!user) return res.status(404).json({ error: 'User not found' });
+  res.json({ syncData: user.syncData || {} });
+}
+
+async function postSync(req, res) {
+  const { syncData } = req.body;
+  const data = db.readData();
+  const userIndex = data.users.findIndex(u => u.id === req.user.id);
+  if (userIndex === -1) return res.status(404).json({ error: 'User not found' });
+  
+  data.users[userIndex].syncData = {
+    ...(data.users[userIndex].syncData || {}),
+    ...syncData
+  };
+  
+  db.writeData(data);
+  res.json({ success: true, syncData: data.users[userIndex].syncData });
+}
+
 module.exports = {
   register,
-  login
+  login,
+  getSync,
+  postSync
 };

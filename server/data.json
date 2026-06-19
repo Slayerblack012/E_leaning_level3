@@ -19,7 +19,17 @@
       "username": "admin",
       "password": "$2a$10$L5y2GDQx2cmOWtTS8nltKOc.ppQP9gGPs1.5hGe3trnq0U2rvd7ES",
       "role": "student",
-      "createdAt": "2026-06-17T13:04:55.438Z"
+      "createdAt": "2026-06-17T13:04:55.438Z",
+      "syncData": {
+        "lms_theme": "coursera",
+        "selected_grade": "10",
+        "completed_lectures": "[\"t11_ch1\"]",
+        "chats_tutors": "{\"global_11\":[{\"role\":\"assistant\",\"text\":\"Chào em! Thầy/Cô thuộc Ban cố vấn học tập THPT rất vui được hỗ trợ em. Thầy/Cô có thể giúp em lên lộ trình ôn tập, tổng hợp kiến thức từ các tài liệu lớp 11. Em cần hỗ trợ gì hôm nay?\"}],\"math_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, thầy là Thầy Nam dạy Toán. Học Toán lớp 11 cần tư duy logic và nắm vững định nghĩa, công thức. Thầy trò mình cùng khám phá nhé!\"}],\"physics_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, thầy là Thầy Hải dạy Lý. Từ các công thức Động học, Lực, dao động hay điện xoay chiều lớp 11, thầy đều sẵn sàng đồng hành cùng em!\"}],\"chemistry_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, cô là Cô Hoa dạy Hoá. Học lý thuyết hay làm bài tập Hoá học lớp 11 có gì khó khăn, em cứ hỏi cô giải đáp chi tiết nhé!\"}],\"biology_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, cô là Cô Linh dạy Sinh. Sinh học lớp 11 có nhiều kiến thức thú vị về thế giới tế bào, di truyền học và hệ sinh thái. Cô sẽ giúp em chinh phục môn Sinh nhé!\"}],\"history_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, thầy là Thầy Bình dạy Sử. Lịch sử lớp 11 giúp em hiểu sâu sắc về văn minh nhân loại và các mốc lịch sử hào hùng của dân tộc Việt Nam. Cần hỏi gì cứ nhắn thầy!\"}],\"literature_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, cô là Cô Mai dạy Ngữ văn. Học Văn lớp 11 cần cảm xúc chân thành và tư duy nghị luận sắc bén. Cô sẽ đồng hành cùng em qua các tác phẩm văn học nhé!\"}],\"english_11\":[{\"role\":\"assistant\",\"text\":\"Hello! I'm Mr. Wyatt, your English teacher. Let's master Grade 11 English vocabulary together. Ask me about any words, phrases, grammatical points or exercises!\"}],\"global_10\":[{\"role\":\"assistant\",\"text\":\"Chào em! Thầy/Cô thuộc Ban cố vấn học tập THPT rất vui được hỗ trợ em. Thầy/Cô có thể giúp em lên lộ trình ôn tập, tổng hợp kiến thức từ các tài liệu lớp 10. Em cần hỗ trợ gì hôm nay?\"}]}",
+        "stats_math_11_easy": "{\"answered\":6,\"correct\":6}",
+        "total_answered_questions": "6",
+        "last_studied_subject": "math",
+        "total_correct_questions": "6"
+      }
     },
     {
       "id": "1781702717665",
@@ -41,6 +51,23 @@
       "password": "$2a$10$smEVrKVPN18oEaJx3M9D6uPTkR6N7H/VTr4K6CSkmbOjmSajt42Am",
       "role": "student",
       "createdAt": "2026-06-19T18:26:09.928Z"
+    },
+    {
+      "id": "1781897717264",
+      "username": "testuser",
+      "password": "$2a$10$L0mCgM2NnZX0xIk9spzR6eeUs2I3MB7GykB8QQ8i5cCe5MlGOuPn6",
+      "role": "student",
+      "createdAt": "2026-06-19T19:35:17.264Z",
+      "syncData": {
+        "lms_theme": "coursera",
+        "selected_grade": "10",
+        "completed_lectures": "[\"t11_ch1\"]",
+        "chats_tutors": "{\"global_11\":[{\"role\":\"assistant\",\"text\":\"Chào em! Thầy/Cô thuộc Ban cố vấn học tập THPT rất vui được hỗ trợ em. Thầy/Cô có thể giúp em lên lộ trình ôn tập, tổng hợp kiến thức từ các tài liệu lớp 11. Em cần hỗ trợ gì hôm nay?\"}],\"math_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, thầy là Thầy Nam dạy Toán. Học Toán lớp 11 cần tư duy logic và nắm vững định nghĩa, công thức. Thầy trò mình cùng khám phá nhé!\"}],\"physics_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, thầy là Thầy Hải dạy Lý. Từ các công thức Động học, Lực, dao động hay điện xoay chiều lớp 11, thầy đều sẵn sàng đồng hành cùng em!\"}],\"chemistry_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, cô là Cô Hoa dạy Hoá. Học lý thuyết hay làm bài tập Hoá học lớp 11 có gì khó khăn, em cứ hỏi cô giải đáp chi tiết nhé!\"}],\"biology_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, cô là Cô Linh dạy Sinh. Sinh học lớp 11 có nhiều kiến thức thú vị về thế giới tế bào, di truyền học và hệ sinh thái. Cô sẽ giúp em chinh phục môn Sinh nhé!\"}],\"history_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, thầy là Thầy Bình dạy Sử. Lịch sử lớp 11 giúp em hiểu sâu sắc về văn minh nhân loại và các mốc lịch sử hào hùng của dân tộc Việt Nam. Cần hỏi gì cứ nhắn thầy!\"}],\"literature_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, cô là Cô Mai dạy Ngữ văn. Học Văn lớp 11 cần cảm xúc chân thành và tư duy nghị luận sắc bén. Cô sẽ đồng hành cùng em qua các tác phẩm văn học nhé!\"}],\"english_11\":[{\"role\":\"assistant\",\"text\":\"Hello! I'm Mr. Wyatt, your English teacher. Let's master Grade 11 English vocabulary together. Ask me about any words, phrases, grammatical points or exercises!\"}],\"global_10\":[{\"role\":\"assistant\",\"text\":\"Chào em! Thầy/Cô thuộc Ban cố vấn học tập THPT rất vui được hỗ trợ em. Thầy/Cô có thể giúp em lên lộ trình ôn tập, tổng hợp kiến thức từ các tài liệu lớp 10. Em cần hỗ trợ gì hôm nay?\"}]}",
+        "stats_math_11_easy": "{\"answered\":6,\"correct\":6}",
+        "total_answered_questions": "6",
+        "last_studied_subject": "math",
+        "total_correct_questions": "6"
+      }
     }
   ],
   "subjects": [
@@ -5888,6 +5915,438 @@
       "action": "LOGOUT",
       "details": "Đăng xuất tài khoản học sinh",
       "timestamp": "2026-06-19T19:24:27.337Z"
+    },
+    {
+      "id": "17818974823980.005718565265955267",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T19:31:22.398Z"
+    },
+    {
+      "id": "17818974901710.12763704313682322",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-19T19:31:30.171Z"
+    },
+    {
+      "id": "17818974904730.2619849903484629",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-19T19:31:30.473Z"
+    },
+    {
+      "id": "17818974908220.18937627402084134",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-19T19:31:30.822Z"
+    },
+    {
+      "id": "17818974908290.5185933074266856",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-19T19:31:30.829Z"
+    },
+    {
+      "id": "17818974917610.23750943339337127",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-19T19:31:31.761Z"
+    },
+    {
+      "id": "17818974918770.5629707761425681",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-19T19:31:31.877Z"
+    },
+    {
+      "id": "17818974919440.4138539755398548",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-19T19:31:31.944Z"
+    },
+    {
+      "id": "17818974922570.9020145083898046",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-19T19:31:32.257Z"
+    },
+    {
+      "id": "17818974943180.6989459087897136",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-19T19:31:34.318Z"
+    },
+    {
+      "id": "17818974943250.3200606135272208",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-19T19:31:34.325Z"
+    },
+    {
+      "id": "17818974948400.3972016008011743",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-19T19:31:34.840Z"
+    },
+    {
+      "id": "17818974951550.021495603841411248",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-19T19:31:35.155Z"
+    },
+    {
+      "id": "17818974963150.8111809117363019",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-19T19:31:36.315Z"
+    },
+    {
+      "id": "17818974966140.8362766635826668",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-19T19:31:36.614Z"
+    },
+    {
+      "id": "17818976357180.8578749607004996",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Udemy Purple",
+      "timestamp": "2026-06-19T19:33:55.718Z"
+    },
+    {
+      "id": "17818976361570.266796861672005",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:33:56.157Z"
+    },
+    {
+      "id": "17818976368790.012426091822659857",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Udemy Purple",
+      "timestamp": "2026-06-19T19:33:56.879Z"
+    },
+    {
+      "id": "17818976371440.5024577117358545",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:33:57.144Z"
+    },
+    {
+      "id": "17818976373060.16015156146154663",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Udemy Purple",
+      "timestamp": "2026-06-19T19:33:57.306Z"
+    },
+    {
+      "id": "17818976396310.5585538328806954",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:33:59.631Z"
+    },
+    {
+      "id": "17818976403030.9314126113668995",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Udemy Purple",
+      "timestamp": "2026-06-19T19:34:00.303Z"
+    },
+    {
+      "id": "17818976405680.8423164743841326",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:34:00.568Z"
+    },
+    {
+      "id": "17818976406270.5867505892644437",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Udemy Purple",
+      "timestamp": "2026-06-19T19:34:00.627Z"
+    },
+    {
+      "id": "17818976412270.593585829429411",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:34:01.228Z"
+    },
+    {
+      "id": "17818977172640.6201029566571281",
+      "userId": "1781897717264",
+      "username": "testuser",
+      "action": "REGISTER",
+      "details": "Đăng ký tài khoản thành công",
+      "timestamp": "2026-06-19T19:35:17.264Z"
+    },
+    {
+      "id": "17818977176180.24802699229003966",
+      "userId": "1781897717264",
+      "username": "testuser",
+      "action": "REGISTER_SUCCESS",
+      "details": "Đăng ký tài khoản thành công từ Client",
+      "timestamp": "2026-06-19T19:35:17.618Z"
+    },
+    {
+      "id": "17818977392440.3340257351579107",
+      "userId": "1781897717264",
+      "username": "testuser",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Udemy Purple",
+      "timestamp": "2026-06-19T19:35:39.245Z"
+    },
+    {
+      "id": "17818977635250.6469232809630614",
+      "userId": "1781897717264",
+      "username": "testuser",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:36:03.525Z"
+    },
+    {
+      "id": "17818977646600.46580821607718803",
+      "userId": "1781897717264",
+      "username": "testuser",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Udemy Purple",
+      "timestamp": "2026-06-19T19:36:04.660Z"
+    },
+    {
+      "id": "17818977649010.9215357570398884",
+      "userId": "1781897717264",
+      "username": "testuser",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:36:04.902Z"
+    },
+    {
+      "id": "17818981028890.6058909929362466",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T19:41:42.890Z"
+    },
+    {
+      "id": "17818981046400.7306159492508592",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:41:44.640Z"
+    },
+    {
+      "id": "17818981053250.09834125323503284",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Udemy Purple",
+      "timestamp": "2026-06-19T19:41:45.325Z"
+    },
+    {
+      "id": "17818981055840.5348048409467242",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:41:45.584Z"
+    },
+    {
+      "id": "17818981056810.17645498966240047",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Udemy Purple",
+      "timestamp": "2026-06-19T19:41:45.681Z"
+    },
+    {
+      "id": "17818981059470.020925715856595528",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:41:45.947Z"
+    },
+    {
+      "id": "17818981062660.8222638340825054",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Udemy Purple",
+      "timestamp": "2026-06-19T19:41:46.266Z"
+    },
+    {
+      "id": "17818981066380.500031392626452",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Udemy Purple",
+      "timestamp": "2026-06-19T19:41:46.638Z"
+    },
+    {
+      "id": "17818981072060.15971761691348751",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:41:47.206Z"
+    },
+    {
+      "id": "17818981074740.038896278048933475",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Udemy Purple",
+      "timestamp": "2026-06-19T19:41:47.474Z"
+    },
+    {
+      "id": "17818981078960.1664943748786183",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:41:47.896Z"
+    },
+    {
+      "id": "17818981080700.15248620714417083",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Udemy Purple",
+      "timestamp": "2026-06-19T19:41:48.070Z"
+    },
+    {
+      "id": "17818981083700.2803875553969013",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:41:48.370Z"
+    },
+    {
+      "id": "17818981091080.7275466744584048",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:41:49.108Z"
+    },
+    {
+      "id": "17818981093790.9765576145015712",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Udemy Purple",
+      "timestamp": "2026-06-19T19:41:49.379Z"
+    },
+    {
+      "id": "17818981096130.30325914086566463",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:41:49.613Z"
+    },
+    {
+      "id": "17818981420040.0564436587420073",
+      "userId": "1781897717264",
+      "username": "testuser",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T19:42:22.004Z"
+    },
+    {
+      "id": "17818981698490.5702249790393888",
+      "userId": "1781897717264",
+      "username": "testuser",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T19:42:49.849Z"
+    },
+    {
+      "id": "17818981901940.12374168641066907",
+      "userId": "1781897717264",
+      "username": "testuser",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:43:10.194Z"
+    },
+    {
+      "id": "17818982031090.34283624290321923",
+      "userId": "1781897717264",
+      "username": "testuser",
+      "action": "CHANGE_THEME",
+      "details": "Thay đổi giao diện sang Coursera Blue",
+      "timestamp": "2026-06-19T19:43:23.109Z"
+    },
+    {
+      "id": "17818982313720.5908711995778416",
+      "userId": "1781897717264",
+      "username": "testuser",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T19:43:51.372Z"
+    },
+    {
+      "id": "17818984145540.2645824566653049",
+      "userId": "1781897717264",
+      "username": "testuser",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T19:46:54.554Z"
+    },
+    {
+      "id": "17818985125320.8715277965618551",
+      "userId": "1781897717264",
+      "username": "testuser",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T19:48:32.532Z"
     }
   ],
   "essays": {

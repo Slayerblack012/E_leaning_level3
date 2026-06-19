@@ -4,15 +4,17 @@ import {
   Layers, 
   BookOpen, 
   GraduationCap, 
-  Sparkles, 
   Activity, 
   Menu, 
-  X 
+  X,
+  User,
+  MessageSquare
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useGrade } from '../gradeContext';
 import { useNotification } from '../notificationContext';
 import { logUserAction } from '../api';
+import { pullSyncFromServer, pushSyncToServer } from '../syncHelper';
 
 export default function Layout({ children }) {
   const { grade, setGrade } = useGrade();
@@ -21,14 +23,66 @@ export default function Layout({ children }) {
   const { showModal } = useNotification();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [theme, setTheme] = useState(localStorage.getItem('lms_theme') || 'coursera');
+  const token = localStorage.getItem('token');
+  const username = localStorage.getItem('username');
 
+  // Push theme update to server
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('lms_theme', theme);
+    if (token) {
+      pushSyncToServer();
+    }
+  }, [theme, token]);
+
+  // Push grade update to server
+  useEffect(() => {
+    if (token) {
+      pushSyncToServer();
+    }
+  }, [grade, token]);
+
+  // Listen to theme changed from server sync or other tabs
+  useEffect(() => {
+    const handleThemeChange = () => {
+      const storedTheme = localStorage.getItem('lms_theme') || 'coursera';
+      if (storedTheme !== theme) {
+        setTheme(storedTheme);
+      }
+    };
+    window.addEventListener('lmsThemeChanged', handleThemeChange);
+    window.addEventListener('storage', handleThemeChange);
+    return () => {
+      window.removeEventListener('lmsThemeChanged', handleThemeChange);
+      window.removeEventListener('storage', handleThemeChange);
+    };
   }, [theme]);
 
-  const token = localStorage.getItem('token');
-  const username = localStorage.getItem('username');
+  // Pull sync from server on mount, tab visible, and periodically
+  useEffect(() => {
+    if (!token) return;
+
+    // Initial pull
+    pullSyncFromServer();
+
+    // Pull on tab focus/visibility change
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        pullSyncFromServer();
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    // Periodic pull every 5 seconds
+    const intervalId = setInterval(() => {
+      pullSyncFromServer();
+    }, 5000);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      clearInterval(intervalId);
+    };
+  }, [token]);
 
   const handleLogout = () => {
     showModal({
@@ -63,8 +117,8 @@ export default function Layout({ children }) {
     },
     {
       path: '/tutor',
-      label: 'Phòng tự học AI',
-      icon: <Sparkles size={18} />
+      label: 'Hỏi đáp & Tự học',
+      icon: <MessageSquare size={18} />
     },
     {
       path: '/settings',
@@ -106,9 +160,9 @@ export default function Layout({ children }) {
 
       {/* Sidebar */}
       <aside className={`sidebar ${sidebarOpen ? 'sidebar-open' : ''}`}>
-        <div className="logo-container">
-          <span className="logo-icon">🎓</span>
-          <span className="logo-text" style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>SmartTutor</span>
+        <div className="logo-container" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+          <GraduationCap className="logo-icon" size={24} style={{ strokeWidth: 2.5, color: 'var(--color-primary)' }} />
+          <span className="logo-text" style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>E-Learning</span>
         </div>
 
         {/* Grade Switcher Section */}
@@ -306,7 +360,7 @@ export default function Layout({ children }) {
           {token ? (
             <div className="api-key-box" style={{ padding: '0.75rem', borderRadius: 'var(--radius-md)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
-                <span style={{ fontSize: '1.1rem' }}>👤</span>
+                <User size={18} style={{ color: 'var(--text-secondary)' }} />
                 <div style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                   <div style={{ fontSize: '0.85rem', fontWeight: 'bold', color: 'var(--text-primary)' }}>
                     {username}

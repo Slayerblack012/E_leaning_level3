@@ -19,7 +19,8 @@ import {
   ShieldAlert,
   Lock,
   CheckCircle2,
-  Trophy
+  Trophy,
+  Flame
 } from 'lucide-react';
 
 export default function SettingsPage() {
@@ -81,7 +82,7 @@ export default function SettingsPage() {
 
   const handleResetProgress = () => {
     showModal({
-      title: '⚠️ Đặt lại Tiến trình Học?',
+      title: 'Đặt lại Tiến trình Học?',
       content: 'Bạn có chắc chắn muốn đặt lại toàn bộ tiến trình học tập và bài tập không? Thao tác này sẽ xóa sạch tất cả điểm số đã đạt được, danh sách bài giảng đã học, lịch sử chat với Gia sư và các bài học đang học dở.',
       confirmText: 'Xác nhận xóa hết',
       cancelText: 'Hủy',
@@ -136,7 +137,7 @@ export default function SettingsPage() {
       desc: 'Trả lời đúng câu trắc nghiệm đầu tiên trên hệ thống.',
       requirement: 'Đạt tối thiểu 1 câu đúng',
       isUnlocked: totalCorrect >= 1,
-      icon: '✨'
+      icon: <Sparkles size={20} style={{ color: '#d97706' }} />
     },
     {
       id: 'dedicated_scholar',
@@ -144,7 +145,7 @@ export default function SettingsPage() {
       desc: 'Tích lũy kiến thức qua 10 câu trả lời chính xác.',
       requirement: 'Đạt tối thiểu 10 câu đúng',
       isUnlocked: totalCorrect >= 10,
-      icon: '🏆'
+      icon: <Trophy size={20} style={{ color: '#d97706' }} />
     },
     {
       id: 'matrix_destroyer',
@@ -152,7 +153,7 @@ export default function SettingsPage() {
       desc: 'Giải quyết xuất sắc 30 câu hỏi ôn tập THPT Quốc gia.',
       requirement: 'Đạt tối thiểu 30 câu đúng',
       isUnlocked: totalCorrect >= 30,
-      icon: '🔥'
+      icon: <Flame size={20} style={{ color: '#d97706' }} />
     },
     {
       id: 'peak_performance',
@@ -160,7 +161,7 @@ export default function SettingsPage() {
       desc: 'Đạt tỉ lệ chính xác xuất sắc trên 80% đối với các bài ôn luyện.',
       requirement: 'Làm tối thiểu 15 câu & Tỉ lệ đúng >= 80%',
       isUnlocked: totalAnswered >= 15 && accuracy >= 80,
-      icon: '🧠'
+      icon: <Award size={20} style={{ color: '#d97706' }} />
     },
     {
       id: 'theory_master',
@@ -168,7 +169,7 @@ export default function SettingsPage() {
       desc: 'Hoàn thành ghi nhận và học lý thuyết từ bài giảng.',
       requirement: 'Đã hoàn thành học ít nhất 1 bài lý thuyết',
       isUnlocked: completedLecturesCount >= 1,
-      icon: '📚'
+      icon: <BookOpen size={20} style={{ color: '#d97706' }} />
     }
   ];
 
@@ -219,7 +220,7 @@ export default function SettingsPage() {
           alignItems: 'center',
           gap: '0.15rem'
         }}>
-          <span style={{ fontSize: '1.4rem' }}>📚</span>
+          <BookOpen size={20} style={{ color: '#ffffff', marginBottom: '0.15rem' }} />
           <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '0.85rem' }}>Khối {grade}</span>
         </div>
       </div>
@@ -292,7 +293,7 @@ export default function SettingsPage() {
               borderRadius: 'var(--radius-lg)',
               border: '1px dashed var(--border-color)'
             }}>
-              <span style={{ fontSize: '2.5rem' }}>📊</span>
+              <TrendingUp size={40} style={{ color: 'var(--text-muted)', marginBottom: '0.5rem' }} />
               <h3 style={{ fontSize: '1.05rem', color: 'var(--text-primary)', margin: 0 }}>Chưa có dữ liệu làm bài trắc nghiệm</h3>
               <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', maxWidth: '400px', margin: 0, lineHeight: 1.5 }}>
                 Em hãy vào mục "Khu luyện tập" hoặc chọn bài tập trắc nghiệm của các môn học để bắt đầu tích lũy điểm số và theo dõi chỉ số năng lực tại đây.
@@ -489,7 +490,7 @@ export default function SettingsPage() {
             <div style={{ flex: 1, minWidth: '260px' }}>
               <h3 style={{ fontSize: '0.95rem', fontWeight: 'bold', color: '#991b1b', margin: 0 }}>Cảnh báo dọn dẹp tiến trình</h3>
               <p style={{ fontSize: '0.8rem', color: '#7f1d1d', marginTop: '0.35rem', lineHeight: 1.5, margin: '0.35rem 0 0 0' }}>
-                Hành động này sẽ xóa vĩnh viễn tất cả điểm số, tiến trình làm bài trắc nghiệm, lịch sử học bài lý thuyết, các giáo án đang học dở và toàn bộ cuộc hội thoại của bạn với các Gia sư AI. Sau khi thực hiện, dữ liệu cũ sẽ không thể khôi phục.
+                Hành động này sẽ xóa vĩnh viễn tất cả điểm số, tiến trình làm bài trắc nghiệm, lịch sử học bài lý thuyết, các giáo án đang học dở và toàn bộ cuộc hội thoại hỏi đáp của bạn. Sau khi thực hiện, dữ liệu cũ sẽ không thể khôi phục.
               </p>
             </div>
             

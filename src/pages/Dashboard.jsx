@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import api from '../api';
+import { pushSyncToServer } from '../syncHelper';
 import { useGrade } from '../gradeContext';
 import { pdfContext } from '../pdfContext';
 import { 
@@ -15,7 +16,11 @@ import {
   TrendingUp,
   Dna,
   History,
-  Feather
+  Feather,
+  Award,
+  Trophy,
+  Flame,
+  AlertTriangle
 } from 'lucide-react';
 
 export default function Dashboard() {
@@ -145,26 +150,32 @@ export default function Dashboard() {
       {/* Premium Hero Banner */}
       <div className="hero-banner fade-in">
         <div className="hero-banner-content">
-          <div className="hero-banner-tag">
-            <span>⚡</span> Cổng ôn luyện tốt nghiệp THPT Quốc gia
+          <div className="hero-banner-tag" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+            <TrendingUp size={14} /> Cổng ôn luyện tốt nghiệp THPT Quốc gia
           </div>
           <h1 className="hero-banner-title">
-            Chào mừng trở lại, {localStorage.getItem('username') || 'Học sinh'}! 👋
+            Chào mừng trở lại, {localStorage.getItem('username') || 'Học sinh'}!
           </h1>
           <p className="hero-banner-desc">
             Khối Lớp {grade} đã sẵn sàng với 7 môn học trọng tâm. Hãy tiếp tục học lý thuyết và luyện đề thi phân hóa để nâng cao năng lực ôn thi quốc gia!
           </p>
           <div className="hero-banner-stats">
             <div className="hero-stat-item">
-              <span className="hero-stat-val">🔥 5 ngày</span>
+              <span className="hero-stat-val" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                <Flame size={18} style={{ color: '#ff8a00' }} /> 5 ngày
+              </span>
               <span className="hero-stat-lbl">Chuỗi học tập (Streak)</span>
             </div>
             <div className="hero-stat-item">
-              <span className="hero-stat-val">✨ {stats.completedLectures * 50 + stats.correctAnswers * 10} XP</span>
+              <span className="hero-stat-val" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                <Award size={18} style={{ color: '#ffd700' }} /> {stats.completedLectures * 50 + stats.correctAnswers * 10} XP
+              </span>
               <span className="hero-stat-lbl">Kinh nghiệm tích lũy</span>
             </div>
             <div className="hero-stat-item">
-              <span className="hero-stat-val">🏆 {getAccuracyRate()}%</span>
+              <span className="hero-stat-val" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem' }}>
+                <Trophy size={18} style={{ color: '#4facfe' }} /> {getAccuracyRate()}%
+              </span>
               <span className="hero-stat-lbl">Tỷ lệ chính xác trung bình</span>
             </div>
           </div>
@@ -188,7 +199,7 @@ export default function Dashboard() {
             <span style={{ background: '#10b981', width: 8, height: 8, borderRadius: '50%', display: 'inline-block', boxShadow: '0 0 8px #10b981' }}></span>
             <span style={{ color: '#ffffff' }}>Hệ thống trực tuyến</span>
           </div>
-          <div style={{ color: '#cbd5e1', fontSize: '0.7rem' }}>Edutech AI SmartTutor v2.5</div>
+          <div style={{ color: '#cbd5e1', fontSize: '0.7rem' }}>E-Learning THPT v2.5</div>
         </div>
       </div>
 
@@ -291,6 +302,7 @@ export default function Dashboard() {
               }}
               onClick={() => {
                 localStorage.setItem('last_studied_subject', lastSubj);
+                pushSyncToServer();
                 navigate(`/lectures?subject=${lastSubj}`);
               }}
             >
@@ -335,6 +347,7 @@ export default function Dashboard() {
                 transition={{ type: 'spring', stiffness: 350, damping: 25 }}
                 onClick={() => {
                   localStorage.setItem('last_studied_subject', subjName);
+                  pushSyncToServer();
                   navigate(`/lectures?subject=${subjName}`);
                 }}
               >
@@ -386,6 +399,7 @@ export default function Dashboard() {
                       style={{ flex: 1, padding: '0.55rem', fontSize: '0.82rem' }}
                       onClick={() => {
                         localStorage.setItem('last_studied_subject', subjName);
+                        pushSyncToServer();
                         navigate(`/lectures?subject=${subjName}`);
                       }}
                     >
@@ -496,10 +510,10 @@ export default function Dashboard() {
                         animate={{ opacity: 1, x: 0 }}
                         style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', background: '#e3fcef', borderLeft: '4px solid #00875a', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}
                       >
-                        <div style={{ display: 'flex', gap: '0.5rem' }}>
-                          <div style={{ fontSize: '1.1rem' }}>🏆</div>
+                        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                          <Trophy size={16} style={{ color: '#00875a' }} />
                           <div style={{ fontSize: '0.8rem', lineHeight: '1.4', color: '#006644', flex: 1 }}>
-                            <strong>Môn thế mạnh - {label}:</strong> Bạn đang học rất vững với độ chính xác cao ({accuracy}%). Hãy tiếp tục thử thách bản thân với các bài tập **Tự luận nâng cao** hoặc trao đổi với AI Gia Sư!
+                            <strong>Môn thế mạnh - {label}:</strong> Bạn đang học rất vững với độ chính xác cao ({accuracy}%). Hãy tiếp tục thử thách bản thân với các bài tập **Tự luận nâng cao** hoặc trao đổi với Trợ lý Học tập!
                           </div>
                         </div>
                         <motion.button
@@ -533,10 +547,10 @@ export default function Dashboard() {
                         animate={{ opacity: 1, x: 0 }}
                         style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', background: '#ffebe6', borderLeft: '4px solid #de350b', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}
                       >
-                        <div style={{ display: 'flex', gap: '0.5rem' }}>
-                          <div style={{ fontSize: '1.1rem' }}>⚠️</div>
+                        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                          <AlertTriangle size={16} style={{ color: '#de350b' }} />
                           <div style={{ fontSize: '0.8rem', lineHeight: '1.4', color: '#ae2a02', flex: 1 }}>
-                            <strong>Cần cải thiện - {label}:</strong> Độ chính xác hiện tại khá thấp ({accuracy}%). Bạn nên xem lại lý thuyết hoặc thảo luận trực tiếp với AI Gia sư để tìm ra các lỗi kiến thức.
+                            <strong>Cần cải thiện - {label}:</strong> Độ chính xác hiện tại khá thấp ({accuracy}%). Bạn nên xem lại lý thuyết hoặc thảo luận trực tiếp với Trợ lý Học tập để tìm ra các lỗi kiến thức.
                           </div>
                         </div>
                         <motion.button
@@ -570,10 +584,10 @@ export default function Dashboard() {
                         animate={{ opacity: 1, x: 0 }}
                         style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', background: '#fff9e6', borderLeft: '4px solid #ffab00', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}
                       >
-                        <div style={{ display: 'flex', gap: '0.5rem' }}>
-                          <div style={{ fontSize: '1.1rem' }}>⚖️</div>
+                        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                          <Activity size={16} style={{ color: '#a36d00' }} />
                           <div style={{ fontSize: '0.8rem', lineHeight: '1.4', color: '#a36d00', flex: 1 }}>
-                            <strong>Đang tiến bộ - {label}:</strong> Kết quả ở mức trung bình ({accuracy}%). Hãy hỏi AI Gia sư để được gợi ý thêm các mẹo ghi nhớ nhanh công thức và ví dụ nâng cao.
+                            <strong>Đang tiến bộ - {label}:</strong> Kết quả ở mức trung bình ({accuracy}%). Hãy hỏi Trợ lý Học tập để được gợi ý thêm các mẹo ghi nhớ nhanh công thức và ví dụ nâng cao.
                           </div>
                         </div>
                         <motion.button
@@ -606,9 +620,9 @@ export default function Dashboard() {
               if (totalPractice === 0) {
                 return (
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '120px', gap: '0.5rem', color: 'var(--text-muted)', textAlign: 'center' }}>
-                    <div style={{ fontSize: '2rem' }}>🚀</div>
+                    <Sparkles size={32} style={{ color: 'var(--color-primary)', marginBottom: '0.25rem' }} />
                     <p style={{ fontSize: '0.85rem', margin: 0, lineHeight: '1.4' }}>
-                      Chào mừng em đến với hệ thống! Hãy chọn môn học phía trên và bắt đầu hành trình tự học để nhận được phân tích năng lực từ Giáo viên AI nhé.
+                      Chào mừng em đến với hệ thống! Hãy chọn môn học phía trên và bắt đầu hành trình tự học để nhận được phân tích năng lực từ hệ thống học tập nhé.
                     </p>
                   </div>
                 );

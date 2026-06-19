@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import api, { setAuthToken, logUserAction } from '../../api';
+import { pullSyncFromServer } from '../../syncHelper';
+import { GraduationCap, UserPlus } from 'lucide-react';
 
 export default function Register() {
   const [username, setUsername] = useState('');
@@ -20,6 +22,7 @@ export default function Register() {
       localStorage.setItem('token', token);
       localStorage.setItem('username', user.username);
       setAuthToken(token);
+      await pullSyncFromServer();
       // Gửi log đăng ký ẩn lên server
       await logUserAction('REGISTER_SUCCESS', 'Đăng ký tài khoản thành công từ Client');
       navigate('/');
@@ -36,13 +39,13 @@ export default function Register() {
       {/* Left Column: Visual Brand Block (Desktop only) */}
       <div className="auth-visual-side">
         <div className="auth-visual-side-content">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '2.5rem' }}>
-            <span style={{ fontSize: '2.2rem' }}>🎓</span>
-            <span style={{ fontSize: '1.75rem', fontWeight: '800', letterSpacing: '-0.02em', background: 'linear-gradient(to right, #ffffff, #94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>SmartTutor AI</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '2.5rem' }}>
+            <GraduationCap size={32} style={{ color: '#ffffff' }} />
+            <span style={{ fontSize: '1.75rem', fontWeight: '800', letterSpacing: '-0.02em', background: 'linear-gradient(to right, #ffffff, #94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>E-Learning THPT</span>
           </div>
           <h2 className="auth-visual-title">Bắt đầu hành trình học tập thông minh</h2>
           <p className="auth-visual-desc">
-            Chỉ với vài giây tạo tài khoản, em sẽ sở hữu toàn bộ học liệu 7 môn học cốt lõi lớp 10, 11, 12 và kết nối trực tiếp với đội ngũ trợ lý giáo viên ảo thông minh hàng đầu.
+            Chỉ với vài giây tạo tài khoản, em sẽ sở hữu toàn bộ học liệu 7 môn học cốt lõi lớp 10, 11, 12 và kết nối trực tiếp với đội ngũ trợ lý học tập trực tuyến thông minh hàng đầu.
           </p>
           <div style={{ display: 'flex', gap: '2rem', marginTop: '3rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem' }}>
             <div>
@@ -72,7 +75,7 @@ export default function Register() {
           borderRadius: 'var(--radius-xl)'
         }}>
           <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            <span style={{ fontSize: '2.5rem' }}>✨</span>
+            <UserPlus size={36} style={{ color: 'var(--color-primary)', margin: '0 auto 0.5rem auto' }} />
             <h2 style={{ fontSize: '1.6rem', color: '#001e62', marginTop: '0.5rem', fontFamily: 'var(--font-title)' }}>Đăng Ký</h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.25rem' }}>
               Tạo tài khoản học tập trực tuyến mới của bạn
@@ -116,7 +119,7 @@ export default function Register() {
                 fontWeight: 'bold',
                 textAlign: 'center'
               }}>
-                ⚠️ {error}
+                {error}
               </div>
             )}
 

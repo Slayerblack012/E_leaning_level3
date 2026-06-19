@@ -499,11 +499,11 @@ export default function App() {
 
   const getTutorDetails = (subject) => {
     switch (subject) {
-      case 'english': return { name: 'Mr. Rawdon Wyatt', role: 'Giáo viên Tiếng Anh', avatar: '🇬🇧' };
-      case 'chemistry': return { name: 'Cô Hoa Hóa học', role: 'Giáo viên Hoá học', avatar: '🧪' };
-      case 'physics': return { name: 'Thầy Hải Vật lý', role: 'Giáo viên Vật lý', avatar: '⚡' };
-      case 'math': return { name: 'Thầy Nam Toán', role: 'Giáo viên Toán học', avatar: '📐' };
-      default: return { name: 'Cố vấn học tập', role: 'Ban cố vấn học tập', avatar: '🎓' };
+      case 'english': return { name: 'Mr. Rawdon Wyatt', role: 'Giáo viên Tiếng Anh', avatar: 'EN' };
+      case 'chemistry': return { name: 'Cô Hoa Hóa học', role: 'Giáo viên Hoá học', avatar: 'CH' };
+      case 'physics': return { name: 'Thầy Hải Vật lý', role: 'Giáo viên Vật lý', avatar: 'PH' };
+      case 'math': return { name: 'Thầy Nam Toán', role: 'Giáo viên Toán học', avatar: 'MA' };
+      default: return { name: 'Cố vấn học tập', role: 'Ban cố vấn học tập', avatar: 'CV' };
     }
   };
 
@@ -953,9 +953,9 @@ export default function App() {
 
       {/* Sidebar Navigation */}
       <aside className={`sidebar ${sidebarOpen ? 'sidebar-open' : ''}`}>
-        <div className="logo-container">
-          <span className="logo-icon">🎓</span>
-          <span className="logo-text">SmartTutor</span>
+        <div className="logo-container" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
+          <GraduationCap className="logo-icon" size={24} style={{ strokeWidth: 2.5, color: 'var(--color-primary)' }} />
+          <span className="logo-text">E-Learning</span>
         </div>
 
         <nav style={{ flex: 1 }}>

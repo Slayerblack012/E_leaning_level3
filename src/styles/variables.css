@@ -76,6 +76,24 @@
   --shadow-glow: 0 8px 24px rgba(86, 36, 208, 0.12);
 }
 
+/* Smooth transitions for theme property changes */
+body, 
+.sidebar, 
+.main-content, 
+.card, 
+.content-section, 
+.stat-card, 
+.subject-card, 
+.chat-container, 
+.quiz-container, 
+.api-key-box, 
+header, 
+button, 
+input, 
+select {
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

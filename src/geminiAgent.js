@@ -70,7 +70,7 @@ export function getOfflineResponse(subject, query) {
   if (context.mockQAs) {
     for (const qa of context.mockQAs) {
       if (cleanQuery.includes(cleanText(qa.q)) || cleanText(qa.q).includes(cleanQuery)) {
-        return `[Gia sư Ngoại tuyến - Trả lời nhanh]:\n\n${qa.a}`;
+        return `[Trợ lý Ngoại tuyến - Trả lời nhanh]:\n\n${qa.a}`;
       }
     }
   }
@@ -79,7 +79,7 @@ export function getOfflineResponse(subject, query) {
   if (context.formulas) {
     for (const f of context.formulas) {
       if (cleanQuery.includes(cleanText(f.name)) || (cleanQuery.includes("cong thuc") && cleanQuery.includes(cleanText(f.name).split(" ")[0]))) {
-        return `[Gia sư Ngoại tuyến - Công thức ${f.name}]:\n\nKiến thức: **${f.formula}**\n*Ghi chú: ${f.note}*`;
+        return `[Trợ lý Ngoại tuyến - Công thức ${f.name}]:\n\nKiến thức: **${f.formula}**\n*Ghi chú: ${f.note}*`;
       }
     }
   }
@@ -88,7 +88,7 @@ export function getOfflineResponse(subject, query) {
   if (context.vocabularySample) {
     for (const v of context.vocabularySample) {
       if (cleanQuery.includes(cleanText(v.word))) {
-        return `[Gia sư Ngoại tuyến - Từ vựng ${v.word}]:\n\n**${v.word}**: ${v.definition}\n*Ví dụ: ${v.example}* (Môn: ${v.subject})`;
+        return `[Trợ lý Ngoại tuyến - Từ vựng ${v.word}]:\n\n**${v.word}**: ${v.definition}\n*Ví dụ: ${v.example}* (Môn: ${v.subject})`;
       }
     }
   }
@@ -229,7 +229,7 @@ ${formulaTeachingGuidelines}`;
     if (replyText) {
       return replyText;
     } else {
-      return "Gia sư AI không phản hồi nội dung. Bạn hãy thử đặt lại câu hỏi rõ ràng hơn nhé.";
+      return "Trợ lý học tập không phản hồi nội dung. Bạn hãy thử đặt lại câu hỏi rõ ràng hơn nhé.";
     }
   } catch (error) {
     console.error("Gemini API Error:", error);

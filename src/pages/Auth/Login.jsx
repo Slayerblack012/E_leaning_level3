@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import api, { setAuthToken, logUserAction } from '../../api';
+import { pullSyncFromServer } from '../../syncHelper';
+import { GraduationCap, Lock } from 'lucide-react';
 
 export default function Login() {
   const [username, setUsername] = useState('');
@@ -20,6 +22,7 @@ export default function Login() {
       localStorage.setItem('token', token);
       localStorage.setItem('username', user.username);
       setAuthToken(token);
+      await pullSyncFromServer();
       // Gửi log đăng nhập ẩn lên server
       await logUserAction('LOGIN', 'Học sinh đăng nhập thành công');
       navigate('/');
@@ -36,13 +39,13 @@ export default function Login() {
       {/* Left Column: Visual Brand Block (Desktop only) */}
       <div className="auth-visual-side">
         <div className="auth-visual-side-content">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '2.5rem' }}>
-            <span style={{ fontSize: '2.2rem' }}>🎓</span>
-            <span style={{ fontSize: '1.75rem', fontWeight: '800', letterSpacing: '-0.02em', background: 'linear-gradient(to right, #ffffff, #94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>SmartTutor AI</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '2.5rem' }}>
+            <GraduationCap size={32} style={{ color: '#ffffff' }} />
+            <span style={{ fontSize: '1.75rem', fontWeight: '800', letterSpacing: '-0.02em', background: 'linear-gradient(to right, #ffffff, #94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>E-Learning THPT</span>
           </div>
           <h2 className="auth-visual-title">Bứt phá điểm số kì thi THPT Quốc gia</h2>
           <p className="auth-visual-desc">
-            Học lý thuyết tương tác bám sát cấu trúc đề thi mới nhất từ Bộ GD&ĐT, làm trắc nghiệm phân hóa và luyện viết luận văn với sự đồng hành 24/7 của đội ngũ Gia sư AI thông minh.
+            Học lý thuyết tương tác bám sát cấu trúc đề thi mới nhất từ Bộ GD&ĐT, làm trắc nghiệm phân hóa và luyện viết luận văn với sự đồng hành 24/7 của hệ thống hỗ trợ học tập thông minh.
           </p>
           <div style={{ display: 'flex', gap: '2rem', marginTop: '3rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem' }}>
             <div>
@@ -51,7 +54,7 @@ export default function Login() {
             </div>
             <div>
               <div style={{ fontSize: '1.6rem', fontWeight: '800' }}>24/7</div>
-              <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Gia sư AI phản hồi tức thì</div>
+              <div style={{ fontSize: '0.8rem', color: '#94a3b8' }}>Hệ thống hỗ trợ tức thì</div>
             </div>
             <div>
               <div style={{ fontSize: '1.6rem', fontWeight: '800' }}>100%</div>
@@ -72,7 +75,7 @@ export default function Login() {
           borderRadius: 'var(--radius-xl)'
         }}>
           <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            <span style={{ fontSize: '2.5rem' }}>🔐</span>
+            <Lock size={36} style={{ color: 'var(--color-primary)', margin: '0 auto 0.5rem auto' }} />
             <h2 style={{ fontSize: '1.6rem', color: '#001e62', marginTop: '0.5rem', fontFamily: 'var(--font-title)' }}>Đăng Nhập</h2>
             <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '0.25rem' }}>
               Truy cập tài khoản học tập trực tuyến của bạn
@@ -116,7 +119,7 @@ export default function Login() {
                 fontWeight: 'bold',
                 textAlign: 'center'
               }}>
-                ⚠️ {error}
+                {error}
               </div>
             )}
 

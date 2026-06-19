@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import api, { logUserAction } from '../api';
+import { pushSyncToServer } from '../syncHelper';
 import { useGrade } from '../gradeContext';
 import { askGeminiAgent } from '../geminiAgent';
 import { useNotification } from '../notificationContext';
@@ -279,6 +280,7 @@ export default function PracticePage() {
 
     // Dispatch event to update statistics
     window.dispatchEvent(new Event('localStatsChanged'));
+    pushSyncToServer();
   };
 
   const handleNextQuestion = () => {
@@ -352,7 +354,7 @@ export default function PracticePage() {
       }
       setAiHint(response);
     } catch (e) {
-      setAiHint("Đã xảy ra lỗi khi kết nối với AI Gia sư.");
+      setAiHint("Đã xảy ra lỗi khi kết nối với Trợ lý Học tập.");
     } finally {
       setHintLoading(false);
     }
@@ -411,7 +413,7 @@ export default function PracticePage() {
           ← Bảng điều khiển
         </button>
         <h1>Phòng Luyện Tập Tự Học</h1>
-        <p style={{ color: 'var(--text-muted)' }}>Học sinh Lớp {grade} • Trắc nghiệm & Tự luận kết hợp Gia sư chấm điểm AI</p>
+        <p style={{ color: 'var(--text-muted)' }}>Học sinh Lớp {grade} • Trắc nghiệm & Tự luận kết hợp chấm điểm tự động</p>
       </header>
 
       {/* Subject Selector Buttons */}
@@ -544,8 +546,8 @@ export default function PracticePage() {
             <div style={{ width: '30px', height: '30px', border: '3px solid #f3f3f3', borderTop: '3px solid #0056d2', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
           </div>
         ) : filteredQuizzes.length === 0 ? (
-          <div style={{ background: '#fff', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '3rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📝</div>
+          <div style={{ background: '#fff', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '3rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+            <FileText size={48} style={{ color: 'var(--color-primary)', marginBottom: '0.5rem' }} />
             <h3>Chưa có câu hỏi luyện tập ở cấp độ này</h3>
             <p style={{ color: 'var(--text-muted)', marginTop: '0.5rem' }}>Hệ thống đang được biên soạn thêm câu hỏi. Vui lòng chọn độ khó khác hoặc môn khác.</p>
           </div>
@@ -701,7 +703,7 @@ export default function PracticePage() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem', marginBottom: '1rem' }}>
                   <span style={{ fontSize: '0.95rem', fontWeight: 'bold', color: '#001e62', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
                     <Sparkles size={16} color="#8b5cf6" fill="#8b5cf6" />
-                    <span>Trợ Lý Gợi Ý AI</span>
+                    <span>Trợ Lý Gợi Ý</span>
                   </span>
                   <button
                     onClick={handleGetAIHint}
@@ -743,7 +745,7 @@ export default function PracticePage() {
                   </div>
                 ) : (
                   <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: '1.5', margin: 0 }}>
-                    Nhấp vào <strong>"Xem Gợi Ý"</strong> để nhận lời khuyên gợi mở tư duy từ AI giúp em tự giải câu hỏi này.
+                    Nhấp vào <strong>"Xem Gợi Ý"</strong> để nhận lời khuyên gợi mở tư duy giúp em tự giải câu hỏi này.
                   </p>
                 )}
               </div>
@@ -812,8 +814,8 @@ export default function PracticePage() {
             <div style={{ width: '30px', height: '30px', border: '3px solid #f3f3f3', borderTop: '3px solid #0056d2', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
           </div>
         ) : filteredEssays.length === 0 ? (
-          <div style={{ background: '#fff', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '3rem', textAlign: 'center' }}>
-            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>✏️</div>
+          <div style={{ background: '#fff', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '3rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+            <Edit3 size={48} style={{ color: 'var(--color-primary)', marginBottom: '0.5rem' }} />
             <h3>Chưa có câu hỏi tự luận ở cấp độ này</h3>
             <p style={{ color: 'var(--text-muted)', marginTop: '0.5rem' }}>Hệ thống đang được cập nhật thêm các đề bài tự luận. Vui lòng chọn độ khó khác hoặc môn khác.</p>
           </div>
@@ -988,12 +990,12 @@ export default function PracticePage() {
                     {gradingLoading ? (
                       <>
                         <div style={{ width: '16px', height: '16px', border: '2px solid #fff', borderTop: '2px solid transparent', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
-                        <span>AI Gia sư đang chấm bài...</span>
+                        <span>Đang chấm điểm tự luận...</span>
                       </>
                     ) : (
                       <>
-                        <Sparkles size={16} />
-                        <span>Nộp bài & Chấm bằng AI Gia Sư</span>
+                        <CheckCircle2 size={16} />
+                        <span>Nộp bài & Chấm điểm</span>
                       </>
                     )}
                   </button>
@@ -1077,7 +1079,7 @@ export default function PracticePage() {
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid rgba(0, 135, 90, 0.15)', paddingBottom: '0.5rem' }}>
                       <span style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#00875a', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
                         <Trophy size={18} color="#00875a" />
-                        <span>Điểm AI: {essayResult.score} / 10</span>
+                        <span>Điểm chấm: {essayResult.score} / 10</span>
                       </span>
                       {essayResult.isOffline && (
                         <span style={{ fontSize: '0.7rem', background: '#ffab00', color: '#fff', padding: '0.2rem 0.5rem', borderRadius: '10px', fontWeight: 'bold' }}>
@@ -1086,7 +1088,7 @@ export default function PracticePage() {
                       )}
                     </div>
                     <div style={{ fontSize: '0.9rem', color: 'var(--text-primary)', lineHeight: '1.6' }}>
-                      <strong style={{ color: '#001e62', display: 'block', marginBottom: '0.35rem' }}>Nhận xét chi tiết từ Giáo viên AI:</strong>
+                      <strong style={{ color: '#001e62', display: 'block', marginBottom: '0.35rem' }}>Nhận xét chi tiết của giáo viên:</strong>
                       <div className="essay-feedback-body" style={{ fontSize: '0.85rem' }}>
                         {renderFormattedText(essayResult.feedback)}
                       </div>
@@ -1115,7 +1117,7 @@ export default function PracticePage() {
                         alignItems: 'center',
                         gap: '0.35rem'
                       }}>
-                        <Sparkles size={16} color="var(--color-primary)" />
+                        <BookOpen size={16} color="var(--color-primary)" />
                         <span>Văn bản trích xuất từ ảnh (OCR):</span>
                       </div>
                       <div style={{ 
@@ -1170,10 +1172,10 @@ export default function PracticePage() {
                   gap: '0.75rem',
                   textAlign: 'center'
                 }}>
-                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.25rem' }}><Bot size={40} color="var(--color-primary)" /></div>
-                  <h3 style={{ fontSize: '1rem', color: '#001e62', margin: 0 }}>Gia sư Trực quan AI</h3>
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '0.25rem' }}><GraduationCap size={40} color="var(--color-primary)" /></div>
+                  <h3 style={{ fontSize: '1rem', color: '#001e62', margin: 0 }}>Cố vấn học tập trực tuyến</h3>
                   <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: '1.5', margin: 0 }}>
-                    Viết chi tiết các bước làm bài tự luận và nhấn nút gửi. Hệ thống AI Tutor sẽ đánh giá cách suy luận, giải thích các công thức và chỉ ra các biến đổi khi thiếu dữ liệu đầu vào.
+                    Viết chi tiết các bước làm bài tự luận và nhấn nút gửi. Hệ thống sẽ tự động đánh giá cách suy luận, giải thích các công thức và chỉ ra các biến đổi khi thiếu dữ liệu đầu vào.
                   </p>
                 </div>
               )}

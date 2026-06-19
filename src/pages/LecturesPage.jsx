@@ -5,6 +5,7 @@ import { useGrade } from '../gradeContext';
 import { askGeminiAgent, getOfflineResponse } from '../geminiAgent';
 import { useNotification } from '../notificationContext';
 import { logUserAction } from '../api';
+import { pushSyncToServer } from '../syncHelper';
 import { 
   BookOpen, 
   Layers, 
@@ -107,6 +108,7 @@ export default function LecturesPage() {
     }
     // Dispatch event to update dashboard stats
     window.dispatchEvent(new Event('completedLecturesChanged'));
+    pushSyncToServer();
   };
 
 
@@ -149,14 +151,14 @@ export default function LecturesPage() {
 
   const getTutorDetails = (subj) => {
     switch (subj) {
-      case 'english': return { name: 'Mr. Rawdon Wyatt', role: 'Giáo viên Tiếng Anh', avatar: '🇬🇧' };
-      case 'chemistry': return { name: 'Cô Hoa Hóa học', role: 'Giáo viên Hoá học', avatar: '🧪' };
-      case 'physics': return { name: 'Thầy Hải Vật lý', role: 'Giáo viên Vật lý', avatar: '⚡' };
-      case 'math': return { name: 'Thầy Nam Toán', role: 'Giáo viên Toán học', avatar: '📐' };
-      case 'biology': return { name: 'Cô Linh Sinh học', role: 'Giáo viên Sinh học', avatar: '🧬' };
-      case 'history': return { name: 'Thầy Bình Lịch sử', role: 'Giáo viên Lịch sử', avatar: '🏛️' };
-      case 'literature': return { name: 'Cô Mai Ngữ văn', role: 'Giáo viên Ngữ văn', avatar: '✍️' };
-      default: return { name: 'Cố vấn học tập', role: 'Ban cố vấn học tập', avatar: '🎓' };
+      case 'english': return { name: 'Mr. Rawdon Wyatt', role: 'Giáo viên Tiếng Anh', avatar: 'EN' };
+      case 'chemistry': return { name: 'Cô Hoa Hóa học', role: 'Giáo viên Hoá học', avatar: 'CH' };
+      case 'physics': return { name: 'Thầy Hải Vật lý', role: 'Giáo viên Vật lý', avatar: 'PH' };
+      case 'math': return { name: 'Thầy Nam Toán', role: 'Giáo viên Toán học', avatar: 'MA' };
+      case 'biology': return { name: 'Cô Linh Sinh học', role: 'Giáo viên Sinh học', avatar: 'BI' };
+      case 'history': return { name: 'Thầy Bình Lịch sử', role: 'Giáo viên Lịch sử', avatar: 'HI' };
+      case 'literature': return { name: 'Cô Mai Ngữ văn', role: 'Giáo viên Ngữ văn', avatar: 'LI' };
+      default: return { name: 'Cố vấn học tập', role: 'Ban cố vấn học tập', avatar: 'CV' };
     }
   };
 
@@ -299,8 +301,8 @@ export default function LecturesPage() {
       </div>
 
       {!subjectData || !subjectData.lectures || subjectData.lectures.length === 0 ? (
-        <div style={{ background: '#fff', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '3rem', textAlign: 'center' }}>
-          <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>📚</div>
+        <div style={{ background: '#fff', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '3rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+          <BookOpen size={48} style={{ color: 'var(--color-primary)', marginBottom: '0.5rem' }} />
           <h3>Chưa có bài giảng cho môn học này</h3>
           <p style={{ color: 'var(--text-muted)', marginTop: '0.5rem' }}>Hãy chọn môn học khác hoặc đổi Khối lớp ở thanh bên trái.</p>
         </div>
@@ -371,7 +373,7 @@ export default function LecturesPage() {
                     whiteSpace: 'nowrap'
                   }}
                 >
-                  🗺️ Lộ trình & Giới thiệu
+                  Lộ trình & Giới thiệu
                 </button>
                 <button
                   onClick={() => setActiveTab('basic')}
@@ -387,7 +389,7 @@ export default function LecturesPage() {
                     whiteSpace: 'nowrap'
                   }}
                 >
-                  💡 Lý thuyết cơ bản
+                  Lý thuyết cơ bản
                 </button>
                 <button
                   onClick={() => setActiveTab('advanced')}
@@ -403,7 +405,7 @@ export default function LecturesPage() {
                     whiteSpace: 'nowrap'
                   }}
                 >
-                  🔥 Chuyên đề nâng cao
+                  Chuyên đề nâng cao
                 </button>
                 <button
                   onClick={() => setActiveTab('examples')}
@@ -419,7 +421,7 @@ export default function LecturesPage() {
                     whiteSpace: 'nowrap'
                   }}
                 >
-                  📝 Ví dụ minh họa
+                  Ví dụ minh họa
                 </button>
                 <button
                   onClick={() => setActiveTab('ai')}
@@ -435,7 +437,7 @@ export default function LecturesPage() {
                     whiteSpace: 'nowrap'
                   }}
                 >
-                  💬 Hỏi đáp AI Gia Sư
+                  Hỏi đáp bài giảng
                 </button>
               </div>
 
@@ -504,7 +506,7 @@ export default function LecturesPage() {
                       ))}
                       {chatLoading && (
                         <div className="message-bubble assistant" style={{ fontStyle: 'italic', color: 'var(--text-muted)', alignSelf: 'flex-start', background: '#f1f3f5', padding: '0.65rem 0.85rem', borderRadius: 'var(--radius-md)' }}>
-                          AI Gia sư đang phân tích bài học...
+                          Trợ lý đang phân tích bài học...
                         </div>
                       )}
                       <div ref={messagesEndRef} />
@@ -516,19 +518,19 @@ export default function LecturesPage() {
                         onClick={() => handleQuickPrompt("Hãy tóm tắt ngắn gọn các ý chính của bài giảng này.")}
                         style={{ background: '#fff', border: '1px solid var(--border-color)', borderRadius: '15px', padding: '0.35rem 0.75rem', fontSize: '0.75rem', cursor: 'pointer', whiteSpace: 'nowrap', color: 'var(--text-secondary)' }}
                       >
-                        📝 Tóm tắt bài học
+                        Tóm tắt bài học
                       </button>
                       <button 
                         onClick={() => handleQuickPrompt("Cho em thêm 2 ví dụ tự luyện tương tự có lời giải.")}
                         style={{ background: '#fff', border: '1px solid var(--border-color)', borderRadius: '15px', padding: '0.35rem 0.75rem', fontSize: '0.75rem', cursor: 'pointer', whiteSpace: 'nowrap', color: 'var(--text-secondary)' }}
                       >
-                        🔍 Thêm ví dụ tương tự
+                        Thêm ví dụ tương tự
                       </button>
                       <button 
                         onClick={() => handleQuickPrompt("Chia sẻ cho em mẹo hoặc phương pháp giải nhanh cho chuyên đề này.")}
                         style={{ background: '#fff', border: '1px solid var(--border-color)', borderRadius: '15px', padding: '0.35rem 0.75rem', fontSize: '0.75rem', cursor: 'pointer', whiteSpace: 'nowrap', color: 'var(--text-secondary)' }}
                       >
-                        ⚡ Mẹo học nhanh
+                        Mẹo học nhanh
                       </button>
                     </div>
 
@@ -537,7 +539,7 @@ export default function LecturesPage() {
                       <input 
                         type="text" 
                         className="chat-input"
-                        placeholder="Hỏi Gia sư AI về bài học này..."
+                        placeholder="Hỏi về bài học này..."
                         value={chatInput}
                         onChange={(e) => setChatInput(e.target.value)}
                         disabled={chatLoading}
@@ -610,10 +612,8 @@ export default function LecturesPage() {
                                 setActiveTab('basic');
                               }}
                             >
-                              <div className="syllabus-lesson-title">
-                                <span style={{ fontSize: '0.8rem' }}>
-                                  {isLecCompleted ? '✅' : '📖'}
-                                </span>
+                              <div className="syllabus-lesson-title" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                                <CheckCircle size={14} style={{ color: isLecCompleted ? '#00875a' : '#94a3b8', flexShrink: 0 }} />
                                 <span>{lec.title}</span>
                               </div>
                               {isLecActive && (
@@ -637,10 +637,10 @@ export default function LecturesPage() {
 
             {/* Quick Practice shortcut */}
             <div className="content-section" style={{ background: 'var(--grad-main)', color: '#ffffff', border: 'none', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', right: '-20px', bottom: '-20px', fontSize: '6rem', opacity: 0.08, transform: 'rotate(-15deg)', pointerEvents: 'none' }}>🎓</div>
+              <GraduationCap size={96} style={{ position: 'absolute', right: '-10px', bottom: '-10px', opacity: 0.08, transform: 'rotate(-15deg)', pointerEvents: 'none' }} />
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#ffffff', fontFamily: 'var(--font-title)', fontWeight: 'bold' }}>Sẵn sàng ôn luyện?</h3>
               <p style={{ fontSize: '0.8rem', opacity: 0.9, lineHeight: 1.4, marginBottom: '1.2rem' }}>
-                Sau khi nắm vững lý thuyết từ giáo trình, hãy tham gia giải trắc nghiệm phân hóa hoặc làm tự luận chấm điểm AI nhé!
+                Sau khi nắm vững lý thuyết từ giáo trình, hãy tham gia giải trắc nghiệm phân hóa hoặc làm tự luận chấm điểm tự động nhé!
               </p>
               <button 
                 onClick={() => navigate(`/practice?subject=${activeSubject}`)}

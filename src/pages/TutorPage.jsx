@@ -4,6 +4,7 @@ import { useGrade } from '../gradeContext';
 import { askGeminiAgent, getOfflineResponse } from '../geminiAgent';
 import { useNotification } from '../notificationContext';
 import { logUserAction } from '../api';
+import { pushSyncToServer } from '../syncHelper';
 import { 
   Sparkles, 
   Send, 
@@ -70,6 +71,7 @@ export default function TutorPage() {
     };
     setChats(newChatsObj);
     localStorage.setItem('chats_tutors', JSON.stringify(newChatsObj));
+    pushSyncToServer();
 
     const query = chatInput;
     
@@ -97,6 +99,7 @@ export default function TutorPage() {
     };
     setChats(finalChatsObj);
     localStorage.setItem('chats_tutors', JSON.stringify(finalChatsObj));
+    pushSyncToServer();
     setLoading(false);
   };
 
@@ -113,6 +116,7 @@ export default function TutorPage() {
         ];
         localStorage.setItem('chats_tutors', JSON.stringify(savedChats));
         setChats(savedChats);
+        pushSyncToServer();
         await logUserAction('CLEAR_TUTOR_CHAT', `Xóa lịch sử chat với Gia sư ${activeTutor.name} (môn ${activeTutorSubject} lớp ${grade})`);
       }
     });
@@ -128,14 +132,14 @@ export default function TutorPage() {
 
   const getTutorInfo = (subject) => {
     switch (subject) {
-      case 'english': return { name: 'Mr. Rawdon Wyatt', role: 'Giáo viên Tiếng Anh', avatar: '🇬🇧', theme: 'var(--color-english)' };
-      case 'chemistry': return { name: 'Cô Hoa Hóa học', role: 'Giáo viên Hoá học', avatar: '🧪', theme: 'var(--color-chemistry)' };
-      case 'physics': return { name: 'Thầy Hải Vật lý', role: 'Giáo viên Vật lý', avatar: '⚡', theme: 'var(--color-physics)' };
-      case 'math': return { name: 'Thầy Nam Toán', role: 'Giáo viên Toán học', avatar: '📐', theme: 'var(--color-math)' };
-      case 'biology': return { name: 'Cô Linh Sinh học', role: 'Giáo viên Sinh học', avatar: '🧬', theme: 'var(--color-biology)' };
-      case 'history': return { name: 'Thầy Bình Lịch sử', role: 'Giáo viên Lịch sử', avatar: '🏛️', theme: 'var(--color-history)' };
-      case 'literature': return { name: 'Cô Mai Ngữ văn', role: 'Giáo viên Ngữ văn', avatar: '✍️', theme: 'var(--color-literature)' };
-      default: return { name: 'Cố vấn học tập', role: 'Ban cố vấn học tập THPT', avatar: '🎓', theme: '#a855f7' };
+      case 'english': return { name: 'Mr. Rawdon Wyatt', role: 'Giáo viên Tiếng Anh', avatar: 'EN', theme: 'var(--color-english)' };
+      case 'chemistry': return { name: 'Cô Hoa Hóa học', role: 'Giáo viên Hoá học', avatar: 'CH', theme: 'var(--color-chemistry)' };
+      case 'physics': return { name: 'Thầy Hải Vật lý', role: 'Giáo viên Vật lý', avatar: 'PH', theme: 'var(--color-physics)' };
+      case 'math': return { name: 'Thầy Nam Toán', role: 'Giáo viên Toán học', avatar: 'MA', theme: 'var(--color-math)' };
+      case 'biology': return { name: 'Cô Linh Sinh học', role: 'Giáo viên Sinh học', avatar: 'BI', theme: 'var(--color-biology)' };
+      case 'history': return { name: 'Thầy Bình Lịch sử', role: 'Giáo viên Lịch sử', avatar: 'HI', theme: 'var(--color-history)' };
+      case 'literature': return { name: 'Cô Mai Ngữ văn', role: 'Giáo viên Ngữ văn', avatar: 'LI', theme: 'var(--color-literature)' };
+      default: return { name: 'Cố vấn học tập', role: 'Ban cố vấn học tập THPT', avatar: 'CV', theme: '#a855f7' };
     }
   };
 
@@ -311,8 +315,8 @@ export default function TutorPage() {
     <div style={{ height: 'calc(100vh - 6rem)', display: 'flex', flexDirection: 'column' }}>
       <header style={{ marginBottom: '1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
-          <h1>Phòng Tự Học & Hỏi Đáp AI</h1>
-          <p style={{ color: 'var(--text-muted)' }}>Tương tác trực tiếp với giáo viên ảo các môn Lớp {grade} 24/7</p>
+          <h1>Phòng Tự Học & Hỏi Đáp</h1>
+          <p style={{ color: 'var(--text-muted)' }}>Tương tác trực tiếp với trợ lý học tập các môn Lớp {grade} 24/7</p>
         </div>
         
         <motion.button
@@ -359,7 +363,16 @@ export default function TutorPage() {
                   borderLeft: `4px solid ${info.theme}`
                 }}
               >
-                <div className="tutor-profile-avatar" style={{ borderLeftColor: info.theme }}>
+                <div 
+                  className="tutor-profile-avatar" 
+                  style={{ 
+                    background: info.theme, 
+                    color: '#ffffff', 
+                    fontSize: '0.85rem', 
+                    fontWeight: 'bold',
+                    border: '2px solid #ffffff'
+                  }}
+                >
                   {info.avatar}
                 </div>
                 <div className="tutor-profile-info">
@@ -382,7 +395,18 @@ export default function TutorPage() {
         <div className="chat-container os-window" style={{ flex: 1, height: '100%', display: 'flex', flexDirection: 'column' }}>
           {/* Chat Header */}
           <div className="chat-header" style={{ borderLeft: `4px solid ${activeTutor.theme}`, background: '#f8f9fa' }}>
-            <div className="chat-avatar" style={{ background: activeTutor.theme }}>
+            <div 
+              className="chat-avatar" 
+              style={{ 
+                background: activeTutor.theme,
+                color: '#ffffff',
+                fontSize: '0.85rem',
+                fontWeight: 'bold',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
               {activeTutor.avatar}
               <span className="avatar-status-dot"></span>
             </div>

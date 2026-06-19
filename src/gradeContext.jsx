@@ -13,6 +13,21 @@ export function GradeProvider({ children }) {
     window.dispatchEvent(new Event('gradeChanged'));
   }, [grade]);
 
+  useEffect(() => {
+    const handleGradeChange = () => {
+      const storedGrade = localStorage.getItem('selected_grade') || '10';
+      if (storedGrade !== grade) {
+        setGrade(storedGrade);
+      }
+    };
+    window.addEventListener('gradeChanged', handleGradeChange);
+    window.addEventListener('storage', handleGradeChange);
+    return () => {
+      window.removeEventListener('gradeChanged', handleGradeChange);
+      window.removeEventListener('storage', handleGradeChange);
+    };
+  }, [grade]);
+
   return (
     <GradeContext.Provider value={{ grade, setGrade }}>
       {children}
