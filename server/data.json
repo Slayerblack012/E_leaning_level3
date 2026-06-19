@@ -5880,6 +5880,14 @@
       "action": "VIEW_LECTURE",
       "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
       "timestamp": "2026-06-19T19:23:01.593Z"
+    },
+    {
+      "id": "17818970673370.6904397917135207",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "LOGOUT",
+      "details": "Đăng xuất tài khoản học sinh",
+      "timestamp": "2026-06-19T19:24:27.337Z"
     }
   ],
   "essays": {

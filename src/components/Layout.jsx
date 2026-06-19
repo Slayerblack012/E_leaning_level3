@@ -77,10 +77,8 @@ export default function Layout({ children }) {
 
   if (isAuthPage) {
     return (
-      <div className="app-container" style={{ justifyContent: 'center', alignItems: 'center', background: 'var(--bg-main)', minHeight: '100vh', width: '100vw' }}>
-        <main style={{ width: '100%', maxWidth: '440px', padding: '1rem' }}>
-          {children}
-        </main>
+      <div style={{ width: '100vw', minHeight: '100vh', background: 'var(--bg-main)', overflowX: 'hidden' }}>
+        {children}
       </div>
     );
   }
