@@ -3938,6 +3938,78 @@
       "action": "SUBMIT_ANSWER",
       "details": "Nộp đáp án ĐÚNG môn math lớp 11 (easy). Câu hỏi: \"Cho cấp số cộng (u_n) có số hạng đầu u₁ = 3 và công sai d = 2. Tìm số hạng u₅:\"",
       "timestamp": "2026-06-19T07:31:33.913Z"
+    },
+    {
+      "id": "17818550884340.5866596162388935",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Động học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-19T07:44:48.435Z"
+    },
+    {
+      "id": "17818550884390.8674651541115466",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Động học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-19T07:44:48.439Z"
+    },
+    {
+      "id": "17818550922120.8741368763042655",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 2: Động lực học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-19T07:44:52.212Z"
+    },
+    {
+      "id": "17818550926490.4663031653235049",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 3: Cân bằng và chuyển động của vật rắn\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-19T07:44:52.649Z"
+    },
+    {
+      "id": "17818550933350.752488900084268",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 4: Các định luật bảo toàn\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-19T07:44:53.335Z"
+    },
+    {
+      "id": "17818550936000.9215854835090715",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 2: Động lực học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-19T07:44:53.600Z"
+    },
+    {
+      "id": "17818550939630.043421998772343096",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Động học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-19T07:44:53.963Z"
+    },
+    {
+      "id": "17818550961680.8699080041888648",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Động học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-19T07:44:56.168Z"
+    },
+    {
+      "id": "17818551003880.19144593396968246",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T07:45:00.388Z"
     }
   ],
   "essays": {
