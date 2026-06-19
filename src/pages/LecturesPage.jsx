@@ -553,65 +553,94 @@ export default function LecturesPage() {
             </div>
           </div>
 
-          {/* Column 2: Side Panel (Syllabus outline & quick links) */}
+          {/* Column 2: Side Panel (Syllabus Outline player & quick links) */}
           <div className="sidebar-panel">
             
-            {/* Syllabus outline */}
+            {/* Syllabus player accordion */}
             <div className="content-section" style={{ padding: '1.5rem' }}>
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '1rem', color: '#001e62', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <Layers size={18} />
-                <span>Cấu trúc môn học</span>
+              <h3 style={{ fontSize: '1.1rem', marginBottom: '1.25rem', color: '#001e62', display: 'flex', alignItems: 'center', gap: '0.5rem', fontFamily: 'var(--font-title)', fontWeight: 'bold' }}>
+                <Layers size={18} color="var(--color-primary)" />
+                <span>Giáo trình học tập</span>
               </h3>
               
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                {subjectData.chapters.map((ch, idx) => {
-                  const isLecActive = subjectData.lectures[selectedLectureIdx]?.chapterId === ch.id;
+              <div className="syllabus-accordion">
+                {subjectData.chapters.map((ch, chIdx) => {
+                  const chapterLectures = subjectData.lectures.filter(l => l.chapterId === ch.id);
+                  const isCurrentChapter = lecture?.chapterId === ch.id;
+                  
                   return (
-                    <button
-                      key={ch.id}
-                      onClick={() => {
-                        // Find lecture index matching this chapter
-                        const foundIdx = subjectData.lectures.findIndex(l => l.chapterId === ch.id);
-                        if (foundIdx !== -1) {
-                          setSelectedLectureIdx(foundIdx);
-                          setActiveTab('basic');
-                        }
-                      }}
-                      style={{
-                        textAlign: 'left',
-                        padding: '0.75rem',
-                        border: '1px solid',
-                        borderColor: isLecActive ? 'var(--color-primary)' : 'var(--border-color)',
-                        background: isLecActive ? 'rgba(0, 86, 210, 0.04)' : '#ffffff',
-                        borderRadius: 'var(--radius-md)',
-                        cursor: 'pointer',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '0.25rem',
-                        transition: 'all 0.2s'
-                      }}
-                    >
-                      <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center' }}>
-                        <span style={{ fontSize: '0.85rem', fontWeight: 'bold', color: isLecActive ? 'var(--color-primary)' : 'var(--text-primary)' }}>
-                          {ch.title}
+                    <div key={ch.id} className="syllabus-chapter">
+                      <div 
+                        className="syllabus-chapter-header"
+                        onClick={() => {
+                          // Toggle chapter dropdown
+                          const list = document.getElementById(`ch-body-${ch.id}`);
+                          if (list) {
+                            list.style.display = list.style.display === 'none' ? 'block' : 'none';
+                          }
+                        }}
+                      >
+                        <div className="syllabus-chapter-title">
+                          <span style={{ color: isCurrentChapter ? 'var(--color-primary)' : 'var(--text-secondary)' }}>
+                            Chương {chIdx + 1}: {ch.title}
+                          </span>
+                        </div>
+                        <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+                          {chapterLectures.length} bài
                         </span>
-                        <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Trang {ch.pages}</span>
                       </div>
-                      <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', margin: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%', maxWidth: '100%' }}>
-
-                        {ch.content || 'Đầy đủ lý thuyết & bài tập chi tiết.'}
-                      </p>
-                    </button>
+                      
+                      <div 
+                        id={`ch-body-${ch.id}`}
+                        className="syllabus-chapter-body"
+                        style={{ display: isCurrentChapter ? 'block' : 'block' }} // Keep expanded for quick navigation
+                      >
+                        {chapterLectures.map((lec) => {
+                          const originalIdx = subjectData.lectures.findIndex(l => l.chapterId === lec.chapterId);
+                          const isLecActive = selectedLectureIdx === originalIdx;
+                          const completedList = JSON.parse(localStorage.getItem('completed_lectures') || '[]');
+                          const isLecCompleted = completedList.includes(lec.chapterId);
+                          
+                          return (
+                            <div 
+                              key={lec.chapterId}
+                              className={`syllabus-lesson-item ${isLecActive ? 'active' : ''}`}
+                              onClick={() => {
+                                setSelectedLectureIdx(originalIdx);
+                                setActiveTab('basic');
+                              }}
+                            >
+                              <div className="syllabus-lesson-title">
+                                <span style={{ fontSize: '0.8rem' }}>
+                                  {isLecCompleted ? '✅' : '📖'}
+                                </span>
+                                <span>{lec.title}</span>
+                              </div>
+                              {isLecActive && (
+                                <span style={{ 
+                                  width: '6px', 
+                                  height: '6px', 
+                                  borderRadius: '50%', 
+                                  background: `var(--color-${activeSubject})`,
+                                  boxShadow: `0 0 6px var(--color-${activeSubject})`
+                                }} />
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
                   );
                 })}
               </div>
             </div>
 
             {/* Quick Practice shortcut */}
-            <div className="content-section" style={{ background: 'var(--grad-main)', color: '#ffffff', border: 'none' }}>
-              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#ffffff' }}>Sẵn sàng luyện tập?</h3>
+            <div className="content-section" style={{ background: 'var(--grad-main)', color: '#ffffff', border: 'none', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', right: '-20px', bottom: '-20px', fontSize: '6rem', opacity: 0.08, transform: 'rotate(-15deg)', pointerEvents: 'none' }}>🎓</div>
+              <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: '#ffffff', fontFamily: 'var(--font-title)', fontWeight: 'bold' }}>Sẵn sàng ôn luyện?</h3>
               <p style={{ fontSize: '0.8rem', opacity: 0.9, lineHeight: 1.4, marginBottom: '1.2rem' }}>
-                Sau khi nắm vững kiến thức ở các tab Cơ bản và Nâng cao, hãy thử sức với bộ bài tập phân loại mức độ để kiểm tra kiến thức của mình!
+                Sau khi nắm vững lý thuyết từ giáo trình, hãy tham gia giải trắc nghiệm phân hóa hoặc làm tự luận chấm điểm AI nhé!
               </p>
               <button 
                 onClick={() => navigate(`/practice?subject=${activeSubject}`)}
@@ -619,7 +648,7 @@ export default function LecturesPage() {
                   width: '100%', 
                   padding: '0.65rem', 
                   border: 'none', 
-                  borderRadius: 'var(--radius-sm)', 
+                  borderRadius: 'var(--radius-md)', 
                   background: '#ffffff', 
                   color: 'var(--color-primary)', 
                   fontWeight: 'bold', 
@@ -629,12 +658,13 @@ export default function LecturesPage() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '0.25rem',
-                  transition: 'transform 0.2s'
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                  transition: 'all 0.2s'
                 }}
-                onMouseOver={(e) => { e.target.style.transform = 'translateX(2px)' }}
-                onMouseOut={(e) => { e.target.style.transform = 'none' }}
+                onMouseOver={(e) => { e.target.style.transform = 'translateY(-1px)'; e.target.style.boxShadow = '0 6px 16px rgba(0,0,0,0.15)' }}
+                onMouseOut={(e) => { e.target.style.transform = 'none'; e.target.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)' }}
               >
-                <span>Vào phòng luyện tập</span>
+                <span>Vào phòng luyện đề</span>
                 <ArrowRight size={14} />
               </button>
             </div>

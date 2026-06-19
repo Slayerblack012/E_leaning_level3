@@ -40,6 +40,9 @@ export default function Dashboard() {
       case 'physics': return 'Vật lý';
       case 'chemistry': return 'Hóa học';
       case 'english': return 'Tiếng Anh';
+      case 'biology': return 'Sinh học';
+      case 'history': return 'Lịch sử';
+      case 'literature': return 'Ngữ văn';
       default: return subj;
     }
   };
@@ -139,32 +142,55 @@ export default function Dashboard() {
 
   return (
     <div>
-      <header className="dashboard-header" style={{ borderBottom: '1px solid var(--border-color)', paddingBottom: '1.5rem', marginBottom: '2rem' }}>
-        <div>
-          <h1 style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-            Hệ thống Học tập E-Learning THPT
-            <span style={{ 
-              fontSize: '0.85rem', 
-              verticalAlign: 'middle', 
-              background: 'rgba(0, 86, 210, 0.08)', 
-              color: 'var(--color-primary)', 
-              padding: '0.25rem 0.6rem', 
-              borderRadius: '4px', 
-              fontWeight: 'bold', 
-              border: '1px solid rgba(0, 86, 210, 0.15)' 
-            }}>
-              Khối Lớp {grade}
-            </span>
+      {/* Premium Hero Banner */}
+      <div className="hero-banner fade-in">
+        <div className="hero-banner-content">
+          <div className="hero-banner-tag">
+            <span>⚡</span> Cổng ôn luyện tốt nghiệp THPT Quốc gia
+          </div>
+          <h1 className="hero-banner-title">
+            Chào mừng trở lại, {localStorage.getItem('username') || 'Học sinh'}! 👋
           </h1>
-          <p style={{ color: 'var(--text-secondary)', marginTop: '0.35rem' }}>
-            Học lý thuyết chi tiết cơ bản/nâng cao và làm bài tập trắc nghiệm phân hóa
+          <p className="hero-banner-desc">
+            Khối Lớp {grade} đã sẵn sàng với 7 môn học trọng tâm. Hãy tiếp tục học lý thuyết và luyện đề thi phân hóa để nâng cao năng lực ôn thi quốc gia!
           </p>
+          <div className="hero-banner-stats">
+            <div className="hero-stat-item">
+              <span className="hero-stat-val">🔥 5 ngày</span>
+              <span className="hero-stat-lbl">Chuỗi học tập (Streak)</span>
+            </div>
+            <div className="hero-stat-item">
+              <span className="hero-stat-val">✨ {stats.completedLectures * 50 + stats.correctAnswers * 10} XP</span>
+              <span className="hero-stat-lbl">Kinh nghiệm tích lũy</span>
+            </div>
+            <div className="hero-stat-item">
+              <span className="hero-stat-val">🏆 {getAccuracyRate()}%</span>
+              <span className="hero-stat-lbl">Tỷ lệ chính xác trung bình</span>
+            </div>
+          </div>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: '#e3fcef', color: '#00875a', padding: '0.5rem 0.75rem', borderRadius: 'var(--radius-md)', fontSize: '0.85rem', fontWeight: 'bold' }}>
-          <span className="status-dot online" style={{ background: '#00875a', width: 8, height: 8, borderRadius: '50%', display: 'inline-block' }}></span>
-          <span>Hệ thống hoạt động tốt</span>
+        <div style={{ 
+          display: 'flex', 
+          flexDirection: 'column', 
+          alignItems: 'flex-end', 
+          gap: '0.4rem', 
+          background: 'rgba(255, 255, 255, 0.08)', 
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          padding: '0.85rem 1.25rem', 
+          borderRadius: 'var(--radius-lg)', 
+          border: '1px solid rgba(255, 255, 255, 0.12)', 
+          fontSize: '0.8rem', 
+          zIndex: 2,
+          boxShadow: '0 8px 32px rgba(15, 23, 42, 0.1)'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontWeight: 'bold' }}>
+            <span style={{ background: '#10b981', width: 8, height: 8, borderRadius: '50%', display: 'inline-block', boxShadow: '0 0 8px #10b981' }}></span>
+            <span style={{ color: '#ffffff' }}>Hệ thống trực tuyến</span>
+          </div>
+          <div style={{ color: '#cbd5e1', fontSize: '0.7rem' }}>Edutech AI SmartTutor v2.5</div>
         </div>
-      </header>
+      </div>
 
       {/* Statistics Section */}
       <motion.div 
@@ -178,48 +204,104 @@ export default function Dashboard() {
           className="stat-card" 
           variants={itemVariants}
           whileHover={{ y: -3, boxShadow: 'var(--shadow-hover)' }}
-          style={{ transition: 'background-color 0.2s' }}
         >
-          <div className="stat-icon-wrapper" style={{ color: 'var(--color-english)' }}>
-            <BookOpen size={24} />
+          <div className="stat-icon-wrapper" style={{ color: 'var(--color-english)', background: 'var(--bg-badge-english)' }}>
+            <BookOpen size={22} />
           </div>
           <div>
-            <div className="stat-value">{stats.completedLectures} bài</div>
-            <div className="stat-label">Bài giảng đã hoàn thành</div>
+            <div className="stat-value" style={{ color: 'var(--text-primary)' }}>{stats.completedLectures} bài học</div>
+            <div className="stat-label">Đã tích lũy lý thuyết</div>
           </div>
         </motion.div>
         <motion.div 
           className="stat-card" 
           variants={itemVariants}
           whileHover={{ y: -3, boxShadow: 'var(--shadow-hover)' }}
-          style={{ transition: 'background-color 0.2s' }}
         >
-          <div className="stat-icon-wrapper" style={{ color: 'var(--color-physics)' }}>
-            <GraduationCap size={24} />
+          <div className="stat-icon-wrapper" style={{ color: 'var(--color-physics)', background: 'var(--bg-badge-physics)' }}>
+            <GraduationCap size={22} />
           </div>
           <div>
-            <div className="stat-value">{stats.answeredQuestions} câu</div>
-            <div className="stat-label">Bài tập trắc nghiệm đã làm</div>
+            <div className="stat-value" style={{ color: 'var(--text-primary)' }}>{stats.answeredQuestions} câu</div>
+            <div className="stat-label">Trắc nghiệm đã làm</div>
           </div>
         </motion.div>
         <motion.div 
           className="stat-card" 
           variants={itemVariants}
           whileHover={{ y: -3, boxShadow: 'var(--shadow-hover)' }}
-          style={{ transition: 'background-color 0.2s' }}
         >
-          <div className="stat-icon-wrapper" style={{ color: 'var(--color-chemistry)' }}>
-            <CheckCircle size={24} />
+          <div className="stat-icon-wrapper" style={{ color: 'var(--color-chemistry)', background: 'var(--bg-badge-chemistry)' }}>
+            <CheckCircle size={22} />
           </div>
           <div>
-            <div className="stat-value">{getAccuracyRate()}%</div>
-            <div className="stat-label">Tỉ lệ trả lời chính xác</div>
+            <div className="stat-value" style={{ color: 'var(--text-primary)' }}>{getAccuracyRate()}% chính xác</div>
+            <div className="stat-label">Hiệu suất trả lời đúng</div>
           </div>
         </motion.div>
       </motion.div>
 
+      {/* Continue Learning Widget */}
+      {(() => {
+        const lastSubj = localStorage.getItem('last_studied_subject') || 'math';
+        const lastLectIdx = parseInt(localStorage.getItem(`last_studied_lecture_idx_${lastSubj}_${grade}`) || '0');
+        const subData = pdfContext[`${lastSubj}_${grade}`];
+        const lecture = subData?.lectures?.[lastLectIdx];
+        if (!lecture) return null;
+        
+        return (
+          <motion.div 
+            className="content-section" 
+            variants={itemVariants}
+            whileHover={{ y: -2, boxShadow: 'var(--shadow-hover)' }}
+            style={{ 
+              display: 'flex', 
+              justifyContent: 'space-between', 
+              alignItems: 'center', 
+              padding: '1.25rem 1.5rem', 
+              background: '#ffffff', 
+              borderLeft: '5px solid var(--color-primary)', 
+              borderLeftColor: `var(--color-${lastSubj})`, 
+              marginBottom: '2rem',
+              flexWrap: 'wrap',
+              gap: '1rem'
+            }}
+          >
+            <div>
+              <div style={{ fontSize: '0.72rem', fontWeight: 'bold', textTransform: 'uppercase', color: `var(--color-${lastSubj})`, letterSpacing: '0.05em', marginBottom: '0.25rem' }}>
+                Đang học dở • Môn {getSubjectLabel(lastSubj)} Lớp {grade}
+              </div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 'bold', color: 'var(--text-primary)' }}>
+                Bài {lastLectIdx + 1}: {lecture.title}
+              </h3>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
+                Em đang dừng ở nội dung bài này. Hãy tiếp tục ôn tập ngay để tích lũy thêm XP nhé!
+              </p>
+            </div>
+            <motion.button
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              className="subject-btn btn-solid"
+              style={{ 
+                maxWidth: '140px', 
+                padding: '0.55rem 1.25rem', 
+                fontSize: '0.82rem', 
+                background: `var(--color-${lastSubj})`, 
+                borderColor: `var(--color-${lastSubj})` 
+              }}
+              onClick={() => {
+                localStorage.setItem('last_studied_subject', lastSubj);
+                navigate(`/lectures?subject=${lastSubj}`);
+              }}
+            >
+              Học tiếp →
+            </motion.button>
+          </motion.div>
+        );
+      })()}
+
       {/* Subject Selector cards */}
-      <h2 style={{ marginBottom: '1.5rem', fontSize: '1.4rem', color: '#001e62' }}>Học liệu Lớp {grade} theo môn</h2>
+      <h2 style={{ marginBottom: '1.5rem', fontSize: '1.4rem', color: '#001e62', fontFamily: 'var(--font-title)' }}>Học liệu Lớp {grade} theo môn</h2>
       
       {activeSubjects.length === 0 ? (
         <div style={{ background: '#fff', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
@@ -247,51 +329,78 @@ export default function Dashboard() {
             return (
               <motion.div 
                 key={sub.id} 
-                className={`subject-card ${getSubjectClass(sub.id)}`}
+                className={`subject-card ${subjName}`}
                 variants={itemVariants}
                 whileHover={{ y: -6, boxShadow: 'var(--shadow-hover)' }}
                 transition={{ type: 'spring', stiffness: 350, damping: 25 }}
+                onClick={() => {
+                  localStorage.setItem('last_studied_subject', subjName);
+                  navigate(`/lectures?subject=${subjName}`);
+                }}
               >
-                <div className="subject-badge">{subjName}</div>
-                <h3 className="subject-title">{sub.title}</h3>
-                <p className="subject-description">{sub.description || 'Chi tiết lý thuyết và bài tập phân cấp theo độ khó.'}</p>
-                
-                {/* Thanh tiến độ bài học trực quan */}
-                <div style={{ marginTop: '1rem', width: '100%', marginBottom: '1.25rem' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '0.35rem', fontWeight: 'bold' }}>
-                    <span>Bài học đã học:</span>
-                    <span>{completedCount}/{totalLectures} ({progressPercent}%)</span>
+                <div className="subject-card-cover">
+                  <div className="subject-card-cover-pattern"></div>
+                  <div className="subject-card-icon">
+                    {getSubjectIcon(sub.id)}
                   </div>
-                  <div style={{ background: '#f1f3f5', height: '6px', borderRadius: '4px', overflow: 'hidden', border: '1px solid #e1e5eb' }}>
-                    <div style={{ 
-                      background: `var(--color-${subjName})`, 
-                      width: `${progressPercent}%`, 
-                      height: '100%',
-                      borderRadius: '4px',
-                      transition: 'width 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
-                    }} />
+                  <div className="subject-card-badge">
+                    Lớp {grade}
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', gap: '0.5rem', marginTop: 'auto' }}>
-                  <motion.button 
-                    className="subject-btn"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                    style={{ flex: 1, padding: '0.5rem', fontSize: '0.8rem' }}
-                    onClick={() => navigate(`/lectures?subject=${subjName}`)}
-                  >
-                    Bài Giảng
-                  </motion.button>
-                  <motion.button 
-                    className="subject-btn"
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.97 }}
-                    style={{ flex: 1, padding: '0.5rem', fontSize: '0.8rem' }}
-                    onClick={() => navigate(`/practice?subject=${subjName}`)}
-                  >
-                    Luyện Tập
-                  </motion.button>
+                <div className="subject-card-body">
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                    <span style={{ fontSize: '0.72rem', fontWeight: 'bold', color: `var(--color-${subjName})`, textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                      {getSubjectLabel(subjName)}
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
+                      {totalLectures} bài giảng
+                    </span>
+                  </div>
+
+                  <h3 className="subject-title">{sub.title}</h3>
+                  <p className="subject-description">{sub.description || 'Chi tiết lý thuyết và bài tập trắc nghiệm phân hóa theo ma trận đề thi THPT Quốc gia.'}</p>
+                  
+                  {/* Thanh tiến độ bài học trực quan */}
+                  <div style={{ marginTop: 'auto', width: '100%', marginBottom: '1.25rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '0.35rem', fontWeight: 'bold' }}>
+                      <span>Tiến trình hoàn thành:</span>
+                      <span>{progressPercent}%</span>
+                    </div>
+                    <div style={{ background: '#f1f5f9', height: '6px', borderRadius: '4px', overflow: 'hidden', border: '1px solid var(--border-color)' }}>
+                      <div style={{ 
+                        background: `var(--color-${subjName})`, 
+                        width: `${progressPercent}%`, 
+                        height: '100%',
+                        borderRadius: '4px',
+                        transition: 'width 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+                      }} />
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '0.5rem' }} onClick={(e) => e.stopPropagation()}>
+                    <motion.button 
+                      className="subject-btn btn-solid"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      style={{ flex: 1, padding: '0.55rem', fontSize: '0.82rem' }}
+                      onClick={() => {
+                        localStorage.setItem('last_studied_subject', subjName);
+                        navigate(`/lectures?subject=${subjName}`);
+                      }}
+                    >
+                      Bài giảng
+                    </motion.button>
+                    <motion.button 
+                      className="subject-btn"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      style={{ flex: 1, padding: '0.55rem', fontSize: '0.82rem' }}
+                      onClick={() => navigate(`/practice?subject=${subjName}`)}
+                    >
+                      Luyện đề
+                    </motion.button>
+                  </div>
                 </div>
               </motion.div>
             );
@@ -317,7 +426,7 @@ export default function Dashboard() {
         <motion.div className="content-section" variants={itemVariants} style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
           <h3 style={{ fontSize: '1.05rem', color: '#001e62', marginBottom: '0.25rem', fontWeight: 'bold' }}>🎯 Tỉ lệ chính xác theo môn</h3>
           
-          {['math', 'physics', 'chemistry', 'english'].map(subj => {
+          {['math', 'physics', 'chemistry', 'biology', 'history', 'literature', 'english'].map(subj => {
             const { answered, correct } = getSubjectStats(subj);
             const accuracy = answered > 0 ? Math.round((correct / answered) * 100) : null;
             const colorVar = `var(--color-${subj})`;
@@ -333,7 +442,7 @@ export default function Dashboard() {
                   </span>
                 </div>
                 
-                <div style={{ background: '#f1f3f5', height: '10px', borderRadius: '5px', overflow: 'hidden', border: '1px solid #e1e5eb', position: 'relative' }}>
+                <div style={{ background: '#f1f5f9', height: '10px', borderRadius: '5px', overflow: 'hidden', border: '1px solid var(--border-color)', position: 'relative' }}>
                   {accuracy !== null ? (
                     <motion.div 
                       initial={{ width: 0 }}
@@ -347,7 +456,7 @@ export default function Dashboard() {
                     />
                   ) : (
                     <div style={{ 
-                      background: '#e1e5eb', 
+                      background: '#e2e8f0', 
                       width: '0%', 
                       height: '100%',
                       borderRadius: '5px'
@@ -360,18 +469,18 @@ export default function Dashboard() {
         </motion.div>
 
         {/* Right Column: AI Recommendations */}
-        <motion.div className="content-section" variants={itemVariants} style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem', background: 'rgba(0, 86, 210, 0.02)' }}>
+        <motion.div className="content-section" variants={itemVariants} style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem', background: 'rgba(37, 99, 235, 0.015)', borderLeft: '3px solid var(--color-primary)' }}>
           <h3 style={{ fontSize: '1.05rem', color: '#001e62', marginBottom: '0.25rem', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-            <Sparkles size={18} color="#a855f7" fill="#a855f7" />
-            <span>Đề xuất học tập cá nhân hóa</span>
+            <Sparkles size={18} color="#8b5cf6" fill="#8b5cf6" />
+            <span>Đề xuất ôn tập cá nhân hóa</span>
           </h3>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', overflowY: 'auto', maxHeight: '250px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', overflowY: 'auto', maxHeight: '380px' }}>
             {(() => {
               const items = [];
               let totalPractice = 0;
 
-              ['math', 'physics', 'chemistry', 'english'].forEach(subj => {
+              ['math', 'physics', 'chemistry', 'biology', 'history', 'literature', 'english'].forEach(subj => {
                 const { answered, correct } = getSubjectStats(subj);
                 totalPractice += answered;
 

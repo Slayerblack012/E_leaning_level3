@@ -136,6 +136,7 @@ export default function PracticePage() {
   const [correctOptionIdx, setCorrectOptionIdx] = useState(0);
   const [aiHint, setAiHint] = useState('');
   const [hintLoading, setHintLoading] = useState(false);
+  const [quizProgress, setQuizProgress] = useState(Array(10).fill(null));
 
   // Essay states
   const [essays, setEssays] = useState([]);
@@ -160,6 +161,7 @@ export default function PracticePage() {
     setIsSubmitted(false);
     setScore(0);
     setAiHint('');
+    setQuizProgress(Array(10).fill(null));
 
     // Reset essay status
     setCurrentEssayIdx(0);
@@ -257,6 +259,11 @@ export default function PracticePage() {
     }
     setIsSubmitted(true);
 
+    // Cập nhật bản đồ câu hỏi
+    const newProg = [...quizProgress];
+    newProg[currentIdx] = isCorrect ? 'correct' : 'incorrect';
+    setQuizProgress(newProg);
+
     // Save statistics in localStorage
     const totalAnswered = parseInt(localStorage.getItem('total_answered_questions') || '0') + 1;
     const totalCorrect = parseInt(localStorage.getItem('total_correct_questions') || '0') + (isCorrect ? 1 : 0);
@@ -313,6 +320,7 @@ export default function PracticePage() {
           setSelectedAns(null);
           setIsSubmitted(false);
           setAiHint('');
+          setQuizProgress(Array(10).fill(null));
         },
         onCancel: () => {
           navigate('/');
@@ -556,14 +564,14 @@ export default function PracticePage() {
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.75rem', marginBottom: '1.5rem', fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 'bold' }}>
                   <span>CÂU HỎI {currentIdx + 1} / {filteredQuizzes.length}</span>
-                  <span>Đúng: {score} câu</span>
+                  <span style={{ color: 'var(--color-chemistry)' }}>Đúng: {score} / {filteredQuizzes.length}</span>
                 </div>
 
                 <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#001e62', lineHeight: '1.5', marginBottom: '1.5rem' }}>
                   {activeQuestion.q}
                 </div>
 
-                <div className="quiz-options" style={{ marginBottom: '1.5rem' }}>
+                <div className="quiz-options" style={{ marginBottom: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                   {shuffledOptions.map((opt, optIdx) => {
                     let statusClass = "";
                     if (isSubmitted) {
@@ -572,43 +580,25 @@ export default function PracticePage() {
                       } else if (optIdx === selectedAns) {
                         statusClass = "incorrect";
                       }
+                    } else if (selectedAns === optIdx) {
+                      statusClass = "selected";
                     }
 
                     const letter = String.fromCharCode(65 + optIdx);
-                    const isSelected = selectedAns === optIdx;
 
                     return (
                       <motion.button
                         key={optIdx}
                         onClick={() => handleSelectAnswer(optIdx)}
                         disabled={isSubmitted}
-                        whileHover={!isSubmitted ? { scale: 1.01, x: 2 } : {}}
-                        whileTap={!isSubmitted ? { scale: 0.99 } : {}}
-                        className={`quiz-option ${statusClass}`}
-                        style={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.75rem',
-                          borderColor: !isSubmitted && isSelected ? 'var(--color-primary)' : '',
-                          background: !isSubmitted && isSelected ? 'rgba(0, 86, 210, 0.04)' : '',
-                          color: !isSubmitted && isSelected ? 'var(--color-primary)' : ''
-                        }}
+                        whileHover={!isSubmitted ? { scale: 1.005, y: -1 } : {}}
+                        whileTap={!isSubmitted ? { scale: 0.995 } : {}}
+                        className={`option-card ${statusClass}`}
                       >
-                        <span style={{ 
-                          display: 'inline-flex', 
-                          width: '24px', 
-                          height: '24px', 
-                          borderRadius: '50%', 
-                          border: '1px solid ' + (statusClass ? 'transparent' : 'currentColor'), 
-                          alignItems: 'center', 
-                          justifyContent: 'center', 
-                          fontSize: '0.8rem',
-                          fontWeight: 'bold',
-                          flexShrink: 0
-                        }}>
+                        <span className="option-card-index">
                           {letter}
                         </span>
-                        <span style={{ fontSize: '0.9rem', lineHeight: '1.4' }}>{opt}</span>
+                        <span style={{ fontSize: '0.92rem', lineHeight: '1.4' }}>{opt}</span>
                       </motion.button>
                     );
                   })}
@@ -633,7 +623,7 @@ export default function PracticePage() {
                         transition: 'background-color 0.2s'
                       }}
                     >
-                      Nộp câu trả lời
+                      Nộp bài làm
                     </motion.button>
                   )}
 
@@ -659,7 +649,7 @@ export default function PracticePage() {
                         transition: 'background-color 0.2s'
                       }}
                     >
-                      <span>{currentIdx < filteredQuizzes.length - 1 ? 'Câu tiếp theo' : 'Hoàn thành lượt học'}</span>
+                      <span>{currentIdx < filteredQuizzes.length - 1 ? 'Câu tiếp theo' : 'Xem kết quả chung'}</span>
                       <ChevronRight size={16} />
                     </motion.button>
                   )}
@@ -669,11 +659,48 @@ export default function PracticePage() {
 
             {/* Sidebar column (Solution & AI Assist) */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              {/* CBT Question Map */}
+              <div className="question-map-card">
+                <div className="question-map-title">Bản đồ câu hỏi trắc nghiệm</div>
+                <div className="question-map-grid">
+                  {filteredQuizzes.map((_, i) => {
+                    let status = "";
+                    if (i === currentIdx) {
+                      status = "active";
+                    } else if (quizProgress[i] === 'correct') {
+                      status = "correct";
+                    } else if (quizProgress[i] === 'incorrect') {
+                      status = "incorrect";
+                    } else if (quizProgress[i] !== null) {
+                      status = "answered";
+                    }
+
+                    return (
+                      <button
+                        key={i}
+                        className={`question-map-btn ${status}`}
+                        onClick={() => {
+                          // Jump to answered questions or active question
+                          if (i === currentIdx) return;
+                          if (quizProgress[i] !== null || i === currentIdx + 1 || i < currentIdx) {
+                            setCurrentIdx(i);
+                          } else {
+                            showToast('Vui lòng làm bài lần lượt từng câu hỏi để hệ thống chấm điểm chính xác.', 'info');
+                          }
+                        }}
+                      >
+                        {i + 1}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
               {/* AI Hint Card */}
-              <div className="quiz-container" style={{ borderColor: 'var(--border-hover)', background: '#fff' }}>
+              <div className="quiz-container" style={{ borderColor: 'rgba(139, 92, 246, 0.2)', background: '#fff', paddingTop: '2rem !important' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem', marginBottom: '1rem' }}>
                   <span style={{ fontSize: '0.95rem', fontWeight: 'bold', color: '#001e62', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                    <Sparkles size={16} color="#a855f7" fill="#a855f7" />
+                    <Sparkles size={16} color="#8b5cf6" fill="#8b5cf6" />
                     <span>Trợ Lý Gợi Ý AI</span>
                   </span>
                   <button
@@ -683,20 +710,20 @@ export default function PracticePage() {
                       padding: '0.35rem 0.75rem',
                       fontSize: '0.75rem',
                       fontWeight: 'bold',
-                      border: '1px solid #ccd0d5',
+                      border: '1px solid #e2e8f0',
                       borderRadius: '15px',
-                      background: '#f8f9fa',
+                      background: '#f8fafc',
                       cursor: isSubmitted ? 'not-allowed' : 'pointer',
                       color: isSubmitted ? 'var(--text-muted)' : 'var(--text-primary)',
                       transition: 'all 0.2s'
                     }}
                   >
                     {hintLoading ? (
-                      'Đang viết...'
+                      'Đang giải...'
                     ) : (
                       <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}>
-                        <Lightbulb size={12} color="#b27b00" fill="#b27b00" />
-                        <span>Lấy Gợi Ý</span>
+                        <Lightbulb size={12} color="#f59e0b" fill="#f59e0b" />
+                        <span>Xem Gợi Ý</span>
                       </span>
                     )}
                   </button>
@@ -704,8 +731,8 @@ export default function PracticePage() {
 
                 {aiHint ? (
                   <div style={{ 
-                    background: 'rgba(168, 85, 247, 0.05)', 
-                    borderLeft: '4px solid #a855f7', 
+                    background: 'rgba(139, 92, 246, 0.05)', 
+                    borderLeft: '4px solid #8b5cf6', 
                     padding: '0.85rem', 
                     borderRadius: 'var(--radius-sm)',
                     fontSize: '0.85rem',
@@ -716,7 +743,7 @@ export default function PracticePage() {
                   </div>
                 ) : (
                   <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: '1.5', margin: 0 }}>
-                    Bấm nút <strong>"Lấy Gợi Ý"</strong> để nhận chỉ dẫn tư duy từ AI (không bị tiết lộ đáp án trực tiếp).
+                    Nhấp vào <strong>"Xem Gợi Ý"</strong> để nhận lời khuyên gợi mở tư duy từ AI giúp em tự giải câu hỏi này.
                   </p>
                 )}
               </div>
