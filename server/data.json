@@ -34,6 +34,13 @@
       "password": "$2a$10$L5y2GDQx2cmOWtTS8nltKOc.ppQP9gGPs1.5hGe3trnq0U2rvd7ES",
       "role": "student",
       "createdAt": "2026-06-17T14:22:29.518Z"
+    },
+    {
+      "id": "1781893569928",
+      "username": "testuser_123",
+      "password": "$2a$10$smEVrKVPN18oEaJx3M9D6uPTkR6N7H/VTr4K6CSkmbOjmSajt42Am",
+      "role": "student",
+      "createdAt": "2026-06-19T18:26:09.928Z"
     }
   ],
   "subjects": [
@@ -5553,6 +5560,326 @@
       "action": "SELECT_PRACTICE",
       "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: essay",
       "timestamp": "2026-06-19T18:22:33.231Z"
+    },
+    {
+      "id": "17818934106150.8357125024191105",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:23:30.615Z"
+    },
+    {
+      "id": "17818935699280.10596680775467981",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "REGISTER",
+      "details": "Đăng ký tài khoản thành công",
+      "timestamp": "2026-06-19T18:26:09.928Z"
+    },
+    {
+      "id": "17818935700890.5355570650640885",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "REGISTER_SUCCESS",
+      "details": "Đăng ký tài khoản thành công từ Client",
+      "timestamp": "2026-06-19T18:26:10.089Z"
+    },
+    {
+      "id": "17818935880640.0450593948838397",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:26:28.064Z"
+    },
+    {
+      "id": "17818935884000.11011071439715026",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:26:28.400Z"
+    },
+    {
+      "id": "17818936086350.6194891376360997",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: physics, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:26:48.635Z"
+    },
+    {
+      "id": "17818936307010.646441716634549",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Hàm số và Phương trình lượng giác\" (Môn: math, Lớp: 11)",
+      "timestamp": "2026-06-19T18:27:10.701Z"
+    },
+    {
+      "id": "17818936310300.9978221378309728",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Hàm số và Phương trình lượng giác\" (Môn: math, Lớp: 11)",
+      "timestamp": "2026-06-19T18:27:11.030Z"
+    },
+    {
+      "id": "17818936460600.6141723129953323",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Điện tích - Điện trường\" (Môn: physics, Lớp: 11)",
+      "timestamp": "2026-06-19T18:27:26.060Z"
+    },
+    {
+      "id": "17818936612690.21559707330436362",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: physics, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:27:41.269Z"
+    },
+    {
+      "id": "17818937452780.6469073368077018",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T18:29:05.278Z"
+    },
+    {
+      "id": "17818937651770.021384429106297564",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:29:25.177Z"
+    },
+    {
+      "id": "17818937655150.28979395832985644",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:29:25.515Z"
+    },
+    {
+      "id": "17818937859000.3407858723858612",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: physics, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:29:45.900Z"
+    },
+    {
+      "id": "17818938047550.5169376848577392",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Hàm số và Phương trình lượng giác\" (Môn: math, Lớp: 11)",
+      "timestamp": "2026-06-19T18:30:04.755Z"
+    },
+    {
+      "id": "17818938050700.6384301707657333",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Hàm số và Phương trình lượng giác\" (Môn: math, Lớp: 11)",
+      "timestamp": "2026-06-19T18:30:05.070Z"
+    },
+    {
+      "id": "17818938226650.6754762585228454",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Điện tích - Điện trường\" (Môn: physics, Lớp: 11)",
+      "timestamp": "2026-06-19T18:30:22.665Z"
+    },
+    {
+      "id": "17818938710370.8839750205225114",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:31:11.037Z"
+    },
+    {
+      "id": "17818938710810.6835419984355467",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:31:11.082Z"
+    },
+    {
+      "id": "17818938872070.061287434306186994",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: physics, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:31:27.207Z"
+    },
+    {
+      "id": "17818939333230.9509983445621178",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:32:13.323Z"
+    },
+    {
+      "id": "17818939336480.5499442145472998",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:32:13.648Z"
+    },
+    {
+      "id": "17818939444280.18805889021515398",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: physics, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:32:24.428Z"
+    },
+    {
+      "id": "17818939748260.8259643836058561",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 10",
+      "timestamp": "2026-06-19T18:32:54.826Z"
+    },
+    {
+      "id": "17818939877540.4297778072420667",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 12",
+      "timestamp": "2026-06-19T18:33:07.754Z"
+    },
+    {
+      "id": "17818940016870.062188589298358465",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 11",
+      "timestamp": "2026-06-19T18:33:21.688Z"
+    },
+    {
+      "id": "17818940113320.3466189174546981",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:33:31.332Z"
+    },
+    {
+      "id": "17818940116720.4539202616500043",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:33:31.672Z"
+    },
+    {
+      "id": "17818940217380.35123794776648165",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: physics, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T18:33:41.738Z"
+    },
+    {
+      "id": "17818968828590.2200374703585516",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Hàm số và Phương trình lượng giác\" (Môn: math, Lớp: 11)",
+      "timestamp": "2026-06-19T19:21:22.859Z"
+    },
+    {
+      "id": "17818968828680.005859777445812231",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Hàm số và Phương trình lượng giác\" (Môn: math, Lớp: 11)",
+      "timestamp": "2026-06-19T19:21:22.868Z"
+    },
+    {
+      "id": "17818968844330.14297510558115945",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Hàm số và Phương trình lượng giác\" (Môn: math, Lớp: 11)",
+      "timestamp": "2026-06-19T19:21:24.433Z"
+    },
+    {
+      "id": "17818968847500.9593065756181279",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Hàm số và Phương trình lượng giác\" (Môn: math, Lớp: 11)",
+      "timestamp": "2026-06-19T19:21:24.750Z"
+    },
+    {
+      "id": "17818968852290.2594476432502121",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T19:21:25.229Z"
+    },
+    {
+      "id": "17818968852340.44907412167397975",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 11, Chế độ: quiz",
+      "timestamp": "2026-06-19T19:21:25.234Z"
+    },
+    {
+      "id": "17818968958590.6964479102023089",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 10",
+      "timestamp": "2026-06-19T19:21:35.859Z"
+    },
+    {
+      "id": "17818969061990.06152019603772896",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-19T19:21:46.199Z"
+    },
+    {
+      "id": "17818969065140.055809462320162706",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-19T19:21:46.514Z"
+    },
+    {
+      "id": "17818969728000.4895288332619214",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-19T19:22:52.800Z"
+    },
+    {
+      "id": "17818969815930.05937880099201431",
+      "userId": "1781893569928",
+      "username": "testuser_123",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-19T19:23:01.593Z"
     }
   ],
   "essays": {
