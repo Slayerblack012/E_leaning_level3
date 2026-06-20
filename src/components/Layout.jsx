@@ -14,7 +14,7 @@ import { motion } from 'framer-motion';
 import { useGrade } from '../gradeContext';
 import { useNotification } from '../notificationContext';
 import { logUserAction } from '../api';
-import { pullSyncFromServer, pushSyncToServer } from '../syncHelper';
+import { pullSyncFromServer, pushSyncToServer, subscribeToSyncStream } from '../syncHelper';
 
 export default function Layout({ children }) {
   const { grade, setGrade } = useGrade();
@@ -52,14 +52,33 @@ export default function Layout({ children }) {
     };
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
-    // Periodic pull every 5 seconds
-    const intervalId = setInterval(() => {
-      pullSyncFromServer();
-    }, 5000);
+    // Try realtime stream via SSE; fallback to polling when not available
+    let intervalId = null;
+    const evt = subscribeToSyncStream();
+
+    if (!evt) {
+      intervalId = setInterval(() => {
+        if (document.visibilityState === 'visible' && navigator.onLine) {
+          pullSyncFromServer();
+        }
+      }, 30000);
+    } else {
+      // If stream dies, start fallback polling
+      evt.addEventListener('error', () => {
+        if (evt.readyState === EventSource.CLOSED) {
+          intervalId = setInterval(() => {
+            if (document.visibilityState === 'visible' && navigator.onLine) {
+              pullSyncFromServer();
+            }
+          }, 30000);
+        }
+      });
+    }
 
     return () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
-      clearInterval(intervalId);
+      if (intervalId) clearInterval(intervalId);
+      if (evt && typeof evt.close === 'function') evt.close();
     };
   }, [token]);
 

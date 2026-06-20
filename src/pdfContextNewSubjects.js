@@ -455,7 +455,6 @@ Lịch sử 10 đổi mới tập trung giáo dục tư duy lịch sử, tìm hi
   }),
 
   // ================= LỊCH SỬ LỚP 11 =================
-  biology_11: null, // Placeholder or not, let's keep all keys clean
   history_11: makeContext({
     title: 'Lịch sử 11 - Lịch sử cận hiện đại thế giới & Việt Nam',
     author: 'Nhà xuất bản Giáo dục Việt Nam',

@@ -115,6 +115,7 @@ export default function PracticePage() {
   const { showToast, showModal } = useNotification();
   const location = useLocation();
   const navigate = useNavigate();
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY || localStorage.getItem('gemini_api_key') || '';
 
   // Get subject from URL query param (e.g. ?subject=math), default to 'math'
   const getQuerySubject = () => {
@@ -147,8 +148,6 @@ export default function PracticePage() {
   const [essayResult, setEssayResult] = useState(null); // { score, feedback, isOffline }
   const [gradingLoading, setGradingLoading] = useState(false);
   const [essayImage, setEssayImage] = useState(null);
-
-  const apiKey = import.meta.env.VITE_GEMINI_API_KEY || localStorage.getItem('gemini_api_key') || '';
 
   // Handle Location changes
   useEffect(() => {
@@ -221,9 +220,21 @@ export default function PracticePage() {
   const filteredEssays = essays.filter(e => e.level === activeLevel);
   const activeEssay = filteredEssays[currentEssayIdx];
 
+  useEffect(() => {
+    setCurrentIdx(0);
+    setSelectedAns(null);
+    setIsSubmitted(false);
+    setAiHint('');
+    setQuizProgress(Array(10).fill(null));
+    setCurrentEssayIdx(0);
+    setEssayAnswer('');
+    setEssayImage(null);
+    setEssayResult(null);
+  }, [activeLevel, activeSubject, grade]);
+
   // Shuffle options when quiz question changes
   useEffect(() => {
-    if (activeQuestion) {
+    if (activeQuestion && Array.isArray(activeQuestion.options)) {
       const originalOptions = [...activeQuestion.options];
       const correctText = originalOptions[activeQuestion.answer];
 
@@ -235,6 +246,12 @@ export default function PracticePage() {
       const newCorrectIdx = shuffled.indexOf(correctText);
       setShuffledOptions(shuffled);
       setCorrectOptionIdx(newCorrectIdx);
+      setSelectedAns(null);
+      setIsSubmitted(false);
+      setAiHint('');
+    } else {
+      setShuffledOptions([]);
+      setCorrectOptionIdx(0);
       setSelectedAns(null);
       setIsSubmitted(false);
       setAiHint('');
@@ -372,7 +389,7 @@ export default function PracticePage() {
       studentAnswer: essayAnswer,
       sampleAnswer: activeEssay.sampleAnswer,
       subject: contextId,
-      apiKey: apiKey,
+      // apiKey is intentionally omitted — it is managed server-side only
       image: essayImage
     })
       .then(res => {

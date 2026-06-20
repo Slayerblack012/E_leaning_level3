@@ -9,6 +9,7 @@ router.post('/register', rateLimit({ scope: 'auth-register', windowMs: 15 * 60 *
 router.post('/login', rateLimit({ scope: 'auth-login', windowMs: 15 * 60 * 1000, max: 10 }), authController.login);
 
 router.get('/sync', authMiddleware, authController.getSync);
+router.get('/sync/stream', authMiddleware, authController.streamSync);
 router.post('/sync', authMiddleware, authController.postSync);
 
 module.exports = router;

@@ -14,7 +14,8 @@ import {
   CheckCircle,
   HelpCircle,
   Send,
-  ArrowRight
+  ArrowRight,
+  GraduationCap
 } from 'lucide-react';
 
 
@@ -44,8 +45,6 @@ export default function LecturesPage() {
   // Mark completed state
   const [isCompleted, setIsCompleted] = useState(false);
 
-  const apiKey = import.meta.env.VITE_GEMINI_API_KEY || localStorage.getItem('gemini_api_key') || '';
-
   // Get the context key (e.g. math_10)
   const contextKey = `${activeSubject}_${grade}`;
   const subjectData = pdfContext[contextKey];
@@ -60,6 +59,12 @@ export default function LecturesPage() {
   }, [location.search, grade]);
 
   const lecture = subjectData?.lectures?.[selectedLectureIdx];
+  const hasLectureContent = Boolean(
+    subjectData &&
+    Array.isArray(subjectData.lectures) &&
+    subjectData.lectures.length > 0 &&
+    Array.isArray(subjectData.chapters)
+  );
 
   // Check if current lecture is completed
   useEffect(() => {
@@ -129,12 +134,8 @@ export default function LecturesPage() {
 
     // Inject lecture context into the AI request for targeted explanation
     const contextualQuery = `[Bối cảnh bài học: ${lecture.title}. Nội dung Cơ bản: ${lecture.basic.slice(0, 500)}. Nội dung Nâng cao: ${lecture.advanced.slice(0, 500)}]. Câu hỏi của học sinh: ${query}`;
-    
-    if (apiKey) {
-      reply = await askGeminiAgent(contextKey, contextualQuery, apiKey, chatHistory);
-    } else {
-      reply = getOfflineResponse(contextKey, query);
-    }
+
+    reply = await askGeminiAgent(contextKey, contextualQuery, null, chatHistory);
 
     setChatHistory(prev => [...prev, { role: 'assistant', text: reply }]);
     setChatLoading(false);
@@ -300,7 +301,7 @@ export default function LecturesPage() {
         ))}
       </div>
 
-      {!subjectData || !subjectData.lectures || subjectData.lectures.length === 0 ? (
+      {!hasLectureContent ? (
         <div style={{ background: '#fff', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '3rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
           <BookOpen size={48} style={{ color: 'var(--color-primary)', marginBottom: '0.5rem' }} />
           <h3>Chưa có bài giảng cho môn học này</h3>

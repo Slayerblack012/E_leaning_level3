@@ -21,8 +21,6 @@ export default function TutorPage() {
   const [loading, setLoading] = useState(false);
   const [chats, setChats] = useState({});
 
-  const apiKey = import.meta.env.VITE_GEMINI_API_KEY || localStorage.getItem('gemini_api_key') || '';
-
   // Get active key (e.g. math_10)
   const activeChatKey = `${activeTutorSubject}_${grade}`;
 

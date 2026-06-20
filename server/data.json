@@ -17,18 +17,20 @@
     {
       "id": "1781701495438",
       "username": "admin",
-      "password": "$2a$10$L5y2GDQx2cmOWtTS8nltKOc.ppQP9gGPs1.5hGe3trnq0U2rvd7ES",
+      "password": "$2a$10$W1uhnrnXkr5pEtwmji2G7O00DVsFo7b36ZE1p6cbova.RjxSn4yjq",
       "role": "student",
       "createdAt": "2026-06-17T13:04:55.438Z",
       "syncData": {
         "lms_theme": "coursera",
         "selected_grade": "10",
         "completed_lectures": "[\"t11_ch1\"]",
-        "chats_tutors": "{\"global_11\":[{\"role\":\"assistant\",\"text\":\"Chào em! Thầy/Cô thuộc Ban cố vấn học tập THPT rất vui được hỗ trợ em. Thầy/Cô có thể giúp em lên lộ trình ôn tập, tổng hợp kiến thức từ các tài liệu lớp 11. Em cần hỗ trợ gì hôm nay?\"}],\"math_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, thầy là Thầy Nam dạy Toán. Học Toán lớp 11 cần tư duy logic và nắm vững định nghĩa, công thức. Thầy trò mình cùng khám phá nhé!\"}],\"physics_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, thầy là Thầy Hải dạy Lý. Từ các công thức Động học, Lực, dao động hay điện xoay chiều lớp 11, thầy đều sẵn sàng đồng hành cùng em!\"}],\"chemistry_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, cô là Cô Hoa dạy Hoá. Học lý thuyết hay làm bài tập Hoá học lớp 11 có gì khó khăn, em cứ hỏi cô giải đáp chi tiết nhé!\"}],\"biology_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, cô là Cô Linh dạy Sinh. Sinh học lớp 11 có nhiều kiến thức thú vị về thế giới tế bào, di truyền học và hệ sinh thái. Cô sẽ giúp em chinh phục môn Sinh nhé!\"}],\"history_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, thầy là Thầy Bình dạy Sử. Lịch sử lớp 11 giúp em hiểu sâu sắc về văn minh nhân loại và các mốc lịch sử hào hùng của dân tộc Việt Nam. Cần hỏi gì cứ nhắn thầy!\"}],\"literature_11\":[{\"role\":\"assistant\",\"text\":\"Chào em, cô là Cô Mai dạy Ngữ văn. Học Văn lớp 11 cần cảm xúc chân thành và tư duy nghị luận sắc bén. Cô sẽ đồng hành cùng em qua các tác phẩm văn học nhé!\"}],\"english_11\":[{\"role\":\"assistant\",\"text\":\"Hello! I'm Mr. Wyatt, your English teacher. Let's master Grade 11 English vocabulary together. Ask me about any words, phrases, grammatical points or exercises!\"}],\"global_10\":[{\"role\":\"assistant\",\"text\":\"Chào em! Thầy/Cô thuộc Ban cố vấn học tập THPT rất vui được hỗ trợ em. Thầy/Cô có thể giúp em lên lộ trình ôn tập, tổng hợp kiến thức từ các tài liệu lớp 10. Em cần hỗ trợ gì hôm nay?\"}]}",
+        "chats_tutors": "{\"global_10\":[{\"role\":\"assistant\",\"text\":\"Chào em! Thầy/Cô thuộc Ban cố vấn học tập THPT rất vui được hỗ trợ em. Thầy/Cô có thể giúp em lên lộ trình ôn tập, tổng hợp kiến thức từ các tài liệu lớp 10. Em cần hỗ trợ gì hôm nay?\"},{\"role\":\"user\",\"text\":\"Lên cho em lộ trình tự học môn Lý lớp 10 kì này.\"},{\"role\":\"assistant\",\"text\":\"Chào em! Thầy/Cô rất vui được giúp em xây dựng một lộ trình tự học môn Vật lí lớp 10 thật hiệu quả và thú vị. Vật lí là một môn học tuyệt vời, giúp chúng ta hiểu được thế giới xung quanh hoạt động như thế nào. Mặc dù có thể có những thử thách, nhưng với phương pháp đúng đắn và sự kiên trì,\"},{\"role\":\"user\",\"text\":\"giới thiệu về bạn đi\"},{\"role\":\"assistant\",\"text\":\"Tuyệt vời! Thầy/Cô rất sẵn lòng giới thiệu rõ hơn về mình để em hiểu rõ hơn về vai trò và cách thầy/cô có thể hỗ trợ em trong hành trình học tập nhé.\\n\\nThầy/Cô là thành viên của **Ban Cố vấn Học tập THPT cấp cao**, được thiết kế đặc biệt để đồng hành cùng các em học sinh **Lớp 10** như em.\\n\\n**Nhiệm vụ chính của thầy/cô là:**\\n\\n1.  **Giải đáp các thắc mắc chung về học tập:** Dù là câu hỏi về bài giảng, cách làm bài tập, hay những vấn đề liên quan đến việc học nói chung, thầy/cô đều ở đây để giúp em tìm ra câu trả lời.\\n2.  **Tư vấn phương pháp ôn thi hiệu quả:** Thầy/cô sẽ chia sẻ những chiến lược học tập thông minh, cách ghi nhớ kiến thức, và kỹ năng làm bài thi để em đạt được kết quả tốt nhất.\\n3.  **Lập kế hoạch học tập cá nhân hóa:** Mỗi em có một cách học riêng, một lịch trình riêng. Thầy/cô sẽ cùng em xây dựng một kế hoạch học tập phù hợp nhất với mục tiêu và năng lực của em.\\n4.  **Kết nối kiến thức liên môn:** Kiến thức không chỉ nằm gọn trong từng môn học riêng lẻ. Thầy/cô sẽ giúp em thấy được mối liên hệ thú vị giữa Toán, Lý, Hóa, và Tiếng Anh, từ đó giúp em hiểu bài sâu sắc hơn và áp dụng linh hoạt hơn.\\n5.  **Truyền cảm hứng và thúc đẩy tinh thần học tập:** Hành trình học tập đôi khi có những lúc khó khăn, nhưng thầy/cô luôn ở đây để động viên, khích lệ và giúp em giữ vững ngọn lửa đam mê học tập.\\n\\nVới vai trò này, thầy/cô cam kết sẽ luôn lắng nghe, thấu hiểu và cung cấp những lời khuyên, hướng dẫn thiết thực nhất, với một thái độ thân thiện, lịch sự và luôn mong muốn em đạt được thành công.\\n\\nVậy nên, em đừng ngần ngại chia sẻ bất kỳ điều gì em đang băn khoăn về việc học nhé. Thầy/cô rất sẵn lòng hỗ trợ em!\"}]}",
         "stats_math_11_easy": "{\"answered\":6,\"correct\":6}",
         "total_answered_questions": "6",
-        "last_studied_subject": "math",
-        "total_correct_questions": "6"
+        "last_studied_subject": "english",
+        "total_correct_questions": "3",
+        "stats_math_10_medium": "{\"answered\":1,\"correct\":0}",
+        "stats_math_10_easy": "{\"answered\":5,\"correct\":3}"
       }
     },
     {
@@ -2649,6 +2651,375 @@
         "answer": 0,
         "level": "hard",
         "explain": "Phùng ban đầu nghĩ ly hôn là tốt nhất, nhưng lời giải thích của người đàn bà hàng chài giúp anh nhận ra lý thuyết sách vở xa rời thực tế mưu sinh nghiệt ngã của người dân lao động."
+      }
+    ]
+  },
+  "essays": {
+    "math_10": [
+      {
+        "q": "Cho hai tập hợp A = [-2; 4] và B = (0; 5). Hãy xác định các tập hợp sau và biểu diễn trên trục số: A ∩ B, A ∪ B và A \\ B.",
+        "level": "easy",
+        "sampleAnswer": "1. A ∩ B = (0; 4]\n2. A ∪ B = [-2; 5)\n3. A \\ B = [-2; 0]"
+      },
+      {
+        "q": "Cho tam giác ABC có a = 5 cm, b = 7 cm, c = 8 cm. Hãy tính diện tích S của tam giác ABC và bán kính R của đường tròn ngoại tiếp tam giác.",
+        "level": "medium",
+        "sampleAnswer": "1. Nửa chu vi p = (5 + 7 + 8)/2 = 10 cm.\n2. Công thức Heron: S = √[10*(10-5)*(10-7)*(10-8)] = √[10*5*3*2] = √300 = 10√3 cm² ≈ 17.32 cm².\n3. R = (a*b*c)/(4S) = (5*7*8)/(4*10√3) = 280/(40√3) = 7/√3 = 7√3/3 cm ≈ 4.04 cm."
+      },
+      {
+        "q": "Một nhóm học tập có 6 học sinh nam và 4 học sinh nữ. Cần lập ban cán sự lớp gồm 3 người. Có bao nhiêu cách chọn ban cán sự sao cho trong đó có ít nhất 1 học sinh nữ?",
+        "level": "hard",
+        "sampleAnswer": "Cách 1: Tính gián tiếp (Phủ định):\n1. Tổng số cách chọn 3 học sinh bất kỳ từ 10 học sinh: C₁₀³ = 120 cách.\n2. Số cách chọn 3 học sinh toàn nam (không có nữ): C_6³ = 20 cách.\n3. Số cách chọn có ít nhất 1 nữ: 120 - 20 = 100 cách.\n\nCách 2: Tính trực tiếp:\n- TH1: 1 nữ, 2 nam: C_4¹ * C_6² = 4 * 15 = 60 cách.\n- TH2: 2 nữ, 1 nam: C_4² * C_6¹ = 6 * 6 = 36 cách.\n- TH3: 3 nữ, 0 nam: C_4³ * C_6⁰ = 4 * 1 = 4 cách.\n- Tổng: 60 + 36 + 4 = 100 cách."
+      }
+    ],
+    "physics_10": [
+      {
+        "q": "Một vật nặng rơi tự do không vận tốc đầu từ độ cao 45 m xuống đất. Lấy g = 10 m/s². Tính thời gian rơi và vận tốc của vật khi chạm đất.",
+        "level": "easy",
+        "sampleAnswer": "1. Thời gian rơi: t = √(2h/g) = √(2*45/10) = √9 = 3 giây.\n2. Vận tốc lúc chạm đất: v = g * t = 10 * 3 = 30 m/s."
+      },
+      {
+        "q": "Một xe có khối lượng 1 tấn đang chạy trên đường nằm ngang với vận tốc 72 km/h thì hãm phanh chuyển động chậm dần đều. Hệ số ma sát giữa bánh xe và mặt đường là μ = 0.2. Tính quãng đường xe đi được từ lúc hãm phanh đến khi dừng lại. Lấy g = 10 m/s².",
+        "level": "medium",
+        "sampleAnswer": "1. Đổi v₀ = 72 km/h = 20 m/s; m = 1000 kg. Dừng lại nên v = 0.\n2. Lực ma sát đóng vai trò lực hãm: F_ms = μ * m * g = 0.2 * 1000 * 10 = 2000 N.\n3. Gia tốc của xe: a = -F_ms / m = -2000 / 1000 = -2 m/s².\n4. Quãng đường đi được: v² - v₀² = 2as => 0 - 20² = 2 * (-2) * s => -400 = -4s => s = 100 m."
+      },
+      {
+        "q": "Một lò xo treo thẳng đứng có độ cứng k = 50 N/m. Đầu dưới treo quả nặng m₁ = 200g thì lò xo giãn ra một đoạn Δl₁. Treo thêm quả nặng m₂ = 100g thì lò xo giãn thêm một đoạn bao nhiêu? Lấy g = 10 m/s².",
+        "level": "hard",
+        "sampleAnswer": "1. Khi treo m₁: k * Δl₁ = m₁ * g => Δl₁ = (0.2 * 10) / 50 = 0.04 m = 4 cm.\n2. Khi treo thêm m₂: lực kéo tăng thêm F_kéo_thêm = m₂ * g = 0.1 * 10 = 1 N.\n3. Độ giãn thêm Δl_thêm = F_kéo_thêm / k = 1 / 50 = 0.02 m = 2 cm.\n*(Tổng độ giãn là 6 cm, đoạn giãn thêm do m₂ là 2 cm)*"
+      }
+    ],
+    "chemistry_10": [
+      {
+        "q": "Nguyên tố X có số hiệu nguyên tử Z = 17. Hãy viết cấu hình electron của nguyên tử X và xác định vị trí của X (ô, chu kỳ, nhóm) trong bảng tuần hoàn.",
+        "level": "easy",
+        "sampleAnswer": "1. Cấu hình electron: 1s² 2s² 2p⁶ 3s² 3p⁵.\n2. Vị trí trong bảng tuần hoàn:\n- Ô số 17 (Z = 17).\n- Chu kỳ 3 (có 3 lớp electron).\n- Nhóm VIIA (có 7 electron lớp ngoài cùng, thuộc phân nhóm chính nguyên tố p)."
+      },
+      {
+        "q": "Cho 4.6 gam kim loại Natri (Na) phản ứng hoàn toàn với nước dư sinh ra dung dịch bazơ NaOH và khí Hydro (H₂). Tính thể tích khí H₂ thu được ở điều kiện tiêu chuẩn. (Cho Na = 23)",
+        "level": "medium",
+        "sampleAnswer": "1. Phương trình phản ứng: 2Na + 2H₂O → 2NaOH + H₂\n2. Số mol Na: n_Na = 4.6 / 23 = 0.2 mol.\n3. Theo phương trình: n_H₂ = 1/2 * n_Na = 0.1 mol.\n4. Thể tích khí H₂ (đktc): V = 0.1 * 22.4 = 2.24 lít."
+      },
+      {
+        "q": "Cân bằng phản ứng oxi hóa - khử sau bằng phương pháp thăng bằng electron, chỉ rõ chất khử và chất oxi hóa:\nFeSO₄ + KMnO₄ + H₂SO₄ → Fe₂(SO₄)₃ + MnSO₄ + K₂SO₄ + H₂O",
+        "level": "hard",
+        "sampleAnswer": "1. Xác định sự thay đổi số oxi hóa:\n- Fe⁺² → Fe⁺³ (nhường 1e, hay 2Fe⁺² → 2Fe⁺³ + 2e)\n- Mn⁺⁷ → Mn⁺² (nhận 5e)\n2. Thăng bằng electron:\n- 5 * (2Fe⁺² → 2Fe⁺³ + 2e)  (quá trình oxi hóa)\n- 2 * (Mn⁺⁷ + 5e → Mn⁺²)    (quá trình khử)\n3. Đưa hệ số vào phương trình:\n10FeSO₄ + 2KMnO₄ + 8H₂SO₄ → 5Fe₂(SO₄)₃ + 2MnSO₄ + K₂SO₄ + 8H₂O\n- Chất khử: FeSO₄ (chứa Fe⁺² có số oxi hóa tăng lên +3).\n- Chất oxi hóa: KMnO₄ (chứa Mn⁺⁷ có số oxi hóa giảm xuống +2)."
+      }
+    ],
+    "english_10": [
+      {
+        "q": "Write a short paragraph (50-70 words) about how technology has changed your learning habits. Use at least two vocabulary words from Chapter 2 (e.g., database, access code, software, computers).",
+        "level": "easy",
+        "sampleAnswer": "Sample Answer: Computers have completely changed my learning habits. I use modern software to practice tests and look up equations. Instead of searching through paper books, I can access online databases for instant resources. Entering a password or access code to my school account allows me to study anywhere and anytime."
+      },
+      {
+        "q": "Explain the difference between 'amend' and 'streamline' in business contexts, and write one sentence for each to illustrate.",
+        "level": "medium",
+        "sampleAnswer": "1. Explanation: 'Amend' means to legally change or correct a document or agreement. 'Streamline' means to simplify office or production processes to increase efficiency and eliminate waste.\n2. Examples:\n- The legal team decided to amend the contract to add the new refund policies.\n- We streamlined the registration system to reduce the waiting time for students."
+      },
+      {
+        "q": "Read the sentence and rewrite it using the word 'downsizing': 'The company had to reduce the number of employees because of financial difficulties.'",
+        "level": "hard",
+        "sampleAnswer": "Rewritten Sentence: The company had to announce a major downsizing plan due to financial difficulties. (Or: The company went through a downsizing process because of financial problems.)"
+      }
+    ],
+    "math_11": [
+      {
+        "q": "Giải phương trình lượng giác sau: 2*cos(x) - 1 = 0.",
+        "level": "easy",
+        "sampleAnswer": "2*cos(x) - 1 = 0 <=> cos(x) = 1/2\n<=> cos(x) = cos(π/3)\n<=> x = ±π/3 + k*2π (k ∈ ℤ)"
+      },
+      {
+        "q": "Cho cấp số nhân (u_n) biết u₁ = 3 và u₄ = 24. Hãy tìm công bội q và tính tổng 5 số hạng đầu tiên (S₅) của cấp số nhân này.",
+        "level": "medium",
+        "sampleAnswer": "1. Ta có u₄ = u₁ * q³ => 24 = 3 * q³ => q³ = 8 => q = 2.\n2. Tổng 5 số hạng đầu: S₅ = u₁ * (1 - q⁵) / (1 - q) = 3 * (1 - 2⁵) / (1 - 2) = 3 * (1 - 32) / (-1) = 3 * (-31) / (-1) = 93."
+      },
+      {
+        "q": "Tính giới hạn sau: L = lim (√(n² + 3n) - n) khi n tiến tới vô cùng.",
+        "level": "hard",
+        "sampleAnswer": "Nhân liên hợp:\nL = lim [ (√(n² + 3n) - n)(√(n² + 3n) + n) ] / [ √(n² + 3n) + n ]\nL = lim [ (n² + 3n - n²) ] / [ √(n² + 3n) + n ]\nL = lim (3n) / [ n*√(1 + 3/n) + n ]\nChia cả tử và mẫu cho n:\nL = lim 3 / [ √(1 + 3/n) + 1 ] = 3 / (1 + 1) = 3/2 = 1.5."
+      }
+    ],
+    "physics_11": [
+      {
+        "q": "Hai điện tích điểm q₁ = 2 * 10⁻⁸ C và q₂ = -2 * 10⁻⁸ C đặt cách nhau 10 cm trong chân không. Tính độ lớn lực hút tĩnh điện giữa chúng.",
+        "level": "easy",
+        "sampleAnswer": "1. Đổi r = 10 cm = 0.1 m.\n2. Áp dụng định luật Coulomb: F = k * |q₁*q₂| / r² = 9 * 10⁹ * |2*10⁻⁸ * (-2*10⁻⁸)| / 0.1²\n3. F = 9 * 10⁹ * 4 * 10⁻¹⁶ / 0.01 = 36 * 10⁻⁷ / 10⁻² = 3.6 * 10⁻⁵ N."
+      },
+      {
+        "q": "Một con lắc lò xo treo thẳng đứng dao động điều hòa. Khi vật ở VTCB, lò xo giãn 10 cm. Lấy g = 10 m/s² và π² = 10. Hãy tính chu kỳ dao động T của con lắc này.",
+        "level": "medium",
+        "sampleAnswer": "1. Đổi Δl₀ = 10 cm = 0.1 m.\n2. Ta có công thức kết hợp khi thiếu khối lượng m: T = 2π * √(Δl₀ / g)\n3. T = 2π * √(0.1 / 10) = 2π * √0.01 = 2π * 0.1 = 0.2π (giây) ≈ 0.628 giây."
+      },
+      {
+        "q": "Một tụ điện có ghi 20 μF - 50V. Tụ được tích điện dưới hiệu điện thế 30V. Tính điện tích q tích được trên tụ và năng lượng điện trường dự trữ trong tụ lúc đó.",
+        "level": "hard",
+        "sampleAnswer": "1. Đổi C = 20 μF = 20 * 10⁻⁶ F. Điện áp U = 30 V.\n2. Điện tích trên tụ: q = C * U = 20*10⁻⁶ * 30 = 6 * 10⁻⁴ C.\n3. Năng lượng điện trường dự trữ: W = 1/2 * C * U² = 1/2 * 20*10⁻⁶ * 30² = 10⁻⁵ * 900 = 9 * 10⁻³ J = 0.009 J."
+      }
+    ],
+    "chemistry_11": [
+      {
+        "q": "Hãy tính pH của dung dịch axit mạnh HNO₃ có nồng độ mol là 0.001 M. Cho biết đây là chất điện li mạnh hay yếu.",
+        "level": "easy",
+        "sampleAnswer": "1. HNO₃ là chất điện li mạnh, phân li hoàn toàn: HNO₃ → H⁺ + NO₃⁻\n2. Nồng độ ion H⁺: [H⁺] = [HNO₃] = 0.001 M = 10⁻³ M.\n3. pH = -log[H⁺] = -log(10⁻³) = 3."
+      },
+      {
+        "q": "Tính pH của dung dịch kiềm Ba(OH)₂ có nồng độ 0.005 M ở 25°C.",
+        "level": "medium",
+        "sampleAnswer": "1. Ba(OH)₂ phân li hoàn toàn tạo ra 2 ion OH⁻: Ba(OH)₂ → Ba²⁺ + 2OH⁻\n2. Nồng độ ion OH⁻: [OH⁻] = 2 * [Ba(OH)₂] = 2 * 0.005 = 0.01 M = 10⁻² M.\n3. pOH = -log[OH⁻] = -log(10⁻²) = 2.\n4. Áp dụng công thức liên hệ pH + pOH = 14 => pH = 14 - 2 = 12."
+      },
+      {
+        "q": "Trộn 200 ml dung dịch HCl 0.15 M với 300 ml dung dịch NaOH 0.1 M thu được dung dịch X. Tính pH của dung dịch X ở 25°C.",
+        "level": "hard",
+        "sampleAnswer": "1. Tính số mol ion phản ứng:\n- n_H⁺ = n_HCl = 0.2 * 0.15 = 0.03 mol.\n- n_OH⁻ = n_NaOH = 0.3 * 0.1 = 0.03 mol.\n2. Phản ứng trung hòa: H⁺ + OH⁻ → H₂O\n3. Nhận thấy n_H⁺ = n_OH⁻ = 0.03 mol nên phản ứng vừa đủ, sau phản ứng dung dịch chỉ chứa muối trung hòa NaCl và nước.\n4. Môi trường trung tính, do đó ở 25°C dung dịch có pH = 7."
+      }
+    ],
+    "english_11": [
+      {
+        "q": "Write a short paragraph (60-80 words) describing the causes and effects of deforestation on local ecosystems. Use the words 'deforestation' and 'ecosystem' in your paragraph.",
+        "level": "easy",
+        "sampleAnswer": "Sample Answer: Deforestation is causing massive damage to nature. The primary cause of deforestation is human activity, such as cutting down trees for agriculture and timber. As a result, the local ecosystem is severely disrupted. Animals lose their natural habitats, leading to biodiversity loss, and soil erosion increases global warming effects."
+      },
+      {
+        "q": "What is 'biodegradable packaging' and why is it considered sustainable? Write a paragraph to explain.",
+        "level": "medium",
+        "sampleAnswer": "Sample Answer: Biodegradable packaging refers to boxes or bags made of natural materials that can be broken down by bacteria or other organisms easily. It is considered sustainable because it does not pollute the oceans or landfill sites for hundreds of years like plastic does, thus preserving resource availability for future generations."
+      },
+      {
+        "q": "Complete the sentence with an explanation: 'Environmental conservation is crucial because...'",
+        "level": "hard",
+        "sampleAnswer": "Sample Answer: Environmental conservation is crucial because it helps protect fragile ecosystems, prevents the depletion of finite natural resources like clean water and forests, and combats global climate change, ensuring a clean and inhabitable planet for future human generations."
+      }
+    ],
+    "math_12": [
+      {
+        "q": "Tính tích phân sau: I = ∫₀¹ (3x² + 2x) dx.",
+        "level": "easy",
+        "sampleAnswer": "1. Tìm nguyên hàm của f(x) = 3x² + 2x: F(x) = x³ + x².\n2. Tính tích phân: I = F(1) - F(0) = (1³ + 1²) - (0³ + 0²) = 2 - 0 = 2."
+      },
+      {
+        "q": "Trong không gian Oxyz, cho ba điểm A(2; 0; 0), B(0; -3; 0), C(0; 0; 4). Hãy viết phương trình mặt phẳng (ABC) dưới dạng phương trình đoạn chắn và phương trình tổng quát.",
+        "level": "medium",
+        "sampleAnswer": "1. Phương trình đoạn chắn của mặt phẳng đi qua A, B, C nằm trên 3 trục tọa độ là:\nx/2 + y/(-3) + z/4 = 1\n2. Quy đồng mẫu số chung là 12 để đưa về dạng tổng quát:\n6x - 4y + 3z = 12 <=> 6x - 4y + 3z - 12 = 0."
+      },
+      {
+        "q": "Tìm giá trị lớn nhất (GTLN) và giá trị nhỏ nhất (GTNN) của hàm số y = x³ - 3x² + 1 trên đoạn [1; 3].",
+        "level": "hard",
+        "sampleAnswer": "1. Đạo hàm: y' = 3x² - 6x. Cho y' = 0 <=> 3x(x - 2) = 0 <=> x = 0 hoặc x = 2.\n2. Trên đoạn [1; 3], ta chỉ xét giá trị x = 2 (do x = 0 nằm ngoài đoạn).\n3. Tính các giá trị:\n- Biên x = 1: y(1) = 1³ - 3*1² + 1 = -1.\n- Cực trị x = 2: y(2) = 2³ - 3*2² + 1 = 8 - 12 + 1 = -3.\n- Biên x = 3: y(3) = 3³ - 3*3² + 1 = 1.\n4. So sánh kết quả:\n- GTLN (Max y) = 1 tại x = 3.\n- GTNN (Min y) = -3 tại x = 2."
+      },
+      {
+        "q": "Giải phương trình mũ sau bằng phương pháp đặt ẩn phụ: 9^x - 4*3^x + 3 = 0. Sau đó, tính tổng các nghiệm tìm được.",
+        "level": "hard",
+        "sampleAnswer": "1. Đặt t = 3^x (điều kiện: t > 0). Phương trình trở thành phương trình bậc hai: t² - 4t + 3 = 0.\n2. Giải phương trình trên, ta được hai nghiệm t = 1 và t = 3 (đều thỏa mãn điều kiện t > 0).\n3. Với t = 1: 3^x = 1 => x = 0.\n4. Với t = 3: 3^x = 3 => x = 1.\n5. Phương trình có hai nghiệm phân biệt x = 0 và x = 1. Vậy tổng các nghiệm là 0 + 1 = 1."
+      },
+      {
+        "q": "Trong không gian Oxyz, cho đường thẳng d: (x-1)/2 = (y+1)/1 = z/-1 và mặt phẳng (P): x + y + z - 3 = 0. Tìm tọa độ giao điểm M của đường thẳng d và mặt phẳng (P).",
+        "level": "hard",
+        "sampleAnswer": "1. Chuyển phương trình đường thẳng d về dạng tham số: x = 1 + 2t, y = -1 + t, z = -t.\n2. Vì M là giao điểm của d và (P), thay tọa độ tham số của d vào phương trình mặt phẳng (P): (1 + 2t) + (-1 + t) + (-t) - 3 = 0.\n3. Rút gọn phương trình ta được: 2t - 3 = 0 => t = 3/2.\n4. Thay giá trị t = 3/2 vào phương trình tham số của d để tìm tọa độ M: x = 1 + 2*(3/2) = 4; y = -1 + 3/2 = 1/2; z = -3/2.\n5. Vậy tọa độ giao điểm M là (4; 1/2; -3/2)."
+      }
+    ],
+    "physics_12": [
+      {
+        "q": "Đặt điện áp xoay chiều u = 220√2 * cos(100π*t) V vào hai đầu đoạn mạch nối tiếp gồm điện trở R = 100 Ω và cuộn cảm thuần có L = 1/π H. Tính cảm kháng Z_L và cường độ dòng điện hiệu dụng chạy trong mạch.",
+        "level": "easy",
+        "sampleAnswer": "1. Tần số góc ω = 100π rad/s. Cảm kháng: Z_L = ω * L = 100π * (1/π) = 100 Ω.\n2. Điện áp hiệu dụng U = 220 V. Tổng trở mạch: Z = √(R² + Z_L²) = √(100² + 100²) = 100√2 Ω.\n3. Cường độ dòng điện hiệu dụng: I = U / Z = 220 / (100√2) = 2.2 / √2 A = 1.1√2 A ≈ 1.56 A."
+      },
+      {
+        "q": "Đặt điện áp xoay chiều U = 220 V vào hai đầu mạch RLC nối tiếp có R = 110 Ω. Biết cường độ dòng điện trễ pha π/3 so với điện áp hai đầu mạch. Tính hệ số công suất của mạch và công suất tiêu thụ P của mạch.",
+        "level": "medium",
+        "sampleAnswer": "1. Độ lệch pha φ = π/3. Hệ số công suất: cos(φ) = cos(π/3) = 0.5.\n2. Vì thiếu cảm kháng Z_L và dung kháng Z_C, áp dụng công thức kết hợp: P = (U² * cos²φ) / R\n3. P = (220² * 0.5²) / 110 = (48400 * 0.25) / 110 = 12100 / 110 = 110 W."
+      },
+      {
+        "q": "Một đoạn mạch RLC nối tiếp gồm điện trở R = 50 Ω, cuộn cảm thuần có L = 1/π H và tụ điện có C = 2 * 10⁻⁴/π F. Đặt vào hai đầu mạch điện áp xoay chiều u = 220√2 * cos(100π*t) V. Hãy viết biểu thức cường độ dòng điện tức thời i chạy trong mạch.",
+        "level": "hard",
+        "sampleAnswer": "1. Tính các trở kháng:\n- Z_L = 100π * 1/π = 100 Ω.\n- Z_C = 1 / (100π * 2*10⁻⁴/π) = 1 / 0.02 = 50 Ω.\n2. Tổng trở: Z = √[R² + (Z_L - Z_C)²] = √[50² + (100 - 50)²] = 50√2 Ω.\n3. Cường độ dòng điện cực đại: I₀ = U₀ / Z = 220√2 / 50√2 = 4.4 A.\n4. Tính độ lệch pha: tan(φ) = (Z_L - Z_C)/R = (100 - 50)/50 = 1 => φ = π/4.\nVì φ = φ_u - φ_i => φ_i = φ_u - φ = 0 - π/4 = -π/4.\n5. Biểu thức cường độ dòng điện: i = 4.4 * cos(100π*t - π/4) A."
+      }
+    ],
+    "chemistry_12": [
+      {
+        "q": "Hãy viết phương trình phản ứng hóa học (dạng cấu tạo thu gọn) của phản ứng thủy phân Etyl axetat (CH₃COOC₂H₅) trong dung dịch kiềm NaOH nóng. Cho biết tên phản ứng này.",
+        "level": "easy",
+        "sampleAnswer": "1. Phương trình phản ứng:\nCH₃COOC₂H₅ + NaOH --(t°)--> CH₃COONa + C₂H₅OH\n2. Tên phản ứng: Phản ứng xà phòng hóa."
+      },
+      {
+        "q": "Hãy tính khối lượng của glixerol thu được khi thủy phân hoàn toàn 8.9 gam chất béo tripanmitin (C₁₅H₃₁COO)₃C₃H₅ bằng dung dịch NaOH dư. (Cho C = 12, H = 1, O = 16)",
+        "level": "medium",
+        "sampleAnswer": "1. Tính phân tử khối tripanmitin: M = 806 g/mol.\n2. Số mol tripanmitin: n = 8.9 / 806 ≈ 0.011 mol.\n3. Phương trình thủy phân:\n(C₁₅H₃₁COO)₃C₃H₅ + 3NaOH → 3C₁₅H₃₁COONa + C₃H₅(OH)₃\n4. Số mol glixerol sinh ra bằng số mol tripanmitin: n_glixerol = 0.011 mol.\n5. Khối lượng glixerol: m = 0.011 * 92 ≈ 1.01 gam."
+      },
+      {
+        "q": "Thủy phân hoàn toàn m gam chất béo (triglycerit) cần dùng vừa đủ 120 ml dung dịch NaOH 1M. Sau phản ứng cô cạn thu được 35.68 gam hỗn hợp muối khan. Hãy tính giá trị m.",
+        "level": "hard",
+        "sampleAnswer": "1. Tính số mol NaOH phản ứng: n_NaOH = 0.12 * 1 = 0.12 mol.\n2. Tính số mol glixerol sinh ra theo tỉ lệ: n_glixerol = 1/3 * n_NaOH = 0.04 mol.\n3. Tính khối lượng các chất:\n- m_NaOH = 0.12 * 40 = 4.8 gam.\n- m_glixerol = 0.04 * 92 = 3.68 gam.\n4. Áp dụng định luật bảo toàn khối lượng:\nm_chất_béo + m_NaOH = m_muối + m_glixerol\nm + 4.8 = 35.68 + 3.68 => m + 4.8 = 39.36 => m = 34.56 gam.\n*Kết quả: Khối lượng chất béo m = 34.56 gam.*"
+      }
+    ],
+    "english_12": [
+      {
+        "q": "What is 'carbon footprint' and write down two methods a household can do to decrease their carbon footprint in daily activities.",
+        "level": "easy",
+        "sampleAnswer": "Sample Answer: Carbon footprint is the total amount of greenhouse gases released due to an individual or household's activities. A household can decrease it by: 1) shifting to energy-efficient appliances and lighting (e.g., LED), and 2) using public transportation or carpooling to reduce vehicle emissions."
+      },
+      {
+        "q": "Explain why 'sustainable development' is a geopolitical concern rather than just an environmental issue.",
+        "level": "medium",
+        "sampleAnswer": "Sample Answer: Sustainable development is a geopolitical concern because natural resources (like oil, gas, and water) are shared globally. Depletion of resources in one country can trigger migration, border disputes, or trade wars. Therefore, international cooperation and treaties are required to ensure resource sustainability and avoid political instability."
+      },
+      {
+        "q": "Read this statement: 'The world needs to invest in ecosystem rehabilitation to prevent irreversible climate change.' Write an essay (100-120 words) explaining this statement using the vocabulary 'rehabilitation' and 'depletion'.",
+        "level": "hard",
+        "sampleAnswer": "Sample Answer: Human industrialization has caused severe depletion of resources and forests, putting wildlife habitats at risk. To combat this depletion, investing in ecosystem rehabilitation is urgent. Rehabilitation, which involves planting native trees and restoring wetlands, acts as carbon capture. Without rehabilitation, natural zones will continue to decline, releasing greenhouse gases and making climate change irreversible. Therefore, countries must collaborate on environmental rehabilitation projects immediately."
+      }
+    ],
+    "biology_10": [
+      {
+        "q": "Trình bày sự khác biệt cơ bản về cấu tạo giữa tế bào nhân sơ (Prokaryote) và tế bào nhân thực (Eukaryote).",
+        "level": "easy",
+        "sampleAnswer": "1. Tế bào nhân sơ:\n- Chưa có nhân hoàn chỉnh (chỉ có vùng nhân chứa phân tử ADN vòng, không có màng nhân bao bọc).\n- Không có các bào quan có màng bao bọc (chỉ có ribôxôm).\n- Kích thước nhỏ (1-5 μm), cấu trúc đơn giản.\n\n2. Tế bào nhân thực:\n- Đã có nhân hoàn chỉnh (với màng nhân bao bọc chất nhiễm sắc).\n- Hệ thống nội màng phát triển và có nhiều bào quan có màng bao bọc (ti thể, lục lạp, lưới nội chất, bộ máy Golgi,...).\n- Kích thước lớn hơn (10-100 μm), cấu trúc phức tạp hơn nhiều."
+      },
+      {
+        "q": "Mô tả cấu trúc hóa học và chức năng của phân tử ATP. Tại sao nói ATP là 'đồng tiền năng lượng' của tế bào?",
+        "level": "medium",
+        "sampleAnswer": "1. Cấu trúc hóa học của ATP (Adenosin Triphosphat):\n- Gồm 3 thành phần: Bazo nito Adenin, đường ribozơ và 3 nhóm photphat.\n- Trong đó, liên kết giữa 2 nhóm photphat ngoài cùng là liên kết cao năng, dễ bị bẻ gãy để giải phóng năng lượng lớn (khoảng 7.3 kcal/mol).\n\n2. Tại sao gọi là 'đồng tiền năng lượng':\n- Tế bào không thể sử dụng trực tiếp năng lượng từ thức ăn (như glucose) mà phải chuyển hóa thành ATP.\n- ATP dễ dàng truyền năng lượng cho các phản ứng thu nhiệt trong tế bào thông qua việc đứt gãy liên kết cao năng để tạo thành ADP và photphat vô cơ. Khi cần tích lũy, tế bào lại tái tổng hợp ATP từ ADP. Do tính chất dễ tiêu dùng và tái sinh linh hoạt như tiền tệ trong lưu thông xã hội, ATP được gọi là 'đồng tiền năng lượng'."
+      },
+      {
+        "q": "Mô tả mối quan hệ mật thiết giữa pha sáng và pha tối của quá trình quang hợp ở thực vật.",
+        "level": "hard",
+        "sampleAnswer": "Quang hợp gồm pha sáng và pha tối liên kết chặt chẽ với nhau như hai bánh răng truyền động:\n1. Pha sáng (xảy ra ở màng thilacôit):\n- Hấp thụ năng lượng ánh sáng và phân ly H₂O để tạo ra O₂ (giải phóng ra ngoài), đồng thời tổng hợp các hợp chất cao năng là ATP và NADPH.\n\n2. Pha tối (xảy ra ở chất nền stroma):\n- Sử dụng CO₂ từ khí quyển cùng sản phẩm của pha sáng là ATP và NADPH để khử CO₂ thành hợp chất hữu cơ (glucôzơ) thông qua chu trình Calvin.\n- Pha tối trả lại ADP và NADP⁺ cho pha sáng để tiếp tục tái sinh ATP và NADPH.\n*Kết luận: Không có pha sáng thì pha tối không thể diễn ra do thiếu năng lượng và chất khử; ngược lại, nếu pha tối bị đình trệ thì pha sáng cũng sẽ ngưng do thiếu nguyên liệu ADP và NADP⁺.*"
+      }
+    ],
+    "history_10": [
+      {
+        "q": "Trình bày những thành tựu văn hóa tiêu biểu của Ai Cập cổ đại và đóng góp của chúng đối với văn minh nhân loại.",
+        "level": "easy",
+        "sampleAnswer": "Ai Cập cổ đại đóng đóng góp vĩ đại cho lịch sử loài người với các thành tựu:\n1. Chữ viết: Sáng tạo chữ tượng hình viết trên giấy papyrus, ghi chép lại lịch sử và tri thức cổ đại.\n2. Toán học: Nghệ thuật đo đạc ruộng đất phát triển hình học (tính số pi ≈ 3.16), giải phương trình bậc nhất.\n3. Thiên văn và Lịch pháp: Làm ra lịch dựa trên chu kỳ chuyển động của Mặt Trời và nước sông Nile dâng (năm có 365 ngày).\n4. Y học và Kiến trúc: Kỹ thuật ướp xác độc đáo hiểu biết sâu về giải phẫu người; các công trình kiến trúc kỳ vĩ như Kim tự tháp, tượng Nhân sư thách thức thời gian."
+      },
+      {
+        "q": "Phân tích nguyên nhân thắng lợi và ý nghĩa lịch sử của chiến thắng Bạch Đằng năm 938 do Ngô Quyền lãnh đạo.",
+        "level": "medium",
+        "sampleAnswer": "1. Nguyên nhân thắng lợi:\n- Sự lãnh đạo tài tình của Ngô Quyền với nghệ thuật quân sự độc đáo (sử dụng trận địa cọc ngầm kết hợp nước thủy triều lên xuống).\n- Tinh thần đoàn kết, chiến đấu dũng cảm của quân dân ta vượt qua sức mạnh ban đầu của địch.\n- Sự chủ quan khinh địch của hoàng tử Lưu Hoằng Tháo và quân Nam Hán.\n\n2. Ý nghĩa lịch sử:\n- Tiêu diệt hoàn toàn ý chí xâm lược của quân Nam Hán.\n- Kết thúc hoàn toàn ách thống trị kéo dài hơn 1000 năm của các triều đại phong kiến phương Bắc.\n- Khẳng định chủ quyền độc lập dân tộc sâu sắc, mở ra kỷ nguyên độc lập tự chủ lâu dài cho nước ta."
+      },
+      {
+        "q": "So sánh những đặc điểm kinh tế - xã hội cốt lõi giữa các quốc gia cổ đại phương Đông và các quốc gia cổ đại phương Tây.",
+        "level": "hard",
+        "sampleAnswer": "1. Các quốc gia cổ đại phương Đông (Ai Cập, Lưỡng Hà, Ấn Độ, Trung Quốc):\n- Kinh tế: Nông nghiệp trồng lúa nước ở lưu vực các con sông lớn phì nhiêu làm cơ sở, công tác trị thủy đắp đê được đề cao.\n- Xã hội: Hình thành giai cấp thống trị (vua chuyên chế, quý tộc, tăng lữ) và giai cấp bị trị (nông dân công xã là lực lượng sản xuất chính, nô lệ phục dịch).\n- Thể chế chính trị: Quân chủ chuyên chế trung ương tập quyền mang tính thần thánh.\n\n2. Các quốc gia cổ đại phương Tây (Hy Lạp, La Mã):\n- Kinh tế: Nghèo đất trồng trọt nhưng giàu tài nguyên khoáng sản, phát triển mạnh thủ công nghiệp và thương nghiệp biển (hải thương quốc tế).\n- Xã hội: Chiếm hữu nô lệ sâu sắc gồm hai giai cấp cơ bản: chủ nô và nô lệ (nô lệ chỉ được xem là vật sở hữu biết nói).\n- Thể chế chính trị: Dân chủ chủ nô (Athens) hoặc Cộng hòa chủ nô (La Mã), không có vua chuyên chế."
+      }
+    ],
+    "literature_10": [
+      {
+        "q": "Trình bày giá trị nhân đạo sâu sắc của tác phẩm kiệt tác 'Truyện Kiều' (Nguyễn Du) qua đoạn trích 'Trao duyên'.",
+        "level": "easy",
+        "sampleAnswer": "Giá trị nhân đạo trong đoạn trích 'Trao duyên' thể hiện qua:\n1. Sự đồng cảm sâu sắc của Nguyễn Du với nỗi đau đớn, bi kịch tình yêu tan vỡ của Thúy Kiều khi buộc phải đặt chữ hiếu lên trên chữ tình.\n2. Trân trọng vẻ đẹp nhân cách cao thượng của Kiều: dù trong hoàn cảnh tuyệt vọng vẫn lo nghĩ cho hạnh phúc của Kim Trọng, hy sinh hạnh phúc cá nhân để giữ trọn lời thề nghĩa nặng.\n3. Lên án gián tiếp các thế lực phong kiến tàn bạo (đồng tiền đen tối) đẩy gia đình Kiều vào cảnh ly tán, buộc nàng phải bán mình chuộc cha."
+      },
+      {
+        "q": "Phân tích hào khí Đông A đầy kiêu hùng được thể hiện qua bài thơ 'Tỏ lòng' (Thuật hoài) của danh tướng Phạm Ngũ Lão.",
+        "level": "medium",
+        "sampleAnswer": "Hào khí Đông A thời Trần được tái hiện sắc nét qua:\n1. Vẻ đẹp của người tráng sĩ đời Trần: Tư thế hiên ngang cầm giáo ('hoành sóc') bảo vệ non sông suốt nhiều năm ròng rã, sẵn sàng chiến đấu vì vận mệnh đất nước.\n2. Sức mạnh quân đội nhà Trần: Hình ảnh so sánh đầy hào hùng 'ba quân khí mạnh nuốt trôi trâu' miêu tả sức mạnh vật chất lẫn tinh thần quật khởi của quân dân thời Trần.\n3. Chí nam nhi cao cả của tác giả: Thể hiện qua cái 'thẹn' trước tấm gương Vũ Hầu (Gia Cát Lượng) vì chưa trả xong nợ công danh cho đất nước, bộc lộ khát vọng cống hiến quên mình vì dân tộc."
+      },
+      {
+        "q": "Chứng minh rằng 'Bình Ngô đại cáo' của Nguyễn Trãi là bản Tuyên ngôn Độc lập thứ hai đầy hùng tráng của dân tộc Việt Nam.",
+        "level": "hard",
+        "sampleAnswer": "'Bình Ngô đại cáo' được coi là bản Tuyên ngôn độc lập thứ hai vì:\n1. Định nghĩa toàn diện về quốc gia dân tộc: Nguyễn Trãi đưa ra các yếu tố chủ quyền đầy đủ gồm cương vực lãnh thổ, nền văn hiến lâu đời, phong tục tập quán riêng biệt, lịch sử các triều đại song hành cùng phong kiến phương Bắc, và hào kiệt đời nào cũng có.\n2. Bản cáo trạng đanh thép tố cáo tội ác vô nhân đạo của giặc Minh: 'Nướng dân đen trên ngọn lửa hung tàn / Vùi con đỏ xuống dưới hầm tai vạ', lột trần luận điệu giả nhân giả nghĩa của kẻ thù.\n3. Bản hùng ca về cuộc khởi nghĩa Lam Sơn: từ những ngày đầu gian khổ ở núi Lam đến các chiến thắng vang dội Chi Lăng, Xương Giang vang dội bờ cõi.\n4. Lời tuyên bố độc lập đàng hoàng: khẳng định kỷ nguyên mới hòa bình bền vững xây dựng trên nền tảng nhân nghĩa yên dân."
+      }
+    ],
+    "biology_11": [
+      {
+        "q": "Phân biệt sự khác nhau giữa quá trình thoát hơi nước qua khí khổng và thoát hơi nước qua cutin ở lá cây xanh.",
+        "level": "easy",
+        "sampleAnswer": "1. Qua khí khổng:\n- Vận tốc thoát hơi nước rất lớn.\n- Được điều chỉnh chủ động bằng cơ chế đóng mở của tế bào hạt sinh (tế bào hình hạt đậu).\n- Chiếm phần lớn lượng nước thoát ra từ lá.\n\n2. Qua lớp cutin trên bề mặt lá:\n- Vận tốc thoát hơi nước nhỏ.\n- Không tự điều chỉnh được (phụ thuộc vào độ dày của lớp cutin: lá non cutin mỏng thoát nước nhiều, lá già cutin dày thoát nước ít).\n- Chiếm tỉ lệ nhỏ hơn nhiều so với qua khí khổng."
+      },
+      {
+        "q": "So sánh cấu tạo và nguyên lý hoạt động giữa hệ tuần hoàn hở và hệ tuần hoàn kín ở động vật.",
+        "level": "medium",
+        "sampleAnswer": "1. Hệ tuần hoàn hở (ở côn trùng, thân mềm):\n- Cấu tạo: Có tim, hệ thống động mạch và tĩnh mạch ngắn, không có mao mạch trung gian.\n- Nguyên lý hoạt động: Máu được tim bơm vào động mạch rồi chảy tràn vào khoang cơ thể trộn lẫn dịch mô tạo thành hỗn hợp máu - dịch mô trực tiếp trao đổi chất với tế bào, sau đó được hút lại về tim qua các lỗ tim. Tốc độ chảy chậm, áp lực máu thấp.\n\n2. Hệ tuần hoàn kín (ở giun đất, mực ống, động vật có xương sống):\n- Cấu tạo: Có tim, hệ thống động mạch, tĩnh mạch và mạng lưới mao mạch dày đặc liên kết kín.\n- Nguyên lý hoạt động: Máu chảy liên tục trong mạch kín từ tim qua động mạch → mao mạch (trao đổi chất gián tiếp qua thành mao mạch) → tĩnh mạch rồi về tim. Tốc độ chảy nhanh, áp lực máu cao, điều hòa phân phối máu hiệu quả hơn."
+      },
+      {
+        "q": "Phân tích cơ chế truyền tin (xung thần kinh) qua xináp hóa học. Tại sao thông tin đi qua xináp chỉ theo một chiều duy nhất?",
+        "level": "hard",
+        "sampleAnswer": "1. Cơ chế truyền tin qua xináp hóa học:\n- Xung thần kinh lan truyền đến chùy xináp làm mở kênh Ca²⁺, ion Ca²⁺ đi vào trong chùy xináp.\n- Ca²⁺ kích thích các bóng chứa chất trung gian hóa học (ví dụ axêtilcôlin) liên kết với màng trước và giải phóng chất này vào khe xináp bằng xuất bào.\n- Chất trung gian hóa học khuếch tán qua khe xináp và gắn vào thụ thể đặc hiệu ở màng sau xináp, làm thay đổi tính thấm màng sau xuất hiện điện thế hoạt động lan truyền đi tiếp.\n\n2. Tại sao chỉ truyền đi một chiều:\n- Vì chỉ ở chùy xináp (màng trước) mới có các bóng chứa chất trung gian hóa học để giải phóng ra ngoài.\n- Chỉ ở màng sau xináp mới có các thụ thể tiếp nhận chất trung gian hóa học này bám vào kích hoạt xung điện. Do đó xung thần kinh không thể truyền ngược lại."
+      }
+    ],
+    "history_11": [
+      {
+        "q": "Trình bày ý nghĩa lịch sử của Cách mạng tháng Mười Nga năm 1917 đối với phong trào giải phóng dân tộc trên thế giới.",
+        "level": "easy",
+        "sampleAnswer": "Cách mạng tháng Mười Nga mang ý nghĩa quốc tế sâu sắc:\n1. Đập tan xiềng xích chủ nghĩa đế quốc ở một quốc gia lớn, cổ vũ mạnh mẽ phong trào đấu tranh của giai cấp công nhân và các dân tộc bị áp bức toàn cầu.\n2. Mở ra con đường cứu nước mới cho các dân tộc thuộc địa - con đường cách mạng vô sản gắn liền độc lập dân tộc với chủ nghĩa xã hội.\n3. Thành lập nhà nước xã hội chủ nghĩa đầu tiên, trở thành chỗ dựa vững chắc cho phong trào hòa bình và tiến bộ thế giới sau này."
+      },
+      {
+        "q": "Phân tích nguyên nhân thực dân Pháp chọn Đà Nẵng làm mục tiêu tấn công mở đầu khi xâm lược nước ta vào năm 1858.",
+        "level": "medium",
+        "sampleAnswer": "Pháp chọn Đà Nẵng làm điểm đổ bộ tấn công đầu tiên vì các lý do chiến lược:\n1. Vị trí địa lý: Đà Nẵng có cảng biển sâu, rộng thuận lợi cho tàu chiến Pháp neo đậu và dễ dàn trận pháo kích đất liền.\n2. Mục tiêu chính trị: Đà Nẵng chỉ cách kinh thành Huế khoảng 100km về phía Bắc, Pháp muốn thực hiện kế hoạch 'đánh nhanh thắng nhanh', nhanh chóng uy hiếp triều đình Huế đầu hàng.\n3. Cơ sở hậu thuẫn xã hội: Pháp hy vọng sự hỗ trợ của lực lượng giáo sĩ và giáo dân Thiên chúa giáo tại khu vực này để làm nội ứng hành quân thuận tiện."
+      },
+      {
+        "q": "So sánh điểm giống và khác nhau về con đường cứu nước của Nguyễn Ái Quốc với các nhà yêu nước tiền bối đầu thế kỷ XX (Phan Bội Châu, Phan Châu Trinh).",
+        "level": "hard",
+        "sampleAnswer": "1. Điểm giống nhau:\n- Đều xuất phát từ lòng yêu nước thương dân nồng nàn, mong muốn giải phóng dân tộc khỏi ách đô hộ của thực dân Pháp.\n- Đều tích cực đi ra nước ngoài tìm kiếm sự giúp đỡ và con đường mới cứu nước.\n\n2. Điểm khác biệt:\n- Phan Bội Châu: Đi theo con đường bạo động vũ trang, chủ trương dựa vào Nhật Bản (phong trào Đông Du) cải cách thể chế quân chủ lập hiến.\n- Phan Châu Trinh: Đi theo con đường cải cách dân chủ, chủ trương dựa vào Pháp để chấn hưng dân trí, nâng cao dân lực rồi mới đòi độc lập ('Khai dân trí, chấn dân khí, hậu dân sinh').\n- Nguyễn Ái Quốc: Hướng sang phương Tây (Pháp, Anh, Mĩ) để tìm hiểu bản chất kẻ thù, tìm đến chủ nghĩa Mác-Lênin, xác định cách mạng Việt Nam là cách mạng vô sản, dựa vào sức mạnh đại đoàn kết toàn dân và liên kết chặt chẽ với phong trào vô sản thế giới để tự giải phóng."
+      }
+    ],
+    "literature_11": [
+      {
+        "q": "Phân tích vẻ đẹp lãng mạn và khát vọng sống hiến dâng mãnh liệt của Xuân Diệu được thể hiện trong đoạn mở đầu bài thơ 'Vội vàng'.",
+        "level": "easy",
+        "sampleAnswer": "1. Khát vọng táo bạo đoạt quyền tạo hóa: Nhà thơ muốn tắt nắng, buộc gió lại để giữ lấy sắc hương tươi đẹp của cuộc đời trần thế ('Tôi muốn tắt nắng đi / Cho màu đừng nhạt mất...').\n2. Bức tranh thiên nhiên tràn ngập sức sống: Thiên nhiên mùa xuân hiện lên như một bữa tiệc đầy sắc hương tươi non quyến rũ ('Ong bướm này đây tuần tháng mật / Này đây hoa của đồng nội xanh rì...').\n3. Quan niệm nhân sinh mới mẻ: Lấy con người trẻ tuổi làm thước đo vẻ đẹp của thiên nhiên ('Tháng giêng ngon như một cặp môi gần'), thể hiện khát khao tận hưởng cuộc sống trần thế một cách mãnh liệt nhất."
+      },
+      {
+        "q": "Phân tích vẻ đẹp hiên ngang, khí phách của nhân vật Huấn Cao trong truyện ngắn 'Chữ người tử tù' của Nguyễn Tuân.",
+        "level": "medium",
+        "sampleAnswer": "Huấn Cao hội tụ vẻ đẹp uy nghi cổ kính chốn ngục tù:\n1. Tài hoa nghệ thuật lỗi lạc: Nổi tiếng khắp tỉnh Sơn về tài viết chữ nhanh và đẹp, chữ của Huấn Cao là báu vật thể hiện hoài bão tung hoành của một đời người.\n2. Khí phách hiên ngang bất khuất: Dù là tử tù chờ ngày ra pháp trường, ông vẫn thản nhiên nhận rượu thịt quản ngục dâng, không sợ hãi bạo lực, uy quyền, giữ tư thế hiên ngang lẫm liệt.\n3. Thiên lương trong sáng: Trọng nghĩa khinh tài, chỉ cho chữ những ai biết quý trọng cái đẹp. Cảm động trước tấm lòng quản ngục, Huấn Cao đã tặng chữ và khuyên bảo chân thành giữ thiên lương thanh cao lánh xa chốn nhơ bẩn."
+      },
+      {
+        "q": "Phân tích quá trình thức tỉnh nhân tính và bi kịch đau đớn bị cự tuyệt quyền làm người của nhân vật Chí Phèo trong kiệt tác cùng tên của Nam Cao.",
+        "level": "hard",
+        "sampleAnswer": "1. Quá trình thức tỉnh nhân tính:\n- Từ một anh canh điền hiền lành bị Bá Kiến đẩy vào tù, ra tù thành con quỷ dữ của làng Vũ Đại rạch mặt ăn vạ phá nát cuộc sống bình yên.\n- Gặp Thị Nở trong đêm trăng, nhận sự chăm sóc mộc mạc (bát cháo hành ấm nóng), Chí Phèo lần đầu tiên tỉnh rượu, cảm nhận được âm thanh cuộc sống đời thường và khát khao lương thiện trỗi dậy mãnh liệt.\n\n2. Bi kịch bị cự tuyệt quyền làm người:\n- Sự từ chối phũ phàng của bà cô Thị Nở đại diện cho định kiến khắt khe của xã hội đã đóng sầm cánh cửa trở lại làm người lương thiện của Chí.\n- Chí Phèo rơi vào tuyệt vọng, vác dao đến nhà Bá Kiến đâm chết kẻ thù và tự sát.\n- Tiếng kêu cứu tuyệt vọng cuối cùng: 'Ai cho tôi lương thiện? Làm thế nào cho mất được những vết mảnh chai trên mặt này?' khẳng định bi kịch đau xót của kiếp người bị tha hóa trong xã hội thực dân nửa phong kiến cũ."
+      }
+    ],
+    "biology_12": [
+      {
+        "q": "Đột biến gen là gì? Nêu ý nghĩa của đột biến gen đối với quá trình tiến hóa và chọn giống cây trồng vật nuôi.",
+        "level": "easy",
+        "sampleAnswer": "1. Khái niệm: Đột biến gen là những biến đổi nhỏ trong cấu trúc của gen, liên quan đến một hoặc một vài cặp nuclêôtit tại một điểm xác định.\n\n2. Ý nghĩa đối với tiến hóa và chọn giống:\n- Đối với tiến hóa: Đột biến gen là nguồn phát sinh các alen mới, tạo ra nguồn biến dị sơ cấp vô tận cung cấp cho quá trình chọn lọc tự nhiên biến đổi tần số gen thích nghi.\n- Đối với chọn giống: Cung cấp nguồn nguyên liệu phong phú để các nhà chọn giống chọn lựa, lai tạo tạo ra các giống cây trồng, vật nuôi mới có năng suất cao hoặc đặc tính quý hiếm."
+      },
+      {
+        "q": "Trình bày các đặc điểm của mã di truyền. Giải thích tại sao tính thoái hóa của mã di truyền lại có lợi cho sự sinh tồn của sinh vật.",
+        "level": "medium",
+        "sampleAnswer": "1. Các đặc điểm của mã di truyền:\n- Mã di truyền là mã bộ ba (cứ 3 nuclêôtit kế tiếp xác định 1 axit amin).\n- Được đọc từ một điểm xác định, liên tục không gối lên nhau.\n- Tính phổ biến (hầu hết sinh vật dùng chung một bảng mã).\n- Tính đặc hiệu (1 bộ ba chỉ mã hóa cho 1 axit amin duy nhất).\n- Tính thoái hóa (nhiều bộ ba khác nhau cùng mã hóa cho 1 loại axit amin).\n\n2. Tại sao tính thoái hóa có lợi:\n- Giúp bảo vệ cấu trúc prôtêin trước tác động của đột biến gen. Nếu xảy ra đột biến thay thế nuclêôtit ở vị trí thứ ba trong bộ ba, bộ ba mới sinh ra nhiều khả năng vẫn mã hóa cho chính axit amin cũ, cấu trúc prôtêin không đổi đảm bảo chức năng sinh học ổn định bình thường."
+      },
+      {
+        "q": "Một quần thể ngẫu phối cân bằng Hardy-Weinberg có tần số kiểu hình hoa trắng (kiểu gen aa) là 9%. Hãy tính tần số của các alen A, a và tỉ lệ kiểu gen dị hợp Aa. Nếu quần thể bị đào thải hoàn toàn các cá thể hoa trắng aa thì ở thế hệ ngẫu phối tiếp theo tần số alen a là bao nhiêu?",
+        "level": "hard",
+        "sampleAnswer": "1. Tính tần số các alen khi cân bằng:\n- Tần số kiểu hình hoa trắng $q^2(aa) = 9\\% = 0.09 \\implies q(a) = \\sqrt{0.09} = 0.3$.\n- Tần số alen A: $p(A) = 1 - q = 1 - 0.3 = 0.7$.\n- Tỉ lệ kiểu gen dị hợp Aa trong quần thể khi cân bằng:\n  $$2pq(Aa) = 2 \\times 0.7 \\times 0.3 = 0.42 = 42\\%$$\n\n2. Tính tần số alen a thế hệ tiếp theo sau đào thải hoa trắng:\n- Thành phần kiểu gen còn lại sau đào thải $aa$:\n  $p^2(AA) = 0.7^2 = 0.49$; $2pq(Aa) = 0.42$.\n- Tổng tỉ lệ cá thể còn lại: $0.49 + 0.42 = 0.91$.\n- Tỉ lệ kiểu gen chuẩn hóa mới: \n  $$AA = \\frac{0.49}{0.91} = \\frac{7}{13}$$; $$Aa = \\frac{0.42}{0.91} = \\frac{6}{13}$$\n- Tần số alen a mới sau đào thải:\n  $$q'(a) = \\frac{1}{2} \\times Aa = \\frac{1}{2} \\times \\frac{6}{13} = \\frac{3}{13} \\approx 0.23$$"
+      }
+    ],
+    "history_12": [
+      {
+        "q": "Trình bày hoàn cảnh lịch sử dẫn đến quyết định đổi mới đất nước tại Đại hội lần thứ VI của Đảng Cộng sản Việt Nam (12/1986).",
+        "level": "easy",
+        "sampleAnswer": "Hoàn cảnh lịch sử vô cùng khó khăn cấp bách:\n1. Khủng hoảng kinh tế - xã hội trầm trọng: Đất nước rơi vào tình trạng lạm phát phi mã, thiếu lương thực hàng hóa tiêu dùng cơ bản, đời sống nhân dân cực kỳ gian khổ do hậu quả kéo dài của cơ chế tập trung quan liêu bao cấp và chiến tranh bảo vệ biên giới.\n2. Cô lập quốc tế: Sự bao vây cấm vận của các thế lực thù địch phương Tây và khó khăn từ các nước XHCN viện trợ truyền thống.\n3. Yêu cầu đổi mới: Thực tiễn đất nước đòi hỏi Đảng phải nhìn nhận thẳng vào sự thật, sửa chữa sai lầm chủ quan duy ý chí để đưa đất nước đi lên thoát nghèo."
+      },
+      {
+        "q": "Phân tích nguyên nhân thắng lợi và ý nghĩa lịch sử của chiến dịch Điện Biên Phủ năm 1954 chống thực dân Pháp.",
+        "level": "medium",
+        "sampleAnswer": "1. Nguyên nhân thắng lợi:\n- Sự lãnh đạo sáng suốt của Trung ương Đảng và Chủ tịch Hồ Chí Minh, đứng đầu là Đại tướng Võ Nguyên Giáp với quyết định chuyển phương châm tác chiến lịch sử từ 'đánh nhanh thắng nhanh' sang 'đánh chắc tiến chắc'.\n- Tinh thần quả cảm chiến đấu, sẵn sàng hy sinh của chiến sĩ xung kích quân đội ta.\n- Sự chi viện đồng lòng của hậu phương to lớn (dân công hỏa tuyến thồ hàng ngàn tấn gạo lên Điện Biên Phủ).\n\n2. Ý nghĩa lịch sử:\n- Đập tan hoàn toàn nỗ lực quân sự cao nhất của Pháp và Mĩ, giáng đòn quyết định buộc Pháp ký Hiệp định Giơnevơ năm 1954.\n- Giải phóng hoàn toàn miền Bắc, tạo cơ sở hậu phương vững chắc cho sự nghiệp giải phóng miền Nam thống nhất đất nước.\n- Cổ vũ mạnh mẽ phong trào giải phóng dân tộc thuộc địa trên toàn thế giới."
+      },
+      {
+        "q": "So sánh chiến lược 'Chiến tranh đặc biệt' (1961-1965) và chiến lược 'Việt Nam hóa chiến tranh' (1969-1973) của Mĩ ở miền Nam Việt Nam.",
+        "level": "hard",
+        "sampleAnswer": "1. Điểm giống nhau:\n- Đều là các loại hình chiến tranh xâm lược thực dân kiểu mới của Mĩ nhằm biến miền Nam Việt Nam thành thuộc địa và chia cắt đất nước lâu dài.\n- Đều dựa vào viện trợ quân sự, tài chính khổng lồ của Mĩ, hệ thống cố vấn Mĩ và vũ khí tối tân hiện đại.\n\n2. Điểm khác biệt:\n- Lực lượng tham chiến chính:\n  + Chiến tranh đặc biệt: Sử dụng quân đội Sài Gòn làm lực lượng nòng cốt tiến hành chiến đấu.\n  + Việt Nam hóa chiến tranh: Mĩ rút dần quân Mĩ về nước nhằm 'thay màu da trên xác chết', quân Sài Gòn vẫn làm nòng cốt phối hợp không quân Mĩ yểm trợ hỏa lực tối đa.\n- Quy mô chiến tranh:\n  + Chiến tranh đặc biệt: Diễn ra chủ yếu ở miền Nam Việt Nam.\n  + Việt Nam hóa chiến tranh: Mở rộng ra toàn Đông Dương (Lào và Campuchia), dùng người Đông Dương đánh người Đông Dương.\n- Thủ đoạn cốt lõi:\n  + Chiến tranh đặc biệt: Quốc sách ấp chiến lược dồn dân cô lập cách mạng.\n  + Việt Nam hóa chiến tranh: Sử dụng thủ đoạn ngoại giao chia rẽ khối XHCN (như Mĩ bắt tay Trung Quốc, Liên Xô) để cô lập viện trợ cách mạng nước ta."
+      }
+    ],
+    "literature_12": [
+      {
+        "q": "Phân tích vẻ đẹp bi tráng của hình tượng người lính Tây Tiến trong bài thơ 'Tây Tiến' của Quang Dũng.",
+        "level": "easy",
+        "sampleAnswer": "Vẻ đẹp bi tráng thể hiện qua sự hài hòa giữa hai yếu tố Bi (đau thương) và Tráng (hùng tráng):\n1. Cái 'Bi' (Đau thương mất mát): Cuộc sống gian khổ, bệnh tật sốt rét rừng tàn phá ngoại hình lính ('không mọc tóc', 'xanh màu lá'), cái chết rình rập rải rác biên cương ('mồ viễn xứ', 'áo bào thay chiếu anh về đất').\n2. Cái 'Tráng' (Hùng tráng kiêu dũng): Tâm hồn kiêu dũng vượt khó khăn coi khinh bệnh tật ('dữ oai hùm'), khát vọng chiến đấu lý tưởng cống hiến ('chiến trường đi chẳng tiếc đời xanh'), cái chết thanh thản nhẹ nhàng hóa thành tiếng thét gầm tiễn đưa của sông Mã gầm lên khúc độc hành oai hùng."
+      },
+      {
+        "q": "Phân tích giá trị hiện thực và nhân đạo sâu sắc của truyện ngắn 'Vợ nhặt' (Kim Lân) qua tình huống nhặt vợ độc đáo giữa ngày đói 1945.",
+        "level": "medium",
+        "sampleAnswer": "1. Giá trị hiện thực:\n- Tái hiện chân thực thảm cảnh nạn đói năm 1945: người chết như ngả rạ, không khí vẩn lên mùi ẩm thối của rác rưởi và mùi tử khí. Con người rẻ rúng đến mức Tràng 'nhặt' được vợ chỉ bằng bốn bát bánh đúc ngoài chợ.\n\n2. Giá trị nhân đạo sâu sắc:\n- Ca ngợi tình nghĩa gắn bó đùm bọc giữa những người nghèo đói (bà cụ Tứ chấp nhận nàng dâu mới bằng tình thương vô bờ bến).\n- Khẳng định sức sống bất diệt của con người: càng cận kề cái chết, họ càng khát khao tổ ấm gia đình hạnh phúc bền vững.\n- Hướng con người tới tương lai tươi sáng: hình ảnh lá cờ đỏ sao vàng xuất hiện trong tâm trí Tràng hứa hẹn bước chuyển biến giải phóng cuộc đời họ."
+      },
+      {
+        "q": "Phân tích vẻ đẹp khuất lấp đầy nghị lực, yêu thương của người đàn bà hàng chài trong truyện ngắn 'Chiếc thuyền ngoài xa' của Nguyễn Minh Châu.",
+        "level": "hard",
+        "sampleAnswer": "Người đàn bà hàng chài tuy vô danh, thô kệch nhưng mang vẻ đẹp tâm hồn ngời sáng:\n1. Nỗi đau và sự cam chịu nhẫn nhục: Bị chồng đánh đập tàn nhẫn 'ba ngày một trận nhẹ, năm ngày một trận nặng' nhưng không hề kêu van hay chạy trốn, xin chồng đưa lên bờ đánh để con không nhìn thấy.\n2. Nguyên nhân sâu xa: Thấu hiểu cuộc sống mưu sinh vất vả trên biển cần một người đàn ông khỏe mạnh để chèo chống thuyền khi phong ba bão táp, cam chịu vì tương lai của các con ('phải sống cho con chứ không thể sống cho mình').\n3. Sự thấu cảm sâu sắc lẽ đời: Hiểu được sự bất lực, cục cằn của chồng thực chất do đói nghèo áp bách, độ lượng tha thứ cho chồng.\n4. Tình mẫu tử vĩ đại: Hạnh phúc bình dị nhất của chị là nhìn các con được ăn no trên thuyền. Sự từng trải của chị đã thức tỉnh nhận thức cho nghệ sĩ Phùng và chánh án Đẩu về lẽ đời đa sự."
       }
     ]
   },
@@ -6420,375 +6791,294 @@
       "action": "REGISTER_SUCCESS",
       "details": "Đăng ký tài khoản thành công từ Client",
       "timestamp": "2026-06-19T20:02:46.207Z"
+    },
+    {
+      "id": "17818995112510.36038479852382377",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T20:05:11.251Z"
+    },
+    {
+      "id": "17818995240100.08657158463997283",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 11",
+      "timestamp": "2026-06-19T20:05:24.010Z"
+    },
+    {
+      "id": "17818995248570.7655462667195364",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 12",
+      "timestamp": "2026-06-19T20:05:24.858Z"
+    },
+    {
+      "id": "17818995258280.4449779559965966",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 10",
+      "timestamp": "2026-06-19T20:05:25.828Z"
+    },
+    {
+      "id": "17819002501470.20130093986376518",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T20:17:30.147Z"
+    },
+    {
+      "id": "17819003527600.72223675951192",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T20:19:12.760Z"
+    },
+    {
+      "id": "17819003616790.2709205583409725",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T20:19:21.680Z"
+    },
+    {
+      "id": "17819011742890.8978348300937941",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T20:32:54.289Z"
+    },
+    {
+      "id": "17819015804090.9637589818993693",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-19T20:39:40.410Z"
+    },
+    {
+      "id": "17819512299180.5694175328069043",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-20T10:27:09.918Z"
+    },
+    {
+      "id": "17819512369020.5037591239956796",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 11",
+      "timestamp": "2026-06-20T10:27:16.902Z"
+    },
+    {
+      "id": "17819512374080.13384245182410703",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 12",
+      "timestamp": "2026-06-20T10:27:17.408Z"
+    },
+    {
+      "id": "17819512393820.4888171121919259",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 11",
+      "timestamp": "2026-06-20T10:27:19.382Z"
+    },
+    {
+      "id": "17819512402440.9877709636993339",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "CHANGE_GRADE",
+      "details": "Thay đổi khối lớp học sang Lớp 10",
+      "timestamp": "2026-06-20T10:27:20.244Z"
+    },
+    {
+      "id": "17819515911390.43685347193650437",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "LOGIN",
+      "details": "Học sinh đăng nhập thành công",
+      "timestamp": "2026-06-20T10:33:11.139Z"
+    },
+    {
+      "id": "17819515937950.767274111051513",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 1 & 2: Cuộc sống Gia đình và Sức khỏe\" (Môn: english, Lớp: 10)",
+      "timestamp": "2026-06-20T10:33:13.795Z"
+    },
+    {
+      "id": "17819515938170.5199710347900872",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 1 & 2: Cuộc sống Gia đình và Sức khỏe\" (Môn: english, Lớp: 10)",
+      "timestamp": "2026-06-20T10:33:13.817Z"
+    },
+    {
+      "id": "17819515977170.4233122082347469",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-20T10:33:17.717Z"
+    },
+    {
+      "id": "17819516212930.04660962646458322",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Động học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-20T10:33:41.293Z"
+    },
+    {
+      "id": "17819516222000.013279365766483031",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Nguyên tử\" (Môn: chemistry, Lớp: 10)",
+      "timestamp": "2026-06-20T10:33:42.200Z"
+    },
+    {
+      "id": "17819516225460.19589712968179096",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Thành phần hóa học và Cấu trúc tế bào\" (Môn: biology, Lớp: 10)",
+      "timestamp": "2026-06-20T10:33:42.546Z"
+    },
+    {
+      "id": "17819516231740.911828499370313",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Sử thi và văn học dân gian Việt Nam\" (Môn: literature, Lớp: 10)",
+      "timestamp": "2026-06-20T10:33:43.174Z"
+    },
+    {
+      "id": "17819516236250.5726832495146594",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 1 & 2: Cuộc sống Gia đình và Sức khỏe\" (Môn: english, Lớp: 10)",
+      "timestamp": "2026-06-20T10:33:43.625Z"
+    },
+    {
+      "id": "17819516391180.8616913144382585",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Unit 5 & 6: Phát minh và Bình đẳng giới\" (Môn: english, Lớp: 10)",
+      "timestamp": "2026-06-20T10:33:59.118Z"
+    },
+    {
+      "id": "17819516401030.8224446310324526",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 3: Sinh học vi sinh vật và virus\" (Môn: biology, Lớp: 10)",
+      "timestamp": "2026-06-20T10:34:00.103Z"
+    },
+    {
+      "id": "17819516401350.5081808026958635",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Thành phần hóa học và Cấu trúc tế bào\" (Môn: biology, Lớp: 10)",
+      "timestamp": "2026-06-20T10:34:00.135Z"
+    },
+    {
+      "id": "17819516406970.5548703514947132",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Hiện thực lịch sử và Cách mạng công nghiệp\" (Môn: history, Lớp: 10)",
+      "timestamp": "2026-06-20T10:34:00.697Z"
+    },
+    {
+      "id": "17819516412400.7919938298069056",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Sử thi và văn học dân gian Việt Nam\" (Môn: literature, Lớp: 10)",
+      "timestamp": "2026-06-20T10:34:01.240Z"
+    },
+    {
+      "id": "17819516418640.30069864177736216",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Nguyên tử\" (Môn: chemistry, Lớp: 10)",
+      "timestamp": "2026-06-20T10:34:01.864Z"
+    },
+    {
+      "id": "17819516423010.4052759269159716",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Động học chất điểm\" (Môn: physics, Lớp: 10)",
+      "timestamp": "2026-06-20T10:34:02.301Z"
+    },
+    {
+      "id": "17819516437350.9109312007356309",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 1: Mệnh đề và tập hợp\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-20T10:34:03.735Z"
+    },
+    {
+      "id": "17819516456740.28974125016040764",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 2: Bất phương trình & Quy hoạch tuyến tính\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-20T10:34:05.675Z"
+    },
+    {
+      "id": "17819516463300.4625468056030131",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "VIEW_LECTURE",
+      "details": "Xem bài học: \"Bài giảng Chương 3: Hệ thức lượng trong tam giác\" (Môn: math, Lớp: 10)",
+      "timestamp": "2026-06-20T10:34:06.330Z"
+    },
+    {
+      "id": "17819516551410.6056663576926078",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-20T10:34:15.141Z"
+    },
+    {
+      "id": "17819516551510.3643649444620043",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SELECT_PRACTICE",
+      "details": "Chọn luyện tập môn: math, Khối lớp: 10, Chế độ: quiz",
+      "timestamp": "2026-06-20T10:34:15.151Z"
+    },
+    {
+      "id": "17819516578740.7135870982423426",
+      "userId": "1781701495438",
+      "username": "admin",
+      "action": "SUBMIT_ANSWER",
+      "details": "Nộp đáp án SAI môn math lớp 10 (easy). Câu hỏi: \"Phần bù của tập hợp con B trong tập hợp A (ký hiệu C_A B) là tập hợp:\"",
+      "timestamp": "2026-06-20T10:34:17.874Z"
     }
-  ],
-  "essays": {
-    "math_10": [
-      {
-        "q": "Cho hai tập hợp A = [-2; 4] và B = (0; 5). Hãy xác định các tập hợp sau và biểu diễn trên trục số: A ∩ B, A ∪ B và A \\ B.",
-        "level": "easy",
-        "sampleAnswer": "1. A ∩ B = (0; 4]\n2. A ∪ B = [-2; 5)\n3. A \\ B = [-2; 0]"
-      },
-      {
-        "q": "Cho tam giác ABC có a = 5 cm, b = 7 cm, c = 8 cm. Hãy tính diện tích S của tam giác ABC và bán kính R của đường tròn ngoại tiếp tam giác.",
-        "level": "medium",
-        "sampleAnswer": "1. Nửa chu vi p = (5 + 7 + 8)/2 = 10 cm.\n2. Công thức Heron: S = √[10*(10-5)*(10-7)*(10-8)] = √[10*5*3*2] = √300 = 10√3 cm² ≈ 17.32 cm².\n3. R = (a*b*c)/(4S) = (5*7*8)/(4*10√3) = 280/(40√3) = 7/√3 = 7√3/3 cm ≈ 4.04 cm."
-      },
-      {
-        "q": "Một nhóm học tập có 6 học sinh nam và 4 học sinh nữ. Cần lập ban cán sự lớp gồm 3 người. Có bao nhiêu cách chọn ban cán sự sao cho trong đó có ít nhất 1 học sinh nữ?",
-        "level": "hard",
-        "sampleAnswer": "Cách 1: Tính gián tiếp (Phủ định):\n1. Tổng số cách chọn 3 học sinh bất kỳ từ 10 học sinh: C₁₀³ = 120 cách.\n2. Số cách chọn 3 học sinh toàn nam (không có nữ): C_6³ = 20 cách.\n3. Số cách chọn có ít nhất 1 nữ: 120 - 20 = 100 cách.\n\nCách 2: Tính trực tiếp:\n- TH1: 1 nữ, 2 nam: C_4¹ * C_6² = 4 * 15 = 60 cách.\n- TH2: 2 nữ, 1 nam: C_4² * C_6¹ = 6 * 6 = 36 cách.\n- TH3: 3 nữ, 0 nam: C_4³ * C_6⁰ = 4 * 1 = 4 cách.\n- Tổng: 60 + 36 + 4 = 100 cách."
-      }
-    ],
-    "physics_10": [
-      {
-        "q": "Một vật nặng rơi tự do không vận tốc đầu từ độ cao 45 m xuống đất. Lấy g = 10 m/s². Tính thời gian rơi và vận tốc của vật khi chạm đất.",
-        "level": "easy",
-        "sampleAnswer": "1. Thời gian rơi: t = √(2h/g) = √(2*45/10) = √9 = 3 giây.\n2. Vận tốc lúc chạm đất: v = g * t = 10 * 3 = 30 m/s."
-      },
-      {
-        "q": "Một xe có khối lượng 1 tấn đang chạy trên đường nằm ngang với vận tốc 72 km/h thì hãm phanh chuyển động chậm dần đều. Hệ số ma sát giữa bánh xe và mặt đường là μ = 0.2. Tính quãng đường xe đi được từ lúc hãm phanh đến khi dừng lại. Lấy g = 10 m/s².",
-        "level": "medium",
-        "sampleAnswer": "1. Đổi v₀ = 72 km/h = 20 m/s; m = 1000 kg. Dừng lại nên v = 0.\n2. Lực ma sát đóng vai trò lực hãm: F_ms = μ * m * g = 0.2 * 1000 * 10 = 2000 N.\n3. Gia tốc của xe: a = -F_ms / m = -2000 / 1000 = -2 m/s².\n4. Quãng đường đi được: v² - v₀² = 2as => 0 - 20² = 2 * (-2) * s => -400 = -4s => s = 100 m."
-      },
-      {
-        "q": "Một lò xo treo thẳng đứng có độ cứng k = 50 N/m. Đầu dưới treo quả nặng m₁ = 200g thì lò xo giãn ra một đoạn Δl₁. Treo thêm quả nặng m₂ = 100g thì lò xo giãn thêm một đoạn bao nhiêu? Lấy g = 10 m/s².",
-        "level": "hard",
-        "sampleAnswer": "1. Khi treo m₁: k * Δl₁ = m₁ * g => Δl₁ = (0.2 * 10) / 50 = 0.04 m = 4 cm.\n2. Khi treo thêm m₂: lực kéo tăng thêm F_kéo_thêm = m₂ * g = 0.1 * 10 = 1 N.\n3. Độ giãn thêm Δl_thêm = F_kéo_thêm / k = 1 / 50 = 0.02 m = 2 cm.\n*(Tổng độ giãn là 6 cm, đoạn giãn thêm do m₂ là 2 cm)*"
-      }
-    ],
-    "chemistry_10": [
-      {
-        "q": "Nguyên tố X có số hiệu nguyên tử Z = 17. Hãy viết cấu hình electron của nguyên tử X và xác định vị trí của X (ô, chu kỳ, nhóm) trong bảng tuần hoàn.",
-        "level": "easy",
-        "sampleAnswer": "1. Cấu hình electron: 1s² 2s² 2p⁶ 3s² 3p⁵.\n2. Vị trí trong bảng tuần hoàn:\n- Ô số 17 (Z = 17).\n- Chu kỳ 3 (có 3 lớp electron).\n- Nhóm VIIA (có 7 electron lớp ngoài cùng, thuộc phân nhóm chính nguyên tố p)."
-      },
-      {
-        "q": "Cho 4.6 gam kim loại Natri (Na) phản ứng hoàn toàn với nước dư sinh ra dung dịch bazơ NaOH và khí Hydro (H₂). Tính thể tích khí H₂ thu được ở điều kiện tiêu chuẩn. (Cho Na = 23)",
-        "level": "medium",
-        "sampleAnswer": "1. Phương trình phản ứng: 2Na + 2H₂O → 2NaOH + H₂\n2. Số mol Na: n_Na = 4.6 / 23 = 0.2 mol.\n3. Theo phương trình: n_H₂ = 1/2 * n_Na = 0.1 mol.\n4. Thể tích khí H₂ (đktc): V = 0.1 * 22.4 = 2.24 lít."
-      },
-      {
-        "q": "Cân bằng phản ứng oxi hóa - khử sau bằng phương pháp thăng bằng electron, chỉ rõ chất khử và chất oxi hóa:\nFeSO₄ + KMnO₄ + H₂SO₄ → Fe₂(SO₄)₃ + MnSO₄ + K₂SO₄ + H₂O",
-        "level": "hard",
-        "sampleAnswer": "1. Xác định sự thay đổi số oxi hóa:\n- Fe⁺² → Fe⁺³ (nhường 1e, hay 2Fe⁺² → 2Fe⁺³ + 2e)\n- Mn⁺⁷ → Mn⁺² (nhận 5e)\n2. Thăng bằng electron:\n- 5 * (2Fe⁺² → 2Fe⁺³ + 2e)  (quá trình oxi hóa)\n- 2 * (Mn⁺⁷ + 5e → Mn⁺²)    (quá trình khử)\n3. Đưa hệ số vào phương trình:\n10FeSO₄ + 2KMnO₄ + 8H₂SO₄ → 5Fe₂(SO₄)₃ + 2MnSO₄ + K₂SO₄ + 8H₂O\n- Chất khử: FeSO₄ (chứa Fe⁺² có số oxi hóa tăng lên +3).\n- Chất oxi hóa: KMnO₄ (chứa Mn⁺⁷ có số oxi hóa giảm xuống +2)."
-      }
-    ],
-    "english_10": [
-      {
-        "q": "Write a short paragraph (50-70 words) about how technology has changed your learning habits. Use at least two vocabulary words from Chapter 2 (e.g., database, access code, software, computers).",
-        "level": "easy",
-        "sampleAnswer": "Sample Answer: Computers have completely changed my learning habits. I use modern software to practice tests and look up equations. Instead of searching through paper books, I can access online databases for instant resources. Entering a password or access code to my school account allows me to study anywhere and anytime."
-      },
-      {
-        "q": "Explain the difference between 'amend' and 'streamline' in business contexts, and write one sentence for each to illustrate.",
-        "level": "medium",
-        "sampleAnswer": "1. Explanation: 'Amend' means to legally change or correct a document or agreement. 'Streamline' means to simplify office or production processes to increase efficiency and eliminate waste.\n2. Examples:\n- The legal team decided to amend the contract to add the new refund policies.\n- We streamlined the registration system to reduce the waiting time for students."
-      },
-      {
-        "q": "Read the sentence and rewrite it using the word 'downsizing': 'The company had to reduce the number of employees because of financial difficulties.'",
-        "level": "hard",
-        "sampleAnswer": "Rewritten Sentence: The company had to announce a major downsizing plan due to financial difficulties. (Or: The company went through a downsizing process because of financial problems.)"
-      }
-    ],
-    "math_11": [
-      {
-        "q": "Giải phương trình lượng giác sau: 2*cos(x) - 1 = 0.",
-        "level": "easy",
-        "sampleAnswer": "2*cos(x) - 1 = 0 <=> cos(x) = 1/2\n<=> cos(x) = cos(π/3)\n<=> x = ±π/3 + k*2π (k ∈ ℤ)"
-      },
-      {
-        "q": "Cho cấp số nhân (u_n) biết u₁ = 3 và u₄ = 24. Hãy tìm công bội q và tính tổng 5 số hạng đầu tiên (S₅) của cấp số nhân này.",
-        "level": "medium",
-        "sampleAnswer": "1. Ta có u₄ = u₁ * q³ => 24 = 3 * q³ => q³ = 8 => q = 2.\n2. Tổng 5 số hạng đầu: S₅ = u₁ * (1 - q⁵) / (1 - q) = 3 * (1 - 2⁵) / (1 - 2) = 3 * (1 - 32) / (-1) = 3 * (-31) / (-1) = 93."
-      },
-      {
-        "q": "Tính giới hạn sau: L = lim (√(n² + 3n) - n) khi n tiến tới vô cùng.",
-        "level": "hard",
-        "sampleAnswer": "Nhân liên hợp:\nL = lim [ (√(n² + 3n) - n)(√(n² + 3n) + n) ] / [ √(n² + 3n) + n ]\nL = lim [ (n² + 3n - n²) ] / [ √(n² + 3n) + n ]\nL = lim (3n) / [ n*√(1 + 3/n) + n ]\nChia cả tử và mẫu cho n:\nL = lim 3 / [ √(1 + 3/n) + 1 ] = 3 / (1 + 1) = 3/2 = 1.5."
-      }
-    ],
-    "physics_11": [
-      {
-        "q": "Hai điện tích điểm q₁ = 2 * 10⁻⁸ C và q₂ = -2 * 10⁻⁸ C đặt cách nhau 10 cm trong chân không. Tính độ lớn lực hút tĩnh điện giữa chúng.",
-        "level": "easy",
-        "sampleAnswer": "1. Đổi r = 10 cm = 0.1 m.\n2. Áp dụng định luật Coulomb: F = k * |q₁*q₂| / r² = 9 * 10⁹ * |2*10⁻⁸ * (-2*10⁻⁸)| / 0.1²\n3. F = 9 * 10⁹ * 4 * 10⁻¹⁶ / 0.01 = 36 * 10⁻⁷ / 10⁻² = 3.6 * 10⁻⁵ N."
-      },
-      {
-        "q": "Một con lắc lò xo treo thẳng đứng dao động điều hòa. Khi vật ở VTCB, lò xo giãn 10 cm. Lấy g = 10 m/s² và π² = 10. Hãy tính chu kỳ dao động T của con lắc này.",
-        "level": "medium",
-        "sampleAnswer": "1. Đổi Δl₀ = 10 cm = 0.1 m.\n2. Ta có công thức kết hợp khi thiếu khối lượng m: T = 2π * √(Δl₀ / g)\n3. T = 2π * √(0.1 / 10) = 2π * √0.01 = 2π * 0.1 = 0.2π (giây) ≈ 0.628 giây."
-      },
-      {
-        "q": "Một tụ điện có ghi 20 μF - 50V. Tụ được tích điện dưới hiệu điện thế 30V. Tính điện tích q tích được trên tụ và năng lượng điện trường dự trữ trong tụ lúc đó.",
-        "level": "hard",
-        "sampleAnswer": "1. Đổi C = 20 μF = 20 * 10⁻⁶ F. Điện áp U = 30 V.\n2. Điện tích trên tụ: q = C * U = 20*10⁻⁶ * 30 = 6 * 10⁻⁴ C.\n3. Năng lượng điện trường dự trữ: W = 1/2 * C * U² = 1/2 * 20*10⁻⁶ * 30² = 10⁻⁵ * 900 = 9 * 10⁻³ J = 0.009 J."
-      }
-    ],
-    "chemistry_11": [
-      {
-        "q": "Hãy tính pH của dung dịch axit mạnh HNO₃ có nồng độ mol là 0.001 M. Cho biết đây là chất điện li mạnh hay yếu.",
-        "level": "easy",
-        "sampleAnswer": "1. HNO₃ là chất điện li mạnh, phân li hoàn toàn: HNO₃ → H⁺ + NO₃⁻\n2. Nồng độ ion H⁺: [H⁺] = [HNO₃] = 0.001 M = 10⁻³ M.\n3. pH = -log[H⁺] = -log(10⁻³) = 3."
-      },
-      {
-        "q": "Tính pH của dung dịch kiềm Ba(OH)₂ có nồng độ 0.005 M ở 25°C.",
-        "level": "medium",
-        "sampleAnswer": "1. Ba(OH)₂ phân li hoàn toàn tạo ra 2 ion OH⁻: Ba(OH)₂ → Ba²⁺ + 2OH⁻\n2. Nồng độ ion OH⁻: [OH⁻] = 2 * [Ba(OH)₂] = 2 * 0.005 = 0.01 M = 10⁻² M.\n3. pOH = -log[OH⁻] = -log(10⁻²) = 2.\n4. Áp dụng công thức liên hệ pH + pOH = 14 => pH = 14 - 2 = 12."
-      },
-      {
-        "q": "Trộn 200 ml dung dịch HCl 0.15 M với 300 ml dung dịch NaOH 0.1 M thu được dung dịch X. Tính pH của dung dịch X ở 25°C.",
-        "level": "hard",
-        "sampleAnswer": "1. Tính số mol ion phản ứng:\n- n_H⁺ = n_HCl = 0.2 * 0.15 = 0.03 mol.\n- n_OH⁻ = n_NaOH = 0.3 * 0.1 = 0.03 mol.\n2. Phản ứng trung hòa: H⁺ + OH⁻ → H₂O\n3. Nhận thấy n_H⁺ = n_OH⁻ = 0.03 mol nên phản ứng vừa đủ, sau phản ứng dung dịch chỉ chứa muối trung hòa NaCl và nước.\n4. Môi trường trung tính, do đó ở 25°C dung dịch có pH = 7."
-      }
-    ],
-    "english_11": [
-      {
-        "q": "Write a short paragraph (60-80 words) describing the causes and effects of deforestation on local ecosystems. Use the words 'deforestation' and 'ecosystem' in your paragraph.",
-        "level": "easy",
-        "sampleAnswer": "Sample Answer: Deforestation is causing massive damage to nature. The primary cause of deforestation is human activity, such as cutting down trees for agriculture and timber. As a result, the local ecosystem is severely disrupted. Animals lose their natural habitats, leading to biodiversity loss, and soil erosion increases global warming effects."
-      },
-      {
-        "q": "What is 'biodegradable packaging' and why is it considered sustainable? Write a paragraph to explain.",
-        "level": "medium",
-        "sampleAnswer": "Sample Answer: Biodegradable packaging refers to boxes or bags made of natural materials that can be broken down by bacteria or other organisms easily. It is considered sustainable because it does not pollute the oceans or landfill sites for hundreds of years like plastic does, thus preserving resource availability for future generations."
-      },
-      {
-        "q": "Complete the sentence with an explanation: 'Environmental conservation is crucial because...'",
-        "level": "hard",
-        "sampleAnswer": "Sample Answer: Environmental conservation is crucial because it helps protect fragile ecosystems, prevents the depletion of finite natural resources like clean water and forests, and combats global climate change, ensuring a clean and inhabitable planet for future human generations."
-      }
-    ],
-    "math_12": [
-      {
-        "q": "Tính tích phân sau: I = ∫₀¹ (3x² + 2x) dx.",
-        "level": "easy",
-        "sampleAnswer": "1. Tìm nguyên hàm của f(x) = 3x² + 2x: F(x) = x³ + x².\n2. Tính tích phân: I = F(1) - F(0) = (1³ + 1²) - (0³ + 0²) = 2 - 0 = 2."
-      },
-      {
-        "q": "Trong không gian Oxyz, cho ba điểm A(2; 0; 0), B(0; -3; 0), C(0; 0; 4). Hãy viết phương trình mặt phẳng (ABC) dưới dạng phương trình đoạn chắn và phương trình tổng quát.",
-        "level": "medium",
-        "sampleAnswer": "1. Phương trình đoạn chắn của mặt phẳng đi qua A, B, C nằm trên 3 trục tọa độ là:\nx/2 + y/(-3) + z/4 = 1\n2. Quy đồng mẫu số chung là 12 để đưa về dạng tổng quát:\n6x - 4y + 3z = 12 <=> 6x - 4y + 3z - 12 = 0."
-      },
-      {
-        "q": "Tìm giá trị lớn nhất (GTLN) và giá trị nhỏ nhất (GTNN) của hàm số y = x³ - 3x² + 1 trên đoạn [1; 3].",
-        "level": "hard",
-        "sampleAnswer": "1. Đạo hàm: y' = 3x² - 6x. Cho y' = 0 <=> 3x(x - 2) = 0 <=> x = 0 hoặc x = 2.\n2. Trên đoạn [1; 3], ta chỉ xét giá trị x = 2 (do x = 0 nằm ngoài đoạn).\n3. Tính các giá trị:\n- Biên x = 1: y(1) = 1³ - 3*1² + 1 = -1.\n- Cực trị x = 2: y(2) = 2³ - 3*2² + 1 = 8 - 12 + 1 = -3.\n- Biên x = 3: y(3) = 3³ - 3*3² + 1 = 1.\n4. So sánh kết quả:\n- GTLN (Max y) = 1 tại x = 3.\n- GTNN (Min y) = -3 tại x = 2."
-      },
-      {
-        "q": "Giải phương trình mũ sau bằng phương pháp đặt ẩn phụ: 9^x - 4*3^x + 3 = 0. Sau đó, tính tổng các nghiệm tìm được.",
-        "level": "hard",
-        "sampleAnswer": "1. Đặt t = 3^x (điều kiện: t > 0). Phương trình trở thành phương trình bậc hai: t² - 4t + 3 = 0.\n2. Giải phương trình trên, ta được hai nghiệm t = 1 và t = 3 (đều thỏa mãn điều kiện t > 0).\n3. Với t = 1: 3^x = 1 => x = 0.\n4. Với t = 3: 3^x = 3 => x = 1.\n5. Phương trình có hai nghiệm phân biệt x = 0 và x = 1. Vậy tổng các nghiệm là 0 + 1 = 1."
-      },
-      {
-        "q": "Trong không gian Oxyz, cho đường thẳng d: (x-1)/2 = (y+1)/1 = z/-1 và mặt phẳng (P): x + y + z - 3 = 0. Tìm tọa độ giao điểm M của đường thẳng d và mặt phẳng (P).",
-        "level": "hard",
-        "sampleAnswer": "1. Chuyển phương trình đường thẳng d về dạng tham số: x = 1 + 2t, y = -1 + t, z = -t.\n2. Vì M là giao điểm của d và (P), thay tọa độ tham số của d vào phương trình mặt phẳng (P): (1 + 2t) + (-1 + t) + (-t) - 3 = 0.\n3. Rút gọn phương trình ta được: 2t - 3 = 0 => t = 3/2.\n4. Thay giá trị t = 3/2 vào phương trình tham số của d để tìm tọa độ M: x = 1 + 2*(3/2) = 4; y = -1 + 3/2 = 1/2; z = -3/2.\n5. Vậy tọa độ giao điểm M là (4; 1/2; -3/2)."
-      }
-    ],
-    "physics_12": [
-      {
-        "q": "Đặt điện áp xoay chiều u = 220√2 * cos(100π*t) V vào hai đầu đoạn mạch nối tiếp gồm điện trở R = 100 Ω và cuộn cảm thuần có L = 1/π H. Tính cảm kháng Z_L và cường độ dòng điện hiệu dụng chạy trong mạch.",
-        "level": "easy",
-        "sampleAnswer": "1. Tần số góc ω = 100π rad/s. Cảm kháng: Z_L = ω * L = 100π * (1/π) = 100 Ω.\n2. Điện áp hiệu dụng U = 220 V. Tổng trở mạch: Z = √(R² + Z_L²) = √(100² + 100²) = 100√2 Ω.\n3. Cường độ dòng điện hiệu dụng: I = U / Z = 220 / (100√2) = 2.2 / √2 A = 1.1√2 A ≈ 1.56 A."
-      },
-      {
-        "q": "Đặt điện áp xoay chiều U = 220 V vào hai đầu mạch RLC nối tiếp có R = 110 Ω. Biết cường độ dòng điện trễ pha π/3 so với điện áp hai đầu mạch. Tính hệ số công suất của mạch và công suất tiêu thụ P của mạch.",
-        "level": "medium",
-        "sampleAnswer": "1. Độ lệch pha φ = π/3. Hệ số công suất: cos(φ) = cos(π/3) = 0.5.\n2. Vì thiếu cảm kháng Z_L và dung kháng Z_C, áp dụng công thức kết hợp: P = (U² * cos²φ) / R\n3. P = (220² * 0.5²) / 110 = (48400 * 0.25) / 110 = 12100 / 110 = 110 W."
-      },
-      {
-        "q": "Một đoạn mạch RLC nối tiếp gồm điện trở R = 50 Ω, cuộn cảm thuần có L = 1/π H và tụ điện có C = 2 * 10⁻⁴/π F. Đặt vào hai đầu mạch điện áp xoay chiều u = 220√2 * cos(100π*t) V. Hãy viết biểu thức cường độ dòng điện tức thời i chạy trong mạch.",
-        "level": "hard",
-        "sampleAnswer": "1. Tính các trở kháng:\n- Z_L = 100π * 1/π = 100 Ω.\n- Z_C = 1 / (100π * 2*10⁻⁴/π) = 1 / 0.02 = 50 Ω.\n2. Tổng trở: Z = √[R² + (Z_L - Z_C)²] = √[50² + (100 - 50)²] = 50√2 Ω.\n3. Cường độ dòng điện cực đại: I₀ = U₀ / Z = 220√2 / 50√2 = 4.4 A.\n4. Tính độ lệch pha: tan(φ) = (Z_L - Z_C)/R = (100 - 50)/50 = 1 => φ = π/4.\nVì φ = φ_u - φ_i => φ_i = φ_u - φ = 0 - π/4 = -π/4.\n5. Biểu thức cường độ dòng điện: i = 4.4 * cos(100π*t - π/4) A."
-      }
-    ],
-    "chemistry_12": [
-      {
-        "q": "Hãy viết phương trình phản ứng hóa học (dạng cấu tạo thu gọn) của phản ứng thủy phân Etyl axetat (CH₃COOC₂H₅) trong dung dịch kiềm NaOH nóng. Cho biết tên phản ứng này.",
-        "level": "easy",
-        "sampleAnswer": "1. Phương trình phản ứng:\nCH₃COOC₂H₅ + NaOH --(t°)--> CH₃COONa + C₂H₅OH\n2. Tên phản ứng: Phản ứng xà phòng hóa."
-      },
-      {
-        "q": "Hãy tính khối lượng của glixerol thu được khi thủy phân hoàn toàn 8.9 gam chất béo tripanmitin (C₁₅H₃₁COO)₃C₃H₅ bằng dung dịch NaOH dư. (Cho C = 12, H = 1, O = 16)",
-        "level": "medium",
-        "sampleAnswer": "1. Tính phân tử khối tripanmitin: M = 806 g/mol.\n2. Số mol tripanmitin: n = 8.9 / 806 ≈ 0.011 mol.\n3. Phương trình thủy phân:\n(C₁₅H₃₁COO)₃C₃H₅ + 3NaOH → 3C₁₅H₃₁COONa + C₃H₅(OH)₃\n4. Số mol glixerol sinh ra bằng số mol tripanmitin: n_glixerol = 0.011 mol.\n5. Khối lượng glixerol: m = 0.011 * 92 ≈ 1.01 gam."
-      },
-      {
-        "q": "Thủy phân hoàn toàn m gam chất béo (triglycerit) cần dùng vừa đủ 120 ml dung dịch NaOH 1M. Sau phản ứng cô cạn thu được 35.68 gam hỗn hợp muối khan. Hãy tính giá trị m.",
-        "level": "hard",
-        "sampleAnswer": "1. Tính số mol NaOH phản ứng: n_NaOH = 0.12 * 1 = 0.12 mol.\n2. Tính số mol glixerol sinh ra theo tỉ lệ: n_glixerol = 1/3 * n_NaOH = 0.04 mol.\n3. Tính khối lượng các chất:\n- m_NaOH = 0.12 * 40 = 4.8 gam.\n- m_glixerol = 0.04 * 92 = 3.68 gam.\n4. Áp dụng định luật bảo toàn khối lượng:\nm_chất_béo + m_NaOH = m_muối + m_glixerol\nm + 4.8 = 35.68 + 3.68 => m + 4.8 = 39.36 => m = 34.56 gam.\n*Kết quả: Khối lượng chất béo m = 34.56 gam.*"
-      }
-    ],
-    "english_12": [
-      {
-        "q": "What is 'carbon footprint' and write down two methods a household can do to decrease their carbon footprint in daily activities.",
-        "level": "easy",
-        "sampleAnswer": "Sample Answer: Carbon footprint is the total amount of greenhouse gases released due to an individual or household's activities. A household can decrease it by: 1) shifting to energy-efficient appliances and lighting (e.g., LED), and 2) using public transportation or carpooling to reduce vehicle emissions."
-      },
-      {
-        "q": "Explain why 'sustainable development' is a geopolitical concern rather than just an environmental issue.",
-        "level": "medium",
-        "sampleAnswer": "Sample Answer: Sustainable development is a geopolitical concern because natural resources (like oil, gas, and water) are shared globally. Depletion of resources in one country can trigger migration, border disputes, or trade wars. Therefore, international cooperation and treaties are required to ensure resource sustainability and avoid political instability."
-      },
-      {
-        "q": "Read this statement: 'The world needs to invest in ecosystem rehabilitation to prevent irreversible climate change.' Write an essay (100-120 words) explaining this statement using the vocabulary 'rehabilitation' and 'depletion'.",
-        "level": "hard",
-        "sampleAnswer": "Sample Answer: Human industrialization has caused severe depletion of resources and forests, putting wildlife habitats at risk. To combat this depletion, investing in ecosystem rehabilitation is urgent. Rehabilitation, which involves planting native trees and restoring wetlands, acts as carbon capture. Without rehabilitation, natural zones will continue to decline, releasing greenhouse gases and making climate change irreversible. Therefore, countries must collaborate on environmental rehabilitation projects immediately."
-      }
-    ],
-    "biology_10": [
-      {
-        "q": "Trình bày sự khác biệt cơ bản về cấu tạo giữa tế bào nhân sơ (Prokaryote) và tế bào nhân thực (Eukaryote).",
-        "level": "easy",
-        "sampleAnswer": "1. Tế bào nhân sơ:\n- Chưa có nhân hoàn chỉnh (chỉ có vùng nhân chứa phân tử ADN vòng, không có màng nhân bao bọc).\n- Không có các bào quan có màng bao bọc (chỉ có ribôxôm).\n- Kích thước nhỏ (1-5 μm), cấu trúc đơn giản.\n\n2. Tế bào nhân thực:\n- Đã có nhân hoàn chỉnh (với màng nhân bao bọc chất nhiễm sắc).\n- Hệ thống nội màng phát triển và có nhiều bào quan có màng bao bọc (ti thể, lục lạp, lưới nội chất, bộ máy Golgi,...).\n- Kích thước lớn hơn (10-100 μm), cấu trúc phức tạp hơn nhiều."
-      },
-      {
-        "q": "Mô tả cấu trúc hóa học và chức năng của phân tử ATP. Tại sao nói ATP là 'đồng tiền năng lượng' của tế bào?",
-        "level": "medium",
-        "sampleAnswer": "1. Cấu trúc hóa học của ATP (Adenosin Triphosphat):\n- Gồm 3 thành phần: Bazo nito Adenin, đường ribozơ và 3 nhóm photphat.\n- Trong đó, liên kết giữa 2 nhóm photphat ngoài cùng là liên kết cao năng, dễ bị bẻ gãy để giải phóng năng lượng lớn (khoảng 7.3 kcal/mol).\n\n2. Tại sao gọi là 'đồng tiền năng lượng':\n- Tế bào không thể sử dụng trực tiếp năng lượng từ thức ăn (như glucose) mà phải chuyển hóa thành ATP.\n- ATP dễ dàng truyền năng lượng cho các phản ứng thu nhiệt trong tế bào thông qua việc đứt gãy liên kết cao năng để tạo thành ADP và photphat vô cơ. Khi cần tích lũy, tế bào lại tái tổng hợp ATP từ ADP. Do tính chất dễ tiêu dùng và tái sinh linh hoạt như tiền tệ trong lưu thông xã hội, ATP được gọi là 'đồng tiền năng lượng'."
-      },
-      {
-        "q": "Mô tả mối quan hệ mật thiết giữa pha sáng và pha tối của quá trình quang hợp ở thực vật.",
-        "level": "hard",
-        "sampleAnswer": "Quang hợp gồm pha sáng và pha tối liên kết chặt chẽ với nhau như hai bánh răng truyền động:\n1. Pha sáng (xảy ra ở màng thilacôit):\n- Hấp thụ năng lượng ánh sáng và phân ly H₂O để tạo ra O₂ (giải phóng ra ngoài), đồng thời tổng hợp các hợp chất cao năng là ATP và NADPH.\n\n2. Pha tối (xảy ra ở chất nền stroma):\n- Sử dụng CO₂ từ khí quyển cùng sản phẩm của pha sáng là ATP và NADPH để khử CO₂ thành hợp chất hữu cơ (glucôzơ) thông qua chu trình Calvin.\n- Pha tối trả lại ADP và NADP⁺ cho pha sáng để tiếp tục tái sinh ATP và NADPH.\n*Kết luận: Không có pha sáng thì pha tối không thể diễn ra do thiếu năng lượng và chất khử; ngược lại, nếu pha tối bị đình trệ thì pha sáng cũng sẽ ngưng do thiếu nguyên liệu ADP và NADP⁺.*"
-      }
-    ],
-    "history_10": [
-      {
-        "q": "Trình bày những thành tựu văn hóa tiêu biểu của Ai Cập cổ đại và đóng góp của chúng đối với văn minh nhân loại.",
-        "level": "easy",
-        "sampleAnswer": "Ai Cập cổ đại đóng đóng góp vĩ đại cho lịch sử loài người với các thành tựu:\n1. Chữ viết: Sáng tạo chữ tượng hình viết trên giấy papyrus, ghi chép lại lịch sử và tri thức cổ đại.\n2. Toán học: Nghệ thuật đo đạc ruộng đất phát triển hình học (tính số pi ≈ 3.16), giải phương trình bậc nhất.\n3. Thiên văn và Lịch pháp: Làm ra lịch dựa trên chu kỳ chuyển động của Mặt Trời và nước sông Nile dâng (năm có 365 ngày).\n4. Y học và Kiến trúc: Kỹ thuật ướp xác độc đáo hiểu biết sâu về giải phẫu người; các công trình kiến trúc kỳ vĩ như Kim tự tháp, tượng Nhân sư thách thức thời gian."
-      },
-      {
-        "q": "Phân tích nguyên nhân thắng lợi và ý nghĩa lịch sử của chiến thắng Bạch Đằng năm 938 do Ngô Quyền lãnh đạo.",
-        "level": "medium",
-        "sampleAnswer": "1. Nguyên nhân thắng lợi:\n- Sự lãnh đạo tài tình của Ngô Quyền với nghệ thuật quân sự độc đáo (sử dụng trận địa cọc ngầm kết hợp nước thủy triều lên xuống).\n- Tinh thần đoàn kết, chiến đấu dũng cảm của quân dân ta vượt qua sức mạnh ban đầu của địch.\n- Sự chủ quan khinh địch của hoàng tử Lưu Hoằng Tháo và quân Nam Hán.\n\n2. Ý nghĩa lịch sử:\n- Tiêu diệt hoàn toàn ý chí xâm lược của quân Nam Hán.\n- Kết thúc hoàn toàn ách thống trị kéo dài hơn 1000 năm của các triều đại phong kiến phương Bắc.\n- Khẳng định chủ quyền độc lập dân tộc sâu sắc, mở ra kỷ nguyên độc lập tự chủ lâu dài cho nước ta."
-      },
-      {
-        "q": "So sánh những đặc điểm kinh tế - xã hội cốt lõi giữa các quốc gia cổ đại phương Đông và các quốc gia cổ đại phương Tây.",
-        "level": "hard",
-        "sampleAnswer": "1. Các quốc gia cổ đại phương Đông (Ai Cập, Lưỡng Hà, Ấn Độ, Trung Quốc):\n- Kinh tế: Nông nghiệp trồng lúa nước ở lưu vực các con sông lớn phì nhiêu làm cơ sở, công tác trị thủy đắp đê được đề cao.\n- Xã hội: Hình thành giai cấp thống trị (vua chuyên chế, quý tộc, tăng lữ) và giai cấp bị trị (nông dân công xã là lực lượng sản xuất chính, nô lệ phục dịch).\n- Thể chế chính trị: Quân chủ chuyên chế trung ương tập quyền mang tính thần thánh.\n\n2. Các quốc gia cổ đại phương Tây (Hy Lạp, La Mã):\n- Kinh tế: Nghèo đất trồng trọt nhưng giàu tài nguyên khoáng sản, phát triển mạnh thủ công nghiệp và thương nghiệp biển (hải thương quốc tế).\n- Xã hội: Chiếm hữu nô lệ sâu sắc gồm hai giai cấp cơ bản: chủ nô và nô lệ (nô lệ chỉ được xem là vật sở hữu biết nói).\n- Thể chế chính trị: Dân chủ chủ nô (Athens) hoặc Cộng hòa chủ nô (La Mã), không có vua chuyên chế."
-      }
-    ],
-    "literature_10": [
-      {
-        "q": "Trình bày giá trị nhân đạo sâu sắc của tác phẩm kiệt tác 'Truyện Kiều' (Nguyễn Du) qua đoạn trích 'Trao duyên'.",
-        "level": "easy",
-        "sampleAnswer": "Giá trị nhân đạo trong đoạn trích 'Trao duyên' thể hiện qua:\n1. Sự đồng cảm sâu sắc của Nguyễn Du với nỗi đau đớn, bi kịch tình yêu tan vỡ của Thúy Kiều khi buộc phải đặt chữ hiếu lên trên chữ tình.\n2. Trân trọng vẻ đẹp nhân cách cao thượng của Kiều: dù trong hoàn cảnh tuyệt vọng vẫn lo nghĩ cho hạnh phúc của Kim Trọng, hy sinh hạnh phúc cá nhân để giữ trọn lời thề nghĩa nặng.\n3. Lên án gián tiếp các thế lực phong kiến tàn bạo (đồng tiền đen tối) đẩy gia đình Kiều vào cảnh ly tán, buộc nàng phải bán mình chuộc cha."
-      },
-      {
-        "q": "Phân tích hào khí Đông A đầy kiêu hùng được thể hiện qua bài thơ 'Tỏ lòng' (Thuật hoài) của danh tướng Phạm Ngũ Lão.",
-        "level": "medium",
-        "sampleAnswer": "Hào khí Đông A thời Trần được tái hiện sắc nét qua:\n1. Vẻ đẹp của người tráng sĩ đời Trần: Tư thế hiên ngang cầm giáo ('hoành sóc') bảo vệ non sông suốt nhiều năm ròng rã, sẵn sàng chiến đấu vì vận mệnh đất nước.\n2. Sức mạnh quân đội nhà Trần: Hình ảnh so sánh đầy hào hùng 'ba quân khí mạnh nuốt trôi trâu' miêu tả sức mạnh vật chất lẫn tinh thần quật khởi của quân dân thời Trần.\n3. Chí nam nhi cao cả của tác giả: Thể hiện qua cái 'thẹn' trước tấm gương Vũ Hầu (Gia Cát Lượng) vì chưa trả xong nợ công danh cho đất nước, bộc lộ khát vọng cống hiến quên mình vì dân tộc."
-      },
-      {
-        "q": "Chứng minh rằng 'Bình Ngô đại cáo' của Nguyễn Trãi là bản Tuyên ngôn Độc lập thứ hai đầy hùng tráng của dân tộc Việt Nam.",
-        "level": "hard",
-        "sampleAnswer": "'Bình Ngô đại cáo' được coi là bản Tuyên ngôn độc lập thứ hai vì:\n1. Định nghĩa toàn diện về quốc gia dân tộc: Nguyễn Trãi đưa ra các yếu tố chủ quyền đầy đủ gồm cương vực lãnh thổ, nền văn hiến lâu đời, phong tục tập quán riêng biệt, lịch sử các triều đại song hành cùng phong kiến phương Bắc, và hào kiệt đời nào cũng có.\n2. Bản cáo trạng đanh thép tố cáo tội ác vô nhân đạo của giặc Minh: 'Nướng dân đen trên ngọn lửa hung tàn / Vùi con đỏ xuống dưới hầm tai vạ', lột trần luận điệu giả nhân giả nghĩa của kẻ thù.\n3. Bản hùng ca về cuộc khởi nghĩa Lam Sơn: từ những ngày đầu gian khổ ở núi Lam đến các chiến thắng vang dội Chi Lăng, Xương Giang vang dội bờ cõi.\n4. Lời tuyên bố độc lập đàng hoàng: khẳng định kỷ nguyên mới hòa bình bền vững xây dựng trên nền tảng nhân nghĩa yên dân."
-      }
-    ],
-    "biology_11": [
-      {
-        "q": "Phân biệt sự khác nhau giữa quá trình thoát hơi nước qua khí khổng và thoát hơi nước qua cutin ở lá cây xanh.",
-        "level": "easy",
-        "sampleAnswer": "1. Qua khí khổng:\n- Vận tốc thoát hơi nước rất lớn.\n- Được điều chỉnh chủ động bằng cơ chế đóng mở của tế bào hạt sinh (tế bào hình hạt đậu).\n- Chiếm phần lớn lượng nước thoát ra từ lá.\n\n2. Qua lớp cutin trên bề mặt lá:\n- Vận tốc thoát hơi nước nhỏ.\n- Không tự điều chỉnh được (phụ thuộc vào độ dày của lớp cutin: lá non cutin mỏng thoát nước nhiều, lá già cutin dày thoát nước ít).\n- Chiếm tỉ lệ nhỏ hơn nhiều so với qua khí khổng."
-      },
-      {
-        "q": "So sánh cấu tạo và nguyên lý hoạt động giữa hệ tuần hoàn hở và hệ tuần hoàn kín ở động vật.",
-        "level": "medium",
-        "sampleAnswer": "1. Hệ tuần hoàn hở (ở côn trùng, thân mềm):\n- Cấu tạo: Có tim, hệ thống động mạch và tĩnh mạch ngắn, không có mao mạch trung gian.\n- Nguyên lý hoạt động: Máu được tim bơm vào động mạch rồi chảy tràn vào khoang cơ thể trộn lẫn dịch mô tạo thành hỗn hợp máu - dịch mô trực tiếp trao đổi chất với tế bào, sau đó được hút lại về tim qua các lỗ tim. Tốc độ chảy chậm, áp lực máu thấp.\n\n2. Hệ tuần hoàn kín (ở giun đất, mực ống, động vật có xương sống):\n- Cấu tạo: Có tim, hệ thống động mạch, tĩnh mạch và mạng lưới mao mạch dày đặc liên kết kín.\n- Nguyên lý hoạt động: Máu chảy liên tục trong mạch kín từ tim qua động mạch → mao mạch (trao đổi chất gián tiếp qua thành mao mạch) → tĩnh mạch rồi về tim. Tốc độ chảy nhanh, áp lực máu cao, điều hòa phân phối máu hiệu quả hơn."
-      },
-      {
-        "q": "Phân tích cơ chế truyền tin (xung thần kinh) qua xináp hóa học. Tại sao thông tin đi qua xináp chỉ theo một chiều duy nhất?",
-        "level": "hard",
-        "sampleAnswer": "1. Cơ chế truyền tin qua xináp hóa học:\n- Xung thần kinh lan truyền đến chùy xináp làm mở kênh Ca²⁺, ion Ca²⁺ đi vào trong chùy xináp.\n- Ca²⁺ kích thích các bóng chứa chất trung gian hóa học (ví dụ axêtilcôlin) liên kết với màng trước và giải phóng chất này vào khe xináp bằng xuất bào.\n- Chất trung gian hóa học khuếch tán qua khe xináp và gắn vào thụ thể đặc hiệu ở màng sau xináp, làm thay đổi tính thấm màng sau xuất hiện điện thế hoạt động lan truyền đi tiếp.\n\n2. Tại sao chỉ truyền đi một chiều:\n- Vì chỉ ở chùy xináp (màng trước) mới có các bóng chứa chất trung gian hóa học để giải phóng ra ngoài.\n- Chỉ ở màng sau xináp mới có các thụ thể tiếp nhận chất trung gian hóa học này bám vào kích hoạt xung điện. Do đó xung thần kinh không thể truyền ngược lại."
-      }
-    ],
-    "history_11": [
-      {
-        "q": "Trình bày ý nghĩa lịch sử của Cách mạng tháng Mười Nga năm 1917 đối với phong trào giải phóng dân tộc trên thế giới.",
-        "level": "easy",
-        "sampleAnswer": "Cách mạng tháng Mười Nga mang ý nghĩa quốc tế sâu sắc:\n1. Đập tan xiềng xích chủ nghĩa đế quốc ở một quốc gia lớn, cổ vũ mạnh mẽ phong trào đấu tranh của giai cấp công nhân và các dân tộc bị áp bức toàn cầu.\n2. Mở ra con đường cứu nước mới cho các dân tộc thuộc địa - con đường cách mạng vô sản gắn liền độc lập dân tộc với chủ nghĩa xã hội.\n3. Thành lập nhà nước xã hội chủ nghĩa đầu tiên, trở thành chỗ dựa vững chắc cho phong trào hòa bình và tiến bộ thế giới sau này."
-      },
-      {
-        "q": "Phân tích nguyên nhân thực dân Pháp chọn Đà Nẵng làm mục tiêu tấn công mở đầu khi xâm lược nước ta vào năm 1858.",
-        "level": "medium",
-        "sampleAnswer": "Pháp chọn Đà Nẵng làm điểm đổ bộ tấn công đầu tiên vì các lý do chiến lược:\n1. Vị trí địa lý: Đà Nẵng có cảng biển sâu, rộng thuận lợi cho tàu chiến Pháp neo đậu và dễ dàn trận pháo kích đất liền.\n2. Mục tiêu chính trị: Đà Nẵng chỉ cách kinh thành Huế khoảng 100km về phía Bắc, Pháp muốn thực hiện kế hoạch 'đánh nhanh thắng nhanh', nhanh chóng uy hiếp triều đình Huế đầu hàng.\n3. Cơ sở hậu thuẫn xã hội: Pháp hy vọng sự hỗ trợ của lực lượng giáo sĩ và giáo dân Thiên chúa giáo tại khu vực này để làm nội ứng hành quân thuận tiện."
-      },
-      {
-        "q": "So sánh điểm giống và khác nhau về con đường cứu nước của Nguyễn Ái Quốc với các nhà yêu nước tiền bối đầu thế kỷ XX (Phan Bội Châu, Phan Châu Trinh).",
-        "level": "hard",
-        "sampleAnswer": "1. Điểm giống nhau:\n- Đều xuất phát từ lòng yêu nước thương dân nồng nàn, mong muốn giải phóng dân tộc khỏi ách đô hộ của thực dân Pháp.\n- Đều tích cực đi ra nước ngoài tìm kiếm sự giúp đỡ và con đường mới cứu nước.\n\n2. Điểm khác biệt:\n- Phan Bội Châu: Đi theo con đường bạo động vũ trang, chủ trương dựa vào Nhật Bản (phong trào Đông Du) cải cách thể chế quân chủ lập hiến.\n- Phan Châu Trinh: Đi theo con đường cải cách dân chủ, chủ trương dựa vào Pháp để chấn hưng dân trí, nâng cao dân lực rồi mới đòi độc lập ('Khai dân trí, chấn dân khí, hậu dân sinh').\n- Nguyễn Ái Quốc: Hướng sang phương Tây (Pháp, Anh, Mĩ) để tìm hiểu bản chất kẻ thù, tìm đến chủ nghĩa Mác-Lênin, xác định cách mạng Việt Nam là cách mạng vô sản, dựa vào sức mạnh đại đoàn kết toàn dân và liên kết chặt chẽ với phong trào vô sản thế giới để tự giải phóng."
-      }
-    ],
-    "literature_11": [
-      {
-        "q": "Phân tích vẻ đẹp lãng mạn và khát vọng sống hiến dâng mãnh liệt của Xuân Diệu được thể hiện trong đoạn mở đầu bài thơ 'Vội vàng'.",
-        "level": "easy",
-        "sampleAnswer": "1. Khát vọng táo bạo đoạt quyền tạo hóa: Nhà thơ muốn tắt nắng, buộc gió lại để giữ lấy sắc hương tươi đẹp của cuộc đời trần thế ('Tôi muốn tắt nắng đi / Cho màu đừng nhạt mất...').\n2. Bức tranh thiên nhiên tràn ngập sức sống: Thiên nhiên mùa xuân hiện lên như một bữa tiệc đầy sắc hương tươi non quyến rũ ('Ong bướm này đây tuần tháng mật / Này đây hoa của đồng nội xanh rì...').\n3. Quan niệm nhân sinh mới mẻ: Lấy con người trẻ tuổi làm thước đo vẻ đẹp của thiên nhiên ('Tháng giêng ngon như một cặp môi gần'), thể hiện khát khao tận hưởng cuộc sống trần thế một cách mãnh liệt nhất."
-      },
-      {
-        "q": "Phân tích vẻ đẹp hiên ngang, khí phách của nhân vật Huấn Cao trong truyện ngắn 'Chữ người tử tù' của Nguyễn Tuân.",
-        "level": "medium",
-        "sampleAnswer": "Huấn Cao hội tụ vẻ đẹp uy nghi cổ kính chốn ngục tù:\n1. Tài hoa nghệ thuật lỗi lạc: Nổi tiếng khắp tỉnh Sơn về tài viết chữ nhanh và đẹp, chữ của Huấn Cao là báu vật thể hiện hoài bão tung hoành của một đời người.\n2. Khí phách hiên ngang bất khuất: Dù là tử tù chờ ngày ra pháp trường, ông vẫn thản nhiên nhận rượu thịt quản ngục dâng, không sợ hãi bạo lực, uy quyền, giữ tư thế hiên ngang lẫm liệt.\n3. Thiên lương trong sáng: Trọng nghĩa khinh tài, chỉ cho chữ những ai biết quý trọng cái đẹp. Cảm động trước tấm lòng quản ngục, Huấn Cao đã tặng chữ và khuyên bảo chân thành giữ thiên lương thanh cao lánh xa chốn nhơ bẩn."
-      },
-      {
-        "q": "Phân tích quá trình thức tỉnh nhân tính và bi kịch đau đớn bị cự tuyệt quyền làm người của nhân vật Chí Phèo trong kiệt tác cùng tên của Nam Cao.",
-        "level": "hard",
-        "sampleAnswer": "1. Quá trình thức tỉnh nhân tính:\n- Từ một anh canh điền hiền lành bị Bá Kiến đẩy vào tù, ra tù thành con quỷ dữ của làng Vũ Đại rạch mặt ăn vạ phá nát cuộc sống bình yên.\n- Gặp Thị Nở trong đêm trăng, nhận sự chăm sóc mộc mạc (bát cháo hành ấm nóng), Chí Phèo lần đầu tiên tỉnh rượu, cảm nhận được âm thanh cuộc sống đời thường và khát khao lương thiện trỗi dậy mãnh liệt.\n\n2. Bi kịch bị cự tuyệt quyền làm người:\n- Sự từ chối phũ phàng của bà cô Thị Nở đại diện cho định kiến khắt khe của xã hội đã đóng sầm cánh cửa trở lại làm người lương thiện của Chí.\n- Chí Phèo rơi vào tuyệt vọng, vác dao đến nhà Bá Kiến đâm chết kẻ thù và tự sát.\n- Tiếng kêu cứu tuyệt vọng cuối cùng: 'Ai cho tôi lương thiện? Làm thế nào cho mất được những vết mảnh chai trên mặt này?' khẳng định bi kịch đau xót của kiếp người bị tha hóa trong xã hội thực dân nửa phong kiến cũ."
-      }
-    ],
-    "biology_12": [
-      {
-        "q": "Đột biến gen là gì? Nêu ý nghĩa của đột biến gen đối với quá trình tiến hóa và chọn giống cây trồng vật nuôi.",
-        "level": "easy",
-        "sampleAnswer": "1. Khái niệm: Đột biến gen là những biến đổi nhỏ trong cấu trúc của gen, liên quan đến một hoặc một vài cặp nuclêôtit tại một điểm xác định.\n\n2. Ý nghĩa đối với tiến hóa và chọn giống:\n- Đối với tiến hóa: Đột biến gen là nguồn phát sinh các alen mới, tạo ra nguồn biến dị sơ cấp vô tận cung cấp cho quá trình chọn lọc tự nhiên biến đổi tần số gen thích nghi.\n- Đối với chọn giống: Cung cấp nguồn nguyên liệu phong phú để các nhà chọn giống chọn lựa, lai tạo tạo ra các giống cây trồng, vật nuôi mới có năng suất cao hoặc đặc tính quý hiếm."
-      },
-      {
-        "q": "Trình bày các đặc điểm của mã di truyền. Giải thích tại sao tính thoái hóa của mã di truyền lại có lợi cho sự sinh tồn của sinh vật.",
-        "level": "medium",
-        "sampleAnswer": "1. Các đặc điểm của mã di truyền:\n- Mã di truyền là mã bộ ba (cứ 3 nuclêôtit kế tiếp xác định 1 axit amin).\n- Được đọc từ một điểm xác định, liên tục không gối lên nhau.\n- Tính phổ biến (hầu hết sinh vật dùng chung một bảng mã).\n- Tính đặc hiệu (1 bộ ba chỉ mã hóa cho 1 axit amin duy nhất).\n- Tính thoái hóa (nhiều bộ ba khác nhau cùng mã hóa cho 1 loại axit amin).\n\n2. Tại sao tính thoái hóa có lợi:\n- Giúp bảo vệ cấu trúc prôtêin trước tác động của đột biến gen. Nếu xảy ra đột biến thay thế nuclêôtit ở vị trí thứ ba trong bộ ba, bộ ba mới sinh ra nhiều khả năng vẫn mã hóa cho chính axit amin cũ, cấu trúc prôtêin không đổi đảm bảo chức năng sinh học ổn định bình thường."
-      },
-      {
-        "q": "Một quần thể ngẫu phối cân bằng Hardy-Weinberg có tần số kiểu hình hoa trắng (kiểu gen aa) là 9%. Hãy tính tần số của các alen A, a và tỉ lệ kiểu gen dị hợp Aa. Nếu quần thể bị đào thải hoàn toàn các cá thể hoa trắng aa thì ở thế hệ ngẫu phối tiếp theo tần số alen a là bao nhiêu?",
-        "level": "hard",
-        "sampleAnswer": "1. Tính tần số các alen khi cân bằng:\n- Tần số kiểu hình hoa trắng $q^2(aa) = 9\\% = 0.09 \\implies q(a) = \\sqrt{0.09} = 0.3$.\n- Tần số alen A: $p(A) = 1 - q = 1 - 0.3 = 0.7$.\n- Tỉ lệ kiểu gen dị hợp Aa trong quần thể khi cân bằng:\n  $$2pq(Aa) = 2 \\times 0.7 \\times 0.3 = 0.42 = 42\\%$$\n\n2. Tính tần số alen a thế hệ tiếp theo sau đào thải hoa trắng:\n- Thành phần kiểu gen còn lại sau đào thải $aa$:\n  $p^2(AA) = 0.7^2 = 0.49$; $2pq(Aa) = 0.42$.\n- Tổng tỉ lệ cá thể còn lại: $0.49 + 0.42 = 0.91$.\n- Tỉ lệ kiểu gen chuẩn hóa mới: \n  $$AA = \\frac{0.49}{0.91} = \\frac{7}{13}$$; $$Aa = \\frac{0.42}{0.91} = \\frac{6}{13}$$\n- Tần số alen a mới sau đào thải:\n  $$q'(a) = \\frac{1}{2} \\times Aa = \\frac{1}{2} \\times \\frac{6}{13} = \\frac{3}{13} \\approx 0.23$$"
-      }
-    ],
-    "history_12": [
-      {
-        "q": "Trình bày hoàn cảnh lịch sử dẫn đến quyết định đổi mới đất nước tại Đại hội lần thứ VI của Đảng Cộng sản Việt Nam (12/1986).",
-        "level": "easy",
-        "sampleAnswer": "Hoàn cảnh lịch sử vô cùng khó khăn cấp bách:\n1. Khủng hoảng kinh tế - xã hội trầm trọng: Đất nước rơi vào tình trạng lạm phát phi mã, thiếu lương thực hàng hóa tiêu dùng cơ bản, đời sống nhân dân cực kỳ gian khổ do hậu quả kéo dài của cơ chế tập trung quan liêu bao cấp và chiến tranh bảo vệ biên giới.\n2. Cô lập quốc tế: Sự bao vây cấm vận của các thế lực thù địch phương Tây và khó khăn từ các nước XHCN viện trợ truyền thống.\n3. Yêu cầu đổi mới: Thực tiễn đất nước đòi hỏi Đảng phải nhìn nhận thẳng vào sự thật, sửa chữa sai lầm chủ quan duy ý chí để đưa đất nước đi lên thoát nghèo."
-      },
-      {
-        "q": "Phân tích nguyên nhân thắng lợi và ý nghĩa lịch sử của chiến dịch Điện Biên Phủ năm 1954 chống thực dân Pháp.",
-        "level": "medium",
-        "sampleAnswer": "1. Nguyên nhân thắng lợi:\n- Sự lãnh đạo sáng suốt của Trung ương Đảng và Chủ tịch Hồ Chí Minh, đứng đầu là Đại tướng Võ Nguyên Giáp với quyết định chuyển phương châm tác chiến lịch sử từ 'đánh nhanh thắng nhanh' sang 'đánh chắc tiến chắc'.\n- Tinh thần quả cảm chiến đấu, sẵn sàng hy sinh của chiến sĩ xung kích quân đội ta.\n- Sự chi viện đồng lòng của hậu phương to lớn (dân công hỏa tuyến thồ hàng ngàn tấn gạo lên Điện Biên Phủ).\n\n2. Ý nghĩa lịch sử:\n- Đập tan hoàn toàn nỗ lực quân sự cao nhất của Pháp và Mĩ, giáng đòn quyết định buộc Pháp ký Hiệp định Giơnevơ năm 1954.\n- Giải phóng hoàn toàn miền Bắc, tạo cơ sở hậu phương vững chắc cho sự nghiệp giải phóng miền Nam thống nhất đất nước.\n- Cổ vũ mạnh mẽ phong trào giải phóng dân tộc thuộc địa trên toàn thế giới."
-      },
-      {
-        "q": "So sánh chiến lược 'Chiến tranh đặc biệt' (1961-1965) và chiến lược 'Việt Nam hóa chiến tranh' (1969-1973) của Mĩ ở miền Nam Việt Nam.",
-        "level": "hard",
-        "sampleAnswer": "1. Điểm giống nhau:\n- Đều là các loại hình chiến tranh xâm lược thực dân kiểu mới của Mĩ nhằm biến miền Nam Việt Nam thành thuộc địa và chia cắt đất nước lâu dài.\n- Đều dựa vào viện trợ quân sự, tài chính khổng lồ của Mĩ, hệ thống cố vấn Mĩ và vũ khí tối tân hiện đại.\n\n2. Điểm khác biệt:\n- Lực lượng tham chiến chính:\n  + Chiến tranh đặc biệt: Sử dụng quân đội Sài Gòn làm lực lượng nòng cốt tiến hành chiến đấu.\n  + Việt Nam hóa chiến tranh: Mĩ rút dần quân Mĩ về nước nhằm 'thay màu da trên xác chết', quân Sài Gòn vẫn làm nòng cốt phối hợp không quân Mĩ yểm trợ hỏa lực tối đa.\n- Quy mô chiến tranh:\n  + Chiến tranh đặc biệt: Diễn ra chủ yếu ở miền Nam Việt Nam.\n  + Việt Nam hóa chiến tranh: Mở rộng ra toàn Đông Dương (Lào và Campuchia), dùng người Đông Dương đánh người Đông Dương.\n- Thủ đoạn cốt lõi:\n  + Chiến tranh đặc biệt: Quốc sách ấp chiến lược dồn dân cô lập cách mạng.\n  + Việt Nam hóa chiến tranh: Sử dụng thủ đoạn ngoại giao chia rẽ khối XHCN (như Mĩ bắt tay Trung Quốc, Liên Xô) để cô lập viện trợ cách mạng nước ta."
-      }
-    ],
-    "literature_12": [
-      {
-        "q": "Phân tích vẻ đẹp bi tráng của hình tượng người lính Tây Tiến trong bài thơ 'Tây Tiến' của Quang Dũng.",
-        "level": "easy",
-        "sampleAnswer": "Vẻ đẹp bi tráng thể hiện qua sự hài hòa giữa hai yếu tố Bi (đau thương) và Tráng (hùng tráng):\n1. Cái 'Bi' (Đau thương mất mát): Cuộc sống gian khổ, bệnh tật sốt rét rừng tàn phá ngoại hình lính ('không mọc tóc', 'xanh màu lá'), cái chết rình rập rải rác biên cương ('mồ viễn xứ', 'áo bào thay chiếu anh về đất').\n2. Cái 'Tráng' (Hùng tráng kiêu dũng): Tâm hồn kiêu dũng vượt khó khăn coi khinh bệnh tật ('dữ oai hùm'), khát vọng chiến đấu lý tưởng cống hiến ('chiến trường đi chẳng tiếc đời xanh'), cái chết thanh thản nhẹ nhàng hóa thành tiếng thét gầm tiễn đưa của sông Mã gầm lên khúc độc hành oai hùng."
-      },
-      {
-        "q": "Phân tích giá trị hiện thực và nhân đạo sâu sắc của truyện ngắn 'Vợ nhặt' (Kim Lân) qua tình huống nhặt vợ độc đáo giữa ngày đói 1945.",
-        "level": "medium",
-        "sampleAnswer": "1. Giá trị hiện thực:\n- Tái hiện chân thực thảm cảnh nạn đói năm 1945: người chết như ngả rạ, không khí vẩn lên mùi ẩm thối của rác rưởi và mùi tử khí. Con người rẻ rúng đến mức Tràng 'nhặt' được vợ chỉ bằng bốn bát bánh đúc ngoài chợ.\n\n2. Giá trị nhân đạo sâu sắc:\n- Ca ngợi tình nghĩa gắn bó đùm bọc giữa những người nghèo đói (bà cụ Tứ chấp nhận nàng dâu mới bằng tình thương vô bờ bến).\n- Khẳng định sức sống bất diệt của con người: càng cận kề cái chết, họ càng khát khao tổ ấm gia đình hạnh phúc bền vững.\n- Hướng con người tới tương lai tươi sáng: hình ảnh lá cờ đỏ sao vàng xuất hiện trong tâm trí Tràng hứa hẹn bước chuyển biến giải phóng cuộc đời họ."
-      },
-      {
-        "q": "Phân tích vẻ đẹp khuất lấp đầy nghị lực, yêu thương của người đàn bà hàng chài trong truyện ngắn 'Chiếc thuyền ngoài xa' của Nguyễn Minh Châu.",
-        "level": "hard",
-        "sampleAnswer": "Người đàn bà hàng chài tuy vô danh, thô kệch nhưng mang vẻ đẹp tâm hồn ngời sáng:\n1. Nỗi đau và sự cam chịu nhẫn nhục: Bị chồng đánh đập tàn nhẫn 'ba ngày một trận nhẹ, năm ngày một trận nặng' nhưng không hề kêu van hay chạy trốn, xin chồng đưa lên bờ đánh để con không nhìn thấy.\n2. Nguyên nhân sâu xa: Thấu hiểu cuộc sống mưu sinh vất vả trên biển cần một người đàn ông khỏe mạnh để chèo chống thuyền khi phong ba bão táp, cam chịu vì tương lai của các con ('phải sống cho con chứ không thể sống cho mình').\n3. Sự thấu cảm sâu sắc lẽ đời: Hiểu được sự bất lực, cục cằn của chồng thực chất do đói nghèo áp bách, độ lượng tha thứ cho chồng.\n4. Tình mẫu tử vĩ đại: Hạnh phúc bình dị nhất của chị là nhìn các con được ăn no trên thuyền. Sự từng trải của chị đã thức tỉnh nhận thức cho nghệ sĩ Phùng và chánh án Đẩu về lẽ đời đa sự."
-      }
-    ]
-  }
+  ]
 }
